@@ -369,13 +369,15 @@ const privacySections = [
         </p>
         <ul className="list-disc pl-5 space-y-1">
           <li>Post the updated Privacy Policy on our website</li>
-          <li>Update the &apos;Last Updated&apos; date at the top of this policy</li>
+          <li>
+            Update the &apos;Last Updated&apos; date at the top of this policy
+          </li>
           <li>
             Notify you via email or platform notification for material changes
           </li>
           <li>
-            Provide at least 30 days&apos; notice for significant changes affecting
-            your rights
+            Provide at least 30 days&apos; notice for significant changes
+            affecting your rights
           </li>
           <li>Obtain your consent where required by applicable law</li>
         </ul>
@@ -419,7 +421,11 @@ export default function PrivacyContent() {
   return (
     <section className="bg-gray-50 py-16">
       <div className="mx-auto max-w-6xl space-y-6 px-6">
-        <Accordion type="multiple" className="space-y-2">
+        <Accordion
+          type="multiple"
+          defaultValue={privacySections.map((_, index) => `item-${index}`)}
+          className="space-y-2"
+        >
           {privacySections.map((section, index) => (
             <AccordionItem value={`item-${index}`} key={index}>
               <AccordionTrigger>{section.title}</AccordionTrigger>

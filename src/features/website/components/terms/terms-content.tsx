@@ -294,7 +294,9 @@ const termsContent = [
           </li>
           <li>Payment is required before access to paid services</li>
           <li>Refunds are subject to our refund policy</li>
-          <li>We reserve the right to change pricing with 30 days&apos; notice</li>
+          <li>
+            We reserve the right to change pricing with 30 days&apos; notice
+          </li>
         </ul>
       </div>
     ),
@@ -476,11 +478,19 @@ export const TermsContent = () => {
   return (
     <section className="bg-gray-50 py-16">
       <div className="mx-auto max-w-6xl space-y-6 px-6">
-        <Accordion type="multiple" className="space-y-2">
+        <Accordion
+          type="multiple"
+          defaultValue={termsContent.map((_, index) => `item-${index}`)} 
+          className="space-y-2"
+        >
           {termsContent.map((section, index) => (
             <AccordionItem value={`item-${index}`} key={index}>
-              <AccordionTrigger className="text-lg md:text-xl">{section.title}</AccordionTrigger>
-              <AccordionContent className="text-sm md:text-lg">{section.content}</AccordionContent>
+              <AccordionTrigger className="text-lg md:text-xl">
+                {section.title}
+              </AccordionTrigger>
+              <AccordionContent className="text-sm md:text-lg">
+                {section.content}
+              </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>

@@ -44,10 +44,30 @@ export const FILTERS = {
   TRUSTEES: "Board of Trustees",
 } as const;
 
+export type Product = {
+  icon: string;
+  id: string;
+  color: string;
+  category: string;
+  description: string;
+  title: string;
+  image: string;
+  features: Array<string>;
+  longDesc: string;
+};
+
 export type FilterType = keyof typeof FILTERS;
 
 // Team data
 export const TEAM_MEMBERS: TeamMember[] = [
+  {
+    name: "Khadijah Abdul Juma",
+    department: "ADVISORS",
+    country: "KE",
+    role: "Advisor on Partnership and Growth Network",
+    img: "/assets/images/Khadija-Abdul.png",
+    bio: "Khadija Abdul Juma is a results-driven technology and media leader with over 12 years of experience advancing digital transformation and economic opportunities across Africa. She is passionate about improving lives and livelihoods through innovation, community empowerment, and strategic partnerships.",
+  },
   {
     name: "Juliana Sarya",
     country: "TZ",
@@ -60,18 +80,11 @@ export const TEAM_MEMBERS: TeamMember[] = [
     role: "Secretary, Board of Trustees",
     department: "TRUSTEES",
     country: "NG",
-    name: "Imam Bashir",
+    name: "Imam Bashir Abdulwahab",
     img: "/assets/images/Imam-Bashir.JPG",
     bio: "Imam Bashir serves as the Secretary of the Trustees, supporting the organization with clear communication, record stewardship, and dependable coordination. He is committed to using technology and organized systems to strengthen community service and improve how people connect with support resources. His work reflects a dedication to uplift humanity, encourage understanding, and promote meaningful social impact.",
   },
-  {
-    name: "Khadijah Abdul Juma",
-    department: "ADVISORS",
-    country: "KE",
-    role: "Advisor on Partnership and Growth Network",
-    img: "/assets/images/Khadija-Abdul.png",
-    bio: "Khadija Abdul Juma is a results-driven technology and media leader with over 12 years of experience advancing digital transformation and economic opportunities across Africa. She is passionate about improving lives and livelihoods through innovation, community empowerment, and strategic partnerships.",
-  },
+
   {
     name: "Oluwasegun M. Olukayode",
     department: "OPERATIONS",
@@ -99,7 +112,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   },
   {
     name: "Iretioluwa Ogunmola",
-    department: "OPERATIONS",
+    department: "TECH",
     role: "Product Management Lead",
     country: "NG",
     img: "/assets/images/Ireti.jpeg",
@@ -109,7 +122,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: "Hammed Adedamola",
     department: "OPERATIONS",
     country: "NG",
-    role: "Product Manager",
+    role: "Social Media Manager Lead",
     img: "/assets/images/Hammed.JPG",
     bio: "I am a Product Manager who is people-driven and passionate about exploring new ideas, connecting with others, and expanding my knowledge. Outside of work, I enjoy watching movies, learning new things, and meeting new people.",
   },
@@ -161,5 +174,178 @@ export const TEAM_MEMBERS: TeamMember[] = [
     country: "NG",
     img: "/assets/images/Boluwatife-Mercy.jpeg",
     bio: "Boluwatife Adeleke is a purpose-driven social impact leader working at the intersection of education, youth empowerment, and operational systems building.",
+  },
+];
+
+export const products: Product[] = [
+  {
+    id: "hub-education",
+    icon: "🎓",
+    title: "RIO Hub for Education",
+    category: "Education & Learning",
+    color: "blue",
+    description:
+      "Track academic progress, study habits, and engagement. Empower students and educators with data-driven insights for better learning outcomes.",
+    image: "/assets/images/product-hub.svg",
+    features: [
+      "Student progress tracking",
+      "Educator effectiveness analytics",
+      "Institutional insights dashboard",
+    ],
+    longDesc:
+      "RIO Hub for Education transforms learning environments by providing real-time analytics on student engagement, progress tracking, and personalized learning paths. Educators gain actionable insights to improve teaching effectiveness while students stay motivated through gamified challenges and peer accountability.",
+  },
+  {
+    id: "hub-corporate",
+    title: "RIO Hub for Companies",
+    category: "Business & Enterprise",
+    color: "cyan",
+    icon: "🏢",
+    description:
+      "Boost workplace productivity and employee engagement. Track team performance, collaboration metrics, and professional development goals.",
+    image: "/assets/images/product-hub.svg",
+    features: [
+      "Team productivity analytics",
+      "Employee engagement tracking",
+      "Performance insights dashboard",
+    ],
+    longDesc:
+      "RIO Hub for Companies revolutionizes workplace productivity by tracking team collaboration, project milestones, and employee wellness. Our AI-driven insights help managers identify bottlenecks, optimize workflows, and foster a culture of continuous improvement and accountability.",
+  },
+  {
+    id: "hub-creators",
+    title: "RIO Hub for Content Creators",
+    category: "Content & Media",
+    color: "purple",
+    icon: "🎬",
+    description:
+      "Manage content schedules, track creative output, and build consistent habits. Stay accountable to your audience and creative goals.",
+    image: "/assets/images/product-hub.svg",
+    features: [
+      "Content calendar management",
+      "Creative habit tracking",
+      "Audience engagement metrics",
+    ],
+    longDesc:
+      "RIO Hub for Content Creators streamlines content production with intelligent scheduling, audience analytics, and creative habit tracking. Stay consistent with your content calendar while building sustainable creative practices that keep your audience engaged.",
+  },
+  {
+    id: "hub-developers",
+    title: "RIO Hub for Developers",
+    color: "green",
+    category: "Technology & Dev",
+    icon: "💻",
+    description:
+      "Track coding habits, project milestones, and technical skill development. Build consistent development practices and collaborate effectively.",
+    image: "/assets/images/product-hub.svg",
+    features: [
+      "Code contribution tracking",
+      "Project milestone management",
+      "Technical skill progression",
+    ],
+    longDesc:
+      "RIO Hub for Developers enhances coding productivity through commit tracking, project milestone management, and skill progression analytics. Build better coding habits, collaborate effectively with your team, and advance your technical expertise systematically.",
+  },
+  {
+    id: "hub-startups",
+    title: "RIO Hub for Startups",
+    category: "Innovation & Startups",
+    icon: "🚀",
+    color: "orange",
+    description:
+      "Monitor innovation cycles, team productivity, and startup growth metrics. Foster a culture of accountability and rapid iteration.",
+    image: "/assets/images/product-hub.svg",
+    features: [
+      "Sprint tracking",
+      "Team velocity metrics",
+      "Innovation pipeline management",
+    ],
+    longDesc:
+      "RIO Hub for Startups accelerates innovation by tracking sprint velocity, team productivity, and product development cycles. Foster a culture of rapid iteration and accountability while maintaining clear visibility into your startup's growth metrics.",
+  },
+  {
+    id: "hub-government",
+    title: "RIO Hub for Government",
+    category: "Public Sector",
+    color: "red",
+    icon: "🏛️",
+    description:
+      "Enhance public sector productivity and service delivery. Track project timelines, citizen engagement, and departmental performance.",
+    image: "/assets/images/product-hub.svg",
+    features: [
+      "Project timeline tracking",
+      "Service delivery metrics",
+      "Departmental analytics",
+    ],
+    longDesc:
+      "RIO Hub for Government improves public sector efficiency through project timeline tracking, service delivery metrics, and departmental performance analytics. Enhance transparency, accountability, and citizen engagement with data-driven governance.",
+  },
+  {
+    id: "hub-nonprofit",
+    title: "RIO Hub for Nonprofits",
+    category: "Social Impact",
+    color: "pink",
+    icon: "🤝",
+    description:
+      "Maximize impact with volunteer management, program tracking, and donor engagement insights. Build sustainable community initiatives.",
+    image: "/assets/images/product-hub.svg",
+    features: [
+      "Volunteer coordination",
+      "Program impact tracking",
+      "Donor engagement analytics",
+    ],
+    longDesc:
+      "RIO Hub for Nonprofits maximizes social impact through volunteer coordination, program effectiveness tracking, and donor engagement analytics. Build sustainable community initiatives with clear metrics that demonstrate your organization's impact.",
+  },
+  {
+    id: "hub-sports",
+    title: "RIO Hub for Sports & Fitness",
+    icon: "⚽",
+    category: "Sports & Wellness",
+    color: "teal",
+    description:
+      "Track training routines, athletic performance, and team coordination. Build winning habits and achieve fitness goals consistently.",
+    image: "/assets/images/product-hub.svg",
+    features: [
+      "Training schedule management",
+      "Performance metrics tracking",
+      "Team coordination tools",
+    ],
+    longDesc:
+      "RIO Hub for Sports & Fitness optimizes athletic performance through training schedule management, performance metrics tracking, and team coordination tools. Build winning habits, track progress, and achieve fitness goals with data-driven insights.",
+  },
+  {
+    id: "hub-creative",
+    title: "RIO Hub for Creative Media",
+    category: "Creative Industries",
+    color: "indigo",
+    icon: "🎨",
+    description:
+      "Manage creative projects, track production workflows, and collaborate with teams. Deliver creative excellence on schedule.",
+    image: "/assets/images/product-hub.svg",
+    features: [
+      "Production workflow tracking",
+      "Creative project management",
+      "Team collaboration tools",
+    ],
+    longDesc:
+      "RIO Hub for Creative Media streamlines production workflows with project management, creative collaboration tools, and deadline tracking. Deliver creative excellence on schedule while maintaining team coordination and quality standards.",
+  },
+  {
+    id: "hub-research",
+    title: "RIO Hub for Research",
+    category: "Research & Academia",
+    color: "violet",
+    icon: "🔬",
+    description:
+      "Track research milestones, manage academic collaborations, and monitor publication progress. Advance knowledge systematically.",
+    image: "/assets/images/product-hub.svg",
+    features: [
+      "Research milestone tracking",
+      "Collaboration management",
+      "Publication progress monitoring",
+    ],
+    longDesc:
+      "RIO Hub for Research advances academic excellence through milestone tracking, collaboration management, and publication progress monitoring. Systematically advance knowledge while maintaining clear visibility into research outcomes and team contributions.",
   },
 ];

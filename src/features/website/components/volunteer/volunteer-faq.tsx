@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { motion } from "motion/react";
 import {
@@ -44,8 +44,8 @@ const VolunteerFAQ: React.FC = () => {
           Frequently Asked Questions
         </h2>
         <Accordion
-          type="single"
-          collapsible
+          type="multiple"
+          defaultValue={questions.map((_, idx) => `item-${idx}`)}
           className="divide-y space-y-2 divide-gray-200 bg-white"
         >
           {questions.map((item, idx) => (

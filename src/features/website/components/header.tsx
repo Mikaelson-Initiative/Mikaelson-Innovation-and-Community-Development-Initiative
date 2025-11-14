@@ -27,8 +27,8 @@ const Header: React.FC<HeaderProps> = ({
   brandName = "Mikaelson Initiative",
   navLinks = [
     { label: "The Team", href: "/team" },
-    { label: "About Us", href: "/about" },
-    // { label: "Social Feed", href: "/feed" },
+    { label: "Our Product", href: "/product" },
+    { label: "About Us", href: "/about-us" },
     { label: "Volunteer", href: "/volunteer" },
   ],
   actionButton = { label: "Sponsor a program", href: "/sponsor" },
@@ -60,8 +60,8 @@ const Header: React.FC<HeaderProps> = ({
               <Link
                 key={link.label}
                 href={link.href}
-                className={cn(`group relative p-2 hover:bg-brand-bg-color rounded-t transition-colors hover:text-brand-green-100`,
-                  isActive && "bg-brand-bg-color text-brand-green-100"
+                className={cn(`group  font-medium relative p-2 hover:bg-brand-bg-color rounded-t transition-colors hover:text-brand-green-100`,
+                  isActive && "bg-brand-bg-color text-brand-green-100 "
                 )}
               >
                 {link.label}

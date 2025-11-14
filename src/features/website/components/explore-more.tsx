@@ -39,7 +39,7 @@ const linksData: LinkItem[] = [
     title: "Community Guidelines",
     description:
       "Learn about our community values, accountability principles, and best practices for growth.",
-    href: "#",
+    href: "/community",
     buttonLabel: "Read Guidelines",
     isInternal: false,
   },

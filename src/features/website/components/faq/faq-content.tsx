@@ -64,7 +64,11 @@ const data = [
 export const FaqContent = () => {
   return (
     <section className="py-12 mx-auto max-w-4xl px-6">
-      <Accordion type="multiple" className="w-full space-y-2">
+      <Accordion
+        defaultValue={data.map((_, index) => `faq-${index}`)}
+        type="multiple"
+        className="w-full space-y-2"
+      >
         {data.map((item, index) => (
           <AccordionItem key={index} value={`faq-${index}`}>
             <AccordionTrigger>{item.question}</AccordionTrigger>

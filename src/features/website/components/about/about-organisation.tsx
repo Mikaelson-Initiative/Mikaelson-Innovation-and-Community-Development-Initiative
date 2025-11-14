@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { motion } from "motion/react";
 
@@ -18,7 +18,7 @@ export const AboutOrganization: React.FC = () => (
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        About the Mikaelson Innovation and Community Development Initiative
+        About the Mikaelson Community Development and Tech Initiative
       </motion.h2>
 
       <motion.p
@@ -28,10 +28,10 @@ export const AboutOrganization: React.FC = () => (
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        The Mikaelson Initiative (Mikaelson Innovation and Community Development
-        Initiative) is a standalone organization dedicated to fostering
-        innovation and sustainable community development across Africa through
-        technology-driven solutions and educational empowerment.
+        Mikaelson Community Development and Tech Initiative is a standalone
+        organization dedicated to fostering innovation and sustainable community
+        development across Africa through technology-driven solutions and
+        educational empowerment.
       </motion.p>
 
       <motion.p

@@ -122,8 +122,8 @@ const codeOfConductItems = [
         <h4 className="font-semibold">3.2 Collaboration and Support</h4>
         <p>
           We value collaboration over competition. Members should actively
-          support each other&apos;s initiatives and contribute to collective success
-          through:
+          support each other&apos;s initiatives and contribute to collective
+          success through:
         </p>
         <ul className="list-disc pl-6 space-y-1">
           <li>Sharing resources, knowledge, and opportunities</li>
@@ -183,7 +183,9 @@ const codeOfConductItems = [
           <li>Keep discussions relevant, constructive, and on-topic</li>
           <li>Avoid spam, excessive self-promotion, or irrelevant content</li>
           <li>Respect privacy, confidentiality, and intellectual property</li>
-          <li>Give proper credit and attribution when sharing others&apos; work</li>
+          <li>
+            Give proper credit and attribution when sharing others&apos; work
+          </li>
           <li>
             Use appropriate language, tone, and professional communication
           </li>
@@ -505,18 +507,15 @@ export default function CodeOfConductContent() {
   return (
     <section className="bg-gray-50 py-16">
       <div className="mx-auto max-w-6xl space-y-6 px-6">
-        <Accordion type="single" collapsible className="space-y-2">
+        <Accordion
+          type="multiple"
+          defaultValue={codeOfConductItems.map((_, idx) => `item-${idx}`)}
+          className="space-y-2"
+        >
           {codeOfConductItems.map((item, idx) => (
-            <AccordionItem
-              key={idx}
-              value={`item-${idx}`}
-            >
-              <AccordionTrigger>
-                {item.title}
-              </AccordionTrigger>
-              <AccordionContent>
-                {item.content}
-              </AccordionContent>
+            <AccordionItem key={idx} value={`item-${idx}`}>
+              <AccordionTrigger>{item.title}</AccordionTrigger>
+              <AccordionContent>{item.content}</AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
