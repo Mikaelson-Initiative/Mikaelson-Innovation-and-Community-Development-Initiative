@@ -32,7 +32,7 @@ const VolunteerForm: React.FC = () => (
           target="_blank"
           rel="noopener"
           className="submit-button inline-flex items-center rounded-full  px-8 py-4 text-lg font-semibold text-white shadow bg-gradient-to-r from-teal-300 to-blue-500  transition-colors"
-          animate={{ y: [0, -10, 0] }}
+          animate={{ y: [0, -5, 0] }}
           transition={{ repeat: Infinity, duration: 1.2 }}
         >
           Apply now

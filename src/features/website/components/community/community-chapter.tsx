@@ -167,14 +167,14 @@ const CommunityChapters: React.FC = () => {
                 type="button"
                 onClick={() => setSelectedRegionKey(group.key)}
                 aria-pressed={selectedRegionKey === group.key}
-                className={`p-4 rounded-lg shadow transition ${
+                className={`p-4 cursor-pointer rounded-lg shadow transition ${
                   selectedRegionKey === group.key
                     ? "bg-blue-600 text-white"
                     : "bg-white hover:bg-blue-50"
                 }`}
               >
                 <h4 className="font-semibold">{group.name}</h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm">
                   {group.chapterCount}{" "}
                   {group.chapterCount === 1 ? "Chapter" : "Chapters"}
                 </p>

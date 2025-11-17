@@ -44,7 +44,7 @@ const JoinTeam: React.FC = () => {
         <button
           type="button"
           onClick={() => router.push("/volunteer")}
-          className="bg-teal-400 text-white text-lg font-semibold py-4 px-8 border-none cursor-pointer shadow rounded-md"
+          className="bg-teal-400 hover:bg-teal-500 transition-colors text-white text-lg font-semibold py-4 px-8 border-none cursor-pointer shadow rounded-md"
         >
           Join Us Today
         </button>

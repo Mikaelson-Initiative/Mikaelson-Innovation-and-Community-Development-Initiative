@@ -7,10 +7,10 @@ import React from "react";
 
 const SocialFeed = () => {
   return (
-    <div className="grid lg:grid-cols-8 max-w-7xl mx-auto gap-4 py-6">
+    <div className="grid lg:grid-cols-8 max-w-7xl mx-auto gap-4 p-4 py-6">
       <UserProfile />
       <FeedsMainContent />
-      <div className="col-span-2 space-y-2">
+      <div className="col-span-2 space-y-2 hidden lg:flex flex-col">
         <CommunityStats />
         <TopContributors />
         <SuggestedForYou />

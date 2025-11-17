@@ -23,20 +23,20 @@ export const UserHeader = () => {
           </div>
         </div>
 
-        <Button className="bg-blue-600 w-full text-md py-8 rounded-xl flex items-center justify-center gap-2">
+        <Button className="bg-teal-400 hover:bg-teal-500 w-full text-md py-8 rounded-xl flex items-center justify-center gap-2">
           <PlusIcon className="w-5 h-5" />
           What&apos;s Happening
         </Button>
       </div>
 
-      <div className="grid grid-cols-3 gap-3 text-center">
+      <div className="grid grid-cols-3 gap-2 text-center">
         {stats.map((item, index) => (
           <div
             key={index}
-            className="flex flex-col items-center bg-gray-50 rounded-lg p-3 border"
+            className="flex flex-col items-center bg-gray-50 rounded-lg p-2 border"
           >
-            <p className="font-bold text-lg">{item.value}</p>
-            <p className="text-xs text-gray-500 uppercase">{item.title}</p>
+            <p className="font-bold">{item.value}</p>
+            <p className="text-sm text-gray-500 capitalize">{item.title}</p>
           </div>
         ))}
       </div>

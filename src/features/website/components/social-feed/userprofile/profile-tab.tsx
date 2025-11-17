@@ -3,7 +3,7 @@ import { HomeIcon, Trophy, Users } from "lucide-react";
 import { useState } from "react";
 
 export const ProfileTab = () => {
-  const [activeTab, setActiveTab] = useState("challenges");
+  const [activeTab, setActiveTab] = useState("forYou");
 
   const tabs = [
     {

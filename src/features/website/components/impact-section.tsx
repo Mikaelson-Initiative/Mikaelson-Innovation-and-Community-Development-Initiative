@@ -89,13 +89,13 @@ export default function ImpactSection() {
         <div className="flex justify-between items-center px-5">
           <HeadingClipText className="mb-0" title={"Our Impact so far"} />
           {/* Tabs */}
-          <div className="hidden md:flex rounded-xl bg-gray-100 p-1 text-sm md:text-xl">
+          <div className="hidden md:flex gap-2 rounded-lg bg-gray-100 p-1 text-sm md:text-base">
             {Object.keys(TABS).map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab as TabKey)}
                 aria-pressed={activeTab === tab}
-                className={`rounded-xl px-4 md:py-5 transition-colors cursor-pointer ${
+                className={`rounded px-2 md:py-2 transition-colors cursor-pointer ${
                   activeTab === tab
                     ? "bg-white text-gray-900 shadow"
                     : "text-gray-600 hover:text-gray-900"
@@ -112,7 +112,7 @@ export default function ImpactSection() {
           {itemsToShow.map((item) => (
             <div
               key={item.label}
-              className="impact-item rounded-2xl border border-l-[#20c9c0] border-l-4 border-gray-200 bg-white p-20 text-center shadow-sm transition-transform hover:-translate-y-1 hover:shadow-lg"
+              className="impact-item rounded-2xl border border-l-[#20c9c0] border-l-4 border-gray-200 bg-white p-10 text-center shadow-sm transition-transform hover:-translate-y-1 hover:shadow-lg"
             >
               <div className="impact-icon-wrapper hidden mx-auto mb-3 h-12 w-12 lg:h-20 lg:w-20 items-center justify-center rounded-full bg-gray-100 text-xl">
                 <span className="impact-icon text-2xl lg:text-5xl" aria-hidden>
