@@ -1,13 +1,7 @@
 'use client'
-import { Heart, MessageCircle, Redo2, Repeat } from "lucide-react";
-import { useEffect, useState } from "react"
-
-interface UserPostCount {
-    userId: number;
-    userName: string;
-    count: number;
-    userAvatar: string;
-}
+import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
+import { Bookmark, Ellipsis, Flag, Heart, Link, MessageCircle, Redo2, Repeat } from 'lucide-react'
+import React from 'react'
 
 const posts = [
     {
@@ -246,169 +240,60 @@ const posts = [
     }
 ]
 
-export const GetPostsTags = () => {
-    const [trendingTags, setTrendingTags] = useState<string[]>([]);
-
-    // Get 6 most trending tags
-    useEffect(() => {
-        const tagCount: Record<string, number> = {};
-
-        posts.forEach(post => {
-            post.tags.forEach(tag => {
-                tagCount[tag] = (tagCount[tag] || 0) + 1;
-            });
-        });
-
-        const sortedTags = Object.entries(tagCount)
-            .sort((a, b) => b[1] - a[1]) // Sort by frequency
-            .slice(0, 6) // pick top 6
-            .map(tag => tag[0]); // only return the tag name
-
-        setTrendingTags(sortedTags);
-    }, []);
-
+export const ForYouFeed = () => {
     return (
-        <div className="flex gap-2 flex-wrap">
-            {trendingTags.map((tag) => (
-                <span
-                    key={tag}
-                    className="px-3 py-1 bg-gray-200 rounded-full text-sm font-medium cursor-pointer hover:text-white hover:bg-teal-300"
-                >
-                    #{tag}
-                </span>
-            ))}
-        </div>
-    )
-}
-
-
-export const GetStats = () => {
-    const [totalPosts, setTotalPosts] = useState<number>(0)
-    const [totalLikes, setTotalLikes] = useState<number>(0)
-    const [totalChallenges, setTotalChallenges] = useState<number>(0)
-
-    useEffect(() => {
-        setTotalPosts(posts.length)
-        // get all likes
-        let totalLikes = 0
-        posts.forEach(post => {
-            totalLikes += post.likes
-        })
-        setTotalLikes(totalLikes)
-
-        // get no of challenges
-        const challenges = new Set(posts.map(post => post.challengeId))
-        setTotalChallenges(challenges.size)
-    }, [])
-    return (
-        <div className="w-full flex flex-col gap-4">
-            <div className="flex items-center justify-center gap-2 flex-col bg-gray-100 w-full rounded-2xl p-4">
-                <span className="text-teal-400 font-bold text-xl">{totalPosts}</span>
-                <span>Posts</span>
-            </div>
-            <div className="flex items-center justify-center gap-2 flex-col bg-gray-100 w-full rounded-2xl p-4">
-                <span className="text-teal-400 font-bold text-xl">{totalLikes}</span>
-                <span>Likes</span>
-            </div>
-            <div className="flex items-center justify-center gap-2 flex-col bg-gray-100 w-full rounded-2xl p-4">
-                <span className="text-teal-400 font-bold text-xl">{totalChallenges}</span>
-                <span>Challenges</span>
-            </div>
-        </div>
-    )
-}
-
-export const GetContributors = () => {
-    const [topContributions, setTopContributions] = useState<UserPostCount[]>([]);
-
-    useEffect(() => {
-        const userCountMap: Record<number, UserPostCount> = {};
-
-        posts.forEach((post) => {
-            if (!userCountMap[post.userId]) {
-                userCountMap[post.userId] = {
-                    userId: post.userId,
-                    userName: post.userName,
-                    count: 1,
-                    userAvatar: post.userAvatar,
-                };
-            } else {
-                userCountMap[post.userId].count += 1;
-            }
-        });
-
-        const topFive = Object.values(userCountMap)
-            .sort((a, b) => b.count - a.count)
-            .slice(0, 5);
-
-        setTopContributions(topFive);
-    }, []);
-
-    if (topContributions.length === 0) {
-        return <div>Loading...</div>;
-    }
-
-    return (
-        <div className="w-full flex flex-col gap-4">
-            {topContributions.map((contributor, index) => (
-                <div className="flex flex-row gap-4" key={index}>
-                    <div className="bg-gradient-to-br from-teal-500 to-blue-600 text-white p-2 rounded-full aspect-square w-10 h-10 font-semibold flex items-center justify-center">
-                        {contributor.userAvatar}
-                    </div>
-                    <div key={contributor.userId} className="flex flex-col">
-                        <span className="text-sm">{contributor.userName}</span>
-                        <span className="text-black/30 text-sm">{contributor.count} Posts</span>
-                    </div>
-                </div>
-            ))}
-        </div>
-    );
-};
-
-export const GettAllPosts = () => {
-
-    return (
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-2">
             {posts.map((post) => (
-                <div key={post.id} className=" bg-white rounded-2xl p-6 border border-[#f3f4f6] shadow-md transition-all">
+                <div key={post.id} className=" bg-white rounded p-6 border border-[#f3f4f6] shadow-md transition-all">
                     <div className="postheader flex flex-row justify-between">
                         <div className="flex flex-row gap-2 justify-center items-center">
                             <span className="text-white flex items-center justify-center p-2 bg-gradient-to-br from-teal-500 to-blue-600 rounded-full w-fit">{post.userAvatar}</span>
                             <span className="font-semibold text-sm">{post.userName}</span>
                         </div>
-                        <div className="bg-black/5 p-2 flex justify-center items-center rounded-xl border">
-                            <span>{post.challengeTitle}</span>
-                        </div>
-                    </div>
-                    <div className="post-progress bg-[#f8fafc] p-2 rounded-xl my-4 border">
-                        <div className="flex flex-row justify-between items-center">
-                            <div>Day <span>{post.progress.currentDay} out of {post.progress.totalDays}</span></div>
-                            {/* Make boder show the progress of the task */}
-
-                            <div
-                                className="rounded-full p-1 w-12 h-12 flex justify-center items-center"
-                                style={{
-                                    background: `conic-gradient(#14b8a6 ${post.progress.percentage * 3.6}deg, #e5e7eb 0deg)`,
-                                }}
-                            >
-                                <div className="bg-white rounded-full w-full h-full flex justify-center items-center text-sm">
-                                    {post.progress.percentage}%
-                                </div>
-                            </div>
+                        <div>
+                            <DropdownMenu>
+                                <DropdownMenuTrigger asChild className='rounded-full cursor-pointer p-2 hover:bg-blue-50'>
+                                    <div>
+                                    <Ellipsis />
+                                    </div>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent>
+                                    <DropdownMenuGroup>
+                                        <DropdownMenuItem>
+                                            <div className='flex gap-2 p-2 items-center justify-center'>
+                                                <Link />
+                                                <span>Copy link to post</span>
+                                            </div>
+                                        </DropdownMenuItem>
+                                        <DropdownMenuItem>
+                                            <div className='flex gap-2 p-2 items-center justify-center'>
+                                                <Bookmark />
+                                                <span>Bookmark post</span>
+                                            </div>
+                                        </DropdownMenuItem>
+                                        <DropdownMenuItem>
+                                            <div className='flex gap-2 p-2 items-center justify-center'>
+                                                <Flag />
+                                                <span>Report post</span>
+                                            </div>
+                                        </DropdownMenuItem>
+                                    </DropdownMenuGroup>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
                         </div>
                     </div>
                     <div className="post-text space-y-2">
                         {post.content}
                     </div>
-                    <div className="post-tags flex flex-wrap gap-4 mt-4">
+                    <div className="post-tags flex flex-wrap gap-4 my-4">
                         {post.tags.map((tag, index) => (
                             <div key={index} className="bg-gray-200 text-black/40 px-2 py-1 hover:bg-teal-300 hover:text-white cursor-pointer transition-all rounded-full text-sm">
                                 #{tag}
                             </div>
                         ))}
                     </div>
-                    <hr/>
-                    <div className="post-reactions flex items-center gap-2 mt-4">
+                    <hr />
+                    <div className="post-reactions flex items-center gap-2 my-2">
                         <div className="likes hover:text-red-600 hover:bg-gray-200 flex items-center justify-center p-2 rounded-lg cursor-pointer gap-2" title="likes">
                             <Heart />
                             <span>{post.likes}</span>
@@ -426,6 +311,85 @@ export const GettAllPosts = () => {
                             <span>{post.shares}</span>
                         </div>
                     </div>
+                    <hr />
+                </div>
+            ))}
+        </div>
+    )
+}
+
+export const FollowingFeed = () => {
+    return (
+        <div className="flex flex-col">
+            {posts.map((post) => (
+                <div key={post.id} className=" bg-white rounded p-6 border border-[#f3f4f6] shadow-md transition-all">
+                    <div className="postheader flex flex-row justify-between">
+                        <div className="flex flex-row gap-2 justify-center items-center">
+                            <span className="text-white flex items-center justify-center p-2 bg-gradient-to-br from-teal-500 to-blue-600 rounded-full w-fit">{post.userAvatar}</span>
+                            <span className="font-semibold text-sm">{post.userName}</span>
+                        </div>
+                        <div>
+                            <DropdownMenu>
+                                <DropdownMenuTrigger asChild className='rounded-full cursor-pointer p-2 hover:bg-blue-50'>
+                                    <div>
+                                    <Ellipsis />
+                                    </div>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent>
+                                    <DropdownMenuGroup>
+                                        <DropdownMenuItem>
+                                            <div className='flex gap-2 p-2 items-center justify-center'>
+                                                <Link />
+                                                <span>Copy link to post</span>
+                                            </div>
+                                        </DropdownMenuItem>
+                                        <DropdownMenuItem>
+                                            <div className='flex gap-2 p-2 items-center justify-center'>
+                                                <Bookmark />
+                                                <span>Bookmark post</span>
+                                            </div>
+                                        </DropdownMenuItem>
+                                        <DropdownMenuItem>
+                                            <div className='flex gap-2 p-2 items-center justify-center'>
+                                                <Flag />
+                                                <span>Report post</span>
+                                            </div>
+                                        </DropdownMenuItem>
+                                    </DropdownMenuGroup>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
+                        </div>
+                    </div>
+                    <div className="post-text space-y-2">
+                        {post.content}
+                    </div>
+                    <div className="post-tags flex flex-wrap gap-4 my-4">
+                        {post.tags.map((tag, index) => (
+                            <div key={index} className="bg-gray-200 text-black/40 px-2 py-1 hover:bg-teal-300 hover:text-white cursor-pointer transition-all rounded-full text-sm">
+                                #{tag}
+                            </div>
+                        ))}
+                    </div>
+                    <hr />
+                    <div className="post-reactions flex items-center gap-2 my-2">
+                        <div className="likes hover:text-red-600 hover:bg-gray-200 flex items-center justify-center p-2 rounded-lg cursor-pointer gap-2" title="likes">
+                            <Heart />
+                            <span>{post.likes}</span>
+                        </div>
+                        <div className="comments hover:text-blue-600 hover:bg-gray-200 flex items-center justify-center p-2 rounded-lg cursor-pointer gap-2" title="comments">
+                            <MessageCircle />
+                            <span>{post.comments}</span>
+                        </div>
+                        <div className="reposts hover:text-green-600 hover:bg-gray-200 flex items-center justify-center p-2 rounded-lg cursor-pointer gap-2" title="reposts">
+                            <Repeat />
+                            <span>{post.reposts}</span>
+                        </div>
+                        <div className="shares hover:text-red-600 hover:bg-gray-200 flex items-center justify-center p-2 rounded-lg cursor-pointer gap-2" title="shares">
+                            <Redo2 />
+                            <span>{post.shares}</span>
+                        </div>
+                    </div>
+                    <hr />
                 </div>
             ))}
         </div>

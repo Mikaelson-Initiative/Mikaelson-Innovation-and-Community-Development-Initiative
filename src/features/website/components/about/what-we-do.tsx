@@ -16,7 +16,6 @@ const Card: React.FC<CardProps> = ({ title, accent, children }) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.6, ease: "easeOut" }}
-    whileHover={{ scale: 1.05 }}
   >
     <h3 className="mb-2 text-lg font-bold text-gray-900 md:text-[20.8px]">
       {title}

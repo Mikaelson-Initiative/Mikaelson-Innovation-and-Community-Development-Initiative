@@ -61,7 +61,7 @@ export const ExploreMore: React.FC = () => {
                 key={link.id}
                 className="link-card rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-sm transition-transform hover:-translate-y-1 hover:shadow-md"
               >
-                <div className="bg-brand-blue mx-auto mb-3 flex h-20 w-20 items-center justify-center rounded-full">
+                <div className="bg-teal-400 mx-auto mb-3 flex h-20 w-20 items-center justify-center rounded-full">
                   <Icon className="h-10 w-10 text-white/95" />
                 </div>
                 <h3 className="mb-1 text-xl font-semibold">{link.title}</h3>
@@ -70,14 +70,14 @@ export const ExploreMore: React.FC = () => {
                 {link.isInternal ? (
                   <Link
                     href={link.href}
-                    className="inline-flex rounded bg-brand-blue px-4 py-2 text-white hover:bg-brand-blue"
+                    className="inline-flex rounded bg-teal-400 px-4 py-2 text-white hover:bg-teal-500"
                   >
                     {link.buttonLabel}
                   </Link>
                 ) : (
                   <a
                     href={link.href}
-                    className="inline-flex rounded bg-brand-blue px-4 py-2 text-white hover:bg-brand-blue"
+                    className="inline-flex rounded bg-teal-400 px-4 py-2 text-white hover:bg-teal-500"
                   >
                     {link.buttonLabel}
                   </a>
