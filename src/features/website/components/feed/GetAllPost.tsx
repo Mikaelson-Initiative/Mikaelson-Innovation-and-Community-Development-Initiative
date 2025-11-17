@@ -1,7 +1,6 @@
 'use client'
-import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
+import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 import { Bookmark, Ellipsis, Flag, Heart, Link, MessageCircle, Redo2, Repeat } from 'lucide-react'
-import React from 'react'
 
 const posts = [
     {
