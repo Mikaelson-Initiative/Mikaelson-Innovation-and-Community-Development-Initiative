@@ -183,7 +183,7 @@ export const products: Product[] = [
     icon: "🎓",
     title: "RIO Hub for Education",
     category: "Education & Learning",
-    color: "blue",
+    color: "#367bf4",
     description:
       "Track academic progress, study habits, and engagement. Empower students and educators with data-driven insights for better learning outcomes.",
     image: "/assets/images/product-hub.svg",
@@ -199,7 +199,7 @@ export const products: Product[] = [
     id: "hub-corporate",
     title: "RIO Hub for Companies",
     category: "Business & Enterprise",
-    color: "cyan",
+    color: "#48d7e2",
     icon: "🏢",
     description:
       "Boost workplace productivity and employee engagement. Track team performance, collaboration metrics, and professional development goals.",
@@ -216,7 +216,7 @@ export const products: Product[] = [
     id: "hub-creators",
     title: "RIO Hub for Content Creators",
     category: "Content & Media",
-    color: "purple",
+    color: "#a44ff5",
     icon: "🎬",
     description:
       "Manage content schedules, track creative output, and build consistent habits. Stay accountable to your audience and creative goals.",
@@ -232,7 +232,7 @@ export const products: Product[] = [
   {
     id: "hub-developers",
     title: "RIO Hub for Developers",
-    color: "green",
+    color: "#0eb27c",
     category: "Technology & Dev",
     icon: "💻",
     description:
@@ -251,7 +251,7 @@ export const products: Product[] = [
     title: "RIO Hub for Startups",
     category: "Innovation & Startups",
     icon: "🚀",
-    color: "orange",
+    color: "#ee950a",
     description:
       "Monitor innovation cycles, team productivity, and startup growth metrics. Foster a culture of accountability and rapid iteration.",
     image: "/assets/images/product-hub.svg",
@@ -267,7 +267,7 @@ export const products: Product[] = [
     id: "hub-government",
     title: "RIO Hub for Government",
     category: "Public Sector",
-    color: "red",
+    color: "#ed4141",
     icon: "🏛️",
     description:
       "Enhance public sector productivity and service delivery. Track project timelines, citizen engagement, and departmental performance.",
@@ -284,7 +284,7 @@ export const products: Product[] = [
     id: "hub-nonprofit",
     title: "RIO Hub for Nonprofits",
     category: "Social Impact",
-    color: "pink",
+    color: "#e63c8d",
     icon: "🤝",
     description:
       "Maximize impact with volunteer management, program tracking, and donor engagement insights. Build sustainable community initiatives.",
@@ -302,7 +302,7 @@ export const products: Product[] = [
     title: "RIO Hub for Sports & Fitness",
     icon: "⚽",
     category: "Sports & Wellness",
-    color: "teal",
+    color: "#11ad9d",
     description:
       "Track training routines, athletic performance, and team coordination. Build winning habits and achieve fitness goals consistently.",
     image: "/assets/images/product-hub.svg",
@@ -318,7 +318,7 @@ export const products: Product[] = [
     id: "hub-creative",
     title: "RIO Hub for Creative Media",
     category: "Creative Industries",
-    color: "indigo",
+    color: "#5d5ced",
     icon: "🎨",
     description:
       "Manage creative projects, track production workflows, and collaborate with teams. Deliver creative excellence on schedule.",
@@ -335,7 +335,7 @@ export const products: Product[] = [
     id: "hub-research",
     title: "RIO Hub for Research",
     category: "Research & Academia",
-    color: "violet",
+    color: "#8856f4",
     icon: "🔬",
     description:
       "Track research milestones, manage academic collaborations, and monitor publication progress. Advance knowledge systematically.",

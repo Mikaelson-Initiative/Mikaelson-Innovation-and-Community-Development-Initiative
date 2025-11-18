@@ -8,22 +8,20 @@ export const ProductHero = () => {
         <h1 className="text-4xl md:text-6xl lg:text-[80px] font-bold leading-tight">
           The Productivity Companion
           <br />
-          <span className="bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">
-            for Communities
-          </span>
+          <span className="gradient-text">for Communities</span>
         </h1>
 
-        <p className="mt-4 text-lg text-muted-foreground">
+        <p className="mt-4 text-lg lg:text-[20px] text-muted-foreground max-w-2xl mx-auto text-center">
           RIO AI is a blazing fast productivity platform powering the next
           generation of community-driven applications.
         </p>
 
         <div className="mt-8 flex justify-center gap-4">
-          <Button asChild>
+          <Button asChild className="btn btn-primary text-black">
             <Link href="/sign-up">Get Started</Link>
           </Button>
 
-          <Button variant="outline" asChild>
+          <Button asChild className="btn hover:-translate-y-[2px] bg-transparent border-2 text-brand-green-100 border-brand-green-100 hover:bg-brand-green-100/10">
             <Link href="/product">Learn More</Link>
           </Button>
         </div>
