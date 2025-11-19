@@ -28,7 +28,7 @@ const CommunityHeroSection: React.FC = () => {
         >
           <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">
             Transform Your Life Through
-            <span className="block bg-gradient-to-r from-purple-600 to-pink-500 text-transparent bg-clip-text">
+            <span className="block bg-gradient-to-r from-brand-blue to-teal-500 text-transparent bg-clip-text">
               Community & Growth
             </span>
           </h1>
@@ -111,7 +111,7 @@ const CommunityHeroSection: React.FC = () => {
               transition={{ repeat: Infinity, duration: 1 }}
             >
               <Link
-                href="/"
+                href="/sign-up"
                 className="flex items-center gap-2 px-6 py-3 rounded-2xl btn-gradient text-white font-semibold shadow hover:opacity-90 transition"
               >
                 <span>Start Your Journey</span>
@@ -120,7 +120,7 @@ const CommunityHeroSection: React.FC = () => {
             </motion.div>
 
             <Link
-              href="/"
+              href="/login"
               className="flex items-center gap-2 px-6 py-3 rounded-2xl bg-gray-100 text-gray-800 font-semibold shadow hover:bg-gray-200 transition"
             >
               <span>Sign In</span>

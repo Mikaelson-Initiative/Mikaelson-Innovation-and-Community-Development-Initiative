@@ -8,12 +8,12 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
-    Form,
-    FormControl,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Eye, EyeOff, X } from "lucide-react";
@@ -156,18 +156,19 @@ export default function CreateAccountForm() {
             control={form.control}
             name="acceptTerms"
             render={({ field }) => (
-              <FormItem className="flex items-center space-x-2">
+              <FormItem className="flex flex-col items-start space-x-2">
                 <FormControl>
                   <div className="flex items-center gap-2">
                     <Checkbox
+                    id="accept"
                       checked={field.value}
                       onCheckedChange={field.onChange}
                     />
-                    <p className="text-xs">
+                    <label htmlFor="accept" className="text-xs">
                       I accept the{" "}
-                      <span className="underline">Company Policy</span> and{" "}
-                      <span className="underline">Terms of Service</span>
-                    </p>
+                      <Link href='/code-of-conduct' className="underline">Company Policy</Link> and{" "}
+                      <Link href='/terms' className="underline">Terms of Service</Link>
+                    </label>
                   </div>
                 </FormControl>
                 <FormMessage />
