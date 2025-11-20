@@ -84,7 +84,7 @@ const TeamSection: React.FC = () => {
               aria-label="Search team members"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full rounded-lg border-2 border-gray-700 px-4 py-2 text-sm outline-none focus:border-cyan-400 sm:w-72 sm:text-base"
+              className="w-full rounded-lg border-2 border-gray-700 p-2 text-sm outline-none focus:border-cyan-400 sm:w-72"
             />
           </motion.div>
         </div>

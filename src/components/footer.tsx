@@ -41,7 +41,7 @@ export const Footer = () => {
     <footer className="pt-10 mt-5 pb-5 px-10 md:px-5 border-t">
       <div className="max-w-6xl mx-auto">
         <div className="w-full max-w-sm py-10 mx-auto space-y-4 text-center">
-          <div className="flex items-center gap-2">
+          <div className="flex justify-center items-center gap-2">
             <Image
               src="/assets/images/mikaelsonlogo.png"
               alt="mikaelinitiativelogo"

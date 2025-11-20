@@ -1,10 +1,8 @@
 "use client";
+import React from "react";
 import { HomeIcon, Trophy, Users } from "lucide-react";
-import { useState } from "react";
 
-export const ProfileTab = () => {
-  const [activeTab, setActiveTab] = useState("forYou");
-
+export const ProfileTab: React.FC<{ activeTab: string; onChange: (value: string) => void }> = ({ activeTab, onChange }) => {
   const tabs = [
     {
       id: "forYou",
@@ -12,8 +10,8 @@ export const ProfileTab = () => {
       icon: <HomeIcon className="w-6 h-6" />,
     },
     {
-      id: "followings",
-      label: "Followings",
+      id: "following",
+      label: "Following",
       icon: <Users className="w-6 h-6" />,
     },
 
@@ -30,7 +28,7 @@ export const ProfileTab = () => {
         {tabs.map((tab) => (
           <button
             key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
+            onClick={() => onChange(tab.id)}
             className={`flex items-center  cursor-pointer gap-2 py-3 px-4 text-sm duration-300 ease-in-out font-medium transition ${
               activeTab === tab.id
                 ? "bg-brand-blue/10 text-brand-blue rounded"
