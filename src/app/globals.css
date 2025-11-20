@@ -360,3 +360,13 @@ html {
     border-radius: 24px 0 0 0;
   }
 }
+
+/* Hide scrollbar but allow scrolling */
+.scrollbar-none::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none; /* IE 10+ */
+  scrollbar-width: none; /* Firefox */
+}
