@@ -21,9 +21,9 @@ export const ProductHero = () => {
             <Link href="/sign-up">Get Started</Link>
           </Button>
 
-          <Button asChild className="btn hover:-translate-y-[2px] bg-transparent border-2 text-brand-green-100 border-brand-green-100 hover:bg-brand-green-100/10">
+          {/* <Button asChild className="btn hover:-translate-y-[2px] bg-transparent border-2 text-brand-green-100 border-brand-green-100 hover:bg-brand-green-100/10">
             <Link href="/product">Learn More</Link>
-          </Button>
+          </Button> */}
         </div>
       </div>
     </section>

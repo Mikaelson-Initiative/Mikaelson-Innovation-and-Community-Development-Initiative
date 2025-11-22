@@ -17,14 +17,14 @@ export default function FinalCta() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 cta-buttons">
           <Button asChild className="btn-primary btn text-black">
-            <Link href="/signup">Start Free Trial</Link>
+            <Link href="/sign-up">Start Free Trial</Link>
           </Button>
 
           <Button
             asChild
             className="btn bg-transparent border-2 text-brand-green-100 border-brand-green-100 hover:bg-brand-green-100/10"
           >
-            <Link href="/contact">Contact Sales</Link>
+            <Link href="/contact">Contact Us</Link>
           </Button>
         </div>
       </div>
