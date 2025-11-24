@@ -5,6 +5,8 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
+import { Google } from "@/components/icons/google";
+import { LinkedIn } from "@/components/icons/LinkedIn";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
@@ -16,7 +18,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Eye, EyeOff, X } from "lucide-react";
+import { Eye, EyeOff } from "lucide-react";
 import Link from "next/link";
 
 // Zod validation schema
@@ -52,12 +54,14 @@ export default function CreateAccountForm() {
     },
   });
 
+  const isDisabled = form.formState.isValid;
+
   const onSubmit = (values: CreateAccountFormValues) => {
     console.log("Form submitted:", values);
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 border rounded-md shadow-md">
+    <div className="max-w-md mx-auto p-6">
       <h2 className="text-2xl font-bold mb-4 text-center">Create Account</h2>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
@@ -160,14 +164,25 @@ export default function CreateAccountForm() {
                 <FormControl>
                   <div className="flex items-center gap-2">
                     <Checkbox
-                    id="accept"
+                      id="accept"
                       checked={field.value}
                       onCheckedChange={field.onChange}
                     />
                     <label htmlFor="accept" className="text-xs">
                       I accept the{" "}
-                      <Link href='/code-of-conduct' className="underline">Company Policy</Link> and{" "}
-                      <Link href='/terms' className="underline">Terms of Service</Link>
+                      <Link
+                        href="/terms"
+                        className="underline text-brand-green-100"
+                      >
+                        Terms
+                      </Link>{" "}
+                      and{" "}
+                      <Link
+                        href="/privacy"
+                        className="underline text-brand-green-100"
+                      >
+                        Privacy policy
+                      </Link>
                     </label>
                   </div>
                 </FormControl>
@@ -176,44 +191,50 @@ export default function CreateAccountForm() {
             )}
           />
 
-          <Button type="submit" className="w-full mt-2">
-            Create Account
+          <Button
+            disabled={!isDisabled}
+            type="submit"
+            variant={"brand"}
+            className="w-full mt-10 "
+          >
+            Sign up
           </Button>
         </form>
       </Form>
 
       {/* Divider */}
-      <div className="flex items-center my-4">
+      <div className="flex items-center my-8">
         <hr className="flex-1 border-t border-gray-300" />
-        <span className="mx-2 text-gray-500 text-sm">Or sign up with</span>
+        <span className="mx-2 text-black text-sm md:text-xl font-semibold">OR</span>
         <hr className="flex-1 border-t border-gray-300" />
       </div>
 
       {/* Social Buttons */}
-      <div className="flex justify-between gap-2">
+      <div className="flex flex-col justify-between gap-2">
         <Button
           variant="outline"
-          className="flex-1 flex items-center justify-center gap-2"
+          className="flex-1 flex items-center justify-center gap-2 border-brand-green-100"
         >
-          Google
+          <Google /> Google
         </Button>
         <Button
           variant="outline"
-          className="flex-1 flex items-center justify-center gap-2"
+          className="flex-1 flex items-center justify-center gap-2 border-brand-green-100"
         >
+          <LinkedIn />
           LinkedIn
         </Button>
-        <Button
+        {/* <Button
           variant="outline"
           className="flex-1 flex items-center justify-center gap-2"
         >
-          <X /> X
-        </Button>
+          <XformerlyTwitter /> X
+        </Button> */}
       </div>
       <div className="text-center mt-4 text-sm text-gray-600">
         Already have an account?{" "}
-        <Link href="/login" className="text-blue-600 hover:underline">
-          Sign in
+        <Link href="/login" className="text-brand-primary hover:underline">
+          Log in
         </Link>
       </div>
     </div>

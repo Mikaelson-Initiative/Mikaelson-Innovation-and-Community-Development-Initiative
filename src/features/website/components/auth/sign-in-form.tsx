@@ -5,6 +5,8 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
+import { Google } from "@/components/icons/google";
+import { LinkedIn } from "@/components/icons/LinkedIn";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -15,12 +17,12 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Eye, EyeOff, X } from "lucide-react";
+import { Eye, EyeOff } from "lucide-react";
 import Link from "next/link";
 
 // Zod schema
 const signInSchema = z.object({
-  email: z.string().email("Invalid email address"),
+  email: z.email("Invalid email address"),
   password: z.string().min(6, "Password must be at least 6 characters"),
 });
 
@@ -37,13 +39,16 @@ export default function SignInForm() {
     },
   });
 
+  const isDisabled = form.formState.isValid;
+
+
   const onSubmit = (values: SignInFormValues) => {
     console.log("Sign In:", values);
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 border rounded-md shadow-md">
-      <h2 className="text-2xl font-bold mb-4 text-center">Sign In</h2>
+    <div className="max-w-md mx-auto p-6">
+      <h2 className="text-2xl font-bold mb-4 text-center">Welcome Back</h2>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           {/* Email */}
@@ -91,45 +96,53 @@ export default function SignInForm() {
             )}
           />
 
-          <Button type="submit" className="w-full mt-2">
+          <Button
+            disabled={!isDisabled}
+            type="submit"
+            variant={"brand"}
+            className="w-full mt-2"
+          >
             Sign In
           </Button>
         </form>
       </Form>
 
       {/* Divider */}
-      <div className="flex items-center my-4">
+      <div className="flex items-center my-8">
         <hr className="flex-1 border-t border-gray-300" />
-        <span className="mx-2 text-gray-500 text-sm">Or sign in with</span>
+        <span className="mx-2 text-black text-sm md:text-xl font-semibold">
+          OR
+        </span>
         <hr className="flex-1 border-t border-gray-300" />
       </div>
 
       {/* Social Buttons */}
-      <div className="flex justify-between gap-2">
+      <div className="flex flex-col justify-between gap-2">
         <Button
           variant="outline"
-          className="flex-1 flex items-center justify-center gap-2"
+          className="flex-1 flex items-center justify-center gap-2 border-brand-green-100"
         >
-          Google
+          <Google /> Google
         </Button>
         <Button
           variant="outline"
-          className="flex-1 flex items-center justify-center gap-2"
+          className="flex-1 flex items-center justify-center gap-2 border-brand-green-100"
         >
+          <LinkedIn />
           LinkedIn
         </Button>
-        <Button
+        {/* <Button
           variant="outline"
           className="flex-1 flex items-center justify-center gap-2"
         >
           <X /> X
-        </Button>
+        </Button> */}
       </div>
 
       {/* Optional "Create Account" link */}
       <div className="text-center mt-4 text-sm text-gray-600">
         Don&apos;t have an account?{" "}
-        <Link href="/sign-up" className="text-blue-600 hover:underline">
+        <Link href="/sign-up" className="text-brand-primary hover:underline">
           Create Account
         </Link>
       </div>

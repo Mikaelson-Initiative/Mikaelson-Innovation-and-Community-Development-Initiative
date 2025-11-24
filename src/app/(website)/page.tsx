@@ -1,11 +1,25 @@
+"use client"
 import AnimatedSection from "@/components/animated-section";
 import EcosystemSection from "@/features/website/components/ecosystem-section";
 import { ExploreMore } from "@/features/website/components/explore-more";
 import HomeHero from "@/features/website/components/hero";
 import ImpactSection from "@/features/website/components/impact-section";
 import MediaStories from "@/features/website/components/media-stories";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function Home() {
+  const isMobile = useIsMobile()
+  const communityUrl = isMobile
+    ? "/assets/images/community-mobile.svg"
+    : "/assets/images/Macbook-pro.jpg";
+  
+  const labsUrl = isMobile
+    ? "/assets/images/lab-mobile.svg"
+    : "/assets/images/Desktop-image.jpg";
+  
+  const sponsorUrl = isMobile
+    ? "/assets/images/partner-mobile.svg"
+    : "/assets/images/iPad Image Presentation.jpg";
   return (
     <main className="bg-[#ffffff] px-5 lg:px-0">
       <HomeHero />
@@ -16,7 +30,7 @@ export default function Home() {
         buttonText="Join our community"
         btnBgcolor="bg-brand-green-100"
         buttonLink="/community"
-        imageSrc="/assets/images/Macbook-pro.jpg"
+        imageSrc={communityUrl}
         imageAlt="Mikaelson Community on MacBook"
       />
       <AnimatedSection
@@ -26,7 +40,7 @@ export default function Home() {
         buttonText="Contribute to Labs"
         buttonLink="/labs"
         btnBgcolor="bg-brand-blue"
-        imageSrc="/assets/images/Desktop-image.jpg"
+        imageSrc={labsUrl}
         imageAlt="Mikaelson Community on MacBook"
       />
       <AnimatedSection
@@ -36,7 +50,7 @@ export default function Home() {
         buttonText="Sponsor a Program"
         buttonLink="/sponsor"
         btnBgcolor="bg-brand-black"
-        imageSrc="/assets/images/iPad Image Presentation.jpg"
+        imageSrc={sponsorUrl}
         imageAlt="Partnership & Growth Network on iPad"
       />
       <ImpactSection />

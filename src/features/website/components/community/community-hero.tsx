@@ -5,7 +5,6 @@ import { Users, Flame, ArrowRight, LogIn, User } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
-
 const formatNumber = (num: number): string => num.toLocaleString();
 
 const CommunityHeroSection: React.FC = () => {
@@ -106,10 +105,7 @@ const CommunityHeroSection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ repeat: Infinity, duration: 1 }}
-            >
+            <motion.div className="flex items-center">
               <Link
                 href="/sign-up"
                 className="flex items-center gap-2 px-6 py-3 rounded-2xl btn-gradient text-white font-semibold shadow hover:opacity-90 transition"

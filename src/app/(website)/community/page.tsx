@@ -2,6 +2,10 @@ import CommunityChapters from "@/features/website/components/community/community
 import CommunityCTA from "@/features/website/components/community/community-cta";
 import FeaturesOverview from "@/features/website/components/community/community-features";
 import CommunityHeroSection from "@/features/website/components/community/community-hero";
+import { CommunityFeatures } from "@/features/website/components/community/features";
+import { LeaderBoard } from "@/features/website/components/community/leaderboard";
+import { MonthlyChallenge } from "@/features/website/components/community/monthly-challenge";
+import { RecentTransformation } from "@/features/website/components/community/recent-transformation";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -36,7 +40,11 @@ const CommunityPage = () => {
     <main className="community-page">
       <CommunityHeroSection />
       <FeaturesOverview />
+      <LeaderBoard />
+      <CommunityFeatures />
       <CommunityChapters />
+      <MonthlyChallenge />
+      <RecentTransformation />
       <CommunityCTA />
     </main>
   );
