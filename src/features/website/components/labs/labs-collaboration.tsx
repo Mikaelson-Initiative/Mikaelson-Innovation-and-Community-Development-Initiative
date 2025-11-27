@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 type Benefit = {
@@ -45,7 +46,7 @@ const LabsCollaborationSection: React.FC = () => {
 
           {/* Action Buttons */}
           <div className="flex-1 flex flex-col gap-4 lg:max-w-sm">
-            <button className="flex items-center justify-center gap-2 bg-indigo-600 text-white font-semibold py-3 px-6 rounded-lg shadow hover:bg-indigo-700 transition">
+            <Link href="/volunteer" className="flex items-center justify-center gap-2 bg-indigo-600 text-white font-semibold py-3 px-6 rounded-lg shadow hover:bg-indigo-700 transition">
               Join Our Lab
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
                 <path
@@ -56,15 +57,15 @@ const LabsCollaborationSection: React.FC = () => {
                   strokeLinejoin="round"
                 />
               </svg>
-            </button>
+            </Link>
 
             <button className="w-full border border-indigo-600 text-indigo-600 font-semibold py-3 px-6 rounded-lg hover:bg-indigo-100 transition">
               Submit a Project Idea
             </button>
 
-            <button className="w-full border border-indigo-600 text-indigo-600 font-semibold py-3 px-6 rounded-lg hover:bg-indigo-100 transition">
+            <Link href="/sponsor" className="w-full flex justify-center border border-indigo-600 text-indigo-600 font-semibold py-3 px-6 rounded-lg hover:bg-indigo-100 transition">
               Partner with Us
-            </button>
+            </Link>
           </div>
         </div>
       </div>

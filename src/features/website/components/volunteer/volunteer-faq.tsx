@@ -12,27 +12,27 @@ const questions = [
   {
     question: "How much time do I need to commit?",
     answer:
-      "We offer flexible commitment options and remote roles; apply and we will match you with a suitable opportunity.",
+      "Most volunteer roles require 3-10 hours per week, depending on your availability and the project needs. We work with your schedule.",
   },
   {
     question: "Is this opportunity remote?",
     answer:
-      "We offer flexible commitment options and remote roles; apply and we will match you with a suitable opportunity.",
+      "Yes! Most of our volunteer opportunities are remote-friendly. Some projects may have optional in-person events or meetups.",
   },
   {
     question: "Do I need specific qualifications?",
     answer:
-      "We offer flexible commitment options and remote roles; apply and we will match you with a suitable opportunity.",
+      "We welcome volunteers from all backgrounds! What matters most is your passion, commitment, and willingness to learn.",
   },
   {
     question: "Will I receive any certification?",
     answer:
-      "We offer flexible commitment options and remote roles; apply and we will match you with a suitable opportunity.",
+      "Yes, we provide volunteer certificates and recognition letters that you can use for your professional portfolio.",
   },
   {
     question: "Can I volunteer while working full-time?",
     answer:
-      "We offer flexible commitment options and remote roles; apply and we will match you with a suitable opportunity.",
+      "Absolutely! Many of our volunteers balance this with their full-time jobs. We offer flexible scheduling and various commitment levels.",
   },
 ];
 

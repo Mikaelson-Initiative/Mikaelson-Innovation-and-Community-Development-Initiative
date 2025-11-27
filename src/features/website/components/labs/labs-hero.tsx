@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 
 const LabsHeroSection: React.FC = () => {
   return (
@@ -35,11 +36,11 @@ const LabsHeroSection: React.FC = () => {
                 real-world challenges facing African communities.
               </p>
               <div className="flex gap-4 pt-4 flex-wrap">
-                <motion.button
+                <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl shadow-lg transition-all duration-200"
                 >
+                  <Link  href="/product" className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl shadow-lg transition-all duration-200">
                   Explore Projects
                   <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
                     <path
@@ -50,12 +51,13 @@ const LabsHeroSection: React.FC = () => {
                       strokeLinejoin="round"
                     />
                   </svg>
-                </motion.button>
-                <motion.button
+                  </Link>
+                </motion.div>
+                <motion.div
                   whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center gap-2 border border-gray-300 hover:border-indigo-600 text-gray-700 hover:text-indigo-600 px-6 py-3 rounded-xl shadow transition-all duration-200"
+                  whileTap={{ scale: 0.95 }}  
                 >
+                  <Link href="/volunteer" className="inline-flex items-center gap-2 border border-gray-300 hover:border-indigo-600 text-gray-700 hover:text-indigo-600 px-6 py-3 rounded-xl shadow transition-all duration-200">
                   Join Our Lab
                   <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
                     <path
@@ -66,7 +68,8 @@ const LabsHeroSection: React.FC = () => {
                       strokeLinejoin="round"
                     />
                   </svg>
-                </motion.button>
+                  </Link>
+                </motion.div>
               </div>
             </motion.div>
 

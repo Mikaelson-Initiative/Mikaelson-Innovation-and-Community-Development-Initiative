@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 
 type Option = {
@@ -110,8 +111,8 @@ export const SponsorshipOptions: React.FC = () => {
               together.
             </p>
 
-            <a
-              href="mailto:community@mikaelsoninitiative.org"
+            <Link
+              href="/contact"
               className="py-3 text-sm md:text-base px-4 md:py-[0.8rem] md:px-[1.5rem] inline-block font-semibold"
               style={{
                 background: "#1f2937",
@@ -122,7 +123,7 @@ export const SponsorshipOptions: React.FC = () => {
               }}
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         </div>
       </div>

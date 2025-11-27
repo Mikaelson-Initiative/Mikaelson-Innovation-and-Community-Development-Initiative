@@ -191,11 +191,11 @@ const CommunityChapters: React.FC = () => {
                     <li key={chapter.id}>
                       <Link
                         href={`/community`}
-                        className="flex items-center space-x-2 p-2 hover:bg-gray-100 rounded"
+                        className="flex items-start flex-col md:flex-row md:items-center space-x-2 p-2 hover:bg-gray-100 rounded"
                       >
                         <span className="font-medium">{chapter.name}</span>
-                        <span className="text-gray-500 text-sm">
-                          • {chapter.location}
+                        <span className="text-gray-500 text-sm flex gap-1">
+                          <span className="hidden md:flex flex-row">•</span><span>{chapter.location}</span>
                         </span>
                       </Link>
                     </li>
