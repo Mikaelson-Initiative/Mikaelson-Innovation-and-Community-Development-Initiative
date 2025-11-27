@@ -11,7 +11,7 @@ const HomeHero: React.FC = () => {
       viewport={{ once: true, amount: 0.2 }}
       className="lg:px-8 py-5"
     >
-      <div className="mx-auto max-w-[2000px] rounded-3xl bg-[rgba(92,225,230,0.5)] p-5 text-left md:p-8 min-h-[550px]">
+      <div className="mx-auto max-w-[1200px] rounded-3xl bg-[rgba(92,225,230,0.5)] p-5 text-left md:p-8 min-h-[550px]">
         <div className="relative mt-10 md:mt-20 mx-auto flex-col flex max-w-[1500px] lg:flex-row items-stretch justify-between gap-10">
           {/* Text Content */}
           <motion.div

@@ -3,13 +3,20 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const Leaderboard = () => {
   return (
-    <Card className="max-w-md w-full">
+     <Card className="max-w-md w-full !py-10 feature-card">
       <CardHeader>
-        <div className="h-40 bg-[#f7fcfe] rounded-xl" />
+        <div className="h-44 bg-[#f7fcfe] rounded-xl p-5">
+          <div className="flex items-end justify-center gap-3 h-full">
+            <div className="w-10 h-[60%] bg-gradient-to-t from-[#5ce1e6] to-[#3b82f6] rounded-t-lg animate-bar-1"></div>
+            <div className="w-10 h-full bg-gradient-to-t from-[#5ce1e6] to-[#3b82f6] rounded-t-lg animate-bar-2"></div>
+            <div className="w-10 h-[75%] bg-gradient-to-t from-[#5ce1e6] to-[#3b82f6] rounded-t-lg animate-bar-3"></div>
+            <div className="w-10 h-[50%] bg-gradient-to-t from-[#5ce1e6] to-[#3b82f6] rounded-t-lg animate-bar-4"></div>
+          </div>
+        </div>
       </CardHeader>
 
-      <CardContent className="space-y-2">
-        <CardTitle className="text-xl">Leaderboard</CardTitle>
+      <CardContent className="space-y-2 text-center">
+        <CardTitle className="text-xl lg:text-2xl">Leaderboard</CardTitle>
         <p className="text-gray-600">
           See the top productive people in your community. Stay motivated
           through friendly competition and recognition.

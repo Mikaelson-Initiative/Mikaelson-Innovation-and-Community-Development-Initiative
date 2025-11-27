@@ -1,5 +1,6 @@
 import React from "react";
 import { Crown } from "lucide-react";
+import Link from "next/link";
 
 type CTAProps = {
   title?: string;
@@ -21,8 +22,8 @@ type CTAProps = {
 const CommunityCTA: React.FC<CTAProps> = ({
   title = "Ready to Join Our Community?",
   description = "Start tracking your habits, connect with others, and transform your daily routine into lasting positive change. Join thousands of members already on their journey.",
-  primaryAction = { label: "Start Your Journey", href: "/signup" },
-  secondaryAction = { label: "Learn More", href: "/about" },
+  primaryAction = { label: "Start Your Journey", href: "/sign-up" },
+  secondaryAction = { label: "Learn More", href: "/about-us" },
   testimonial = {
     quote:
       "This platform has completely changed how I approach my daily habits. The community support is incredible.",
@@ -43,18 +44,18 @@ const CommunityCTA: React.FC<CTAProps> = ({
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-10">
-          <a
+          <Link
             href={primaryAction.href}
             className="px-6 py-3 rounded-2xl btn-gradient font-semibold shadow text-lg text-white transition"
           >
             {primaryAction.label}
-          </a>
-          <a
+          </Link>
+          <Link
             href={secondaryAction.href}
             className="px-6 py-3 rounded-2xl border text-brand-blue border-white font-semibold hover:bg-white text-lg  bg-white transition"
           >
             {secondaryAction.label}
-          </a>
+          </Link>
         </div>
 
         {/* Testimonial */}

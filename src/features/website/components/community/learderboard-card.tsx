@@ -1,0 +1,79 @@
+import React from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import ReactCountryFlag from "react-country-flag";
+
+interface Progress {
+  totalDays: number;
+  currentDay: number;
+  percentage: number;
+}
+
+interface LeaderboardUser {
+  id: string;
+  name: string;
+  country: string;
+  shortLabel: string;
+  imageUrl: string;
+  points: number;
+  streak: number;
+  habit: string;
+  progress: Progress;
+}
+
+export const LeaderboardCard = ({ user }: { user: LeaderboardUser }) => {
+  return (
+    <div className="w-full rounded-xl bg-brand-bg-gray shadow p-5 border flex lg:flex-row flex-col">
+      <div className="flex flex-1 items-center gap-4">
+        {/* Avatar */}
+        <Avatar className="h-10 w-10 md:h-12 md:w-12">
+          <AvatarImage src={user.imageUrl} alt={user.name} />
+          <AvatarFallback className="bg-blue-600 text-white font-bold">
+            {user.shortLabel}
+          </AvatarFallback>
+        </Avatar>
+
+        {/* User Info */}
+        <div>
+          <p className="font-semibold text-sm md:text-lg">{user.name}</p>
+          <div className="flex items-center gap-2">
+            <p className="text-xs md:text-sm text-gray-500">{user.country}</p>
+            <ReactCountryFlag
+              countryCode={user.shortLabel}
+              svg
+              // style={{ width: "1.5em", height: "1.5em" }}
+              title={user.country}
+              className="rotate-2 ml-2 h-2 w-2 sm:!w-5 sm:!h-5"
+            />
+          </div>
+          <p className="text-xs text-muted-foreground">145 days Active</p>
+        </div>
+      </div>
+
+      {/* Stats */}
+      <div className="flex flex-1 flex-col md:flex-row items-center justify-evenly gap-3">
+        <div className="w-full grid grid-cols-3  text-center">
+          <div>
+            <p className="font-bold">{user.points}</p>
+            <p className="text-xs text-gray-500">Points</p>
+          </div>
+          <div>
+            <p className="font-bold">{user.streak}</p>
+            <p className="text-xs text-gray-500">Streak</p>
+          </div>
+          <div>
+            <p className="font-bold">{user.habit}</p>
+            <p className="text-xs text-gray-500">Habits</p>
+          </div>
+        </div>
+
+        {/* Progress Bar */}
+        <div className="w-full md:flex hidden bg-gray-200 h-3 rounded-full overflow-hidden">
+          <div
+            className="h-full bg-blue-600 rounded-full transition-all"
+            style={{ width: `${user.progress.percentage}%` }}
+          ></div>
+        </div>
+      </div>
+    </div>
+  );
+};
