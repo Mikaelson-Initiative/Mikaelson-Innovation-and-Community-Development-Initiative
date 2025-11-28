@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -21,6 +21,10 @@ import {
 import { Input } from "@/components/ui/input";
 import { Eye, EyeOff } from "lucide-react";
 import Link from "next/link";
+import { useAuth, useSignIn, useSignUp } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
+import axios from "axios";
+import { BACKEND_URL } from "../../../../../constants";
 
 // Zod validation schema
 const formSchema = z
@@ -41,8 +45,19 @@ const formSchema = z
 type CreateAccountFormValues = z.infer<typeof formSchema>;
 
 export default function CreateAccountForm() {
+  const { signUp, setActive, isLoaded } = useSignUp();
+  const { signIn } = useSignIn();
+  const { isSignedIn, userId } = useAuth();
+  const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [pendingVerification, setPendingVerification] = useState(false);
+
+  useEffect(() => {
+    if (isSignedIn) {
+      router.push("/feed");
+    }
+  }, [isSignedIn]);
 
   const form = useForm<CreateAccountFormValues>({
     resolver: zodResolver(formSchema),
@@ -57,8 +72,36 @@ export default function CreateAccountForm() {
 
   const isDisabled = form.formState.isValid;
 
-  const onSubmit = (values: CreateAccountFormValues) => {
-    console.log("Form submitted:", values);
+  const onSubmit = async (values: CreateAccountFormValues) => {
+    if (!isLoaded) return;
+    try {
+      setPendingVerification(true);
+      const email = values.email;
+      const password = values.password;
+
+      await signUp.create({
+        emailAddress: email,
+        password,
+      });
+
+      await signUp.prepareEmailAddressVerification({ strategy: "email_code" });
+
+      alert("Code sent to your mail");
+      router.push(`/verify-email?email=${email}&fullName=${values.fullName}`);
+      setPendingVerification(false);
+    } catch (error) {
+      console.log("SignUp Error:", error);
+    }
+  };
+
+  const handleGoogle = async () => {
+    if (!isLoaded || !signIn) return;
+
+    await signIn.authenticateWithRedirect({
+      strategy: "oauth_google",
+      redirectUrl: `${window.location.origin}/sso-callback`,
+      redirectUrlComplete: `${window.location.origin}/feed`,
+    });
   };
 
   return (
@@ -198,10 +241,11 @@ export default function CreateAccountForm() {
             variant={"brand"}
             className="w-full mt-10 "
           >
-            Sign up
+            {!pendingVerification ? "Sign Up" : "Creating account..."}
           </Button>
         </form>
       </Form>
+      <div id="clerk-captcha"></div>
 
       {/* Divider */}
       <div className="flex items-center my-8">
@@ -217,6 +261,7 @@ export default function CreateAccountForm() {
         <Button
           variant="outline"
           className="flex-1 flex items-center justify-center gap-2 border-brand-green-100"
+          onClick={handleGoogle}
         >
           <Google />
           Continue with Google

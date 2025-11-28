@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -17,9 +17,13 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Eye, EyeOff } from "lucide-react";
+import { Eye, EyeOff, UserSearch } from "lucide-react";
 import Link from "next/link";
 import { Apple } from "@/components/icons/apple";
+import { useAuth, useSignIn, useUser } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
+import axios from "axios";
+import { BACKEND_URL } from "../../../../../constants";
 
 // Zod schema
 const signInSchema = z.object({
@@ -30,7 +34,18 @@ const signInSchema = z.object({
 type SignInFormValues = z.infer<typeof signInSchema>;
 
 export default function SignInForm() {
+  const { signIn, setActive, isLoaded } = useSignIn();
+  const { isSignedIn, userId } = useAuth();
+  const { user } = useUser();
   const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (isSignedIn && userId) {
+      router.push("/feed");
+    }
+  }, [isSignedIn, userId]);
 
   const form = useForm<SignInFormValues>({
     resolver: zodResolver(signInSchema),
@@ -42,8 +57,105 @@ export default function SignInForm() {
 
   const isDisabled = form.formState.isValid;
 
-  const onSubmit = (values: SignInFormValues) => {
-    console.log("Sign In:", values);
+  const onSubmit = async (values: SignInFormValues) => {
+    if (!isLoaded) return;
+
+    const email = values.email;
+    const password = values.password;
+
+    try {
+      setIsLoading(true);
+
+      const signInAttempt = await signIn.create({
+        identifier: email,
+        password: password,
+      });
+
+      if (signInAttempt.status === "complete") {
+        await setActive({ session: signInAttempt.createdSessionId });
+        router.replace("/feed");
+      } else {
+        console.error(
+          "Sign-in incomplete:",
+          JSON.stringify(signInAttempt, null, 2)
+        );
+        alert("Sign-in incomplete. Please try again.");
+      }
+    } catch (err: any) {
+      console.error("Sign-in error:", JSON.stringify(err, null, 2));
+
+      if (err.errors && err.errors.length > 0) {
+        const errorMessage = err.errors[0].message;
+        const errorCode = err.errors[0].code;
+
+        switch (errorCode) {
+          case "form_identifier_not_found":
+            alert("No account found with this email.");
+            break;
+          case "form_password_incorrect":
+            alert("Incorrect password. Please try again.");
+            break;
+          case "strategy_for_user_invalid":
+            alert("This sign-in method is not available for your account.");
+            break;
+          case "form_param_format_invalid":
+            alert("Invalid email format.");
+            break;
+          default:
+            alert(errorMessage || "Failed to sign in. Please try again.");
+        }
+      } else {
+        alert("An unexpected error occurred. Please try again.");
+      }
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleGoogle = async () => {
+    if (!isLoaded || !signIn) return;
+
+    await signIn.authenticateWithRedirect({
+      strategy: "oauth_google",
+      redirectUrl: `${window.location.origin}/sso-callback`,
+      redirectUrlComplete: `${window.location.origin}/feed`,
+    });
+
+    const syncUserToBackend = async () => {
+      if (!isLoaded || !user) return;
+
+      try {
+        const userId = user.id;
+        const email = user.primaryEmailAddress?.emailAddress;
+        const username = user.username || email?.split("@")[0];
+
+        // Check if user exists in your backend
+        try {
+          await axios.get(`${BACKEND_URL}/api/v1/users/${userId}`);
+          // User exists, redirect to feed
+          router.push("/feed");
+        } catch (error: any) {
+          if (error.response?.status === 404) {
+            // User doesn't exist, create them
+            await axios.post(`${BACKEND_URL}/api/v1/users`, {
+              username,
+              email,
+              clerkId: userId,
+            });
+            // Redirect to feed after creation
+            router.push("/feed");
+          } else {
+            throw error;
+          }
+        }
+      } catch (error) {
+        console.error("SSO callback handling failed:", error);
+        // Redirect to login page on error
+        router.push("/login?error=oauth_failed");
+      }
+    };
+
+    syncUserToBackend();
   };
 
   return (
@@ -102,7 +214,7 @@ export default function SignInForm() {
             variant={"brand"}
             className="w-full mt-2"
           >
-            Sign In
+            {isLoading ? "Signing in..." : "Sign In"}
           </Button>
         </form>
       </Form>
@@ -121,6 +233,7 @@ export default function SignInForm() {
         <Button
           variant="outline"
           className="flex-1 flex items-center justify-center gap-2 border-brand-green-100"
+          onClick={handleGoogle}
         >
           <Google /> Sign in with Google
         </Button>
