@@ -28,7 +28,7 @@ const data = [
   },
 ];
 
-export const SuggestedForYou = () => {
+export const SuggestedForYou = ({ challenges }: { challenges: any[] }) => {
   return (
     <div className="bg-white border rounded-lg overflow-hidden">
       <div className="">
@@ -38,12 +38,17 @@ export const SuggestedForYou = () => {
         </div>
         <div className="">
           {data.map((item) => (
-            <div className="flex gap-2 border-b hover:bg-amber-200 py-5 px-2" key={item.id}>
+            <div
+              className="flex gap-2 border-b hover:bg-amber-200 py-5 px-2"
+              key={item.id}
+            >
               <div className="w-10 h-10 shrink-0 bg-gray-100 flex-center rounded-lg">
                 {item.icon}
               </div>
               <div className="text-gray-700 space-y-1 flex-center flex-col">
-                <h1 className="text-sm font-semibold text-black">{item.title}</h1>
+                <h1 className="text-sm font-semibold text-black">
+                  {item.title}
+                </h1>
                 <p className="text-[11px] text-center">{item.description}</p>
                 <div className="flex gap-2 text-xs">
                   <p className="text-brand-blue font-semibold">
