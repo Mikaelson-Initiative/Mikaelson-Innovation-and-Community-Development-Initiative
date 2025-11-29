@@ -1,3 +1,4 @@
+"use client"
 import axios from "axios";
 import { BACKEND_URL } from "../../../../../constants";
 import { GettAllPosts } from "./GetPostsTags";
@@ -9,7 +10,7 @@ interface ChallengePostsResult {
   percentageOfPosts: number[];
   numOfDaysPosted: number;
 }
-// main feed page
+//
 const MainFeed = () => {
   async function fetchChallengesPosts(): Promise<ChallengePostsResult> {
     const response = await axios.get(`${BACKEND_URL}/api/v1/challenges/posts`);
