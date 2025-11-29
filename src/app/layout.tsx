@@ -78,7 +78,7 @@ export const metadata: Metadata = {
 };
 
 
-const clerkPubKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY!;
+const clerkPubKey = "pk_test_ZGl2aW5lLWRvcnktMzMuY2xlcmsuYWNjb3VudHMuZGV2JA"
 
 export default function RootLayout({
   children,
