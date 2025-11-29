@@ -2,8 +2,10 @@ import { Button } from "@/components/ui/button";
 import { PlusIcon } from "lucide-react";
 import React, { useEffect } from "react";
 import { User } from "../../../../../../types";
-import { useAuth } from "@clerk/nextjs";
+import { useAuth, useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
+import axios from "axios";
+import { BACKEND_URL } from "../../../../../../constants";
 
 const stats = [
   { title: "Day Streak", value: 7 },
@@ -13,6 +15,7 @@ const stats = [
 
 export const UserHeader = ({ user }: { user: User }) => {
   const { signOut, isSignedIn, userId } = useAuth();
+  const { user: users, isLoaded } = useUser();
   const router = useRouter();
 
   useEffect(() => {
@@ -28,6 +31,37 @@ export const UserHeader = ({ user }: { user: User }) => {
     sessionStorage.clear();
     router.push("/login");
   };
+
+  useEffect(() => {
+    const syncUser = async () => {
+      if (!isLoaded || !users) return;
+
+      try {
+        const userId = users.id;
+        const email = users.primaryEmailAddress?.emailAddress;
+        const username = user.username || email?.split("@")[0];
+
+        // Check if user exists in backend
+        try {
+          await axios.get(`${BACKEND_URL}/api/v1/users/${userId}`);
+        } catch (error: any) {
+          if (error.response?.status === 404) {
+            // Create user if doesn't exist
+            await axios.post(`${BACKEND_URL}/api/v1/users`, {
+              username,
+              email,
+              clerkId: userId,
+            });
+          }
+        }
+      } catch (error) {
+        console.error("Failed to sync user:", error);
+      }
+    };
+
+    syncUser();
+  }, [isLoaded, user]);
+
   return (
     <div className="space-y-5">
       <div className="border-b space-y-4 pb-4">
