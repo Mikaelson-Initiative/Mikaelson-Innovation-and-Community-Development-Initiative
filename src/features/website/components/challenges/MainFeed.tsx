@@ -9,7 +9,7 @@ interface ChallengePostsResult {
   percentageOfPosts: number[];
   numOfDaysPosted: number;
 }
-
+//challenge feed
 const MainFeed = () => {
   async function fetchChallengesPosts(): Promise<ChallengePostsResult> {
     const response = await axios.get(`${BACKEND_URL}/api/v1/challenges/posts`);
