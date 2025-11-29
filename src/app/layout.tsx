@@ -77,13 +77,16 @@ export const metadata: Metadata = {
   category: "Technology & Community Development",
 };
 
+
+const clerkPubKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY!;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider publishableKey={clerkPubKey}>
       <QueryProvider>
         <html lang="en">
           <body

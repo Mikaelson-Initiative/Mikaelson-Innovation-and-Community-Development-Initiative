@@ -39,7 +39,7 @@ export const UserHeader = ({ user }: { user: User }) => {
       try {
         const userId = users.id;
         const email = users.primaryEmailAddress?.emailAddress;
-        const username = user.username || email?.split("@")[0];
+        const username = user?.username || email?.split("@")[0];
 
         // Check if user exists in backend
         try {
@@ -70,7 +70,7 @@ export const UserHeader = ({ user }: { user: User }) => {
             className="h-10 w-10 flex items-center justify-center font-bold text-white rounded-full bg-blue-600"
             onClick={handleSignOut}
           >
-            {user?.username[0]}
+            {user?.username?.[0]}
           </div>
 
           <div>
