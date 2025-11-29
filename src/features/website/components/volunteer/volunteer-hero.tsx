@@ -1,7 +1,8 @@
-"use client"
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import StatsCard from "./stats-card";
+import Link from "next/link";
 
 export const VolunteerHero: React.FC = () => (
   <section className="px-6 py-12">
@@ -28,19 +29,15 @@ export const VolunteerHero: React.FC = () => (
             changemakers, contribute your skills, and help build a brighter
             future for our continent.
           </p>
-          <motion.a
-            href="#start"
+          <Link
+            href="/waitlist"
             className="inline-flex items-center rounded-full bg-teal-400 px-6 py-3 text-lg md:px-8 md:py-4 md:text-xl font-semibold text-white shadow hover:bg-teal-500 transition-colors"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Start Your Journey
+            Join waitlist
             <span className="ml-3 text-2xl" aria-hidden>
               ↓
             </span>
-          </motion.a>
+          </Link>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, x: 50 }}

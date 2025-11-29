@@ -1,9 +1,9 @@
 "use client";
-import React from "react";
+import { ArrowRight, Flame, User, Users } from "lucide-react";
 import { motion } from "motion/react";
-import { Users, Flame, ArrowRight, LogIn, User } from "lucide-react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
 const formatNumber = (num: number): string => num.toLocaleString();
 
@@ -107,21 +107,21 @@ const CommunityHeroSection: React.FC = () => {
           >
             <motion.div className="flex items-center">
               <Link
-                href="/sign-up"
+                href="/waitlist"
                 className="flex items-center gap-2 px-6 py-3 rounded-2xl btn-gradient text-white font-semibold shadow hover:opacity-90 transition"
               >
-                <span>Start Your Journey</span>
+                <span>Join waitlist</span>
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </motion.div>
 
-            <Link
+            {/* <Link
               href="/login"
               className="flex items-center gap-2 px-6 py-3 rounded-2xl bg-gray-100 text-gray-800 font-semibold shadow hover:bg-gray-200 transition"
             >
               <span>Sign In</span>
               <LogIn className="w-5 h-5" />
-            </Link>
+            </Link> */}
           </motion.div>
         </motion.div>
 

@@ -22,7 +22,7 @@ type CTAProps = {
 const CommunityCTA: React.FC<CTAProps> = ({
   title = "Ready to Join Our Community?",
   description = "Start tracking your habits, connect with others, and transform your daily routine into lasting positive change. Join thousands of members already on their journey.",
-  primaryAction = { label: "Start Your Journey", href: "/sign-up" },
+  primaryAction = { label: "Join Waitlist", href: "/waitlist" },
   secondaryAction = { label: "Learn More", href: "/about-us" },
   testimonial = {
     quote:

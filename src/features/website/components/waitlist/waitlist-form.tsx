@@ -31,7 +31,7 @@ const formSchema = z.object({
   newsletter: z.boolean().default(false),
 });
 
-export const WaitlistForm = ({ waitlistCount = 0 }) => {
+export const WaitlistForm = ({ waitlistCount = 1247 }) => {
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -112,7 +112,7 @@ export const WaitlistForm = ({ waitlistCount = 0 }) => {
                     </FormLabel>
                     <Select
                       onValueChange={field.onChange}
-                            defaultValue={field.value}
+                      defaultValue={field.value}
                     >
                       <FormControl className="!h-12">
                         <SelectTrigger className="w-full">

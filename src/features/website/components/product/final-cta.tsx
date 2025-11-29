@@ -17,7 +17,7 @@ export default function FinalCta() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 cta-buttons">
           <Button asChild className="btn-primary btn text-black">
-            <Link href="/sign-up">Start Free Trial</Link>
+            <Link href="/waitlist">Join waitlist</Link>
           </Button>
 
           <Button

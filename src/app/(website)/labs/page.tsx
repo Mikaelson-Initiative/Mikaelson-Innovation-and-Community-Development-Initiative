@@ -2,7 +2,6 @@ import LabsCollaborationSection from "@/features/website/components/labs/labs-co
 import LabsFeaturedProjects from "@/features/website/components/labs/labs-featured-section";
 import LabsHeroSection from "@/features/website/components/labs/labs-hero";
 import LabsInnovationProcess from "@/features/website/components/labs/labs-innovation-process";
-import LabsTeamSection from "@/features/website/components/labs/labs-team-section";
 import LabsWhatWeDo from "@/features/website/components/labs/labs-what-we-do";
 import type { Metadata } from "next";
 
@@ -40,7 +39,7 @@ const LabsPage = () => {
       <LabsWhatWeDo />
       <LabsFeaturedProjects />
       <LabsInnovationProcess />
-      <LabsTeamSection />
+      {/* <LabsTeamSection /> */}
       <LabsCollaborationSection />
     </main>
   );

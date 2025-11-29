@@ -67,7 +67,7 @@ export const ProductModal = ({ product, open, onClose }: Props) => {
           </div>
           <div className="flex-center">
             <Button asChild className="btn btn-primary text-black">
-              <Link href="/sign-up">Get Started</Link>
+              <Link href="/waitlist">Join waitlist</Link>
             </Button>
           </div>
         </ScrollArea>
