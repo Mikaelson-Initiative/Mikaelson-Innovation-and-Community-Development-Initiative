@@ -16,6 +16,7 @@
   --color-brand-gray: var(--brand-gray);
   --color-brand-primary: var(--brand-primary);
   --color-brand-bg-gray: var(--brand-bg-gray);
+  --color-brand-secondary: var(--brand-secondary);
 
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -98,6 +99,7 @@
   --brand-blue-500: #2563eb;
   --brand-primary: #20c9c0;
   --brand-bg-gray: #f8fafc;
+  --brand-secondary: #adf0f2;
 }
 
 html {
@@ -276,6 +278,45 @@ html {
       transform: scale(1);
       opacity: 1;
     }
+  }
+  @keyframes float-slow {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes float-medium {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-14px);
+    }
+  }
+
+  @keyframes float-fast {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-18px);
+    }
+  }
+
+  .animate-float-slow {
+    animation: float-slow 4s ease-in-out infinite;
+  }
+  .animate-float-medium {
+    animation: float-medium 3.5s ease-in-out infinite;
+  }
+  .animate-float-fast {
+    animation: float-fast 3s ease-in-out infinite;
   }
 
   .unified-float {
