@@ -31,36 +31,7 @@ export const UserHeader = ({ user }: { user: User }) => {
     sessionStorage.clear();
     router.push("/login");
   };
-
-  useEffect(() => {
-    const syncUser = async () => {
-      if (!isLoaded || !users) return;
-
-      try {
-        const userId = users.id;
-        const email = users.primaryEmailAddress?.emailAddress;
-        const username = user?.username || email?.split("@")[0];
-
-        // Check if user exists in backend
-        try {
-          await axios.get(`${BACKEND_URL}/api/v1/users/${userId}`);
-        } catch (error: any) {
-          if (error.response?.status === 404) {
-            // Create user if doesn't exist
-            await axios.post(`${BACKEND_URL}/api/v1/users`, {
-              username,
-              email,
-              clerkId: userId,
-            });
-          }
-        }
-      } catch (error) {
-        console.error("Failed to sync user:", error);
-      }
-    };
-
-    syncUser();
-  }, [isLoaded, user]);
+  
 
   return (
     <div className="space-y-5">

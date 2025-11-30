@@ -1,27 +1,30 @@
-"use client"
+"use client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
-    Form,
-    FormControl,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
 } from "@/components/ui/select";
 import { zodResolver } from "@hookform/resolvers/zod";
+import axios from "axios";
 import { Lightbulb, Mail, Send, User, Users } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { BACKEND_URL } from "../../../../../constants";
+import { useState } from "react";
 
 const formSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -32,6 +35,7 @@ const formSchema = z.object({
 });
 
 export const WaitlistForm = ({ waitlistCount = 1247 }) => {
+  const [loading, setLoading] = useState(false);
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -43,8 +47,17 @@ export const WaitlistForm = ({ waitlistCount = 1247 }) => {
     },
   });
 
-  const onSubmit = (data: z.infer<typeof formSchema>) => {
-    console.log(data);
+  const onSubmit = async (data: z.infer<typeof formSchema>) => {
+    setLoading(true);
+    try {
+      const waitList = await axios.post(`${BACKEND_URL}/api/v1/waitList`, data);
+      console.log(waitList);
+    } catch (error) {
+      console.log(error);
+      alert("You have joined the waitList!")
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -183,7 +196,8 @@ export const WaitlistForm = ({ waitlistCount = 1247 }) => {
                 variant={"brand"}
                 className="w-full flex !py-7 items-center gap-2"
               >
-                <Send className="w-4 h-4" /> Join the Waitlist
+                <Send className="w-4 h-4" />{" "}
+                {loading ? "Adding to waitlist..." : "Join the Waitlist"}
               </Button>
             </form>
           </Form>

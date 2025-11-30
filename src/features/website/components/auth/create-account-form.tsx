@@ -99,7 +99,7 @@ export default function CreateAccountForm() {
 
     await signIn.authenticateWithRedirect({
       strategy: "oauth_google",
-      redirectUrl: `${window.location.origin}/sso-callback`,
+      redirectUrl: `/sso-callback`,
       redirectUrlComplete: `${window.location.origin}/feed`,
     });
   };
