@@ -1,1 +1,1 @@
-export const BACKEND_URL = "https://mikaelson-initiative-backend.onrender.com;
+export const BACKEND_URL = "https://mikaelson-initiative-backend.onrender.com";
