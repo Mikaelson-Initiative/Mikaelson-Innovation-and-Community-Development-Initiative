@@ -1,2 +1,2 @@
-export const BACKEND_URL = "http://localhost:5000";
+export const BACKEND_URL = "https://mikaelson-initiative-backend.onrender.com";
 //https://mikaelson-initiative-backend.onrender.com
