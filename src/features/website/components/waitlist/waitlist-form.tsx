@@ -32,6 +32,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { BACKEND_URL } from "../../../../../constants";
 import { useState } from "react";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -62,9 +63,9 @@ export const WaitlistForm = ({ waitlistCount = 1247 }) => {
     setLoading(true);
     try {
       const waitList = await axios.post(`${BACKEND_URL}/api/v1/waitList`, data);
-      if (waitList) {
-        // alert("You have joined the waitList!");
-        setShowSuccess(true)
+      if ((waitList.status = 201)) {
+        console.log(waitList);
+        toast.success("You have joined the waitList!");
       }
     } catch (error) {
       console.log(error);
