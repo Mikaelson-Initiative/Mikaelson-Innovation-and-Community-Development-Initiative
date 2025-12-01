@@ -17,6 +17,8 @@
   --color-brand-primary: var(--brand-primary);
   --color-brand-bg-gray: var(--brand-bg-gray);
   --color-brand-secondary: var(--brand-secondary);
+  --color-brand-primary-200: var(--brand-primary-200);
+  --color-brand-primary-300: var(--brand-primary-300);
 
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -91,6 +93,7 @@
 
   /* custom color */
   --brand-green-100: #e5e7eb;
+  --brand-primary-200: #e8f7f8;
   --brand-blue: #1d4ed8;
   --brand-bg-color: #c4f1f3;
   --brand-gray: #e7edf3;
@@ -98,6 +101,7 @@
   --brand-black: #000000;
   --brand-blue-500: #2563eb;
   --brand-primary: #20c9c0;
+  --brand-primary-300: #eefcfc;
   --brand-bg-gray: #f8fafc;
   --brand-secondary: #adf0f2;
 }

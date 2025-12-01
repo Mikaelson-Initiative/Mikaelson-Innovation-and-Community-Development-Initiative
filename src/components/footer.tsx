@@ -12,13 +12,13 @@ import { YouTube } from "./icons/Youtube";
 export const socialLinks = [
   {
     label: "X (formerly Twitter)",
-    href: "https://x.com/mici_org",
+    href: "https://x.com/mcdti_org",
     ariaLabel: "X",
     icon: XformerlyTwitter,
   },
   {
     label: "Instagram",
-    href: "https://www.instagram.com/mici_org/",
+    href: "https://www.instagram.com/mikaelson_initiative/",
     ariaLabel: "Instagram",
     icon: Instagram,
   },
