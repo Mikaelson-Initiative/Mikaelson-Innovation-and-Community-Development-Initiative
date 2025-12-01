@@ -4,7 +4,7 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { QueriesObserver } from "@tanstack/react-query";
 import QueryProvider from "@/components/QueryProvider";
-import { Toaster } from "@/components/ui/sonner";
+import { Toaster } from "sonner";
 
 const poppins = Poppins({
   variable: "--font-poppins",
