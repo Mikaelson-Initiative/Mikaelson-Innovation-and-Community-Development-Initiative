@@ -20,7 +20,14 @@ import {
 } from "@/components/ui/select";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
-import { Lightbulb, Mail, Send, User, Users } from "lucide-react";
+import {
+  CheckCircle2Icon,
+  Lightbulb,
+  Mail,
+  Send,
+  User,
+  Users,
+} from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { BACKEND_URL } from "../../../../../constants";
@@ -37,6 +44,7 @@ const formSchema = z.object({
 
 export const WaitlistForm = ({ waitlistCount = 1247 }) => {
   const [loading, setLoading] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -47,6 +55,9 @@ export const WaitlistForm = ({ waitlistCount = 1247 }) => {
       newsletter: false,
     },
   });
+
+  const email = form.watch("email");
+  const name = form.watch("name");
 
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
     setLoading(true);
@@ -204,6 +215,15 @@ export const WaitlistForm = ({ waitlistCount = 1247 }) => {
               </Button>
             </form>
           </Form>
+          {showSuccess && (
+            <div className="bg-gradient-to-br from-[#ccf9e2] to-[#b2f5d6] rounded-2xl mt-5 text-center py-12 flex-center flex-col">
+              <CheckCircle2Icon className=" text-green-500 mb-4 h-10 w-10" />
+              <h3 className="text-2xl font-bold mb-2">Welcome aboard! 🎉</h3>
+              <p>
+                Thanks {name}! We'll send you updates at {email}{" "}
+              </p>
+            </div>
+          )}
         </CardContent>
       </Card>
     </section>
