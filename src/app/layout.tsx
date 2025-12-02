@@ -5,6 +5,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { QueriesObserver } from "@tanstack/react-query";
 import { ThemeProvider } from "@/components/theme-provider";
 import QueryProvider from "@/components/QueryProvider";
+import { Toaster } from "sonner";
 import Script from "next/script";
 import { Toaster } from "sonner";
 
@@ -110,6 +111,7 @@ export default function RootLayout({
           <body
             className={`${poppins.variable} antialiased bg-white text-gray-900`}
           >
+            <Toaster />
             <noscript>
               <iframe
                 src="https://www.googletagmanager.com/ns.html?id=GTM-M2GCJCC8"

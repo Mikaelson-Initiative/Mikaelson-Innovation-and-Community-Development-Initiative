@@ -65,12 +65,9 @@ export const WaitlistForm = ({ waitlistCount = 1247 }) => {
     setLoading(true);
     try {
       const waitList = await axios.post(`${BACKEND_URL}/api/v1/waitList`, data);
-      if (waitList) {
-        // alert("You have joined the waitList!");
+      if ((waitList.status = 201)) {
         console.log(waitList);
-        
-        toast.success("You have joined the waitList!");
-        // setShowSuccess(true);
+        setShowSuccess(true);
       }
     } catch (error) {
       console.log(error);
