@@ -21,7 +21,7 @@ export const HowToPartner: React.FC = () => {
           Contact us at{" "}
           <a
             href="mailto:chukwusabastine2018@gmail.com"
-            className="text-indigo-600 underline font-medium"
+            className="text-indigo-600 text-xs md:text-base underline font-medium"
           >
             community@mikaelsoninitiative.org
           </a>
