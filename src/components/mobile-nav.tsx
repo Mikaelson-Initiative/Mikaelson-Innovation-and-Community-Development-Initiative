@@ -42,14 +42,14 @@ export const MobileNav: React.FC<MobileNavProps> = ({
         </SheetTrigger>
         <SheetContent side="right" className="w-64 sm:w-80">
           <SheetHeader>
-            <SheetTitle>{brandName}</SheetTitle>
+            <SheetTitle className="sr-only">{brandName}</SheetTitle>
           </SheetHeader>
           <div className="mt-6 px-5 flex flex-col gap-6 text-gray-700">
             {navLinks.map((link) => (
               <SheetClose asChild key={link.label}>
                 <Link
                   href={link.href}
-                  className="text-base transition-colors hover:text-gray-900"
+                  className="text-base transition-colors hover:text-gray-900 dark:text-brand-text-dark-heading"
                 >
                   {link.label}
                 </Link>
