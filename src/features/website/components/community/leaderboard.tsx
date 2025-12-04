@@ -16,7 +16,7 @@ export const LeaderBoard = () => {
   const [activeTab, setActiveTab] = useState("Overall");
 
   return (
-    <section className="bg-brand-bg-gray p-5 lg:p-10">
+    <section className="bg-brand-bg-gray dark:bg-card p-5 lg:p-10">
       <div className="mb-12">
         <CommunityHeader
           title="Community Leaderboard"
@@ -52,9 +52,9 @@ export const LeaderBoard = () => {
         </div>
       </div>
 
-      <div className="bg-white mx-auto max-w-7xl p-3 sm:p-10">
-        <div className="flex justify-between items-center py-5 border-b text-black">
-          <h1 className="text-base md:text-2xl font-bold">Top Performers</h1>
+      <div className="bg-white dark:bg-brand-dark-bg-nav mx-auto max-w-7xl p-3 sm:p-10">
+        <div className="flex justify-between items-center py-5 border-b dark:border-b-brand-primary text-black">
+          <h1 className="text-base md:text-2xl font-bold dark:text-brand-text-dark-heading">Top Performers</h1>
           <div className="flex items-center gap-2">
             <div className="size-3 bg-brand-primary animate-pulse rounded-full" />
             <h1 className="font-bold text-sm md:text-base text-brand-primary">Live updates</h1>

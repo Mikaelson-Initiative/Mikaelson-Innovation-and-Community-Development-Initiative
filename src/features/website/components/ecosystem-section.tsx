@@ -33,7 +33,7 @@ export default function EcosystemSection() {
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.2 }}
-      className="relative z-[1] mx-auto max-w-[1200px] flex-col items-center justify-center bg-white px-4 pt-4 pb-16"
+      className="relative z-[1] mx-auto max-w-[1200px] flex-col items-center justify-center dark:bg-brand-dark-bg-nav bg-white px-4 pt-4 pb-16"
     >
       {/* Header */}
       <motion.div
@@ -43,7 +43,7 @@ export default function EcosystemSection() {
         viewport={{ once: true }}
         className="w-full text-center"
       >
-        <h2 className="mx-auto mb-2 text-center text-[2.3rem] font-extrabold leading-[1.2] tracking-[-0.025em] text-[#111111]">
+        <h2 className="mx-auto mb-2 text-center text-[2.3rem] dark:text-brand-text-dark-heading font-extrabold leading-[1.2] tracking-[-0.025em] text-[#111111]">
           Our Ecosystem
         </h2>
       </motion.div>

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { MobileNav } from "@/components/mobile-nav";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { ModeToggle } from "@/components/mode-toggler";
 
 // Types
 interface NavLink {
@@ -33,14 +34,14 @@ const Header: React.FC<HeaderProps> = ({
   ],
   actionButton = { label: "Sponsor a program", href: "/sponsor" },
 }) => {
-  const pathName = usePathname()
+  const pathName = usePathname();
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur dark:bg-brand-dark-bg-nav">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 md:px-10">
         {/* Logo & Brand */}
         <Link
           href="/"
-          className="flex items-center gap-3 text-xl font-bold tracking-tight md:gap-4"
+          className="flex items-center gap-3 text-sm md:text-xl font-bold tracking-tight md:gap-4"
         >
           <Image
             src="/assets/images/mikaelsonlogo.png"
@@ -49,50 +50,60 @@ const Header: React.FC<HeaderProps> = ({
             height={32}
             className="rounded-md"
           />
-          <span>{brandName}</span>
+          <span className="dark:text-brand-text-dark-heading">{brandName}</span>
         </Link>
 
         {/* Navigation */}
         <nav className="ml-6 hidden items-center gap-8 whitespace-nowrap text-sm text-gray-700 lg:flex">
           {navLinks.map((link) => {
-            const isActive = pathName === link.href
+            const isActive = pathName === link.href;
             return (
               <Link
                 key={link.label}
                 href={link.href}
-                className={cn(`group  font-medium relative p-2 hover:bg-brand-bg-color rounded-t transition-colors hover:text-brand-green-100`,
-                  isActive && "bg-brand-bg-color text-brand-green-100 "
+                className={cn(
+                  `group dark:text-brand-text-dark-heading font-medium relative p-2 hover:bg-brand-bg-color dark:hover:bg-transparent rounded-t transition-colors hover:text-brand-green-100`,
+                  isActive &&
+                    "bg-brand-bg-color text-brand-green-100 dark:bg-transparent"
                 )}
               >
                 {link.label}
-                <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-brand-blue transition-all duration-300 group-hover:w-full"></span>
+                <span
+                  className={cn(
+                    "absolute left-0 bottom-0 h-[2px] w-0 bg-brand-blue transition-all duration-300 group-hover:w-full",
+                    isActive && "dark:w-full"
+                  )}
+                ></span>
               </Link>
             );
           })}
 
           {/* Action Button */}
-          {actionButton && (
-            <Link
-              href={actionButton.href}
-              className="ml-auto inline-flex  items-center rounded-xl bg-gray-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-black"
-            >
-              {actionButton.label}
-              <svg
-                className="ml-2 h-4 w-4"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+          <div className="flex items-center gap-2">
+            {actionButton && (
+              <Link
+                href={actionButton.href}
+                className="ml-auto inline-flex  items-center rounded-xl bg-gray-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-black"
               >
-                <path
-                  d="M7 17L17 7M17 7H7M17 7V17"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </Link>
-          )}
+                {actionButton.label}
+                <svg
+                  className="ml-2 h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7 17L17 7M17 7H7M17 7V17"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </Link>
+            )}
+            <ModeToggle />
+          </div>
         </nav>
         <MobileNav
           brandName={brandName}

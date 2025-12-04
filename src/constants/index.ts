@@ -61,6 +61,14 @@ export type FilterType = keyof typeof FILTERS;
 // Team data
 export const TEAM_MEMBERS: TeamMember[] = [
   {
+    name: "Oluwasegun M. Olukayode",
+    department: "OPERATIONS",
+    country: "NG",
+    role: "Founder & Executive Director",
+    img: "/assets/images/20240726_164330.jpeg",
+    bio: "Visionary leader with over 10 years of experience in sustainable technology and community development. Passionate about empowering African communities through innovative solutions.",
+  },
+  {
     name: "Khadijah Abdul Juma",
     department: "ADVISORS",
     country: "KE",
@@ -68,14 +76,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     img: "/assets/images/Khadija-Abdul.png",
     bio: "Khadija Abdul Juma is a results-driven technology and media leader with over 12 years of experience advancing digital transformation and economic opportunities across Africa. She is passionate about improving lives and livelihoods through innovation, community empowerment, and strategic partnerships.",
   },
-  {
-    name: "Juliana Sarya",
-    country: "TZ",
-    department: "OPERATIONS",
-    role: "Project Manager Associate",
-    img: "/assets/images/Juliana-Sarya.jpg",
-    bio: "I am Juliana Sarya, an IT professional, digital activist, and social innovator passionate about using technology to solve real community challenges. Over the past years, I have led initiatives that empower young people, women, and persons with disabilities through digital literacy, IoT, robotics, and human-centered design. I led IOTeach, an EdTech project that equips students with future-ready skills and encourages them to create solutions for issues such as education gaps, inclusion, and community development",
-  },
+
   {
     role: "Secretary, Board of Trustees",
     department: "TRUSTEES",
@@ -83,15 +84,6 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: "Imam Bashir Abdulwahab",
     img: "/assets/images/Imam-Bashir.JPG",
     bio: "Imam Bashir serves as the Secretary of the Trustees, supporting the organization with clear communication, record stewardship, and dependable coordination. He is committed to using technology and organized systems to strengthen community service and improve how people connect with support resources. His work reflects a dedication to uplift humanity, encourage understanding, and promote meaningful social impact.",
-  },
-
-  {
-    name: "Oluwasegun M. Olukayode",
-    department: "OPERATIONS",
-    country: "NG",
-    role: "Founder & Executive Director",
-    img: "/assets/images/20240726_164330.jpeg",
-    bio: "Visionary leader with over 10 years of experience in sustainable technology and community development. Passionate about empowering African communities through innovative solutions.",
   },
 
   {
@@ -103,14 +95,6 @@ export const TEAM_MEMBERS: TeamMember[] = [
     bio: "Program management lead coordinating planning, execution, and impact across initiatives.",
   },
   {
-    name: " Okikiolu Eniola-Glory",
-    department: "OPERATIONS",
-    country: "NG",
-    role: "Community Operations Lead",
-    img: "/assets/images/eniola.jpeg",
-    bio: "My name is Eniola-Glory, an Hr manager and vocal artist, an introvert who loves growing, learning and being impactful.",
-  },
-  {
     name: "Iretioluwa Ogunmola",
     department: "TECH",
     role: "Product Management Lead",
@@ -118,6 +102,23 @@ export const TEAM_MEMBERS: TeamMember[] = [
     img: "/assets/images/Ireti.jpeg",
     bio: "I'm a Product Manager who loves understanding user needs and turning them into products that feel effortless to use. I collaborate with designers and engineers to plan, build, and launch features that solve real problems and create value. I enjoy working with data, learning continuously, and shipping meaningful improvements one iteration at a time.",
   },
+  {
+    name: "Juliana Sarya",
+    country: "TZ",
+    department: "OPERATIONS",
+    role: "Project Manager Associate",
+    img: "/assets/images/Juliana-Sarya.jpg",
+    bio: "I am Juliana Sarya, an IT professional, digital activist, and social innovator passionate about using technology to solve real community challenges. Over the past years, I have led initiatives that empower young people, women, and persons with disabilities through digital literacy, IoT, robotics, and human-centered design. I led IOTeach, an EdTech project that equips students with future-ready skills and encourages them to create solutions for issues such as education gaps, inclusion, and community development",
+  },
+  {
+    name: " Okikiolu Eniola-Glory",
+    department: "OPERATIONS",
+    country: "NG",
+    role: "Community Operations Lead",
+    img: "/assets/images/eniola.jpeg",
+    bio: "My name is Eniola-Glory, an Hr manager and vocal artist, an introvert who loves growing, learning and being impactful.",
+  },
+
   {
     name: "Hammed Adedamola",
     department: "OPERATIONS",
@@ -174,6 +175,14 @@ export const TEAM_MEMBERS: TeamMember[] = [
     country: "NG",
     img: "/assets/images/Boluwatife-Mercy.jpeg",
     bio: "Boluwatife Adeleke is a purpose-driven social impact leader working at the intersection of education, youth empowerment, and operational systems building.",
+  },
+  {
+    name: "Olujimi Fashoyin",
+    department: "TECH",
+    role: "Data Analyst",
+    country: "NG",
+    img: "/assets/images/Olujimi-Fashoyin.jpg",
+    bio: "My name is Olujimi Fashoyin. I graduated in mechatronics engineering from FUOYE. I’m passionate about using my skills in data analysis, problem-solving, and technology to make a positive impact. I enjoy collaborating on projects that create meaningful results.",
   },
 ];
 
@@ -349,6 +358,3 @@ export const products: Product[] = [
   //     "RIO Hub for Research advances academic excellence through milestone tracking, collaboration management, and publication progress monitoring. Systematically advance knowledge while maintaining clear visibility into research outcomes and team contributions.",
   // },
 ];
-
-
-

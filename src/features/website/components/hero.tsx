@@ -22,11 +22,11 @@ const HomeHero: React.FC = () => {
             className="z-10 flex max-w-[600px] flex-1 flex-col items-start justify-start pt-8 text-left"
             data-aos="fade-right"
           >
-            <h1 className="m-0 text-3xl md:text-[2.1rem] font-bold leading-[1.2] text-[#111111]">
+            <h1 className="m-0 text-3xl md:text-[2.1rem] font-bold leading-[1.2] text-[#111111] dark:text-brand-text-dark-heading">
               We&apos;re Building Africa&apos;s Future - one Student, One Idea,
               One Action at a Time.
             </h1>
-            <p className="mt-[1.2rem] text-lg md:text-[1.1rem] font-normal leading-[1.6] text-[#222222]">
+            <p className="mt-[1.2rem] text-lg md:text-[1.1rem] font-normal leading-[1.6] text-[#222222] dark:text-brand-text-dark">
               The Mikaelson Initiative is a youth-driven movement using
               technology, intentional living, and community to transform Africa
               from the inside out. We&apos;re starting with students. We&apos;re
@@ -50,7 +50,7 @@ const HomeHero: React.FC = () => {
                 className="h-full w-full rounded-xl"
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/x8nYGAWlLnQ?autoplay=1&mute=1&loop=1&playlist=x8nYGAWlLnQ"
+                src="https://www.youtube.com/embed/x8nYGAWlLnQ?autoplay=1&mute=0&loop=1&playlist=x8nYGAWlLnQ"
                 title="Mikaelson Initiative Video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

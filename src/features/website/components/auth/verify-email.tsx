@@ -8,9 +8,22 @@ import {
   InputOTPSlot,
 } from "@/components/ui/input-otp";
 import { Button } from "@/components/ui/button";
+import { useSignUp } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
+import axios from "axios";
 
-export default function VerifyEmail({ email }: { email: string }) {
+export default function VerifyEmail({
+  email,
+  username,
+}: {
+  email: string;
+  username: string;
+}) {
+  const { isLoaded, signUp, setActive } = useSignUp();
   const [otp, setOtp] = useState("");
+  const [pendingVerification, setPendingVerification] = useState(false);
+  const [code, setCode] = useState("");
+  const router = useRouter();
 
   // Function to hide part of email
   const maskEmail = (email: string) => {
@@ -21,8 +34,34 @@ export default function VerifyEmail({ email }: { email: string }) {
 
   const hiddenEmail = maskEmail(email);
 
-  const handleSubmit = () => {
-    console.log("OTP Submitted:", otp);
+  const handleSubmit = async () => {
+    if (!isLoaded) return;
+
+    try {
+      const signUpAttempt = await signUp.attemptEmailAddressVerification({
+        code,
+      });
+
+      if (signUpAttempt.status === "complete") {
+        await setActive({ session: signUpAttempt.createdSessionId });
+      } else {
+        console.error(JSON.stringify(signUpAttempt, null, 2));
+      }
+
+      if (signUpAttempt.status === "complete") {
+        axios.post(`http://localhost:5000/api/v1/users`, {
+          username,
+          email,
+          clerkId: signUpAttempt.createdUserId,
+        });
+
+        await setActive({ session: signUpAttempt.createdSessionId });
+        alert("Account created successfully!");
+        router.push("/dashboard");
+      }
+    } catch (err) {
+      console.error(JSON.stringify(err, null, 2));
+    }
   };
 
   return (
@@ -38,8 +77,8 @@ export default function VerifyEmail({ email }: { email: string }) {
       <div className="flex items-center justify-center">
         <InputOTP
           maxLength={6}
-          value={otp}
-          onChange={setOtp}
+          value={code}
+          onChange={setCode}
           className="flex justify-center"
         >
           <InputOTPGroup className="space-x-2">
@@ -56,7 +95,7 @@ export default function VerifyEmail({ email }: { email: string }) {
 
       <Button
         onClick={handleSubmit}
-        disabled={otp.length !== 6}
+        disabled={code.length !== 6}
         className="w-full"
         variant="brand"
       >

@@ -4,7 +4,7 @@ import React, { PropsWithChildren } from "react";
 
 const WebsiteRootLayout = ({ children }: PropsWithChildren) => {
   return (
-    <main>
+    <main className="dark:bg-brand-dark-bg-nav">
       <Header />
       {children}
       <Footer />

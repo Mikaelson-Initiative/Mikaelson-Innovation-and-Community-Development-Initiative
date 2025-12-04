@@ -30,17 +30,17 @@ const features: Feature[] = [
 
 const FeaturesOverview: React.FC = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white dark:bg-card">
       <div className="container mx-auto px-6 text-center">
         {/* Section Header */}
         <div className="mb-12 space-y-10 max-w-3xl mx-auto">
           <div className="text-sm w-fit mx-auto font-semibold border px-5 py-3 bg-blue-500 uppercase tracking-wide mb-8 shadow-lg text-white rounded-full">
             Why Choose Us
           </div>
-          <h2 className="text-3xl md:text-5xl font-extrabold mt-2">
+          <h2 className="text-3xl md:text-5xl font-extrabold mt-2 dark:text-brand-text-dark-heading">
             Everything You Need to Succeed
           </h2>
-          <p className="mt-4 text-center w-full text-gray-600 text-lg max-w-md mx-auto">
+          <p className="mt-4 text-center w-full text-gray-600 dark:text-brand-text-dark text-lg max-w-md mx-auto">
             Powerful tools and supportive community to accelerate your personal
             growth
           </p>

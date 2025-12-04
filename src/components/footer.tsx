@@ -12,13 +12,13 @@ import { YouTube } from "./icons/Youtube";
 export const socialLinks = [
   {
     label: "X (formerly Twitter)",
-    href: "https://x.com/mici_org",
+    href: "https://x.com/mcdti_org",
     ariaLabel: "X",
     icon: XformerlyTwitter,
   },
   {
     label: "Instagram",
-    href: "https://www.instagram.com/mici_org/",
+    href: "https://www.instagram.com/mikaelson_initiative/",
     ariaLabel: "Instagram",
     icon: Instagram,
   },
@@ -38,7 +38,7 @@ export const socialLinks = [
 
 export const Footer = () => {
   return (
-    <footer className="pt-10 mt-5 pb-5 px-10 md:px-5 border-t">
+    <footer className="pt-10 mt-5 pb-5 px-10 md:px-5 border-t dark:bg-brand-dark-bg-nav">
       <div className="max-w-6xl mx-auto">
         <div className="w-full max-w-sm py-10 mx-auto space-y-4 text-center">
           <div className="flex justify-center items-center gap-2">
@@ -49,9 +49,9 @@ export const Footer = () => {
               height={50}
               className="rounded-md"
             />
-            <h1 className="font-extrabold text-2xl">Mikaelson Initiative</h1>
+            <h1 className="font-extrabold text-2xl dark:text-brand-text-dark-heading">Mikaelson Initiative</h1>
           </div>
-          <p className="">
+          <p className="dark:text-brand-text-dark">
             Elevating humanity through technology and community.
           </p>
         </div>
@@ -100,7 +100,7 @@ export const Footer = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4">
               {footerLinks.map((section) => (
                 <div key={section.section} className="">
-                  <h3 className="mb-2 font-extrabold text-lg md:text-2xl">
+                  <h3 className="mb-2 font-extrabold text-lg dark:text-brand-text-dark-heading md:text-2xl">
                     {section.section}
                   </h3>
                   <nav className="flex flex-col gap-2 text-sm text-gray-700">
@@ -108,7 +108,7 @@ export const Footer = () => {
                       <Link
                         key={link.href}
                         href={link.href}
-                        className="hover:text-blue-500"
+                        className="hover:text-blue-500 dark:text-brand-text-dark"
                       >
                         {link.label}
                       </Link>
@@ -117,7 +117,7 @@ export const Footer = () => {
                 </div>
               ))}
               <div className="social-links col-span-2 md:col-span-1 flex flex-col items-center gap-4">
-                <h1 className="font-extrabold text-lg md:text-2xl">Connect With Us</h1>
+                <h1 className="font-extrabold text-lg md:text-2xl dark:text-brand-text-dark-heading">Connect With Us</h1>
                 <div className="gap-4 flex">
                   {socialLinks.map((item) => (
                     <a

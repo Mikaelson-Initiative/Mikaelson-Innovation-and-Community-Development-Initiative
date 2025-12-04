@@ -15,15 +15,15 @@ const benefits: Benefit[] = [
 
 const LabsCollaborationSection: React.FC = () => {
   return (
-    <section id="collaboration" className="py-20 bg-indigo-50">
+    <section id="collaboration" className="py-20 bg-indigo-50 dark:bg-brand-dark-bg-nav">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Text Area */}
           <div className="flex-1">
-            <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
+            <h2 className="text-3xl lg:text-4xl dark:text-brand-text-dark-heading font-extrabold text-gray-900 mb-4">
               Join Our Innovation Journey
             </h2>
-            <p className="text-lg text-gray-600 mb-6">
+            <p className="text-lg text-gray-600 mb-6 dark:text-brand-text-dark">
               Whether you&apos;re a developer, researcher, or community leader,
               there&apos;s a place for you in our innovation ecosystem.
             </p>

@@ -61,12 +61,12 @@ const sdgs: Sdg[] = [
 
 export default function SdgSection() {
   return (
-    <section className="bg-white py-20 px-6">
+    <section className="bg-white py-20 px-6 dark:bg-brand-dark-bg-nav">
       <div className="max-w-[1200px] mx-auto text-center">
-        <h2 className="text-4xl font-extrabold text-gray-900 mb-4">
+        <h2 className="text-4xl font-extrabold text-gray-900 mb-4 dark:text-brand-text-dark">
           Contributing to the UN Sustainable Development Goals
         </h2>
-        <p className="text-lg text-gray-500 mb-12">
+        <p className="text-lg text-gray-500 mb-12 dark:text-brand-text-dark">
           Our work directly aligns with and contributes to achieving these
           global goals
         </p>

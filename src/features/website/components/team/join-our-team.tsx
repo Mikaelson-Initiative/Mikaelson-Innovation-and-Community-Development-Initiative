@@ -6,33 +6,31 @@ const JoinTeam: React.FC = () => {
   const router = useRouter()
   return (
     <section
-      className="join-team"
+      className="join-team dark:bg-brand-dark-bg-nav bg-[#ecf8ff]"
       style={{
         padding: "4rem 1rem",
         textAlign: "center",
-        background:
-          "linear-gradient(135deg, rgb(235, 248, 255) 0%, rgb(240, 249, 255) 100%)",
         marginTop: "4rem",
       }}
     >
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
         <h2
+          className="dark:text-brand-text-dark-heading text-black"
           style={{
             fontSize: "2.5rem",
             fontWeight: 700,
             marginBottom: "1.5rem",
-            color: "rgb(17,24,39)",
           }}
         >
           Join Our Team
         </h2>
 
         <h3
+          className="dark:text-brand-text-dark"
           style={{
             fontSize: "1.25rem",
             fontWeight: 400,
             marginBottom: "2.5rem",
-            color: "rgb(107,114,128)",
             lineHeight: 1.6,
           }}
         >

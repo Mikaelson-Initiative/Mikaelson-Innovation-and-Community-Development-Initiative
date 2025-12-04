@@ -32,14 +32,14 @@ export default function HowItWorks() {
           {steps.map((step, index) => (
             <div
               key={index}
-              className="step hover:border-brand-green-100 transition-colors duration-300  hover:shadow-[0_20px_60px_rgba(92,225,230,0.2)]/10 hover:shadow-brand-green-100 text-center border-2 rounded-2xl p-8 shadow-sm bg-[#f8fafc]"
+              className="step dark:bg-card hover:border-brand-green-100 transition-colors duration-300  hover:shadow-[0_20px_60px_rgba(92,225,230,0.2)]/10 hover:shadow-brand-green-100 text-center border-2 rounded-2xl p-8 shadow-sm bg-[#f8fafc]"
             >
               <div className="step-number w-16 h-16 mx-auto mb-4 rounded-full btn-primary flex items-center justify-center text-xl lg:text-3xl font-bold">
                 {index + 1}
               </div>
 
-              <h4 className="text-xl font-bold mb-2">{step.title}</h4>
-              <p className="text-gray-600">{step.description}</p>
+              <h4 className="text-xl font-bold mb-2 dark:text-brand-text-dark-heading">{step.title}</h4>
+              <p className="text-gray-600 dark:text-brand-text-dark">{step.description}</p>
             </div>
           ))}
         </div>

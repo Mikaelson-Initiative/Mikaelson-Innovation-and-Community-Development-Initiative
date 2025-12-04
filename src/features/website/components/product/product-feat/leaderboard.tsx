@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const Leaderboard = () => {
   return (
-     <Card className="max-w-md w-full !py-10 feature-card">
+    <Card className="max-w-md w-full !py-10 feature-card">
       <CardHeader>
         <div className="h-44 bg-[#f7fcfe] rounded-xl p-5">
           <div className="flex items-end justify-center gap-3 h-full">
@@ -17,7 +17,7 @@ export const Leaderboard = () => {
 
       <CardContent className="space-y-2 text-center">
         <CardTitle className="text-xl lg:text-2xl">Leaderboard</CardTitle>
-        <p className="text-gray-600">
+        <p className="text-gray-600 dark:text-brand-text-dark">
           See the top productive people in your community. Stay motivated
           through friendly competition and recognition.
         </p>

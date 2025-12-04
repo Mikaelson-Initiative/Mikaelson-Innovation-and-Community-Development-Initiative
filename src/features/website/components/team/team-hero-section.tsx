@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 
 const TeamHeroSection: React.FC = () => {
   return (
-    <section className="bg-white py-5">
+    <section className="bg-white py-5 dark:bg-brand-dark-bg-nav">
       <div className="mx-auto w-full max-w-6xl">
         <motion.div
           className="flex min-h-[550px] items-center justify-center rounded-3xl bg-brand-bg-color px-6 py-10"

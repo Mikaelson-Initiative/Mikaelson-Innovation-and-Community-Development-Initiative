@@ -1,9 +1,9 @@
 "use client";
-import React from "react";
+import { ArrowRight, Flame, User, Users } from "lucide-react";
 import { motion } from "motion/react";
-import { Users, Flame, ArrowRight, LogIn, User } from "lucide-react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
 const formatNumber = (num: number): string => num.toLocaleString();
 
@@ -15,7 +15,7 @@ const CommunityHeroSection: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full bg-white py-16">
+    <section className="relative w-full bg-white dark:bg-card py-16">
       <div className="container mx-auto flex flex-col items-center px-4 gap-8  md:gap-12">
         {/* Text Content */}
         <motion.div
@@ -25,13 +25,13 @@ const CommunityHeroSection: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">
+          <h1 className="text-3xl md:text-5xl font-extrabold leading-tight dark:text-brand-text-dark-heading">
             Transform Your Life Through
             <span className="block bg-gradient-to-r from-brand-blue to-teal-500 text-transparent bg-clip-text">
               Community & Growth
             </span>
           </h1>
-          <p className="text-base md:text-lg text-gray-600 max-w-xl">
+          <p className="text-base md:text-lg text-gray-600 max-w-xl dark:text-brand-text-dark">
             Connect with like-minded individuals across Africa, track your
             progress, and achieve your goals together. Experience the power of
             accountability and shared success.
@@ -107,21 +107,21 @@ const CommunityHeroSection: React.FC = () => {
           >
             <motion.div className="flex items-center">
               <Link
-                href="/sign-up"
+                href="/waitlist"
                 className="flex items-center gap-2 px-6 py-3 rounded-2xl btn-gradient text-white font-semibold shadow hover:opacity-90 transition"
               >
-                <span>Start Your Journey</span>
+                <span>Join waitlist</span>
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </motion.div>
 
-            <Link
+            {/* <Link
               href="/login"
               className="flex items-center gap-2 px-6 py-3 rounded-2xl bg-gray-100 text-gray-800 font-semibold shadow hover:bg-gray-200 transition"
             >
               <span>Sign In</span>
               <LogIn className="w-5 h-5" />
-            </Link>
+            </Link> */}
           </motion.div>
         </motion.div>
 

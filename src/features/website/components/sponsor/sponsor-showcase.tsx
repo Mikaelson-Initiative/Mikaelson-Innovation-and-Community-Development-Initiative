@@ -5,8 +5,8 @@ import React from "react";
 export const SponsorsShowcase: React.FC = () => {
   return (
     <section
-      className="sponsors-showcase"
-      style={{ padding: "4rem 1rem", textAlign: "center", background: "white" }}
+      className="sponsors-showcase bg-white dark:bg-brand-dark-bg-nav"
+      style={{ padding: "4rem 1rem", textAlign: "center", }}
     >
       <div
         style={{

@@ -1,6 +1,10 @@
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Crown } from "lucide-react";
 import React from "react";
+import { User } from "../../../../../types";
+import axios from "axios";
+import { BACKEND_URL } from "../../../../../constants";
+import { useQuery } from "@tanstack/react-query";
 
 const data = [
   { name: "Amara Okafor", posts: 2, likes: 10 },
@@ -15,7 +19,7 @@ const data = [
   { name: "Michael Eze", posts: 8, likes: 35 },
 ];
 
-export const TopContributors = () => {
+export const TopContributors = ({ users }: { users: User[] }) => {
   return (
     <div className="bg-white border rounded-lg overflow-hidden">
       <div className="flex gap-2 items-center my-2 p-3 border-b">
@@ -23,10 +27,10 @@ export const TopContributors = () => {
         <h1 className="font-bold text-lg">Top Contributors</h1>
       </div>
 
-      <ScrollArea className="h-72 w-full rounded-md border-none p-3">
+      <ScrollArea  className="h-72 w-full rounded-md border-none p-3">
         <div className="space-y-3">
-          {data.map((user, index) => {
-            const [firstName, lastName] = user.name.split(" ");
+          {users?.map((user, index) => {
+            const [firstName, lastName] = user?.username.split(" ");
             return (
               <div
                 key={index}
@@ -39,8 +43,8 @@ export const TopContributors = () => {
                       {index + 1}
                     </div>
                     <div className="size-10 bg-brand-blue rounded-full flex-center text-white">
-                      {firstName.charAt(0)}
-                      {lastName.charAt(0)}
+                      {firstName?.charAt(0)}
+                      {lastName?.charAt(0)}
                     </div>
                   </div>
                   <div>
@@ -49,7 +53,7 @@ export const TopContributors = () => {
                       <span className="text-gray-600">{lastName}</span>
                     </p>
                     <p className="text-xs text-gray-500">
-                      {user.posts} posts • {user.likes} likes
+                      {user?.Post?.length} posts • {user?.Like?.length} likes
                     </p>
                   </div>
                 </div>

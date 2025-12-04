@@ -18,7 +18,7 @@ const projects: Project[] = [
     title: "OpenTutor AI",
     category: "education",
     description: "Connecting students with mentors across Nigeria",
-    image: "/assets/images/project1.jpg",
+    image: "/assets/images/mikaelsonlogo.png",
     status: "active",
     tags: ["Vue", "Node", "MongoDB"],
   },
@@ -27,7 +27,7 @@ const projects: Project[] = [
     title: "HealthTech Initiative",
     category: "healthcare",
     description: "Telemedicine platform for rural communities",
-    image: "/assets/images/project2.jpg",
+    image: "/assets/images/mikaelsonlogo.png",
     status: "completed",
     tags: ["React", "Python", "PostgreSQL"],
   },
@@ -36,7 +36,7 @@ const projects: Project[] = [
     title: "Smart Agriculture",
     category: "agriculture",
     description: "IoT solutions for modern farming",
-    image: "/assets/images/project3.jpg",
+    image: "/assets/images/mikaelsonlogo.png",
     status: "development",
     tags: ["IoT", "ML", "Sensors"],
   },
@@ -46,7 +46,7 @@ const projects: Project[] = [
     category: "real-estate",
     description:
       "Data-driven platform optimizing property valuation and urban planning.",
-    image: "/assets/images/project4.jpg",
+    image: "/assets/images/mikaelsonlogo.png",
     status: "active",
     tags: ["Analytics", "GIS", "Vue"],
   },
@@ -83,14 +83,14 @@ const LabsFeaturedProjects: React.FC = () => {
   }, [activeFilter]);
 
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section id="projects" className="py-20 bg-white dark:bg-card">
       <div className="container mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
+          <h2 className="text-3xl lg:text-4xl dark:text-brand-text-dark-heading font-extrabold text-gray-900 mb-4">
             Featured Projects
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto dark:text-brand-text-dark">
             Discover our current initiatives and their impact on communities
             across Africa.
           </p>

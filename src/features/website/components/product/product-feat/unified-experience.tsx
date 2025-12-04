@@ -18,7 +18,7 @@ export const UnifiedExperience = () => {
         <CardTitle className="text-xl lg:text-2xl">
           Unified Experience
         </CardTitle>
-        <p className="text-gray-600">
+        <p className="text-gray-600 dark:text-brand-text-dark">
           Combine Community, Challenge, and Dashboard into a single, intuitive
           post-login environment and social feed.
         </p>

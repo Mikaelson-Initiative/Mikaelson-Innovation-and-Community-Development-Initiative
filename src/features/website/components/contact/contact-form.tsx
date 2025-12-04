@@ -52,8 +52,8 @@ const ContactUsForm: React.FC = () => {
       <main className="max-w-3xl mx-auto px-6 py-24">
         {/* Page Header */}
         <section className="text-center mb-12">
-          <h1 className="text-4xl font-extrabold mb-4">Contact Us</h1>
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <h1 className="text-4xl font-extrabold mb-4 dark:text-brand-text-dark-heading">Contact Us</h1>
+          <p className="text-lg text-gray-600 leading-relaxed dark:text-brand-text-dark">
             Thank you for your interest in the Mikaelson Initiative. We&apos;d love
             to hear from you! <br />
             Whether you have questions, feedback, or want to partner with us,
@@ -69,7 +69,7 @@ const ContactUsForm: React.FC = () => {
         </section>
 
         {/* Contact Form */}
-        <section className="bg-slate-50 p-8 rounded-xl shadow-sm">
+        <section className="bg-slate-50 dark:bg-card p-8 rounded-xl shadow-sm">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
               <FormField

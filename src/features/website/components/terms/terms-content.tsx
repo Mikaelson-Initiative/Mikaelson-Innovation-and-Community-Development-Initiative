@@ -476,7 +476,7 @@ const termsContent = [
 
 export const TermsContent = () => {
   return (
-    <section className="bg-gray-50 py-16">
+    <section className="bg-gray-50 py-16 dark:bg-card">
       <div className="mx-auto max-w-6xl space-y-6 px-6">
         <Accordion
           type="multiple"

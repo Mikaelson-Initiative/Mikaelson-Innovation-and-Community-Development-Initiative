@@ -52,7 +52,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
-      className={`mx-auto mt-8 w-full overflow-hidden rounded-[2rem] bg-gradient-to-br from-slate-50 to-slate-200 px-3 lg:px-7 py-12 text-center ${className}`}
+      className={`mx-auto mt-8 w-full overflow-hidden rounded-[2rem] dark:bg-gradient-to-br dark:from-brand-dark-bg-nav dark:to-brand-dark-bg-nav bg-gradient-to-br from-slate-50 to-slate-200 px-3 lg:px-7 py-12 text-center ${className}`}
     >
       {/* Heading */}
       <motion.div variants={itemVariants}>
@@ -62,9 +62,9 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
       {/* Paragraph */}
       <motion.div
         variants={itemVariants}
-        className="bg-white text-black py-8 px-5 rounded-[2rem]"
+        className="bg-white dark:bg-brand-dark-bg-nav text-black py-8 px-5 rounded-[2rem]"
       >
-        <p className="text-center text-xl font-medium leading-[32.64px]">
+        <p className="text-center text-xl font-medium dark:text-brand-text-dark leading-[32.64px]">
           {description}
         </p>
       </motion.div>
@@ -82,7 +82,13 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
             >
               <span>{buttonText}</span>
               <span className="button-icon inline-flex h-8 w-8 items-center justify-center">
-                <Image width={20} height={20} src="/icons/arrow.svg" alt="arrow" className="h-4 w-4" />
+                <Image
+                  width={20}
+                  height={20}
+                  src="/icons/arrow.svg"
+                  alt="arrow"
+                  className="h-4 w-4"
+                />
               </span>
             </button>
           </Link>

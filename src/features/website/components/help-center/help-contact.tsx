@@ -4,14 +4,13 @@ import React from "react";
 const HelpContact: React.FC = () => {
   return (
     <div
-      className="help-contact"
+      className="help-contact dark:text-brand-text-dark-heading text-black"
       style={{ textAlign: "center", marginBottom: "4rem" }}
     >
       <h2
         style={{
           fontSize: "2rem",
           fontWeight: 700,
-          color: "rgb(17, 17, 17)",
           marginBottom: "2rem",
         }}
       >
