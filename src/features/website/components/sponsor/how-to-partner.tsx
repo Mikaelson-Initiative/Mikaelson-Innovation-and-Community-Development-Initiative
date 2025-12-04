@@ -20,7 +20,7 @@ export const HowToPartner: React.FC = () => {
         <p className="text-gray-700 text-base md:text-lg">
           Contact us at{" "}
           <a
-            href="mailto:chukwusabastine2018@gmail.com"
+            href="mailto:community@mikaelsoninitiative.org"
             className="text-indigo-600 underline font-medium"
           >
             community@mikaelsoninitiative.org
@@ -42,7 +42,7 @@ export const HowToPartner: React.FC = () => {
             <span className="text-indigo-600 font-bold text-xl">
               {String(index + 2).padStart(2, "0")}
             </span>
-            <p className="text-gray-700 text-base md:text-lg">{text}</p>
+            <p className="text-gray-700 text-sm md:text-base lg:text-lg">{text}</p>
           </li>
         ))}
       </ol>

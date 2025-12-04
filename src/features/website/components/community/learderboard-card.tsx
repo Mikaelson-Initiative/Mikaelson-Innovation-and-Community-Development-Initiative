@@ -22,7 +22,7 @@ interface LeaderboardUser {
 
 export const LeaderboardCard = ({ user }: { user: LeaderboardUser }) => {
   return (
-    <div className="w-full rounded-xl bg-brand-bg-gray shadow p-5 border flex lg:flex-row flex-col">
+    <div className="w-full rounded-xl bg-brand-bg-gray shadow p-5 border flex lg:flex-row flex-col gap-4">
       <div className="flex flex-1 items-center gap-4">
         {/* Avatar */}
         <Avatar className="h-10 w-10 md:h-12 md:w-12">
@@ -33,17 +33,19 @@ export const LeaderboardCard = ({ user }: { user: LeaderboardUser }) => {
         </Avatar>
 
         {/* User Info */}
-        <div>
-          <p className="font-semibold text-sm md:text-lg">{user.name}</p>
-          <div className="flex items-center gap-2">
-            <p className="text-xs md:text-sm text-gray-500">{user.country}</p>
-            <ReactCountryFlag
-              countryCode={user.shortLabel}
-              svg
-              // style={{ width: "1.5em", height: "1.5em" }}
-              title={user.country}
-              className="rotate-2 ml-2 h-2 w-2 sm:!w-5 sm:!h-5"
-            />
+        <div className="w-full">
+          <div className="flex justify-between md:flex-col">
+            <p className="font-semibold text-sm md:text-lg">{user.name}</p>
+            <div className="flex items-center gap-2">
+              <p className="text-xs md:text-sm text-gray-500">{user.country}</p>
+              <ReactCountryFlag
+                countryCode={user.shortLabel}
+                svg
+                // style={{ width: "1.5em", height: "1.5em" }}
+                title={user.country}
+                className="rotate-2 ml-2 h-2 w-2 sm:!w-5 sm:!h-5"
+              />
+            </div>
           </div>
           <p className="text-xs text-muted-foreground">145 days Active</p>
         </div>
@@ -51,7 +53,7 @@ export const LeaderboardCard = ({ user }: { user: LeaderboardUser }) => {
 
       {/* Stats */}
       <div className="flex flex-1 flex-col md:flex-row items-center justify-evenly gap-3">
-        <div className="w-full grid grid-cols-3  text-center">
+        <div className="w-full grid grid-cols-3">
           <div>
             <p className="font-bold">{user.points}</p>
             <p className="text-xs text-gray-500">Points</p>

@@ -52,7 +52,7 @@ export const LeaderBoard = () => {
         </div>
       </div>
 
-      <div className="bg-white mx-auto max-w-7xl p-3 sm:p-10">
+      <div className="bg-white mx-auto max-w-7xl p-3 sm:p-10 border rounded-lg">
         <div className="flex justify-between items-center py-5 border-b text-black">
           <h1 className="text-base md:text-2xl font-bold">Top Performers</h1>
           <div className="flex items-center gap-2">

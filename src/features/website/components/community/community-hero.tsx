@@ -99,21 +99,19 @@ const CommunityHeroSection: React.FC = () => {
 
           {/* Buttons */}
           <motion.div
-            className="flex flex-col md:flex-row gap-4 pt-4 justify-center md:justify-start"
+            className="flex flex-row flex-wrap gap-4 pt-4 justify-center md:justify-start"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <motion.div className="flex items-center">
-              <Link
-                href="/sign-up"
-                className="flex items-center gap-2 px-6 py-3 rounded-2xl btn-gradient text-white font-semibold shadow hover:opacity-90 transition"
-              >
-                <span>Start Your Journey</span>
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-            </motion.div>
+            <Link
+              href="/sign-up"
+              className="flex items-center gap-2 px-6 py-3 rounded-2xl btn-gradient text-white font-semibold shadow hover:opacity-90 transition"
+            >
+              <span>Start Your Journey</span>
+              <ArrowRight className="w-5 h-5" />
+            </Link>
 
             <Link
               href="/login"
