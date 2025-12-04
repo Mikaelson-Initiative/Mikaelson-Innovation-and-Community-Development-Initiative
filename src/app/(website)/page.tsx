@@ -21,7 +21,7 @@ export default function Home() {
     ? "/assets/images/partner-mobile.svg"
     : "/assets/images/iPad Image Presentation.jpg";
   return (
-    <main className="bg-[#ffffff] px-5 lg:px-0">
+    <main className="bg-[#ffffff] dark:bg-background px-5 lg:px-0">
       <HomeHero />
       <EcosystemSection />
       <AnimatedSection

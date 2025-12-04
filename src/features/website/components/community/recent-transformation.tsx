@@ -50,7 +50,7 @@ export const RecentTransformation = () => {
   return (
     <div className="px-4 mt-10 py-20">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-2xl font-bold mb-6">Recent Transformations</h2>
+        <h2 className="text-2xl font-bold mb-6 dark:text-brand-text-dark-heading">Recent Transformations</h2>
 
         <div className="grid grid-cols-1 gap-6">
           {data.map((item, index) => (

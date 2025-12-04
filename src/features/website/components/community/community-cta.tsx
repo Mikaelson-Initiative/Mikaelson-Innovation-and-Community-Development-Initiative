@@ -22,7 +22,7 @@ type CTAProps = {
 const CommunityCTA: React.FC<CTAProps> = ({
   title = "Ready to Join Our Community?",
   description = "Start tracking your habits, connect with others, and transform your daily routine into lasting positive change. Join thousands of members already on their journey.",
-  primaryAction = { label: "Start Your Journey", href: "/sign-up" },
+  primaryAction = { label: "Join Waitlist", href: "/waitlist" },
   secondaryAction = { label: "Learn More", href: "/about-us" },
   testimonial = {
     quote:
@@ -31,7 +31,7 @@ const CommunityCTA: React.FC<CTAProps> = ({
   },
 }) => {
   return (
-    <section className="bg-gradient-to-br from-[#f8fafc] to-[#f1f5f9] py-16">
+    <section className="bg-gradient-to-br dark:bg-card dark:from-card dark:to-card from-[#f8fafc] to-[#f1f5f9] py-16">
       <div className="max-w-4xl mx-auto px-6 text-center">
         {/* Icon */}
         <div className="flex items-center justify-center w-20 h-20 rounded-full mb-4 mx-auto bg-gradient-to-br from-blue-600 to-teal-400">
@@ -39,8 +39,8 @@ const CommunityCTA: React.FC<CTAProps> = ({
         </div>
 
         {/* Heading */}
-        <h2 className="text-3xl font-extrabold mb-4">{title}</h2>
-        <p className="text-lg mb-8">{description}</p>
+        <h2 className="text-3xl font-extrabold mb-4 dark:text-brand-text-dark-heading">{title}</h2>
+        <p className="text-lg mb-8 dark:text-brand-text-dark">{description}</p>
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-10">

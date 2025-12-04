@@ -23,7 +23,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="py-16 bg-white testimonials">
+    <section className="py-16 bg-white testimonials dark:bg-card">
       <div className="container mx-auto px-6">
         <ProductHeader title="What Our Users say" />
         <div className="grid gap-8 md:grid-cols-3 testimonials-grid">

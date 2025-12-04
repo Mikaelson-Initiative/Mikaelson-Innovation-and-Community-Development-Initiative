@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
+import { QueriesObserver } from "@tanstack/react-query";
+import { ThemeProvider } from "@/components/theme-provider";
+import QueryProvider from "@/components/QueryProvider";
+import { Toaster } from "sonner";
+import Script from "next/script";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -74,18 +80,59 @@ export const metadata: Metadata = {
   category: "Technology & Community Development",
 };
 
+const clerkPubKey = "pk_test_ZGl2aW5lLWRvcnktMzMuY2xlcmsuYWNjb3VudHMuZGV2JA";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${poppins.variable} antialiased bg-white text-gray-900`}
-      >
-        <main id="main-content">{children}</main>
-      </body>
-    </html>
+    <ClerkProvider publishableKey={clerkPubKey}>
+      <QueryProvider>
+        <html lang="en">
+          <head>
+            {/* Google Tag Manager */}
+            <Script
+              id="gtm-script"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                  })(window,document,'script','dataLayer','GTM-M2GCJCC8');
+                `,
+              }}
+            />
+          </head>
+          <body
+            className={`${poppins.variable} antialiased bg-white text-gray-900`}
+          >
+            <Toaster />
+            <noscript>
+              <iframe
+                src="https://www.googletagmanager.com/ns.html?id=GTM-M2GCJCC8"
+                height={0}
+                width={0}
+                style={{ display: "none", visibility: "hidden" }}
+              />
+            </noscript>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <main id="main-content">
+                {children}
+                <Toaster position="top-center" richColors />
+              </main>
+            </ThemeProvider>
+          </body>
+        </html>
+      </QueryProvider>
+    </ClerkProvider>
   );
 }

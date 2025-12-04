@@ -35,22 +35,22 @@ const TeamSection: React.FC = () => {
     <div>
       {/* Header Section */}
       <motion.section
-        className="mt-12 bg-gray-50 px-4 py-16 text-center md:mt-16"
+        className="mt-12 bg-gray-50 dark:bg-brand-dark-bg-nav px-4 py-16 text-center md:mt-16"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="mb-6 text-3xl font-bold text-gray-900 sm:text-4xl md:mb-8 md:text-5xl">
+        <h2 className="mb-6 text-3xl font-bold dark:text-brand-text-dark-heading text-gray-900 sm:text-4xl md:mb-8 md:text-5xl">
           Our Team of Impact
         </h2>
-        <h3 className="mx-auto max-w-3xl text-base font-medium text-gray-500 sm:text-lg md:text-xl">
+        <h3 className="mx-auto max-w-3xl dark:text-brand-text-dark text-base font-medium text-gray-500 sm:text-lg md:text-xl">
           Shaping the future of Africa with community backed by sustainable
           technology
         </h3>
       </motion.section>
       {/* Filter Section */}
-      <section className="bg-white px-4 py-8">
+      <section className="bg-white px-4 py-8 dark:bg-brand-dark-bg-nav">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4">
           <motion.div
             className="flex flex-wrap gap-3"
@@ -84,14 +84,14 @@ const TeamSection: React.FC = () => {
               aria-label="Search team members"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full rounded-lg border-2 border-gray-700 p-2 text-sm outline-none focus:border-cyan-400 sm:w-72"
+              className="w-full dark:text-white dark:placeholder:text-white rounded-lg border-2 border-gray-700 p-2 text-sm outline-none focus:border-cyan-400 sm:w-72"
             />
           </motion.div>
         </div>
       </section>
 
       {/* Team Members */}
-      <section className="bg-white px-4 py-12">
+      <section className="bg-white px-4 py-12 dark:bg-brand-dark-bg-nav">
         <div className="mx-auto max-w-7xl">
           <motion.div
             className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
@@ -141,8 +141,8 @@ const TeamSection: React.FC = () => {
                 {selectedMember && (
                   <DialogContent className="max-w-md">
                     <DialogHeader className="sr-only">
-                      <DialogTitle>What you need to know</DialogTitle>
-                      <DialogDescription>
+                      <DialogTitle className="dark:text-brand-text-dark-heading">What you need to know</DialogTitle>
+                      <DialogDescription className="dark:text-brand-text-dark">
                         Get know {selectedMember.name}
                       </DialogDescription>
                     </DialogHeader>
@@ -158,10 +158,10 @@ const TeamSection: React.FC = () => {
                       </div>
 
                       <div className="text-black text-center mt-4">
-                        <h3 className="font-semibold text-2xl">
+                        <h3 className="font-semibold text-2xl dark:text-brand-text-dark-heading">
                           {selectedMember.name}
                         </h3>
-                        <p className="text-lg">{selectedMember.role}</p>
+                        <p className="text-lg dark:text-brand-text-dark">{selectedMember.role}</p>
                       </div>
 
                       <div className="bg-[#f8fafc] p-5 space-y-3 mt-4 rounded-lg">

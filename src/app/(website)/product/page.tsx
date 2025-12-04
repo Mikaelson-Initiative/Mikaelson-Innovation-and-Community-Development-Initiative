@@ -7,7 +7,7 @@ import Testimonials from "@/features/website/components/product/testimonials";
 
 const ProductPage = () => {
   return (
-    <div>
+    <div className="dark:bg-brand-dark-bg-nav">
       <ProductHero />
       <CoreFeatures />
       <HubSolutions />

@@ -1,6 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { PlusIcon } from "lucide-react";
-import React from "react";
+import React, { useEffect } from "react";
+import { User } from "../../../../../../types";
+import { useAuth, useUser } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
+import axios from "axios";
+import { BACKEND_URL } from "../../../../../../constants";
 
 const stats = [
   { title: "Day Streak", value: 7 },
@@ -8,18 +13,42 @@ const stats = [
   { title: "Points", value: 1024 },
 ];
 
-export const UserHeader = () => {
+export const UserHeader = ({ user }: { user: User }) => {
+  const { signOut, isSignedIn, userId } = useAuth();
+  const { user: users, isLoaded } = useUser();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!isSignedIn) {
+      router.push("/login");
+    }
+  }, [isSignedIn]);
+
+  const handleSignOut = async () => {
+    await signOut();
+
+    localStorage.clear();
+    sessionStorage.clear();
+    router.push("/login");
+  };
+  
+
   return (
     <div className="space-y-5">
       <div className="border-b space-y-4 pb-4">
         <div className="flex items-center gap-4">
-          <div className="h-10 w-10 flex items-center justify-center font-bold text-white rounded-full bg-blue-600">
-            U
+          <div
+            className="h-10 w-10 flex items-center justify-center font-bold text-white rounded-full bg-blue-600"
+            onClick={handleSignOut}
+          >
+            {user?.username?.[0]}
           </div>
 
           <div>
-            <h1 className="font-semibold text-lg">User</h1>
-            <p className="text-xs text-gray-500">10 posts • 200 followers</p>
+            <h1 className="font-semibold text-lg">{user?.username}</h1>
+            <p className="text-xs text-gray-500">
+              {user?.Post?.length} posts • {user?.Follower?.length} followers
+            </p>
           </div>
         </div>
 

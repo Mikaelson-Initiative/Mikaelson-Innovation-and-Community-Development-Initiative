@@ -47,10 +47,10 @@ const InfoCard: React.FC<InfoCardProps> = ({
 );
 
 export const AboutHeader: React.FC = () => (
-  <header className="bg-brand-gray py-10 mt-3">
+  <header className="bg-brand-gray py-10 mt-3 dark:bg-brand-dark-bg-nav">
     <div className="mx-auto max-w-6xl text-center px-5 pt-9 md:pt-13">
       <motion.h1
-        className="mb-4 text-4xl font-extrabold md:text-5xl"
+        className="mb-4 text-4xl font-extrabold md:text-5xl dark:text-brand-text-dark-heading"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -59,7 +59,7 @@ export const AboutHeader: React.FC = () => (
         Mikaelson Community Development and Tech Initiative
       </motion.h1>
       <motion.p
-        className="mb-12 text-lg text-gray-600 md:text-xl"
+        className="mb-12 text-lg text-gray-600 md:text-xl dark:text-brand-text-dark"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

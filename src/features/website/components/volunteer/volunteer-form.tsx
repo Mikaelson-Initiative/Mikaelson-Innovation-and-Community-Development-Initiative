@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "motion/react";
 
 const VolunteerForm: React.FC = () => (
-  <section className="application-form px-4 py-16" id="start">
+  <section className="application-form px-4 py-16 dark:bg-brand-dark-bg-nav" id="start">
     <div className="container mx-auto max-w-3xl">
       <motion.div
         className="form-header text-center"
@@ -12,10 +12,10 @@ const VolunteerForm: React.FC = () => (
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="mb-2 text-3xl font-extrabold text-gray-900 md:text-4xl">
+        <h2 className="mb-2 text-3xl font-extrabold text-gray-900 dark:text-brand-text-dark-heading md:text-4xl">
           Apply to Volunteer
         </h2>
-        <p className="text-gray-600 md:text-lg">
+        <p className="text-gray-600 md:text-lg dark:text-brand-text-dark">
           Tell us about yourself and how you&apos;d like to contribute
         </p>
       </motion.div>

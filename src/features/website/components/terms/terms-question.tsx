@@ -3,8 +3,8 @@ import React from 'react'
 export const TermsQuestion = () => {
   return (
     <div className="mx-auto mt-16 max-w-6xl px-6 text-center">
-      <h2 className="text-3xl font-bold text-gray-800">Questions?</h2>
-      <p className="mt-2 text-lg text-gray-600">
+      <h2 className="text-3xl font-bold text-gray-800 dark:text-brand-text-dark-heading">Questions?</h2>
+      <p className="mt-2 text-lg text-gray-600 dark:text-brand-text-dark">
         Need clarification on any of these terms?
       </p>
       <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-3">

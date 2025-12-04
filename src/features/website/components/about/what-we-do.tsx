@@ -27,7 +27,7 @@ const Card: React.FC<CardProps> = ({ title, accent, children }) => (
 export const WhatWeDo: React.FC = () => (
   <section className="what-we-do mb-16 px-4">
     <motion.h2
-      className="mb-10 text-center text-3xl font-extrabold text-gray-900 md:text-[40px]"
+      className="mb-10 text-center text-3xl font-extrabold dark:text-brand-text-dark-heading text-gray-900 md:text-[40px]"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}

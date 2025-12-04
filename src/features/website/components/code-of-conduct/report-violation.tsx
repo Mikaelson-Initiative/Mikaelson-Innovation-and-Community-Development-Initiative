@@ -27,8 +27,8 @@ const reportOptions = [
 export default function ReportViolationSection() {
   return (
     <div className="mx-auto mt-16 max-w-6xl px-6 text-center">
-      <h2 className="text-3xl font-bold text-gray-800">Report a Violation</h2>
-      <p className="mt-2 text-lg text-gray-600">
+      <h2 className="text-3xl font-bold text-gray-800 dark:text-brand-text-dark-heading">Report a Violation</h2>
+      <p className="mt-2 text-lg text-gray-600 dark:text-brand-text-dark">
         Experienced or witnessed inappropriate behavior?
       </p>
 

@@ -6,20 +6,20 @@ import { useState } from "react";
 export const HubSolutions = () => {
     const [search, setSearch] = useState("");
   return (
-    <div className="bg-white py-12 px-10 ">
+    <div className="bg-white py-12 px-10 dark:bg-brand-dark-bg-nav">
       <div className="container mx-auto max-w-7xl space-y-8">
         <div className="flex justify-between flex-col md:flex-row gap-5 items-center">
-          <h1 className="text-3xl font-bold lg:text-[64px]">
+          <h1 className="text-3xl font-bold lg:text-[64px] dark:text-brand-text-dark-heading">
             RIO Hub Solutions
           </h1>
           <Input
             placeholder="Search ecosystems..."
-            className="max-w-sm input-search"
+            className="max-w-sm input-search dark:text-white"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
         </div>
-        <div className="space-y-5 text-gray-700 lg:text-[18px] leading-relaxed text-center text-pretty">
+        <div className="space-y-5 text-gray-700 dark:text-brand-text-dark lg:text-[18px] leading-relaxed text-center text-pretty">
           <p>
             RIO Hub is an intelligent productivity platform designed to
             transform how communities track progress, build habits, and achieve

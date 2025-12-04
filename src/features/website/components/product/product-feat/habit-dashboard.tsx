@@ -15,7 +15,7 @@ export const HabitDashboard = () => {
 
       <CardContent className="space-y-2 text-center">
         <CardTitle className="text-xl lg:text-2xl">Habit Dashboard</CardTitle>
-        <p className="text-gray-600">
+        <p className="text-gray-600 dark:text-brand-text-dark">
           Create new habits and monitor progress in real-time. Track your
           productivity journey with intuitive visualizations.
         </p>

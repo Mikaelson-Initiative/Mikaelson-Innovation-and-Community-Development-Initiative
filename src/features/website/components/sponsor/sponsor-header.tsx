@@ -33,15 +33,14 @@ export const SponsorHeader: React.FC = () => {
       }}
     >
       <h1
-        className="text-2xl md:text-[3rem]"
-        style={{ fontWeight: 800, color: "rgb(17,17,17)" }}
+        className="text-2xl md:text-[3rem] text-black dark:text-brand-text-dark-heading"
+        style={{ fontWeight: 800 }}
       >
         Sponsor and Support Our Initiative
       </h1>
       <p
-        className="text-base md:text-[1.2rem] w-full  lg:max-w-[800px]"
+        className="text-base md:text-[1.2rem] w-full  lg:max-w-[800px] dark:text-brand-text-dark-heading text-gray-700"
         style={{
-          color: "rgb(85,85,85)",
           margin: "1rem auto",
         }}
       >

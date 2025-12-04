@@ -38,23 +38,23 @@ const questions = [
 
 const VolunteerFAQ: React.FC = () => {
   return (
-    <section className="faq-section px-6 py-16">
+    <section className="faq-section px-6 py-16 dark:bg-brand-dark-bg-nav">
       <div className="container mx-auto max-w-3xl">
-        <h2 className="section-title mb-8 text-center text-3xl font-extrabold text-gray-900">
+        <h2 className="section-title mb-8 text-center text-3xl dark:text-brand-text-dark-heading font-extrabold text-gray-900">
           Frequently Asked Questions
         </h2>
         <Accordion
           type="multiple"
           defaultValue={questions.map((_, idx) => `item-${idx}`)}
-          className="divide-y space-y-2 divide-gray-200 bg-white"
+          className="divide-y space-y-2 divide-gray-200 bg-white dark:bg-card"
         >
           {questions.map((item, idx) => (
             <AccordionItem
               key={idx}
               value={`item-${idx}`}
-              className="px-5 py-2"
+              className="px-5 py-2 dark:bg-card"
             >
-              <AccordionTrigger className="text-left text-lg font-medium text-gray-900 flex justify-between">
+              <AccordionTrigger className="text-left text-lg font-medium dark:text-brand-text-dark-heading text-gray-900 flex justify-between">
                 {item.question}
               </AccordionTrigger>
               <AccordionContent>
@@ -62,7 +62,7 @@ const VolunteerFAQ: React.FC = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="text-sm text-gray-600"
+                  className="text-sm text-gray-600 dark:text-brand-text-dark"
                 >
                   {item.answer}
                 </motion.div>

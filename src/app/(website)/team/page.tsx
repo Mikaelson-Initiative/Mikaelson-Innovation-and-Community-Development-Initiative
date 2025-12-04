@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 
 const TeamPage = () => {
   return (
-    <div className="px-5">
+    <div className="px-5 dark:bg-brand-dark-bg-nav">
       <TeamHeroSection />
       <TeamSection />
       <JoinTeam />

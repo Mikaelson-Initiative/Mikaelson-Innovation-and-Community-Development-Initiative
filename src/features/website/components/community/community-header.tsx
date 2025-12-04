@@ -16,12 +16,12 @@ export const CommunityHeader = ({ label, subtitle, title }: Props) => {
       )}
 
       {/* Title */}
-      <h2 className="text-3xl md:text-5xl font-extrabold text-center">
+      <h2 className="text-3xl md:text-5xl dark:text-brand-text-dark-heading font-extrabold text-center">
         {title}
       </h2>
 
       {/* Subtitle */}
-      <p className="mt-4 text-center w-full text-gray-600 text-lg max-w-md">
+      <p className="mt-4 text-center w-full dark:text-brand-text-dark text-gray-600 text-lg max-w-md">
         {subtitle}
       </p>
     </div>

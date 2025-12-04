@@ -1,7 +1,23 @@
-import VerifyEmail from "@/features/website/components/auth/verify-email";
+"use client";
 
-const Verificationpage = () => {
-  return <VerifyEmail email="chukw@gmail.com" />;
+import { Suspense } from "react";
+import VerifyEmail from "@/features/website/components/auth/verify-email";
+import { useSearchParams } from "next/navigation";
+
+const VerificationPage = () => {
+  return (
+    <Suspense fallback={<p>Loading...</p>}>
+      <InnerVerification />
+    </Suspense>
+  );
 };
 
-export default Verificationpage;
+const InnerVerification = () => {
+  const searchParams = useSearchParams();
+  const email = searchParams.get("email");
+  const username = searchParams.get("fullName");
+
+  return <VerifyEmail email={email!} username={username!} />;
+};
+
+export default VerificationPage;

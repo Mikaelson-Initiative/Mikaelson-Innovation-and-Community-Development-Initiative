@@ -505,7 +505,7 @@ const codeOfConductItems = [
 
 export default function CodeOfConductContent() {
   return (
-    <section className="bg-gray-50 py-16">
+    <section className="bg-gray-50 py-16 dark:bg-brand-dark-bg-nav">
       <div className="mx-auto max-w-6xl space-y-6 px-6">
         <Accordion
           type="multiple"

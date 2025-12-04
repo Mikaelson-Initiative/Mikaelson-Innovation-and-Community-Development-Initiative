@@ -50,14 +50,14 @@ const LabsWhatWeDo: React.FC = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50 dark:bg-card">
       <div className="container mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
+          <h2 className="text-3xl lg:text-4xl dark:text-brand-text-dark-heading font-extrabold text-gray-900 mb-4">
             What We Do
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-gray-600 dark:text-brand-text-dark">
             Our labs focus on creating technology solutions that directly
             address the unique challenges and opportunities within African
             communities.

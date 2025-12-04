@@ -17,7 +17,7 @@ export const OurStory: React.FC = () => (
       }}
     >
       <motion.h2
-        className="mb-4 text-3xl text-center font-extrabold text-gray-900 md:text-4xl"
+        className="mb-4 text-3xl text-center dark:text-brand-text-dark-heading font-extrabold text-gray-900 md:text-4xl"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -26,7 +26,7 @@ export const OurStory: React.FC = () => (
       </motion.h2>
 
       <motion.p
-        className="mb-4 text-gray-700 md:text-lg"
+        className="mb-4 text-gray-700 md:text-lg dark:text-brand-text-dark"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
@@ -41,26 +41,26 @@ export const OurStory: React.FC = () => (
       </motion.p>
 
       <motion.p
-        className="mb-4 text-gray-700 md:text-lg"
+        className="mb-4 text-gray-700 md:text-lg dark:text-brand-text-dark"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
       >
-        Recognizing that he wasn&apos;t alone in this struggle, Oluwasegun realized
-        that countless other African students were facing the same challenges -
-        brilliant minds being held back by lack of structure, focus, and
-        intentional personal development. This realization sparked a mission to
-        create something bigger than himself.
+        Recognizing that he wasn&apos;t alone in this struggle, Oluwasegun
+        realized that countless other African students were facing the same
+        challenges - brilliant minds being held back by lack of structure,
+        focus, and intentional personal development. This realization sparked a
+        mission to create something bigger than himself.
       </motion.p>
 
       <motion.p
-        className="text-gray-700 md:text-lg"
+        className="text-gray-700 md:text-lg dark:text-brand-text-dark"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.6 }}
       >
-        What began as one person&apos;s journey to overcome procrastination and build
-        a focused, structured life has evolved into a movement reaching
+        What began as one person&apos;s journey to overcome procrastination and
+        build a focused, structured life has evolved into a movement reaching
         thousands of students across multiple universities. Today, the Mikaelson
         Initiative represents hope, possibility, and action - transforming not
         just individuals, but building a better Africa, one student at a time.

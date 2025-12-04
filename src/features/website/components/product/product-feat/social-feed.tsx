@@ -14,7 +14,7 @@ export const SocialFeed = () => {
 
       <CardContent className="space-y-2 text-center">
         <CardTitle className="text-xl lg:text-2xl">Social Feed</CardTitle>
-        <p className="text-gray-600">
+        <p className="text-gray-600 dark:text-brand-text-dark">
           Tweet updates and watch videos simultaneously. Engage with your
           community while staying productive.
         </p>

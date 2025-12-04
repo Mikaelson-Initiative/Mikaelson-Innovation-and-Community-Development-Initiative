@@ -27,7 +27,7 @@ export const ProductModal = ({ product, open, onClose }: Props) => {
         <DialogHeader>
           <DialogTitle className="flex items-center justify-center flex-col gap-3 text-2xl font-bold">
             <span className="text-3xl lg:text-8xl">{product.icon}</span>
-            <span className="">{product.title}</span>
+            <span className="dark:text-brand-text-dark-heading">{product.title}</span>
 
             <p className="bg-gray-50 py-1 px-3 text-brand-primary rounded-full text-sm text-center w-max">
               {product.category}
@@ -38,8 +38,8 @@ export const ProductModal = ({ product, open, onClose }: Props) => {
         {/* Scrollable Section */}
         <ScrollArea className="h-[300px] pr-3 mt-4 space-y-4">
           <div className="text-center mb-10">
-            <p className="font-bold text-2xl mb-3">How RIO Hub Solves This</p>
-            <p className="text-muted-foreground">{product.description}</p>
+            <p className="font-bold text-2xl mb-3 dark:text-brand-text-dark">How RIO Hub Solves This</p>
+            <p className="text-muted-foreground dark:text-brand-text-dark">{product.description}</p>
           </div>
 
           <div>
@@ -53,21 +53,21 @@ export const ProductModal = ({ product, open, onClose }: Props) => {
                   <div className="h-4 w-4 bg-brand-primary rounded-full text-white flex-center">
                     <Check className="size-3" strokeWidth={3} />
                   </div>
-                  <span>{item}</span>
+                  <span className="dark:text-brand-text-dark-heading">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="bg-[#edf7fe] p-5 text-center rounded-2xl border-l-4 border-l-brand-primary my-10">
-            <h3 className="font-semibold mb-5">The Solution</h3>
-            <p className="text-gray-600 leading-relaxed text-pretty">
+          <div className="bg-[#edf7fe] dark:bg-card p-5 text-center rounded-2xl border-l-4 border-l-brand-primary my-10">
+            <h3 className="font-semibold mb-5 dark:text-brand-text-dark-heading">The Solution</h3>
+            <p className="text-gray-600 leading-relaxed text-pretty dark:text-brand-text-dark">
               {product.longDesc}
             </p>
           </div>
           <div className="flex-center">
             <Button asChild className="btn btn-primary text-black">
-              <Link href="/sign-up">Get Started</Link>
+              <Link href="/waitlist">Join waitlist</Link>
             </Button>
           </div>
         </ScrollArea>

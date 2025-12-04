@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "motion/react";
 
 export const AboutOrganization: React.FC = () => (
-  <section className="about-organization mt-16 bg-gray-50 py-12 text-center">
+  <section className="about-organization mt-16 bg-gray-50 dark:bg-card py-12 text-center">
     <motion.div
       className="mx-auto max-w-4xl rounded-2xl border border-black/10 bg-white/80 p-10 text-left shadow"
       initial={{ opacity: 0, y: 50 }}

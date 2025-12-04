@@ -57,7 +57,7 @@ export function WellnessProgressCard({
             <Flame className="size-10" />
           </div>
           <div className="flex-1">
-            <h1 className="text-xl mb-5 md:text-2xl text-[#2c3e50] text-center lg:text-[28.8px] font-bold tracking-wide">
+            <h1 className="text-xl mb-5 md:text-2xl dark:text-brand-text-dark-heading text-[#2c3e50] text-center lg:text-[28.8px] font-bold tracking-wide">
               {title}
             </h1>
             <p className="text-sm md:text-base text-center text-muted-foreground">
@@ -131,7 +131,7 @@ export function CircularProgress({
       }}
     >
       <div
-        className="bg-white rounded-full flex justify-center items-center text-sm font-semibold"
+        className="bg-white rounded-full dark:text-black flex justify-center items-center text-sm font-semibold"
         style={{ width: innerSize, height: innerSize }}
       >
         {percent}%

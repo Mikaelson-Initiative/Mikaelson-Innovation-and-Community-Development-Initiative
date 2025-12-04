@@ -30,10 +30,10 @@ const benefits = [
 ];
 
 const WhyVolunteer: React.FC = () => (
-  <section className="why-volunteer px-4 py-16">
+  <section className="why-volunteer px-4 py-16 dark:bg-brand-dark-bg-nav">
     <div className="container mx-auto max-w-6xl">
       <motion.h2
-        className="section-title mb-8 text-center text-3xl font-extrabold text-gray-900 md:text-4xl"
+        className="section-title mb-8 text-center dark:text-brand-text-dark-heading text-3xl font-extrabold text-gray-900 md:text-4xl"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -55,15 +55,15 @@ const WhyVolunteer: React.FC = () => (
         {benefits.map((b) => (
           <motion.div
             key={b.title}
-            className="benefit-card rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-sm"
+            className="benefit-card rounded-2xl border dark:bg-card border-gray-200 bg-white p-6 text-center shadow-sm"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
             <div className="benefit-icon mb-2 text-4xl">{b.icon}</div>
-            <h3 className="mb-2 text-lg font-semibold md:text-xl">{b.title}</h3>
-            <p className="text-sm text-gray-600 md:text-base">
+            <h3 className="mb-2 text-lg font-semibold md:text-xl dark:text-brand-text-dark-heading">{b.title}</h3>
+            <p className="text-sm text-gray-600 md:text-base dark:text-brand-text-dark">
               {b.description}
             </p>
           </motion.div>

@@ -27,10 +27,10 @@ const LabsHeroSection: React.FC = () => {
               <span className="inline-block bg-indigo-100 text-indigo-600 px-4 py-1 rounded-full text-sm font-semibold tracking-wide">
                 INNOVATION LABS
               </span>
-              <h1 className="text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
+              <h1 className="text-4xl lg:text-5xl font-extrabold dark:text-brand-text-dark-heading text-gray-900 leading-tight">
                 Building Tomorrow&apos;s Solutions Today
               </h1>
-              <p className="text-lg text-gray-600 max-w-xl">
+              <p className="text-lg text-gray-600 max-w-xl dark:text-brand-text-dark">
                 Our Innovation Labs are where breakthrough ideas meet
                 cutting-edge technology. We develop practical solutions for
                 real-world challenges facing African communities.

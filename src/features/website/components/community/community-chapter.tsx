@@ -121,7 +121,7 @@ const CommunityChapters: React.FC = () => {
   );
 
   return (
-    <section className="py-16 bg-gradient-to-br from-slate-50 to-slate-100">
+    <section className="py-16 bg-gradient-to-br from-slate-50 to-slate-100 dark:bg-card dark:from-card dark:to-card">
       <div className="max-w-6xl mx-auto px-6 space-y-12">
         <CommunityHeader
           label="Our Global Network"

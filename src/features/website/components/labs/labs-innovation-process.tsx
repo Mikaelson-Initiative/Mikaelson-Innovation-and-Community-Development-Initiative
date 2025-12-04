@@ -35,14 +35,14 @@ const steps: ProcessStep[] = [
 
 const LabsInnovationProcess: React.FC = () => {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50 dark:bg-card">
       <div className="container mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
+          <h2 className="text-3xl lg:text-4xl dark:text-brand-text-dark-heading font-extrabold text-gray-900 mb-4">
             Our Innovation Process
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-gray-600 dark:text-brand-text-dark">
             From idea to implementation, we follow a structured approach to
             ensure our solutions create meaningful impact.
           </p>

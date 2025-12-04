@@ -37,7 +37,7 @@ export const SponsorshipOptions: React.FC = () => {
   return (
     <section className="sponsorship-options" style={{ padding: "4rem 1rem" }}>
       <div style={{ width: "90%", maxWidth: 1200, margin: "0 auto" }}>
-        <h2 className="text-2xl md:text-[3rem] font-bold mb-6 lg:mb-8 text-center">
+        <h2 className="text-2xl md:text-[3rem] font-bold mb-6 lg:mb-8 text-center dark:text-brand-text-dark-heading">
           Ways to Give
         </h2>
         <div
