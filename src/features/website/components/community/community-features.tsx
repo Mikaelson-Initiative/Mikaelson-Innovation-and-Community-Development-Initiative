@@ -56,8 +56,12 @@ const FeaturesOverview: React.FC = () => {
               <div className="flex items-center justify-center w-12 h-12 rounded-full mb-4 mx-auto bg-gradient-to-br from-blue-600 to-teal-400">
                 {feature.icon}
               </div>
-              <h3 className="text-2xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-gray-600 text-base">{feature.description}</p>
+              <h3 className="text-2xl font-semibold mb-2 dark:text-black">
+                {feature.title}
+              </h3>
+              <p className="text-gray-600 text-base dark:text-brand-text-dark">
+                {feature.description}
+              </p>
             </div>
           ))}
         </div>

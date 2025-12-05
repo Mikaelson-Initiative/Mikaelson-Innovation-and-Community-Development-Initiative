@@ -109,7 +109,7 @@
   --brand-secondary: #adf0f2;
   --brand-text-dark: #b1b1b1;
   --brand-text-dark-heading: #e5e5e5;
-  --brand-dark-bg-nav: #0f0f0f;
+  --brand-dark-bg-nav: rgba(117, 117, 117, 0.1);
 }
 
 html {

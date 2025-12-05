@@ -2,7 +2,6 @@ import { footerLinks } from "@/constants";
 import { Mail, MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import ReportsDropdown from "./annual-report";
 import { XformerlyTwitter } from "./icons/Twitter";
 import { Instagram } from "./icons/Instagram";
@@ -133,7 +132,7 @@ export const Footer = () => {
                           <Image
                             src={"/assets/images/instagram-icon.svg"}
                             width={30}
-                            height={20}
+                            height={30}
                             alt="instagram"
                           />
                         ) : (

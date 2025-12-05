@@ -168,7 +168,7 @@ const CommunityChapters: React.FC = () => {
                     : "bg-white hover:bg-blue-50"
                 }`}
               >
-                <h4 className="font-semibold">{group.name}</h4>
+                <h4 className="font-semibold dark:text-black">{group.name}</h4>
               </button>
             ))}
           </div>
@@ -193,9 +193,9 @@ const CommunityChapters: React.FC = () => {
                         href={`/community`}
                         className="flex items-start flex-col md:flex-row md:items-center space-x-2 p-2 hover:bg-gray-100 rounded"
                       >
-                        <span className="font-medium">{chapter.name}</span>
+                        <span className="font-medium dark:text-black">{chapter.name}</span>
                         <span className="text-gray-500 text-sm flex gap-1">
-                          <span className="hidden md:flex flex-row">•</span><span>{chapter.location}</span>
+                          <span className="hidden md:flex flex-row">•</span><span className="dark:text-brand-text-dark">{chapter.location}</span>
                         </span>
                       </Link>
                     </li>

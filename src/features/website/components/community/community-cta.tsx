@@ -59,7 +59,7 @@ const CommunityCTA: React.FC<CTAProps> = ({
         </div>
 
         {/* Testimonial */}
-        <div className="bg-white rounded-xl p-6 italic shadow-lg max-w-2xl mx-auto">
+        <div className="bg-white rounded-xl p-6 italic shadow-lg max-w-2xl mx-auto dark:text-black/70">
           <p className="mb-2">{testimonial.quote}</p>
           <cite className="not-italic font-semibold">{testimonial.author}</cite>
         </div>

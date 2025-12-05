@@ -67,7 +67,7 @@ export const RecentTransformation = () => {
               <div className="flex-1">
                 <div className="flex justify-between items-center">
                   <div className="flex gap-2 items-center">
-                    <h3 className="text-sm md:text-lg font-semibold">{item.name}</h3>
+                    <h3 className="text-sm md:text-lg font-semibold dark:text-black/70">{item.name}</h3>
                     <ReactCountryFlag
                       countryCode={item.countryCode}
                       svg
@@ -94,9 +94,9 @@ export const RecentTransformation = () => {
                   {item.tags.map((tag, i) => (
                     <span
                       key={i}
-                      className="px-3 py-1.5 bg-[#f8f9fa]  text-xs rounded-full"
+                      className="px-3 py-1.5 bg-[#f8f9fa]  text-xs rounded-full dark:text-black/40"
                     >
-                      {tag}
+                      #{tag}
                     </span>
                   ))}
                 </div>

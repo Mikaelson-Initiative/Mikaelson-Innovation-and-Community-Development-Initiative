@@ -54,7 +54,7 @@ export const CommunityStats = () => {
       {/* Community Growth Stats */}
       <div className="space-y-4 bg-white rounded-md p-10">
         <div className="text-center space-y-1">
-          <h3 className="text-3xl font-extrabold">Community Growth</h3>
+          <h3 className="text-3xl font-extrabold dark:text-black">Community Growth</h3>
           <p className="text-gray-700">
             Our chapters are growing stronger every day
           </p>
@@ -62,21 +62,21 @@ export const CommunityStats = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
           <div className="bg-white rounded-lg bg-gradient-to-br from-slate-50 to-slate-100 p-15">
             <TrendingUp className="w-8 h-8 mx-auto text-blue-600 mb-2" />
-            <span className="block text-lg font-bold">
-              +{Math.floor(totalCommunityMembers * 0.08)}
+            <span className="block text-lg font-bold dark:text-black">
+              +{Math.floor(totalCommunityMembers)}
             </span>
-            <span className="text-gray-600 block">New Members This Month</span>
+            <span className="text-gray-600 block dark:text-brand-text-dark">New Members This Month</span>
           </div>
           <div className="bg-white rounded-lg bg-gradient-to-br from-slate-50 to-slate-100 p-15">
             <Globe className="w-8 h-8 mx-auto text-green-600 mb-2" />
-            <span className="block text-lg font-bold">
+            <span className="block text-lg font-bold dark:text-black">
               {communityChapters.length}
             </span>
             <span className="text-gray-600 block">Active Chapters</span>
           </div>
           <div className="bg-white rounded-lg bg-gradient-to-br from-slate-50 to-slate-100 p-15">
             <Book className="w-8 h-8 mx-auto text-red-600 mb-2" />
-            <span className="block text-lg font-bold">
+            <span className="block text-lg font-bold dark:text-black">
               {Math.round(
                 communityChapters.reduce((sum, c) => sum + c.totalPoints, 0) /
                   1000

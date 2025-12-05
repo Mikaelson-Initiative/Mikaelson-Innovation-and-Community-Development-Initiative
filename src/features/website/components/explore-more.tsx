@@ -49,7 +49,7 @@ export const ExploreMore: React.FC = () => {
   return (
     <section className=" py-16" data-aos="fade-up">
       <div className="container mx-auto max-w-[1200px]">
-        <h2 className="section-title text-center">
+        <h2 className="section-title text-center dark:text-white">
           Explore More
         </h2>
 

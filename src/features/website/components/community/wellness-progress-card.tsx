@@ -92,7 +92,7 @@ export function WellnessProgressCard({
                   <s.icon />
                 </div>
                 <div className="">
-                  <p className="mt-1 text-lg md:text-2xl font-bold">
+                  <p className="mt-1 text-lg md:text-2xl font-bold dark:text-black">
                     {s.value}
                   </p>
                   <p className="text-xs text-muted-foreground font-semibold">

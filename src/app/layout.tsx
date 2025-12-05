@@ -80,7 +80,7 @@ export const metadata: Metadata = {
   category: "Technology & Community Development",
 };
 
-const clerkPubKey = "pk_test_ZGl2aW5lLWRvcnktMzMuY2xlcmsuYWNjb3VudHMuZGV2JA";
+const clerkPubKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY!;
 
 export default function RootLayout({
   children,
@@ -90,7 +90,7 @@ export default function RootLayout({
   return (
     <ClerkProvider publishableKey={clerkPubKey}>
       <QueryProvider>
-        <html lang="en">
+        <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
           <head>
             {/* Google Tag Manager */}
             <Script
@@ -108,7 +108,7 @@ export default function RootLayout({
             />
           </head>
           <body
-            className={`${poppins.variable} antialiased bg-white text-gray-900`}
+            className={`${poppins.variable} antialiased`}
           >
             <Toaster />
             <noscript>

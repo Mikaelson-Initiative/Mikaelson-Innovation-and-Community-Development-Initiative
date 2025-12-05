@@ -57,7 +57,7 @@ const CommunityHeroSection: React.FC = () => {
             >
               <Users className="w-8 h-8 text-purple-600" />
               <div>
-                <span className="block text-xl font-bold">
+                <span className="block text-xl font-bold dark:text-black">
                   {formatNumber(liveStats.activeMembers)}+
                 </span>
                 <span className="text-sm text-gray-500">Active Members</span>
@@ -73,7 +73,7 @@ const CommunityHeroSection: React.FC = () => {
             >
               <Flame className="w-8 h-8 text-orange-500" />
               <div>
-                <span className="block text-xl font-bold">
+                <span className="block text-xl font-bold dark:text-black">
                   {formatNumber(liveStats.totalStreaks)}+
                 </span>
                 <span className="text-sm text-gray-500">Daily Streaks</span>
@@ -89,7 +89,7 @@ const CommunityHeroSection: React.FC = () => {
             >
               <User className="w-8 h-8 text-green-600" />
               <div>
-                <span className="block text-xl font-bold">
+                <span className="block text-xl font-bold dark:text-black">
                   {liveStats.countriesReached}+
                 </span>
                 <span className="text-sm text-gray-500">Countries</span>
@@ -99,7 +99,7 @@ const CommunityHeroSection: React.FC = () => {
 
           {/* Buttons */}
           <motion.div
-            className="flex flex-col md:flex-row gap-4 pt-4 justify-center md:justify-start"
+            className="flex flex-row flex-wrap gap-4 pt-4 justify-center md:justify-start"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
