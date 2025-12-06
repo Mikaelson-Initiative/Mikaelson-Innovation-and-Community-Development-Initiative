@@ -20,7 +20,7 @@ export const AdminNavbar = () => {
           height={100}
           className="h-10 w-10 rounded-sm"
         />
-        <span className="text-xl font-semibold">Admin</span>
+        <span className="text-xl font-semibold dark:text-black">Admin</span>
       </div>
 
       {/* Right */}

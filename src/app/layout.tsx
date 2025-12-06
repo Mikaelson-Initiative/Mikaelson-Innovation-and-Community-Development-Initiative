@@ -80,7 +80,7 @@ export const metadata: Metadata = {
   category: "Technology & Community Development",
 };
 
-const clerkPubKey = "pk_test_ZGl2aW5lLWRvcnktMzMuY2xlcmsuYWNjb3VudHMuZGV2JA";
+const clerkPubKey = "pk_test_ZGl2aW5lLWRvcnktMzMuY2xlcmsuYWNjb3VudHMuZGV2JA"
 
 export default function RootLayout({
   children,
