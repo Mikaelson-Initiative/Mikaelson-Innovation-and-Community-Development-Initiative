@@ -6,6 +6,7 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
+import { format } from "date-fns";
 
 import {
   Table,
@@ -35,12 +36,14 @@ export function AdminDataTable({ data }: DataTableProps) {
   async function fetchWaitList(): Promise<any[]> {
     const response = await axios.get(`${BACKEND_URL}/api/v1/waitList`);
     console.log("waitlists:", response.data.data);
+    console.log(response.data.data);
+
     return response.data.data;
   }
   const {
     data: waitlists,
     error,
-    isLoading
+    isLoading,
   } = useQuery({
     queryKey: [`waitlists`],
     queryFn: fetchWaitList,
@@ -56,7 +59,7 @@ export function AdminDataTable({ data }: DataTableProps) {
       <Table>
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow key={headerGroup.id}>
+            <TableRow key={headerGroup.id} className="dark:bg-black/70">
               {headerGroup.headers.map((header) => {
                 return (
                   <TableHead key={header.id}>
@@ -72,26 +75,29 @@ export function AdminDataTable({ data }: DataTableProps) {
             </TableRow>
           ))}
         </TableHeader>
-{waitlists?.length ? (
-  waitlists?.map((item) => (
-    <TableRow
-      key={item.id}
-      //data-state={row.getIsSelected && row.getIsSelected() && "selected"}
-    >
-      <TableCell className="py-5">{item.name}</TableCell>
-      <TableCell className="py-5">{item.email}</TableCell>
-      <TableCell className="py-5">{item.interest || 'N/A'}</TableCell>
-      <TableCell className="py-5">{item?.referral || 'N/A'}</TableCell>
-      {/* Add other columns as needed */}
-    </TableRow>
-  ))
-) : (
-  <TableRow>
-    <TableCell colSpan={columns.length} className="h-24 text-center">
-      No results.
-    </TableCell>
-  </TableRow>
-)}
+        {waitlists?.length ? (
+          waitlists?.map((item) => (
+            <TableRow
+              key={item.id}
+              className="hover:text-white hover:font-semibold"
+              //data-state={row.getIsSelected && row.getIsSelected() && "selected"}
+            >
+              <TableCell className="py-5">{item.name}</TableCell>
+              <TableCell className="py-5">{item.email}</TableCell>
+              <TableCell className="py-5">
+                {format(item.createdAt, "MMM dd, yyyy")}
+              </TableCell>
+              <TableCell className="py-5">{item.interest || "No option selected"}</TableCell>
+              {/* Add other columns as needed */}
+            </TableRow>
+          ))
+        ) : (
+          <TableRow>
+            <TableCell colSpan={columns.length} className="h-24 text-center">
+              No results.
+            </TableCell>
+          </TableRow>
+        )}
       </Table>
     </div>
   );
