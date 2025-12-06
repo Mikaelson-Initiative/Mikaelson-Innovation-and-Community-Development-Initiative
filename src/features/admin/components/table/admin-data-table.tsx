@@ -38,19 +38,19 @@ export function AdminDataTable({ data }: DataTableProps) {
     return response.data.data;
   }
   const {
-    data: challenges,
-    error: challengesPostsError,
-    isLoading: ChallengesPostsloading,
+    data: waitlists,
+    error,
+    isLoading
   } = useQuery({
     queryKey: [`waitlists`],
     queryFn: fetchWaitList,
   });
 
   return (
-    <div className="overflow-hidden rounded-md border max-w-6xl mx-auto p-5 bg-white">
+    <div className="overflow-hidden rounded-md border max-w-6xl mx-auto p-5 bg-white text-gray-800">
       <div className="mb-5">
         <h1 className="font-bold text-lg md:text-xl">
-          Recent Waitlist Signups
+          Recent Waitlist Signups ({waitlists?.length})
         </h1>
       </div>
       <Table>
@@ -72,28 +72,26 @@ export function AdminDataTable({ data }: DataTableProps) {
             </TableRow>
           ))}
         </TableHeader>
-        <TableBody>
-          {table.getRowModel().rows?.length ? (
-            table.getRowModel().rows.map((row) => (
-              <TableRow
-                key={row.id}
-                data-state={row.getIsSelected() && "selected"}
-              >
-                {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id} className="py-5">
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </TableCell>
-                ))}
-              </TableRow>
-            ))
-          ) : (
-            <TableRow>
-              <TableCell colSpan={columns.length} className="h-24 text-center">
-                No results.
-              </TableCell>
-            </TableRow>
-          )}
-        </TableBody>
+{waitlists?.length ? (
+  waitlists?.map((item) => (
+    <TableRow
+      key={item.id}
+      //data-state={row.getIsSelected && row.getIsSelected() && "selected"}
+    >
+      <TableCell className="py-5">{item.name}</TableCell>
+      <TableCell className="py-5">{item.email}</TableCell>
+      <TableCell className="py-5">{item.interest || 'N/A'}</TableCell>
+      <TableCell className="py-5">{item?.referral || 'N/A'}</TableCell>
+      {/* Add other columns as needed */}
+    </TableRow>
+  ))
+) : (
+  <TableRow>
+    <TableCell colSpan={columns.length} className="h-24 text-center">
+      No results.
+    </TableCell>
+  </TableRow>
+)}
       </Table>
     </div>
   );
