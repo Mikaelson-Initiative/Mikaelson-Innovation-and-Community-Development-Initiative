@@ -6,6 +6,7 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
+import { format } from "date-fns";
 
 import {
   Table,
@@ -17,6 +18,9 @@ import {
 } from "@/components/ui/table";
 
 import { columns, User } from "./columns";
+import axios from "axios";
+import { BACKEND_URL } from "../../../../../constants";
+import { useQuery } from "@tanstack/react-query";
 
 interface DataTableProps {
   data: User[];
@@ -29,17 +33,33 @@ export function AdminDataTable({ data }: DataTableProps) {
     getCoreRowModel: getCoreRowModel(),
   });
 
+  async function fetchWaitList(): Promise<any[]> {
+    const response = await axios.get(`${BACKEND_URL}/api/v1/waitList`);
+    console.log("waitlists:", response.data.data);
+    console.log(response.data.data);
+
+    return response.data.data;
+  }
+  const {
+    data: waitlists,
+    error,
+    isLoading,
+  } = useQuery({
+    queryKey: [`waitlists`],
+    queryFn: fetchWaitList,
+  });
+
   return (
-    <div className="overflow-hidden rounded-md border max-w-6xl mx-auto p-5 bg-white">
+    <div className="overflow-hidden rounded-md border max-w-6xl mx-auto p-5 bg-white text-gray-800">
       <div className="mb-5">
         <h1 className="font-bold text-lg md:text-xl">
-          Recent Waitlist Signups
+          Recent Waitlist Signups ({waitlists?.length})
         </h1>
       </div>
       <Table>
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow key={headerGroup.id}>
+            <TableRow key={headerGroup.id} className="dark:bg-black/70">
               {headerGroup.headers.map((header) => {
                 return (
                   <TableHead key={header.id}>
@@ -55,28 +75,29 @@ export function AdminDataTable({ data }: DataTableProps) {
             </TableRow>
           ))}
         </TableHeader>
-        <TableBody>
-          {table.getRowModel().rows?.length ? (
-            table.getRowModel().rows.map((row) => (
-              <TableRow
-                key={row.id}
-                data-state={row.getIsSelected() && "selected"}
-              >
-                {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id} className="py-5">
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </TableCell>
-                ))}
-              </TableRow>
-            ))
-          ) : (
-            <TableRow>
-              <TableCell colSpan={columns.length} className="h-24 text-center">
-                No results.
+        {waitlists?.length ? (
+          waitlists?.map((item) => (
+            <TableRow
+              key={item.id}
+              className="hover:text-white hover:font-semibold"
+              //data-state={row.getIsSelected && row.getIsSelected() && "selected"}
+            >
+              <TableCell className="py-5">{item.name}</TableCell>
+              <TableCell className="py-5">{item.email}</TableCell>
+              <TableCell className="py-5">
+                {format(item.createdAt, "MMM dd, yyyy")}
               </TableCell>
+              <TableCell className="py-5">{item.interest || "No option selected"}</TableCell>
+              {/* Add other columns as needed */}
             </TableRow>
-          )}
-        </TableBody>
+          ))
+        ) : (
+          <TableRow>
+            <TableCell colSpan={columns.length} className="h-24 text-center">
+              No results.
+            </TableCell>
+          </TableRow>
+        )}
       </Table>
     </div>
   );

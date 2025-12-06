@@ -37,8 +37,8 @@ import { toast } from "sonner";
 const formSchema = z.object({
   name: z.string().min(1, "Name is required"),
   email: z.email("Enter a valid email"),
-  interest: z.string().optional(),
-  referral: z.string().optional(),
+  interest: z.string().min(1, "Select your interest"),
+  referral: z.string(),
   newsletter: z.boolean().default(false),
 });
 
