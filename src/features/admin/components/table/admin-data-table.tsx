@@ -17,6 +17,9 @@ import {
 } from "@/components/ui/table";
 
 import { columns, User } from "./columns";
+import axios from "axios";
+import { BACKEND_URL } from "../../../../../constants";
+import { useQuery } from "@tanstack/react-query";
 
 interface DataTableProps {
   data: User[];
@@ -27,6 +30,20 @@ export function AdminDataTable({ data }: DataTableProps) {
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
+  });
+
+  async function fetchWaitList(): Promise<any[]> {
+    const response = await axios.get(`${BACKEND_URL}/api/v1/waitlist`);
+    console.log("waitlist:", response.data.data);
+    return response.data.data;
+  }
+  const {
+    data: challenges,
+    error: challengesPostsError,
+    isLoading: ChallengesPostsloading,
+  } = useQuery({
+    queryKey: [`waitlist`],
+    queryFn: fetchWaitList,
   });
 
   return (
