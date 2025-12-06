@@ -42,7 +42,7 @@ export function AdminDataTable({ data }: DataTableProps) {
     error: challengesPostsError,
     isLoading: ChallengesPostsloading,
   } = useQuery({
-    queryKey: [`waitlist`],
+    queryKey: [`waitlists`],
     queryFn: fetchWaitList,
   });
 
