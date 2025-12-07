@@ -19,7 +19,7 @@ const HomeHero: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
             viewport={{ once: true }}
-            className="z-10 flex max-w-[600px] flex-1 flex-col items-start justify-start pt-8 text-left"
+            className="z-10 flex max-w-[600px] flex-1 flex-col items-start justify-start md:pt-8 text-left"
             data-aos="fade-right"
           >
             <h1 className="m-0 text-3xl md:text-[2.1rem] font-bold leading-[1.2] text-[#111111] dark:text-brand-text-dark-heading">

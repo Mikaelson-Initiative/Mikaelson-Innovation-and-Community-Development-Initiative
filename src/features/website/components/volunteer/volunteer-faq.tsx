@@ -52,7 +52,7 @@ const VolunteerFAQ: React.FC = () => {
             <AccordionItem
               key={idx}
               value={`item-${idx}`}
-              className="px-5 py-2 dark:bg-card"
+              className="p-2 dark:bg-card"
             >
               <AccordionTrigger className="text-left text-lg font-medium dark:text-brand-text-dark-heading text-gray-900 flex justify-between">
                 {item.question}

@@ -66,7 +66,7 @@ export const ProductsGrid = ({ search }: Props) => {
             </div>
 
             <div className="flex justify-between items-center bg-[#f5f5f5] p-5">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 dark:text-black">
                 <Tag />
                 <p>{product.category}</p>
               </div>

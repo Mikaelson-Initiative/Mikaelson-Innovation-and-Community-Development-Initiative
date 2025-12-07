@@ -9,9 +9,9 @@ const formatNumber = (num: number): string => num.toLocaleString();
 
 const CommunityHeroSection: React.FC = () => {
   const liveStats = {
-    activeMembers: 3247,
-    totalStreaks: 18653,
-    countriesReached: 52,
+    activeMembers: 0,
+    totalStreaks: 0,
+    countriesReached: 0,
   };
 
   return (
@@ -58,7 +58,7 @@ const CommunityHeroSection: React.FC = () => {
               <Users className="w-8 h-8 text-purple-600" />
               <div>
                 <span className="block text-xl font-bold dark:text-black">
-                  {formatNumber(liveStats.activeMembers)}+
+                  {formatNumber(liveStats.activeMembers)}
                 </span>
                 <span className="text-sm text-gray-500">Active Members</span>
               </div>
@@ -74,7 +74,7 @@ const CommunityHeroSection: React.FC = () => {
               <Flame className="w-8 h-8 text-orange-500" />
               <div>
                 <span className="block text-xl font-bold dark:text-black">
-                  {formatNumber(liveStats.totalStreaks)}+
+                  {formatNumber(liveStats.totalStreaks)}
                 </span>
                 <span className="text-sm text-gray-500">Daily Streaks</span>
               </div>
@@ -90,7 +90,7 @@ const CommunityHeroSection: React.FC = () => {
               <User className="w-8 h-8 text-green-600" />
               <div>
                 <span className="block text-xl font-bold dark:text-black">
-                  {liveStats.countriesReached}+
+                  {liveStats.countriesReached}
                 </span>
                 <span className="text-sm text-gray-500">Countries</span>
               </div>

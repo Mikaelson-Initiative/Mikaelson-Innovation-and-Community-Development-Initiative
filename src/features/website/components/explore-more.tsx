@@ -64,7 +64,7 @@ export const ExploreMore: React.FC = () => {
                 <div className="bg-teal-400 mx-auto mb-3 flex h-20 w-20 items-center justify-center rounded-full">
                   <Icon className="h-10 w-10 text-white/95" />
                 </div>
-                <h3 className="mb-1 text-xl font-semibold">{link.title}</h3>
+                <h3 className="mb-1 text-xl font-semibold dark:text-black/80">{link.title}</h3>
                 <p className="mb-4 text-lg text-gray-700">{link.description}</p>
 
                 {link.isInternal ? (

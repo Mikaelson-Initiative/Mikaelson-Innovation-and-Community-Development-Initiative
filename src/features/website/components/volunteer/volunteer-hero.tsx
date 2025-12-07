@@ -6,7 +6,7 @@ import StatsCard from "./stats-card";
 import Link from "next/link";
 
 export const VolunteerHero: React.FC = () => (
-  <section className="px-6 py-12 dark:bg-brand-dark-bg-nav">
+  <section className="md:px-6 py-12 dark:bg-brand-dark-bg-nav">
     <motion.div
       className="mx-auto max-w-6xl rounded-3xl p-8 md:p-16"
       style={{ background: "rgba(92, 225, 230, 0.5)", minHeight: 550 }}
@@ -21,6 +21,7 @@ export const VolunteerHero: React.FC = () => (
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          className="text-center md:text-left"
         >
           <h1 className="mb-6 text-3xl font-extrabold leading-tight dark:text-brand-text-dark-heading text-gray-900 md:text-5xl">
             Join Our Mission

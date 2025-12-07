@@ -1,9 +1,9 @@
 import React from "react";
 
 const stats = [
-  { value: "180+", label: "ACTIVE VOLUNTEERS" },
-  { value: "12+", label: "COUNTRIES" },
-  { value: "42+", label: "PROJECTS" },
+  { value: "15+", label: "ACTIVE VOLUNTEERS" },
+  { value: "5+", label: "COUNTRIES" },
+  { value: "10+", label: "PROJECTS" },
 ];
 
 const StatsCard: React.FC = () => (
@@ -11,7 +11,7 @@ const StatsCard: React.FC = () => (
     <div className="space-y-10">
       {stats.map((stat) => (
         <div key={stat.label} className="text-center">
-          <div className="text-4xl font-extrabold text-blue-600">
+          <div className="text-4xl font-extrabold text-teal-500">
             {stat.value}
           </div>
           <div className="mt-2 text-sm font-semibold tracking-wide text-gray-500">
