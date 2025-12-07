@@ -28,6 +28,7 @@ import {
   User,
   Users,
 } from "lucide-react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { BACKEND_URL } from "../../../../../constants";
@@ -84,7 +85,8 @@ export const WaitlistForm = ({ waitlistCount = 1247 }) => {
           <div className="text-center mb-6">
             <h2 className="text-3xl font-bold">Reserve Your Spot</h2>
             <p className="text-gray-600">
-              Join {waitlistCount} others already on the list
+              Join <strong>{waitlistCount}</strong> others
+              already on the list
             </p>
           </div>
 

@@ -8,7 +8,7 @@ import { ModeToggle } from "@/components/mode-toggler";
 export const AdminNavbar = () => {
   const router = useRouter();
   return (
-    <header className="w-full bg-white shadow-sm px-6 py-3 flex items-center justify-between">
+    <header className="w-full bg-white dark:bg-brand-dark-bg-nav shadow-sm px-6 py-3 flex items-center justify-between">
       {/* Left */}
       <div className="flex items-center gap-3">
         <Image
@@ -18,7 +18,7 @@ export const AdminNavbar = () => {
           height={100}
           className="h-10 w-10 rounded-sm"
         />
-        <span className="text-xl font-semibold dark:text-black">Admin</span>
+        <span className="text-xl font-semibold dark:text-white">Admin</span>
       </div>
 
       {/* Right */}

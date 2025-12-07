@@ -50,7 +50,7 @@ export const QuickActions: React.FC<Props> = ({ users }) => {
         {/* Export Data */}
         <button
           onClick={() => exportAllUsersCSV(users)}
-          className="flex w-full items-center justify-start gap-2 px-4 py-3 bg-brand-primary-300 border-brand-primary border-2 text-black rounded-md hover:bg-brand-primary transition dark:text-white"
+          className="flex w-full items-center justify-start gap-2 px-4 py-3 bg-brand-primary-300 border-brand-primary border-2 dark:bg-black text-black rounded-md hover:bg-brand-primary transition dark:text-white"
         >
           <Download size={16} />
           <span>Export Data</span>
@@ -59,20 +59,20 @@ export const QuickActions: React.FC<Props> = ({ users }) => {
         {/* View Waitlist */}
         <Link
           href="/admin/waitlist"
-          className="flex w-full border-2 items-center justify-start gap-2 px-4 py-3 bg-brand-primary-300 border-brand-primary text-black rounded-md hover:bg-brand-primary transition dark:text-white"
+          className="flex w-full border-2 items-center dark:bg-black justify-start gap-2 px-4 py-3 bg-brand-primary-300 border-brand-primary text-black rounded-md hover:bg-brand-primary transition dark:text-white"
         >
           <List size={16} />
           <span>View Waitlist</span>
         </Link>
 
         {/* Analytics */}
-        <button className="flex w-full border-2 items-center justify-start gap-2 px-4 py-3 bg-brand-primary-300 border-brand-primary text-black rounded-md hover:bg-brand-primary transition dark:text-white">
+        <button className="flex w-full border-2 dark:bg-black items-center justify-start gap-2 px-4 py-3 bg-brand-primary-300 border-brand-primary text-black rounded-md hover:bg-brand-primary transition dark:text-white">
           <BarChart size={16} />
           <span>Analytics</span>
         </button>
 
         {/* Settings */}
-        <button className="flex w-full border-2 items-center justify-start gap-2 px-4 py-3 bg-brand-primary-300 border-brand-primary border text-black rounded-md hover:bg-brand-primary transition dark:text-white">
+        <button className="flex w-full border-2 dark:bg-black items-center justify-start gap-2 px-4 py-3 bg-brand-primary-300 border-brand-primary border text-black rounded-md hover:bg-brand-primary transition dark:text-white">
           <Settings size={16} />
           <span>Settings</span>
         </button>
