@@ -32,13 +32,12 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { BACKEND_URL } from "../../../../../constants";
-import { useState } from "react";
 
 const formSchema = z.object({
   name: z.string().min(1, "Name is required"),
   email: z.email("Enter a valid email"),
   interest: z.string().min(1, "Select your interest"),
-  referral: z.string(),
+  referral: z.string().optional(),
   newsletter: z.boolean().default(false),
 });
 
@@ -65,12 +64,14 @@ export const WaitlistForm = ({ waitlistCount = 1247 }) => {
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
     setLoading(true);
     try {
+      setShowSuccess(false)
+      setErrorMessage("")
       const waitList = await axios.post(`${BACKEND_URL}/api/v1/waitList`, data);
       if ((waitList.status = 201)) {
         console.log(waitList);
         setShowSuccess(true);
       }
-    } catch (error) {
+    } catch (error: any) {
       console.log(error?.message);
       setErrorMessage(error?.message)
     } finally {
@@ -85,8 +86,7 @@ export const WaitlistForm = ({ waitlistCount = 1247 }) => {
           <div className="text-center mb-6">
             <h2 className="text-3xl font-bold">Reserve Your Spot</h2>
             <p className="text-gray-600">
-              Join <strong>{waitlistCount}</strong> others
-              already on the list
+              Join <b>{waitlistCount}</b> others already on the list
             </p>
           </div>
 
@@ -222,7 +222,7 @@ export const WaitlistForm = ({ waitlistCount = 1247 }) => {
             </form>
           </Form>
           {showSuccess && (
-            <div className="bg-gradient-to-br from-[#ccf9e2] to-[#b2f5d6] rounded-2xl mt-5 text-center py-12 flex-center flex-col">
+            <div className="bg-gradient-to-br from-[#ccf9e2] to-[#b2f5d6] rounded-2xl mt-5 text-center py-12 flex-center flex-col dark:text-black">
               <CheckCircle2Icon className=" text-green-500 mb-4 h-10 w-10" />
               <h3 className="text-2xl font-bold mb-2">Welcome aboard! 🎉</h3>
               <p>
@@ -231,7 +231,7 @@ export const WaitlistForm = ({ waitlistCount = 1247 }) => {
             </div>
           )}
           {errorMessage && (
-            <div className="text-white p-4 bg-red-400 text-center">{errorMessage}</div>
+            <div className="text-white p-4 mt-5 rounded bg-red-400 text-center">{errorMessage}: Try again later</div>
           )}
         </CardContent>
       </Card>
