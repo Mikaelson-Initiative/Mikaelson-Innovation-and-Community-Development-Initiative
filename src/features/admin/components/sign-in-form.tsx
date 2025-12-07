@@ -58,8 +58,8 @@ const AdminSignInForm = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-gray-100">
-      <div className="bg-white w-full max-w-md p-8 rounded-xl shadow-md">
+    <div className="min-h-screen flex items-center justify-center p-4 bg-gray-100 dark:bg-brand-dark-bg-nav">
+      <div className="bg-white dark:bg-card w-full dark:border-2 dark:border-brand-primary max-w-md p-8 rounded-xl shadow-md">
         {/* Header */}
         <div className="text-center mb-6">
           <Image

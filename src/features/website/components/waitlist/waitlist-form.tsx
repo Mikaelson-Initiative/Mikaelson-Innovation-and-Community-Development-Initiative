@@ -1,37 +1,37 @@
-  "use client";
-  import { Button } from "@/components/ui/button";
-  import { Card, CardContent } from "@/components/ui/card";
-  import { Checkbox } from "@/components/ui/checkbox";
-  import {
-    Form,
-    FormControl,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
-  } from "@/components/ui/form";
-  import { Input } from "@/components/ui/input";
-  import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-  } from "@/components/ui/select";
-  import { zodResolver } from "@hookform/resolvers/zod";
-  import axios from "axios";
-  import {
-    CheckCircle2Icon,
-    Lightbulb,
-    Mail,
-    Send,
-    User,
-    Users,
-  } from "lucide-react";
-  import { useForm } from "react-hook-form";
-  import { z } from "zod";
-  import { BACKEND_URL } from "../../../../../constants";
-  import { useState } from "react";
+"use client";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { zodResolver } from "@hookform/resolvers/zod";
+import axios from "axios";
+import {
+  CheckCircle2Icon,
+  Lightbulb,
+  Mail,
+  Send,
+  User,
+  Users,
+} from "lucide-react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { BACKEND_URL } from "../../../../../constants";
+import { useState } from "react";
 
   const formSchema = z.object({
     name: z.string().min(1, "Name is required"),
@@ -77,16 +77,16 @@
       }
     };
 
-    return (
-      <section className="w-full py-12 flex justify-center">
-        <Card className="w-full max-w-xl shadow-md rounded-2xl">
-          <CardContent className="p-8">
-            <div className="text-center mb-6">
-              <h2 className="text-3xl font-bold">Reserve Your Spot</h2>
-              <p className="text-gray-600">
-                Join {waitlistCount} others already on the list
-              </p>
-            </div>
+  return (
+    <section className="w-full py-12 flex justify-center">
+      <Card className="w-full max-w-xl shadow-md rounded-2xl">
+        <CardContent className="p-8">
+          <div className="text-center mb-6">
+            <h2 className="text-3xl font-bold">Reserve Your Spot</h2>
+            <p className="text-gray-600">
+              Join {waitlistCount} others already on the list
+            </p>
+          </div>
 
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">

@@ -54,7 +54,7 @@ export const AdminDashboardStats: React.FC<Props> = ({
     <div className="space-y-6 py-10 px-5 md:px-0">
       {/* Page Title */}
       <div className="text-center">
-        <h1 className="text-2xl font-bold dark:text-brand-black">Dashboard</h1>
+        <h1 className="text-2xl font-bold dark:text-white">Dashboard</h1>
         <p className="text-gray-600">Overview of your platform</p>
       </div>
 
