@@ -72,7 +72,7 @@ export const QuickActions: React.FC<Props> = ({ users }) => {
         </button>
 
         {/* Settings */}
-        <button className="flex w-full border-2 dark:bg-black items-center justify-start gap-2 px-4 py-3 bg-brand-primary-300 border-brand-primary border text-black rounded-md hover:bg-brand-primary transition dark:text-white">
+        <button className="flex w-full border-2 dark:bg-black items-center justify-start gap-2 px-4 py-3 bg-brand-primary-300 border-brand-primary text-black rounded-md hover:bg-brand-primary transition dark:text-white">
           <Settings size={16} />
           <span>Settings</span>
         </button>

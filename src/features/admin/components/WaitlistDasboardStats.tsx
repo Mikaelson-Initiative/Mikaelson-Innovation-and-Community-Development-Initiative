@@ -42,14 +42,14 @@ const WaitlistDasboardStats: React.FC<Props> = ({ entries }) => {
       <p className='mb-4'>Manage and track all waitlist signups</p>
       <div className='grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-6'>
         <div className='bg-white dark:bg-black/60 border border-[1px solid #e9ecef] dark:border-neutral-800 rounded-xl p-6 flex gap-4'>
-          <div className='w-14 aspect-square bg-blue-200/50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 flex justify-center items-center rounded-xl'><Users /></div>
+          <div className='w-14 aspect-square bg-teal-200/50 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300 flex justify-center items-center rounded-xl'><Users /></div>
           <div className='flex flex-1 items-center flex-col'>
             <div>Total Signups</div>
             <div className='text-2xl font-semibold'>{total}</div>
           </div>
         </div>
         <div className='bg-white dark:bg-black/60 border border-[1px solid #e9ecef] dark:border-neutral-800 rounded-xl p-6 flex gap-4'>
-          <div className='w-14 aspect-square bg-green-200/50 dark:bg-green-900/30 text-green-700 dark:text-green-300 flex justify-center items-center rounded-xl'>
+          <div className='w-14 aspect-square bg-blue-200/50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 flex justify-center items-center rounded-xl'>
             <Calendar />
           </div>
           <div className='flex flex-1 items-center flex-col'>
@@ -67,7 +67,7 @@ const WaitlistDasboardStats: React.FC<Props> = ({ entries }) => {
           </div>
         </div>
         <div className='bg-white dark:bg-black/60 border border-[1px solid #e9ecef] dark:border-neutral-800 rounded-xl p-6 flex gap-4'>
-          <div className='w-14 aspect-square bg-amber-200/50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 flex justify-center items-center rounded-xl'>
+          <div className='w-14 aspect-square bg-green-200/50 dark:bg-green-900/30 text-green-700 dark:text-green-300 flex justify-center items-center rounded-xl'>
             <Mail />
           </div>
           <div className='flex flex-1 items-center flex-col'>

@@ -158,7 +158,7 @@ const WaitlistTable: React.FC<WaitlistTableProps> = ({ entries, setEntries }) =>
 
                 <div className="flex items-center gap-3 flex-wrap">
                     <Select value={interest} onValueChange={setInterest}>
-                        <SelectTrigger>
+                        <SelectTrigger className='py-6'>
                             <SelectValue placeholder="All Interests" />
                         </SelectTrigger>
                         <SelectContent>
@@ -171,7 +171,7 @@ const WaitlistTable: React.FC<WaitlistTableProps> = ({ entries, setEntries }) =>
                     </Select>
 
                     <Select value={status} onValueChange={setStatus}>
-                        <SelectTrigger>
+                        <SelectTrigger className='py-6'>
                             <SelectValue placeholder="All Status" />
                         </SelectTrigger>
                         <SelectContent>
@@ -181,7 +181,7 @@ const WaitlistTable: React.FC<WaitlistTableProps> = ({ entries, setEntries }) =>
                         </SelectContent>
                     </Select>
 
-                    <Button variant="outline" onClick={clearFilters} className="gap-2">
+                    <Button variant="outline" onClick={clearFilters} className="gap-2 py-6 text-gray-500">
                         <X className="size-4" />
                         Clear
                     </Button>
@@ -190,14 +190,14 @@ const WaitlistTable: React.FC<WaitlistTableProps> = ({ entries, setEntries }) =>
 
             {/* Bulk actions removed per request */}
             {selected.size > 0 && (
-                <div className="bg-white dark:bg-neutral-900 border dark:border-neutral-800 rounded-lg p-4 flex items-center justify-between shadow-sm">
+                <div className="dark:bg-neutral-900 dark:border-neutral-800 rounded-lg p-4 flex items-center justify-between shadow-sm bg-blue-200/20 border border-blue-300">
                     <div className="text-sm text-muted-foreground">
                         <span className="font-medium text-foreground">{selected.size}</span> selected
                     </div>
                     <div className="flex gap-2">
-                        <Button variant="outline" className="gap-2" onClick={bulkEmail}><Mail className="size-4" /> Email Selected</Button>
-                        <Button variant="outline" className="gap-2" onClick={bulkExport}><Download className="size-4" /> Export Selected</Button>
-                        <Button variant="destructive" className="gap-2" onClick={bulkDelete}><Trash2 className="size-4" /> Delete Selected</Button>
+                        <Button variant="outline" className="gap-2 border border-blue-400 text-blue-400" onClick={bulkEmail}><Mail className="size-4" /> Email Selected</Button>
+                        <Button variant="outline" className="gap-2 border border-blue-400 text-blue-400" onClick={bulkExport}><Download className="size-4" /> Export Selected</Button>
+                        <Button variant="destructive" className="gap-2 bg-white border border-red-400 text-red-400" onClick={bulkDelete}><Trash2 className="size-4" /> Delete Selected</Button>
                     </div>
                 </div>
             )}
@@ -207,7 +207,7 @@ const WaitlistTable: React.FC<WaitlistTableProps> = ({ entries, setEntries }) =>
                 <Table className="text-sm">
                     <TableHeader>
                         <TableRow className="bg-muted/40">
-                            <TableHead className="p-4">
+                            <TableHead className="p-2">
                                 <Checkbox
                                     checked={pageData.length > 0 && pageData.every((e) => selected.has(e.id))}
                                     onCheckedChange={(val) => toggleAllOnPage(Boolean(val))}
@@ -254,7 +254,11 @@ const WaitlistTable: React.FC<WaitlistTableProps> = ({ entries, setEntries }) =>
                                                 )
                                             }
                                         >
-                                            <SelectTrigger className="h-8 w-[140px]">
+                                            <SelectTrigger className={`h-8 w-[140px] ${
+                                                (e.status === "pending" && "bg-amber-300/30 text-amber-500 border-amber-500") ||
+                                                (e.status === "contacted" && "bg-blue-300/30 text-blue-500 border-blue-500") ||
+                                                (e.status === "invited" && "bg-green-300/30 text-green-500 border-green-500")
+                                            }`}>
                                                 <SelectValue />
                                             </SelectTrigger>
                                             <SelectContent>
