@@ -11,11 +11,11 @@ import {
 
 export const TraficSources = () => {
     const data = [
-      { name: "Direct", value: 35, color: "#20c9c0" },
-      { name: "Social Media", value: 20, color: "#a855f7" },
-      { name: "Organic Search", value: 25, color: "#3b82f6" },
-      { name: "Referral", value: 10, color: "#22c55e" },
-      { name: "Email", value: 10, color: "#f59e0b" },
+      { name: "Direct", value: 0, color: "#20c9c0" },
+      { name: "Social Media", value: 0, color: "#a855f7" },
+      { name: "Organic Search", value: 0, color: "#3b82f6" },
+      { name: "Referral", value: 0, color: "#22c55e" },
+      { name: "Email", value: 0, color: "#f59e0b" },
     ];
 
   return (

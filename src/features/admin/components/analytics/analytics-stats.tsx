@@ -16,26 +16,26 @@ export const AnalyticsStats = () => {
     {
       label: "Total Visitors",
       icon: <Users className="h-5 w-5 text-primary" />,
-      value: "3,420",
-      changeRate: "+2% last period",
+      value: "0",
+      changeRate: "0% last period",
     },
     {
       label: "Page Views",
       icon: <Eye className="h-5 w-5 text-primary" />,
-      value: "12,980",
-      changeRate: "+5.4% last period",
+      value: "0",
+      changeRate: "0% last period",
     },
     {
       label: "Avg. Session Duration",
       icon: <Timer className="h-5 w-5 text-primary" />,
-      value: "3m 24s",
-      changeRate: "-1.2% last period",
+      value: "0",
+      changeRate: "0% last period",
     },
     {
       label: "Waitlist Signups",
       icon: <UserPlus className="h-5 w-5 text-primary" />,
-      value: "285",
-      changeRate: "+9.8% last period",
+      value: "0",
+      changeRate: "0% last period",
     },
   ];
 

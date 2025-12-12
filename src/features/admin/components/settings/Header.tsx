@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <header className="flex items-center justify-between p-4 border-b dark:border-neutral-800">
             <div className="flex items-center gap-4 min-w-0">
-                <Link href="/admin" aria-label="Back to Admin"><MoveLeft /></Link>
+                <Link href="/admin/dashboard" aria-label="Back to Admin"><MoveLeft /></Link>
                 <div className="flex items-center gap-3 min-w-0">
                     <Image
                         src="/assets/images/mikaelsonlogo.png"

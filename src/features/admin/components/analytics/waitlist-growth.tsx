@@ -10,13 +10,13 @@ import {
 
 export const WaitlistGrowth = () => {
   const data = [
-    { day: "Mon", signups: 12 },
-    { day: "Tue", signups: 18 },
-    { day: "Wed", signups: 25 },
-    { day: "Thu", signups: 22 },
-    { day: "Fri", signups: 30 },
-    { day: "Sat", signups: 15 },
-    { day: "Sun", signups: 10 },
+    { day: "Mon", signups: 0 },
+    { day: "Tue", signups: 0 },
+    { day: "Wed", signups: 0},
+    { day: "Thu", signups: 0},
+    { day: "Fri", signups: 0},
+    { day: "Sat", signups:0 },
+    { day: "Sun", signups: 0},
   ];
 
   // Define a color palette for each day
