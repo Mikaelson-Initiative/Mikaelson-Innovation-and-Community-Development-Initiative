@@ -5,9 +5,9 @@ import { Progress } from "@/components/ui/progress";
 
 export const DeviceTypes = () => {
   const data = [
-    { label: "Mobile", percent: 30 },
-    { label: "Desktop", percent: 50 },
-    { label: "Tablet", percent: 75 },
+    { label: "Mobile", percent: 0 },
+    { label: "Desktop", percent: 0 },
+    { label: "Tablet", percent: 0 },
   ];
 
   return (

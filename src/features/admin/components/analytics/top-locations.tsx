@@ -4,16 +4,16 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 export const TopLocations = () => {
   const data = [
-    { country: "United States", visitors: 120 },
-    { country: "Canada", visitors: 95 },
-    { country: "United Kingdom", visitors: 88 },
-    { country: "Germany", visitors: 76 },
-    { country: "France", visitors: 72 },
-    { country: "Spain", visitors: 68 },
-    { country: "Netherlands", visitors: 65 },
-    { country: "Nigeria", visitors: 60 },
-    { country: "Kenya", visitors: 57 },
-    { country: "India", visitors: 54 },
+    { country: "United States", visitors: 0 },
+    { country: "Canada", visitors: 0 },
+    { country: "United Kingdom", visitors: 0 },
+    { country: "Germany", visitors: 0 },
+    { country: "France", visitors: 0 },
+    { country: "Spain", visitors: 0 },
+    { country: "Netherlands", visitors: 0 },
+    { country: "Nigeria", visitors: 0 },
+    { country: "Kenya", visitors: 0 },
+    { country: "India", visitors: 0 },
   ];
 
   return (

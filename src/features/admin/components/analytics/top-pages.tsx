@@ -4,10 +4,10 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 export const TopPages = () => {
   const data = [
-    { label: "/home", views: 20 },
-    { label: "/waitlist", views: 50 },
-    { label: "/community", views: 50 },
-    { label: "/admin", views: 40 },
+    { label: "/home", views: 0 },
+    { label: "/waitlist", views: 0 },
+    { label: "/community", views: 0 },
+    { label: "/admin", views: 0 },
   ];
 
   return (
