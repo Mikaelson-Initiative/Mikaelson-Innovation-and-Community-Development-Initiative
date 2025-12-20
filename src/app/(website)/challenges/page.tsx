@@ -33,10 +33,10 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <section className='grid md:grid-cols-8 gap-4 bg-gray-50 md:p-8'>
-        <LeftSidebar />
-        <MainFeed />
-        <RightSidebar />
+    <section className='grid md:grid-cols-8 gap-4 bg-gray-50 dark:bg-slate-950 md:p-8'>
+      <LeftSidebar />
+      <MainFeed />
+      <RightSidebar />
     </section>
   )
 }

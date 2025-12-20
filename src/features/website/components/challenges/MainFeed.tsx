@@ -27,7 +27,7 @@ const MainFeed = () => {
   });
 
   return (
-    <section className="md:col-span-4 p-4">
+    <section className="md:col-span-4 px-4">
       <GettAllPosts results={challengesposts!} />
     </section>
   );

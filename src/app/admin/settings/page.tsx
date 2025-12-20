@@ -11,14 +11,16 @@ const page = () => {
     return (
         <div>
             <Header />
-            <main className="py-12 px-8 bg-brand-bg-gray dark:bg-black/20 dark:text-white flex flex-col gap-4">
+            <main className="p-6 md:p-8 bg-gray-50 dark:bg-black/20 min-h-screen flex flex-col gap-6">
                 <Hero />
-                <Analytics />
-                <SiteConfiguration />
-                <ENotifications />
-                <Security />
-                <DataManagement />
-                <Integration />
+                <div className="grid grid-cols-1 gap-6">
+                    <SiteConfiguration />
+                    <Security />
+                    <Analytics />
+                    <ENotifications />
+                    <DataManagement />
+                    <Integration />
+                </div>
             </main>
         </div>
     )

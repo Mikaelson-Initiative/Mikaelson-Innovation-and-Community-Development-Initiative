@@ -1,4 +1,4 @@
-import {GetPostsTags} from "./GetPostsTags"
+import { GetPostsTags } from "./GetPostsTags"
 
 const LeftSidebar = () => {
     const user = { LoggedIn: false }
@@ -48,32 +48,32 @@ const LeftSidebar = () => {
             difficulty: "Advanced"
         }
     ]
-    
-    
+
+
 
     return (
         <aside className="hidden md:flex md:flex-col md:col-span-2">
-            <div className="bg-white shadow p-6 mb-6 border flex flex-col justify-center items-center">
-                <h3 className="font-semibold mb-2">Quick Actions</h3>
+            <div className="bg-white dark:bg-slate-800 dark:text-slate-200 shadow p-6 mb-6 border dark:border-slate-700 flex flex-col justify-center items-center">
+                <h3 className="font-semibold mb-2 dark:text-slate-200">Quick Actions</h3>
                 {user.LoggedIn ? (
                     <button className="bg-teal-400 text-white p-4 rounded-lg cursor-pointer w-full">Share Progress</button>
                 ) : (
                     <button className="bg-teal-400 text-white p-4 rounded-lg cursor-pointer w-full">Login</button>
                 )}
             </div>
-            <div className="bg-white shadow p-6 mb-6 border flex flex-col justify-center items-center">
-                <h3 className="font-semibold mb-2">Active Challenges</h3>
+            <div className="bg-white dark:bg-slate-800 dark:text-slate-200 shadow p-6 mb-6 border dark:border-slate-700 flex flex-col justify-center items-center">
+                <h3 className="font-semibold mb-2 dark:text-slate-200">Active Challenges</h3>
                 <div className="flex flex-col gap-2">
                     {challenges.map((challenge) => (
-                        <button key={challenge.id} className="flex text-sm justify-between bg-white border border-[#e5e7eb] items-center rounded-xl p-2 w-full cursor-pointer hover:bg-green-100 hover:border-green-500">
-                            <span className="text-left">{challenge.title}</span>
-                            <span className="bg-gray-100 p-2 rounded-full">{challenge.participants}</span>
+                        <button key={challenge.id} className="flex text-sm justify-between bg-white dark:bg-slate-900 border border-[#e5e7eb] dark:border-slate-700 items-center rounded-xl p-2 w-full cursor-pointer hover:bg-green-100 hover:border-green-500 dark:hover:bg-slate-800 dark:hover:border-slate-600">
+                            <span className="text-left dark:text-slate-200">{challenge.title}</span>
+                            <span className="bg-gray-100 dark:bg-slate-800 dark:text-slate-200 p-2 rounded-full">{challenge.participants}</span>
                         </button>
                     ))}
                 </div>
             </div>
-            <div className="bg-white shadow p-6 mb-6 border flex flex-col justify-center items-center">
-                <h3 className="font-semibold mb-2">Trending</h3>
+            <div className="bg-white dark:bg-slate-800 shadow p-6 mb-6 border dark:border-slate-700 flex flex-col justify-center items-center">
+                <h3 className="font-semibold mb-2 dark:text-slate-200">Trending</h3>
                 <GetPostsTags />
             </div>
         </aside>

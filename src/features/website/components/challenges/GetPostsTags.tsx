@@ -283,7 +283,7 @@ export const GetPostsTags = () => {
       {trendingTags.map((tag) => (
         <span
           key={tag}
-          className="px-3 py-1 bg-gray-200 rounded-full text-sm font-medium cursor-pointer hover:text-white hover:bg-teal-300"
+          className="px-3 py-1 bg-gray-200 dark:bg-slate-700 dark:text-slate-300 rounded-full text-sm font-medium cursor-pointer hover:text-white hover:bg-teal-300"
         >
           #{tag}
         </span>
@@ -312,15 +312,15 @@ export const GetStats = () => {
   }, []);
   return (
     <div className="w-full flex flex-col gap-4">
-      <div className="flex items-center justify-center gap-2 flex-col bg-gray-100 w-full rounded-2xl p-4">
+      <div className="flex items-center justify-center gap-2 flex-col bg-gray-100 dark:bg-slate-800 dark:text-slate-200 w-full rounded-2xl p-4">
         <span className="text-teal-400 font-bold text-xl">{totalPosts}</span>
         <span>Posts</span>
       </div>
-      <div className="flex items-center justify-center gap-2 flex-col bg-gray-100 w-full rounded-2xl p-4">
+      <div className="flex items-center justify-center gap-2 flex-col bg-gray-100 dark:bg-slate-800 dark:text-slate-200 w-full rounded-2xl p-4">
         <span className="text-teal-400 font-bold text-xl">{totalLikes}</span>
         <span>Likes</span>
       </div>
-      <div className="flex items-center justify-center gap-2 flex-col bg-gray-100 w-full rounded-2xl p-4">
+      <div className="flex items-center justify-center gap-2 flex-col bg-gray-100 dark:bg-slate-800 dark:text-slate-200 w-full rounded-2xl p-4">
         <span className="text-teal-400 font-bold text-xl">
           {totalChallenges}
         </span>
@@ -368,8 +368,8 @@ export const GetContributors = () => {
             {contributor.userAvatar}
           </div>
           <div key={contributor.userId} className="flex flex-col">
-            <span className="text-sm">{contributor.userName}</span>
-            <span className="text-black/30 text-sm">
+            <span className="text-sm dark:text-slate-200">{contributor.userName}</span>
+            <span className="text-black/30 dark:text-slate-400 text-sm">
               {contributor.count} Posts
             </span>
           </div>
@@ -393,7 +393,7 @@ export const GettAllPosts = ({
       {results?.posts?.map((post, index) => (
         <div
           key={post.id}
-          className=" bg-white rounded-2xl p-6 border border-[#f3f4f6] shadow-md transition-all"
+          className=" bg-white dark:bg-slate-800 dark:text-slate-200 rounded-2xl p-6 border border-[#f3f4f6] dark:border-slate-700 shadow-md transition-all"
         >
           <div className="postheader flex flex-row justify-between">
             <div className="flex items-center gap-3">
@@ -416,7 +416,7 @@ export const GettAllPosts = ({
               </span>
             </div>
           </div>
-          <div className="post-progress bg-[#f8fafc] p-2 rounded-xl my-2 border">
+          <div className="post-progress bg-[#f8fafc] dark:bg-slate-900 border dark:border-slate-700 p-2 rounded-xl my-2 border">
             <div className="flex flex-row justify-between items-center">
               <div>
                 Day{" "}
@@ -429,15 +429,12 @@ export const GettAllPosts = ({
               <div
                 className="rounded-full p-1 w-12 h-12 flex justify-center items-center"
                 style={{
-                  background: `conic-gradient(#14b8a6 ${
-                    results?.percentageOfPosts[index] * 3.6
-                  }deg, #e5e7eb 0deg)`,
+                  background: `conic-gradient(#14b8a6 ${results?.percentageOfPosts[index] * 3.6
+                    }deg, #e5e7eb 0deg)`,
                 }}
               >
-                <div className="bg-white rounded-full w-full h-full flex justify-center items-center text-sm">
-                  {results.percentageOfPosts[index] === 100
-                    ? `${results.percentageOfPosts[index]}%`
-                    : `${results.percentageOfPosts[index].toFixed(1)}%`}
+                <div className="bg-white dark:bg-slate-800 rounded-full w-full h-full flex justify-center items-center text-sm">
+                  {Math.round(results.percentageOfPosts[index])}%
                 </div>
               </div>
             </div>
@@ -447,7 +444,7 @@ export const GettAllPosts = ({
             {post?.tags?.map((tag, index) => (
               <div
                 key={index}
-                className="bg-gray-200 text-black/40 px-2 py-1 hover:bg-teal-300 hover:text-white cursor-pointer transition-all rounded-full text-sm"
+                className="bg-gray-200 dark:bg-slate-700 text-black/40 dark:text-slate-300 px-2 py-1 hover:bg-teal-300 hover:text-white cursor-pointer transition-all rounded-full text-sm"
               >
                 #{tag}
               </div>
@@ -456,28 +453,28 @@ export const GettAllPosts = ({
           <hr />
           <div className="post-reactions flex items-center gap-2 mt-4">
             <div
-              className="likes hover:text-red-600 hover:bg-gray-200 flex items-center justify-center p-2 rounded-lg cursor-pointer gap-2"
+              className="likes hover:text-red-600 hover:bg-gray-200 dark:hover:bg-slate-700 flex items-center justify-center p-2 rounded-lg cursor-pointer gap-2"
               title="likes"
             >
               <Heart />
               <span>{post?.Like?.length}</span>
             </div>
             <div
-              className="comments hover:text-blue-600 hover:bg-gray-200 flex items-center justify-center p-2 rounded-lg cursor-pointer gap-2"
+              className="comments hover:text-blue-600 hover:bg-gray-200 dark:hover:bg-slate-700 flex items-center justify-center p-2 rounded-lg cursor-pointer gap-2"
               title="comments"
             >
               <MessageCircle />
               <span>{post?.Comment?.length}</span>
             </div>
             <div
-              className="reposts hover:text-green-600 hover:bg-gray-200 flex items-center justify-center p-2 rounded-lg cursor-pointer gap-2"
+              className="reposts hover:text-green-600 hover:bg-gray-200 dark:hover:bg-slate-700 flex items-center justify-center p-2 rounded-lg cursor-pointer gap-2"
               title="reposts"
             >
               <Repeat />
               <span>{post?.reposts?.length}</span>
             </div>
             <div
-              className="shares hover:text-red-600 hover:bg-gray-200 flex items-center justify-center p-2 rounded-lg cursor-pointer gap-2"
+              className="shares hover:text-red-600 hover:bg-gray-200 dark:hover:bg-slate-700 flex items-center justify-center p-2 rounded-lg cursor-pointer gap-2"
               title="shares"
             >
               <Redo2 />
