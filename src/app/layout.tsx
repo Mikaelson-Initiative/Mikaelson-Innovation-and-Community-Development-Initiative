@@ -92,6 +92,10 @@ export default function RootLayout({
       <head>
         {/* Google Tag Manager */}
         <Script
+          src="https://t.contentsquare.net/uxa/637962adff02e.js"
+          strategy="afterInteractive"
+        />
+        <Script
           id="gtm-script"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{

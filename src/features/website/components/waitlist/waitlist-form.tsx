@@ -32,10 +32,11 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { BACKEND_URL } from "../../../../../constants";
+import { emailSchema } from "@/lib/email-schema";
 
 const formSchema = z.object({
   name: z.string().min(1, "Name is required"),
-  email: z.email("Enter a valid email"),
+  email: emailSchema,
   interest: z.string().min(1, "Select your interest"),
   referral: z.string().optional(),
   newsletter: z.boolean().default(false),
@@ -47,6 +48,7 @@ export const WaitlistForm = ({ waitlistCount = 1247 }) => {
   const [errorMessage, setErrorMessage] = useState("")
   const form = useForm({
     resolver: zodResolver(formSchema),
+    mode: "onChange",
     defaultValues: {
       name: "",
       email: "",
@@ -145,6 +147,7 @@ export const WaitlistForm = ({ waitlistCount = 1247 }) => {
                     <Select
                       onValueChange={field.onChange}
                       defaultValue={field.value}
+                      onOpenChange={() => field.onBlur()}
                     >
                       <FormControl className="!h-12">
                         <SelectTrigger className="w-full">
@@ -231,7 +234,9 @@ export const WaitlistForm = ({ waitlistCount = 1247 }) => {
             </div>
           )}
           {errorMessage && (
-            <div className="text-white p-4 mt-5 rounded bg-red-400 text-center">{errorMessage}: Try again later</div>
+            <div className="text-white p-4 mt-5 rounded bg-red-400 text-center">
+              {errorMessage}: Try again later
+            </div>
           )}
         </CardContent>
       </Card>
