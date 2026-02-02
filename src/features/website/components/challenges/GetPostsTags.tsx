@@ -416,7 +416,7 @@ export const GettAllPosts = ({
               </span>
             </div>
           </div>
-          <div className="post-progress bg-[#f8fafc] dark:bg-slate-900 border dark:border-slate-700 p-2 rounded-xl my-2 border">
+          <div className="post-progress bg-[#f8fafc] dark:bg-slate-900 border dark:border-slate-700 p-2 rounded-xl my-2">
             <div className="flex flex-row justify-between items-center">
               <div>
                 Day{" "}
