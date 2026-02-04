@@ -21,7 +21,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
   borderColor,
 }) => (
   <motion.div
-    className="rounded-2xl px-13 py-5"
+    className="rounded-2xl px-8 py-5"
     style={{
       background,
       color: textColor,
@@ -69,14 +69,14 @@ export const AboutHeader: React.FC = () => (
       </motion.p>
 
       <motion.div
-        className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-3"
+        className="mx-4 grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-3"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={{
           hidden: {},
           visible: {
-            transition: { staggerChildren: 0.2 },
+            transition: { staggerChildren: 0.1 },
           },
         }}
       >
@@ -84,9 +84,8 @@ export const AboutHeader: React.FC = () => (
           Icon={Target}
           title="Our Mission"
           text="To empower African communities through innovative technology solutions, quality education, and sustainable development programs that foster economic growth and social progress."
-          background="rgba(92,225,230,0.5)"
-          textColor="#111"
-          borderColor="#5ce1e6"
+          background="#10b981"
+          textColor="#fff"
         />
         <InfoCard
           Icon={Eye}

@@ -7,10 +7,10 @@ export const Leaderboard = () => {
       <CardHeader>
         <div className="h-44 bg-[#f7fcfe] rounded-xl p-5">
           <div className="flex items-end justify-center gap-3 h-full">
-            <div className="w-10 h-[60%] bg-gradient-to-t from-[#5ce1e6] to-[#3b82f6] rounded-t-lg animate-bar-1"></div>
-            <div className="w-10 h-full bg-gradient-to-t from-[#5ce1e6] to-[#3b82f6] rounded-t-lg animate-bar-2"></div>
-            <div className="w-10 h-[75%] bg-gradient-to-t from-[#5ce1e6] to-[#3b82f6] rounded-t-lg animate-bar-3"></div>
-            <div className="w-10 h-[50%] bg-gradient-to-t from-[#5ce1e6] to-[#3b82f6] rounded-t-lg animate-bar-4"></div>
+            <div className="w-10 h-[60%] bg-[#5ce1e6]/50 rounded-t-lg animate-bar-1"></div>
+            <div className="w-10 h-full bg-[#5ce1e6]/50 rounded-t-lg animate-bar-2"></div>
+            <div className="w-10 h-[75%] bg-[#5ce1e6]/50 rounded-t-lg animate-bar-3"></div>
+            <div className="w-10 h-[50%] bg-[#5ce1e6]/50 rounded-t-lg animate-bar-4"></div>
           </div>
         </div>
       </CardHeader>

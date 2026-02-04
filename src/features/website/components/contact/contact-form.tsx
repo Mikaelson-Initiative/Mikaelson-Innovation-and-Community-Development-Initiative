@@ -39,7 +39,6 @@ const ContactUsForm: React.FC = () => {
   });
 
   const onSubmit = (values: ContactFormValues) => {
-    console.log("Form submitted:", values);
     // TODO: handle submission (e.g., API call)
   };
 

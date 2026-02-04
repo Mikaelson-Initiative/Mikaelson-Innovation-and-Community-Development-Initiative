@@ -16,7 +16,7 @@ export default function FinalCta() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 cta-buttons">
-          <Button asChild className="btn-primary btn text-black">
+          <Button asChild className="btn bg-brand-green-100/50 hover:bg-brand-green-100/30 border-2 border-brand-green-100 text-black">
             <Link href="/waitlist">Join waitlist</Link>
           </Button>
 

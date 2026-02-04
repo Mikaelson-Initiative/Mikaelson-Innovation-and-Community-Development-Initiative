@@ -6,10 +6,10 @@ export const HabitDashboard = () => {
     <Card className="max-w-md w-full !py-10 feature-card">
       <CardHeader>
         <div className="h-44 bg-[#f7fcfe] rounded-xl grid grid-cols-2 gap-3 p-5">
-          <div className="rounded-lg bg-gradient-to-br from-[#5ce1e6] to-[#3b82f6] animate-scale-1" />
-          <div className="rounded-lg bg-gradient-to-br from-[#5ce1e6] to-[#3b82f6] animate-scale-2" />
-          <div className="rounded-lg bg-gradient-to-br from-[#5ce1e6] to-[#3b82f6] animate-scale-3" />
-          <div className="rounded-lg bg-gradient-to-br from-[#5ce1e6] to-[#3b82f6] animate-scale-4" />
+          <div className="rounded-lg bg-[#5ce1e6]/50 animate-scale-1" />
+          <div className="rounded-lg bg-[#5ce1e6]/50 animate-scale-2" />
+          <div className="rounded-lg bg-[#5ce1e6]/50 animate-scale-3" />
+          <div className="rounded-lg bg-[#5ce1e6]/50 animate-scale-4" />
         </div>
       </CardHeader>
 

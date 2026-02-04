@@ -17,7 +17,6 @@ export const UserProfile: React.FC<{
 
   async function fetchUser(): Promise<User> {
     const response = await axios.get(`${BACKEND_URL}/api/v1/users/${userId}`);
-    console.log(response.data.data);
     return response.data.data;
   }
 
@@ -29,7 +28,7 @@ export const UserProfile: React.FC<{
     <div className="hidden lg:flex bg-white border rounded-lg overflow-hidden w-full col-span-2 h-max">
       <div className="space-y-5 p-5">
         {userId}
-        <UserHeader user={data!}/>
+        <UserHeader user={data!} />
         <ProfileSearch />
         <ProfileTab activeTab={activeTab} onChange={onChange} />
       </div>

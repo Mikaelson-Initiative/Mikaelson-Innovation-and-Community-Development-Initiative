@@ -22,8 +22,7 @@ import Link from "next/link";
 import { Apple } from "@/components/icons/apple";
 import { useAuth, useSignIn, useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
-import axios from "axios";
-import { BACKEND_URL } from "../../../../../constants";
+import { toast } from "sonner";
 
 // Zod schema
 const signInSchema = z.object({
@@ -79,7 +78,7 @@ export default function SignInForm() {
           "Sign-in incomplete:",
           JSON.stringify(signInAttempt, null, 2)
         );
-        alert("Sign-in incomplete. Please try again.");
+        toast.error("Sign-in incomplete. Please try again.");
       }
     } catch (err: any) {
       console.error("Sign-in error:", JSON.stringify(err, null, 2));
@@ -90,22 +89,22 @@ export default function SignInForm() {
 
         switch (errorCode) {
           case "form_identifier_not_found":
-            alert("No account found with this email.");
+            toast.error("No account found with this email.");
             break;
           case "form_password_incorrect":
-            alert("Incorrect password. Please try again.");
+            toast.error("Incorrect password. Please try again.");
             break;
           case "strategy_for_user_invalid":
-            alert("This sign-in method is not available for your account.");
+            toast.error("This sign-in method is not available for your account.");
             break;
           case "form_param_format_invalid":
-            alert("Invalid email format.");
+            toast.error("Invalid email format.");
             break;
           default:
-            alert(errorMessage || "Failed to sign in. Please try again.");
+            toast.error(errorMessage || "Failed to sign in. Please try again.");
         }
       } else {
-        alert("An unexpected error occurred. Please try again.");
+        toast.error("An unexpected error occurred. Please try again.");
       }
     } finally {
       setIsLoading(false);

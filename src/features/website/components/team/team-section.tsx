@@ -143,7 +143,7 @@ const TeamSection: React.FC = () => {
                     <DialogHeader className="sr-only">
                       <DialogTitle className="dark:text-brand-text-dark-heading">What you need to know</DialogTitle>
                       <DialogDescription className="dark:text-brand-text-dark">
-                        Get know {selectedMember.name}
+                        Get to know {selectedMember.name}
                       </DialogDescription>
                     </DialogHeader>
                     <ScrollArea className="max-h-[80vh] p-6">

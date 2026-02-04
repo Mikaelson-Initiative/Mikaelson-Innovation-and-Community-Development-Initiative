@@ -17,7 +17,7 @@ export const ProductHero = () => {
         </p>
 
         <div className="mt-8 flex justify-center gap-4">
-          <Button asChild className="btn btn-primary text-black">
+          <Button asChild className="btn bg-teal-300 hover:bg-teal-500 text-black">
             <Link href="/waitlist">Join waitlist</Link>
           </Button>
 

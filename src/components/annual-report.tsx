@@ -9,7 +9,7 @@ const ReportsDropdown: React.FC = () => {
   return (
     <div
       onClick={() => setOpen((v) => !v)}
-      className="relative flex items-center gap-2 rounded-sm border border-gray-300 bg-white cursor-pointer p-4 text-lg font-medium text-gray-900 hover:bg-gray-50"
+      className="relative flex items-center gap-2 rounded-sm border border-gray-300 bg-white dark:bg-black dark:border-gray-300 cursor-pointer p-4 text-lg font-medium hover:bg-gray-50"
     >
       <span>📊 Annual Reports</span>
       <ChevronUp

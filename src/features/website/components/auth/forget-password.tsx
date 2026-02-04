@@ -31,7 +31,7 @@ export default function ForgotPasswordForm() {
   });
 
   const onSubmit = (data: FormValues) => {
-    console.log("Reset link sent to:", data.email);
+    // TODO: Implement password reset functionality
   };
 
   return (

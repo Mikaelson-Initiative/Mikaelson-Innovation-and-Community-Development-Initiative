@@ -70,11 +70,9 @@ export const WaitlistForm = ({ waitlistCount = 1247 }) => {
       setErrorMessage("")
       const waitList = await axios.post(`${BACKEND_URL}/api/v1/waitList`, data);
       if ((waitList.status = 201)) {
-        console.log(waitList);
         setShowSuccess(true);
       }
     } catch (error: any) {
-      console.log(error?.message);
       setErrorMessage(error?.message)
     } finally {
       setLoading(false);

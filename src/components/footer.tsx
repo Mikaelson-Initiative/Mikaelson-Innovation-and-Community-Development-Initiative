@@ -128,16 +128,8 @@ export const Footer = () => {
                       href={item.href}
                     >
                       <div className="">
-                        {item.label === "Instagram" ? (
-                          <Image
-                            src={"/assets/images/instagram-icon.svg"}
-                            width={30}
-                            height={30}
-                            alt="instagram"
-                          />
-                        ) : (
+                        
                           <item.icon className="w-8 h-8" />
-                        )}
                       </div>
                     </a>
                   ))}

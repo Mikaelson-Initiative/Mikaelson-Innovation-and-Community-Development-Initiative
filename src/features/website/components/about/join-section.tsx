@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "motion/react";
 
 export const JoinSection: React.FC = () => (
-  <section className="max-w-5xl mx-auto rounded-2xl bg-gradient-to-br from-teal-500 to-blue-600 p-10 text-center text-white px-4">
+  <section className="max-w-5xl mx-auto rounded-2xl bg-teal-500 p-10 text-center text-white px-4">
     <motion.h2
       className="mb-3 text-3xl font-extrabold md:text-4xl"
       initial={{ opacity: 0, y: 20 }}

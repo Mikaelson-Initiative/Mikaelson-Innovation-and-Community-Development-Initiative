@@ -25,6 +25,7 @@ import { useAuth, useSignIn, useSignUp } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import { BACKEND_URL } from "../../../../../constants";
+import { toast } from "sonner";
 
 // Zod validation schema
 const formSchema = z
@@ -86,11 +87,12 @@ export default function CreateAccountForm() {
 
       await signUp.prepareEmailAddressVerification({ strategy: "email_code" });
 
-      alert("Code sent to your mail");
+      toast.success("Verification code sent to your email!");
       router.push(`/verify-email?email=${email}&fullName=${values.fullName}`);
       setPendingVerification(false);
     } catch (error) {
-      console.log("SignUp Error:", error);
+      toast.error("Sign-up failed. Please try again.");
+      setPendingVerification(false);
     }
   };
 

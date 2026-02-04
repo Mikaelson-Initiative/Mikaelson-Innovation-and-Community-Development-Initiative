@@ -14,7 +14,6 @@ interface ChallengePostsResult {
 const MainFeed = () => {
   async function fetchChallengesPosts(): Promise<ChallengePostsResult> {
     const response = await axios.get(`${BACKEND_URL}/api/v1/challenges/posts`);
-    console.log("challenge posts:", response.data.data);
     return response.data.data;
   }
   const {
@@ -27,7 +26,7 @@ const MainFeed = () => {
   });
 
   return (
-    <section className="md:col-span-4 p-4">
+    <section className="md:col-span-4 px-4">
       <GettAllPosts results={challengesposts!} />
     </section>
   );

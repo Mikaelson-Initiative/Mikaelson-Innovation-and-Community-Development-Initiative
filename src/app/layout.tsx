@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
-import { QueriesObserver } from "@tanstack/react-query";
 import { ThemeProvider } from "@/components/theme-provider";
 import QueryProvider from "@/components/QueryProvider";
 import { Toaster } from "sonner";
@@ -112,7 +111,6 @@ export default function RootLayout({
       <body className={`${poppins.variable} antialiased`}>
         <ClerkProvider publishableKey={clerkPubKey}>
           <QueryProvider>
-            <Toaster />
             <noscript>
               <iframe
                 src="https://www.googletagmanager.com/ns.html?id=GTM-M2GCJCC8"

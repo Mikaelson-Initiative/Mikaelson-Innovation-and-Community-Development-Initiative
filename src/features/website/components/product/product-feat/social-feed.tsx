@@ -6,9 +6,9 @@ export const SocialFeed = () => {
     <Card className="max-w-md w-full !py-10 feature-card">
       <CardHeader>
         <div className="h-44 bg-[#f7fcfe] rounded-xl grid grid-cols-1 gap-3 py-4 px-8">
-          <div className=" rounded-lg bg-gradient-to-r from-cyan-300/30 to-blue-500/30 animate-slide-1" />
-          <div className="rounded-lg bg-gradient-to-r from-cyan-300/30 to-blue-500/30 animate-slide-2" />
-          <div className="rounded-lg bg-gradient-to-r from-cyan-300/30 to-blue-500/30 animate-slide-3" />
+          <div className=" rounded-lg bg-[#5ce1e6]/30 animate-slide-1" />
+          <div className="rounded-lg bg-[#5ce1e6]/30 animate-slide-2" />
+          <div className="rounded-lg bg-[#5ce1e6]/30 animate-slide-3" />
         </div>
       </CardHeader>
 
