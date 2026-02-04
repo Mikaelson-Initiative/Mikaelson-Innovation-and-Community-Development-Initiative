@@ -23,7 +23,6 @@ export const FeedsMainContent: React.FC<{
   const { userId } = useAuth();
   async function fetchPosts(): Promise<Post[]> {
     const response = await axios.get(`${BACKEND_URL}/api/v1/posts`);
-    console.log(response.data.data);
     return response.data.data;
   }
   const {
@@ -39,7 +38,6 @@ export const FeedsMainContent: React.FC<{
     const response = await axios.get(
       `${BACKEND_URL}/api/v1/posts/followings/${userId}`
     );
-    console.log(response.data.data);
     return response.data.data;
   }
   const {
@@ -53,7 +51,6 @@ export const FeedsMainContent: React.FC<{
 
   async function fetchChallengesPosts(): Promise<ChallengePostsResult> {
     const response = await axios.get(`${BACKEND_URL}/api/v1/challenges/posts`);
-    console.log("challenge posts:", response.data.data);
     return response.data.data;
   }
   const {

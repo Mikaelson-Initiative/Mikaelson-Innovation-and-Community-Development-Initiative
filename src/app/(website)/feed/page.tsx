@@ -50,7 +50,6 @@ const SocialFeed = () => {
     const response = await axios.get(
       `${BACKEND_URL}/api/v1/users/top-contributors`
     );
-    console.log("top contributors:", response.data.data);
     return response.data.data;
   }
   const {
@@ -64,7 +63,6 @@ const SocialFeed = () => {
 
   async function fetchChallenges(): Promise<any[]> {
     const response = await axios.get(`${BACKEND_URL}/api/v1/challenges`);
-    console.log("challenge:", response.data.data);
     return response.data.data;
   }
   const {
