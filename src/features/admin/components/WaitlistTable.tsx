@@ -76,37 +76,37 @@ const WaitlistTable: React.FC<WaitlistTableProps> = ({ entries, setEntries }) =>
     }
 
     const bulkEmail = () => {
-        console.log('Bulk email IDs:', Array.from(selected))
+        // TODO: Implement bulk email functionality
     }
     const bulkExport = () => {
         // Generate CSV for selected entries
-        const headers = ['id','name','email','interest','referral','newsletter','joined','status']
+        const headers = ['id', 'name', 'email', 'interest', 'referral', 'newsletter', 'joined', 'status']
         const selectedEntries = entries.filter((e) => selected.has(e.id))
         const escape = (val: unknown) => {
-          const s = String(val ?? '')
-          // escape quotes and wrap in quotes if contains comma or newline
-          const escaped = s.replace(/"/g, '""')
-          return /[",\n]/.test(s) ? `"${escaped}"` : escaped
+            const s = String(val ?? '')
+            // escape quotes and wrap in quotes if contains comma or newline
+            const escaped = s.replace(/"/g, '""')
+            return /[",\n]/.test(s) ? `"${escaped}"` : escaped
         }
         const rows = [headers.join(',')]
         for (const e of selectedEntries) {
-          rows.push([
-            escape(e.id),
-            escape(e.name),
-            escape(e.email),
-            escape(e.interest),
-            escape(e.referral ?? ''),
-            escape(e.newsletter ? 'yes' : 'no'),
-            escape(e.joined),
-            escape(e.status),
-          ].join(','))
+            rows.push([
+                escape(e.id),
+                escape(e.name),
+                escape(e.email),
+                escape(e.interest),
+                escape(e.referral ?? ''),
+                escape(e.newsletter ? 'yes' : 'no'),
+                escape(e.joined),
+                escape(e.status),
+            ].join(','))
         }
         const csv = rows.join('\n')
         const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' })
         const url = URL.createObjectURL(blob)
         const a = document.createElement('a')
         a.href = url
-        a.download = `waitlist-selected-${new Date().toISOString().slice(0,10)}.csv`
+        a.download = `waitlist-selected-${new Date().toISOString().slice(0, 10)}.csv`
         a.click()
         URL.revokeObjectURL(url)
     }
@@ -253,11 +253,10 @@ const WaitlistTable: React.FC<WaitlistTableProps> = ({ entries, setEntries }) =>
                                                 )
                                             }
                                         >
-                                            <SelectTrigger className={`h-8 w-[140px] ${
-                                                (e.status === "pending" && "bg-amber-300/30 text-amber-500 border-amber-500") ||
+                                            <SelectTrigger className={`h-8 w-[140px] ${(e.status === "pending" && "bg-amber-300/30 text-amber-500 border-amber-500") ||
                                                 (e.status === "contacted" && "bg-blue-300/30 text-blue-500 border-blue-500") ||
                                                 (e.status === "invited" && "bg-green-300/30 text-green-500 border-green-500")
-                                            }`}>
+                                                }`}>
                                                 <SelectValue />
                                             </SelectTrigger>
                                             <SelectContent>
