@@ -1,6 +1,8 @@
 "use client";
 
 import { AdminNavbar } from "@/features/admin/components/navbar";
+import  { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { QuickActions } from "@/features/admin/components/quick-actions";
 import { AdminDashboardStats } from "@/features/admin/components/stats";
 import { AdminDataTable } from "@/features/admin/components/table/admin-data-table";
@@ -15,7 +17,33 @@ const getPercentageChange = (current: number, previous: number) => {
 };
 
 const AdminDashboardHome = () => {
-  // ✅ Fetch users
+  
+  const router = useRouter();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isCheckingAuth, setIsCheckingAuth] = useState(true);
+
+useEffect(() => {
+     const checkAuthentication = () => {
+      if (typeof window === "undefined") return;
+
+      const auth = localStorage.getItem("admin_authenticated");
+
+      if (auth === "true") {
+        setIsAuthenticated(true);
+        setIsCheckingAuth(false);
+      } else {
+        // Only redirect if we're sure there's no auth
+        setIsCheckingAuth(false);
+        router.replace("/admin");
+      }
+    };
+
+    checkAuthentication();
+  }, []);
+  
+  
+  // Fetch waitlist data
+  
   const fetchWaitList = async (): Promise<User[]> => {
     const res = await axios.get(`/api/waitlist`);
     const items = res.data?.data ?? [];
@@ -29,10 +57,13 @@ const AdminDashboardHome = () => {
     }));
   };
 
+  // 
   const { data: users = [], isLoading, error } = useQuery({
-    queryKey: ["admin-waitlist"],
-    queryFn: fetchWaitList,
-  });
+  queryKey: ["admin-waitlist"],
+  queryFn: fetchWaitList,
+  enabled: isAuthenticated,
+});
+
 
   // ✅ Date references
   const now = new Date();
@@ -126,6 +157,21 @@ const AdminDashboardHome = () => {
   // ✅ UI
   // ============================
 
+  // checking if user is authenticated first before initiating loading state
+
+  if (isCheckingAuth) {
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+      Checking authentication...
+    </div>
+  );
+}
+
+if (!isAuthenticated) {
+  return null;
+}
+
+
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -164,3 +210,6 @@ const AdminDashboardHome = () => {
 };
 
 export default AdminDashboardHome;
+
+
+
