@@ -33,7 +33,7 @@ export default function Testimonials() {
               className="shadow-md !border-l-4 transition-all hover:border-2 duration-300 hover:border-brand-green-100 hover:-translate-y-2 border-l-brand-primary rounded-2xl"
             >
               <CardContent className="p-6">
-                <p className="text-muted-foreground italic text-base mb-4">"{item.quote}"</p>
+                <p className="text-muted-foreground italic text-base mb-4">&quot;{item.quote}&quot;</p>
                 <cite className="text-brand-primary text-base font-semibold block">
                   - {item.author}
                 </cite>
