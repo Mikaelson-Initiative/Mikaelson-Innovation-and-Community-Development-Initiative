@@ -10,7 +10,7 @@ type WaitlistEntry = {
   id: string
   name: string
   email: string
-  interest: 'habits' | 'community' | 'challenges' | 'analytics' | 'all'
+  interest: 'Habits' | 'Community' | 'Challenges' | 'Analytics' | 'All'
   referral?: string
   newsletter: boolean
   joined: string
@@ -19,18 +19,18 @@ type WaitlistEntry = {
 
 const Page = () => {
   const [entries, setEntries] = React.useState<WaitlistEntry[]>([
-    { id: '1', name: 'John Doe', email: 'john@example.com', interest: 'habits', referral: 'Twitter', newsletter: true, joined: '2025-10-15', status: 'pending' },
-    { id: '2', name: 'Jane Smith', email: 'jane@example.com', interest: 'community', referral: 'LinkedIn', newsletter: false, joined: '2025-10-13', status: 'contacted' },
-    { id: '3', name: 'Alex Johnson', email: 'alex@example.com', interest: 'challenges', referral: 'Friend', newsletter: true, joined: '2025-10-12', status: 'invited' },
-    { id: '4', name: 'Maria Garcia', email: 'maria@example.com', interest: 'analytics', referral: 'Blog', newsletter: false, joined: '2025-10-10', status: 'pending' },
-    { id: '5', name: 'Chris Lee', email: 'chris@example.com', interest: 'all', referral: 'Website', newsletter: true, joined: '2025-10-09', status: 'contacted' },
-    { id: '6', name: 'Emily Davis', email: 'emily@example.com', interest: 'habits', referral: 'Instagram', newsletter: false, joined: '2025-10-08', status: 'pending' },
-    { id: '7', name: 'Michael Brown', email: 'michael@example.com', interest: 'community', referral: 'Friend', newsletter: true, joined: '2025-10-07', status: 'invited' },
-    { id: '8', name: 'Sarah Wilson', email: 'sarah@example.com', interest: 'challenges', referral: 'Twitter', newsletter: false, joined: '2025-10-06', status: 'pending' },
-    { id: '9', name: 'David Martinez', email: 'david@example.com', interest: 'analytics', referral: 'LinkedIn', newsletter: true, joined: '2025-10-05', status: 'contacted' },
-    { id: '10', name: 'Olivia Taylor', email: 'olivia@example.com', interest: 'all', referral: 'Website', newsletter: true, joined: '2025-10-04', status: 'pending' },
-    { id: '11', name: 'Liam Anderson', email: 'liam@example.com', interest: 'habits', referral: 'Blog', newsletter: false, joined: '2025-10-03', status: 'invited' },
-    { id: '12', name: 'Sophia Thomas', email: 'sophia@example.com', interest: 'community', referral: 'Friend', newsletter: true, joined: '2025-10-02', status: 'contacted' },
+    { id: '1', name: 'John Doe', email: 'john@example.com', interest: 'Habits', referral: 'Twitter', newsletter: true, joined: '2025-10-15', status: 'pending' },
+    { id: '2', name: 'Jane Smith', email: 'jane@example.com', interest: 'Community', referral: 'LinkedIn', newsletter: false, joined: '2025-10-13', status: 'contacted' },
+    { id: '3', name: 'Alex Johnson', email: 'alex@example.com', interest: 'Challenges', referral: 'Friend', newsletter: true, joined: '2025-10-12', status: 'invited' },
+    { id: '4', name: 'Maria Garcia', email: 'maria@example.com', interest: 'Analytics', referral: 'Blog', newsletter: false, joined: '2025-10-10', status: 'pending' },
+    { id: '5', name: 'Chris Lee', email: 'chris@example.com', interest: 'All', referral: 'Website', newsletter: true, joined: '2025-10-09', status: 'contacted' },
+    { id: '6', name: 'Emily Davis', email: 'emily@example.com', interest: 'Habits', referral: 'Instagram', newsletter: false, joined: '2025-10-08', status: 'pending' },
+    { id: '7', name: 'Michael Brown', email: 'michael@example.com', interest:'Community' , referral:'Friend' , newsletter:true , joined:'2025-10-07' , status:'invited'},               
+    { id: '8', name: 'Sarah Wilson', email: 'sarah@example.com', interest: 'Challenges', referral: 'Twitter', newsletter: false, joined: '2025-10-06', status: 'pending' },
+    { id: '9', name: 'David Martinez', email: 'david@example.com', interest: 'Analytics', referral: 'LinkedIn', newsletter: true, joined: '2025-10-05', status: 'contacted' },
+    { id: '10', name: 'Olivia Taylor', email: 'olivia@example.com', interest: 'All', referral: 'Website', newsletter: true, joined: '2025-10-04', status: 'pending' },
+    { id: '11', name: 'Liam Anderson', email: 'liam@example.com', interest: 'Habits', referral: 'Blog', newsletter: false, joined: '2025-10-03', status: 'invited' },
+    { id: '12', name: 'Sophia Thomas', email: 'sophia@example.com', interest: 'Community', referral: 'Friend', newsletter: true, joined: '2025-10-02', status: 'contacted' },
   ])
 
   return (

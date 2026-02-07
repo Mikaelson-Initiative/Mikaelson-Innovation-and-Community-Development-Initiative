@@ -16,7 +16,7 @@ type WaitlistEntry = {
     id: string
     name: string
     email: string
-    interest: 'habits' | 'community' | 'challenges' | 'analytics' | 'all'
+    interest: 'Habits' | 'Community' | 'Challenges' | 'Analytics' | 'All'
     referral?: string
     newsletter: boolean
     joined: string
@@ -161,11 +161,11 @@ const WaitlistTable: React.FC<WaitlistTableProps> = ({ entries, setEntries }) =>
                             <SelectValue placeholder="All Interests" />
                         </SelectTrigger>
                         <SelectContent>
-                            <SelectItem value="habits">Habit Tracking</SelectItem>
-                            <SelectItem value="community">Community Features</SelectItem>
-                            <SelectItem value="challenges">Challenges & Competitions</SelectItem>
-                            <SelectItem value="analytics">Personal Analytics</SelectItem>
-                            <SelectItem value="all">Everything</SelectItem>
+                            <SelectItem value="Habits">Habit Tracking</SelectItem>
+                            <SelectItem value="Community">Community Features</SelectItem>
+                            <SelectItem value="Challenges">Challenges & Competitions</SelectItem>
+                            <SelectItem value="Analytics">Personal Analytics</SelectItem>
+                            <SelectItem value="All">Everything</SelectItem>
                         </SelectContent>
                     </Select>
 

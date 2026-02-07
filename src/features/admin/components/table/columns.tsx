@@ -34,5 +34,15 @@ export const columns: ColumnDef<User>[] = [
   {
     accessorKey: "interest",
     header: "Interest",
+    cell: ({ row }) => {
+      const interest = row.getValue("interest") as string;
+      // capitalizing each word -- kinda temporary tbh but it works 
+      return interest
+        .split(" ")
+        .map(
+          (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase(),
+        )
+        .join(" ");
+    },
   },
 ];

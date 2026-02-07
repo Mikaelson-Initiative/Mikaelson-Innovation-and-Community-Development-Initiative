@@ -23,7 +23,7 @@ const HomeHero: React.FC = () => {
             data-aos="fade-right"
           >
             <h1 className="m-0 text-3xl md:text-[2.1rem] font-bold leading-[1.2] text-[#111111] dark:text-brand-text-dark-heading">
-              We&apos;re Building Africa&apos;s Future - one Student, One Idea,
+              We&apos;re Building Africa&apos;s Future - One Student, One Idea,
               One Action at a Time.
             </h1>
             <p className="mt-[1.2rem] text-lg md:text-[1.1rem] font-normal leading-[1.6] text-[#222222] dark:text-brand-text-dark">

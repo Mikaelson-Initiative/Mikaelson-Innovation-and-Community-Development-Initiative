@@ -4,7 +4,7 @@ type WaitlistEntry = {
   id: string
   name: string
   email: string
-  interest: 'habits' | 'community' | 'challenges' | 'analytics' | 'all'
+  interest: 'Habits' | 'Community' | 'Challenges' | 'Analytics' | 'All'
   referral?: string
   newsletter: boolean
   joined: string // ISO date string
