@@ -107,7 +107,7 @@ export const SponsorshipOptions: React.FC = () => {
               style={{ margin: "1rem 0", color: "#333" }}
             >
               Join our network of corporate partners committed to fostering
-              talent and driving innovation in Africa. Let's build the future
+              talent and driving innovation in Africa. Let&apos;s build the future
               together.
             </p>
 

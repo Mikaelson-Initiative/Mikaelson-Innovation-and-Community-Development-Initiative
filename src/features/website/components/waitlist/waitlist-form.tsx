@@ -227,7 +227,7 @@ export const WaitlistForm = ({ waitlistCount = 1247 }) => {
               <CheckCircle2Icon className=" text-green-500 mb-4 h-10 w-10" />
               <h3 className="text-2xl font-bold mb-2">Welcome aboard! 🎉</h3>
               <p>
-                Welcome {name}! We'll send you updates at {email}{" "}
+                Welcome {name}! We&apos;ll send you updates at {email}{" "}
               </p>
             </div>
           )}

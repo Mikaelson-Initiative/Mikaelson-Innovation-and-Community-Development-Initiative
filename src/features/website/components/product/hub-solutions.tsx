@@ -4,7 +4,7 @@ import { ProductsGrid } from "./product-grid";
 import { useState } from "react";
 
 export const HubSolutions = () => {
-    const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("");
   return (
     <div className="bg-white py-12 px-10 dark:bg-brand-dark-bg-nav">
       <div className="container mx-auto max-w-7xl space-y-8">
@@ -30,7 +30,7 @@ export const HubSolutions = () => {
           </p>
 
           <p>
-            Whether you're in education, business, creative industries, or
+            Whether you&apos;re in education, business, creative industries, or
             public service, RIO Hub adapts to your unique ecosystem—delivering
             personalized recommendations, actionable metrics, and the tools you
             need to drive meaningful improvement and sustainable success.
