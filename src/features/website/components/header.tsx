@@ -44,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   const pathName = usePathname();
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-200 bg-white dark:bg-brand-dark-bg-nav">
+    <header className="sticky top-0 z-50 border-b border-gray-200 bg-white dark:bg-[#111111]">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 md:px-10">
         {/* Logo & Brand */}
         <Link
@@ -91,7 +91,7 @@ const Header: React.FC<HeaderProps> = ({
             {actionButton && (
               <Link
                 href={actionButton.href}
-                className="ml-auto inline-flex  items-center rounded-xl bg-gray-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-black"
+                className="ml-auto inline-flex border dark:border-white  items-center rounded-xl bg-gray-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-black"
               >
                 {actionButton.label}
                 <svg
