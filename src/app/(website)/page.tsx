@@ -21,8 +21,9 @@ export default function Home() {
     ? "/assets/images/partner-mobile.svg"
     : "/assets/images/iPad Image Presentation.jpg";
   return (
-    <main className="bg-[#ffffff] dark:bg-background px-5 lg:px-0">
+    <>
       <HomeHero />
+    <main className="bg-[#ffffff] dark:bg-background px-5 lg:px-0">
       <EcosystemSection />
       <AnimatedSection
         title="The Mikaelson Community"
@@ -36,26 +37,27 @@ export default function Home() {
       <AnimatedSection
         title="Mikaelson Labs"
         description="Mikaelson Labs is our innovation hub where we build and experiment
-          with new ideas to solve challenges across Africa."
+        with new ideas to solve challenges across Africa."
         buttonText="Contribute to Labs"
         buttonLink="/labs"
         btnBgcolor="bg-brand-blue"
         imageSrc={labsUrl}
         imageAlt="Mikaelson Community on MacBook"
-      />
+        />
       <AnimatedSection
         title="Partnership & Growth Network"
         description="Our network connects students with mentors, resources, and
-          opportunities to foster collaboration and accelerate growth."
+        opportunities to foster collaboration and accelerate growth."
         buttonText="Sponsor a Program"
         buttonLink="/sponsor"
         btnBgcolor="bg-brand-black"
         imageSrc={sponsorUrl}
         imageAlt="Partnership & Growth Network on iPad"
-      />
+        />
       <ImpactSection />
       <MediaStories />
       <ExploreMore />
     </main>
+        </>
   );
 }
