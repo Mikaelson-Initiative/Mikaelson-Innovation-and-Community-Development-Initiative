@@ -75,17 +75,20 @@ const heroSlides: HeroSlide[] = [
       image: '/assets/images/mikealson-hero.png',
       title: `We're Building Africa's Future - One Student, One Idea, One Action at a Time.`,
       subtitle: `The Mikaelson Initiative is a youth-driven movement using technology, intentional living, and community to transform Africa from the inside out. We're starting with students. We're staying with purpose.`,
-      ctaText: "Join The Community",
+      ctaText1: "Join The Community",
+      ctaText2: "Explore Our Ecosystem",
     },
    {
       image: '/assets/images/mikaelson-landing.png',
-      title: 'Discover Amazing Destinations',
-      ctaText: "Join The Community",
+      title: '',
+      ctaText1: "Join The Community",
+      ctaText2: "Explore Our Ecosystem",
     },
    {
       image: '/assets/images/mikaelson-landing-ii.png',
-      title: 'Discover Amazing Destinations',
-      ctaText: "Join The Community",
+      title: '',
+      ctaText1: "Join The Community",
+      ctaText2: "Explore Our Ecosystem",
       
     },
     // {

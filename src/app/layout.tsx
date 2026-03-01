@@ -108,7 +108,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${poppins.variable} antialiased`}>
+      <body  className={`${poppins.variable} antialiased `}>
         <ClerkProvider publishableKey={clerkPubKey}>
           <QueryProvider>
             <noscript>

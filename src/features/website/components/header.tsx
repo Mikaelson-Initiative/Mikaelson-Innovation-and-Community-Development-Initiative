@@ -44,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   const pathName = usePathname();
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur dark:bg-brand-dark-bg-nav">
+    <header className="sticky top-0 z-50 border-b border-gray-200 bg-white dark:bg-brand-dark-bg-nav">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 md:px-10">
         {/* Logo & Brand */}
         <Link

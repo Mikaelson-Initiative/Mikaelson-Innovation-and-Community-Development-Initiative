@@ -8,7 +8,8 @@ export interface HeroSlide {
   image: string;
   title: string;
   subtitle?: string;
-  ctaText: string;
+  ctaText1: string;
+  ctaText2: string;
   alt?: string;
 }
 
@@ -85,7 +86,7 @@ tl.fromTo(
   }
 
   // Use the first slide's text (or whichever you want to display statically)
-  const { title, subtitle, ctaText } = slides[0];
+  const { title, subtitle, ctaText1, ctaText2 } = slides[0];
 
   return (
     <div className={`relative w-full max-w-full rounded-br-4xl rounded-bl-4xl ${height} overflow-hidden ${className}`}>
@@ -143,13 +144,24 @@ tl.fromTo(
         </p>
 
         {/* cta */}
+        <div className='flex gap-3 '>
+          {/* 1 */}
         <button className='text-left rounded-md'  ref={ctaTextRef}>
 
           <span className='text-[15px] py-2 px-4 font-semi-bold  border  border-red-400 text-white '>
-            {ctaText}
+            {ctaText1}
 
           </span>
         </button>
+        {/* 2 */}
+        <button className='text-left rounded-md'  ref={ctaTextRef}>
+
+          <span className='text-[15px] py-2 px-4 font-semi-bold  border  border-red-400 text-white '>
+            {ctaText2}
+
+          </span>
+        </button>
+        </div>
 
         
         
