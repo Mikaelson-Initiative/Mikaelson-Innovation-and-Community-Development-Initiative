@@ -58,7 +58,7 @@ export default function HowItWorks() {
       >
 
         
-        <div className="relative w-full max-w-6xl h-[75vh]">
+        <div className="relative w-full max-w-6xl h-[75vh] border border-red-400">
           {steps.map((step, index) => (
             <div
               key={index}
@@ -72,21 +72,21 @@ export default function HowItWorks() {
               backdrop-blur-xl
               transition-colors
 
-              border-neutral-800
+              border-[#5CE1E6]
               bg-black
               text-white
 
-              dark:border-neutral-800
+              dark:border-[#5CE1E6]
               dark:bg-black
 
-              light:border-neutral-200
+              light:border-[#5CE1E6]
               light:bg-white
               light:text-black
             "
             >
               {/* BIG NUMBER */}
               <div
-                className="absolute top-4 left-6 text-[clamp(120px,14vw,180px)] font-bold opacity-[0.06] leading-none pointer-events-none select-none">
+                className="absolute text-[#5CE1E6] top-4 left-6 text-[clamp(120px,14vw,180px)] font-bold  leading-none pointer-events-none select-none">
                 {step.number}
               </div>
 
@@ -99,22 +99,13 @@ export default function HowItWorks() {
                   {step.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="
-                      px-4 py-2
-                      rounded-full
-                      text-sm
-                      border
-                      border-neutral-700
-                      dark:border-neutral-700
-                      light:border-neutral-300
-                    "
-                    >
+                      className="px-4 py-2 rounded-full text-sm  border border-[#5CE1E6]        dark:border-[#5CE1E6]  light:border-[#5CE1E6] ">
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <p className="text-neutral-400 dark:text-neutral-400 light:text-neutral-600 max-w-md">
+                <p className="text-white   max-w-md">
                   {step.description}
                 </p>
               </div>

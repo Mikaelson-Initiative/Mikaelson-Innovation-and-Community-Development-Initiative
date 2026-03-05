@@ -150,7 +150,7 @@ const HeroSlider: React.FC<HeroSliderProps> = ({
         {/* cta */}
         <div className="flex md:gap-2 gap-4 ">
           {/* 1 */}
-          <button className="hidden md:block text-left  md:px-4 md:py-2 px-2 py-1 text-sm font-semibold bg-transparent hover:border-cyan-300/50  text-white  transition-colors duration-300 text-cyan-300/50 border-2 hover:border-cyan-300/50 focus:outline-none focus:ring-2  focus:ring-cyan-300/60" ref={ctaTextRef}>
+          <button className="hidden md:block text-left  md:px-4 md:py-2 px-2 py-1 text-sm font-semibold bg-transparent hover:border-[#5CE1E6]  text-white  transition-colors duration-300 text-[#5CE1E6] border-2 hover:border-[#5CE1E6] focus:outline-none focus:ring-2  focus:ring-[#5CE1E6" ref={ctaTextRef}>
            
               {ctaText1}
            
@@ -158,7 +158,7 @@ const HeroSlider: React.FC<HeroSliderProps> = ({
           {/* 2 */}
           <button
             ref={ctaTextRef}
-            className="text-left  md:px-4 md:py-2 px-2 py-1 text-sm font-semibold  text-white  transition-colors duration-300 bg-cyan-300/50 focus:outline-none focus:ring-2 focus:ring-cyan-300/60"
+            className="text-left  md:px-4 md:py-2 px-2 py-1 text-sm font-semibold  text-white  transition-colors duration-300 bg-[#5CE1E6] focus:outline-none focus:ring-2 focus:ring-[#5CE1E6]"
           >
             {ctaText2}
           </button>
