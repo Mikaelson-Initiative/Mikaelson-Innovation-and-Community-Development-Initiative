@@ -9,6 +9,7 @@ import MediaStories from "@/features/website/components/media-stories";
 import { useIsMobile } from "@/hooks/use-mobile";
 import IntroVideo from "@/features/website/components/intro-video";
 import WhatWeDo from "./what-we-do";
+import HowItWorks from "@/features/website/components/how-it-works";
 
 export default function Home() {
   const isMobile = useIsMobile();
@@ -30,6 +31,7 @@ export default function Home() {
       <main className="bg-[#ffffff] dark:bg-background px-5 lg:px-0">
         <IntroVideo />
         <WhatWeDo />
+        <HowItWorks />
         <EcosystemSection />
         <AnimatedSection
           title="The Mikaelson Community"
