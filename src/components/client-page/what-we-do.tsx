@@ -1,79 +1,74 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { pillars } from "./data";
-// text-lg md:text-[1.1rem] dark:text-white leading-[1.2] tracking-[0.025em] text-[#111111]
+
 export default function WhatWeDo() {
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const ctx = gsap.context(() => {
-
-      gsap.from(".pillar-card", {
-        scrollTrigger: {
-          trigger: ".pillars",
-          start: "top 80%",
-        },
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: "power3.out",
-      });
-
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section ref={sectionRef} className="py-10 text-[#111111] dark:text-white">
-      <div className="container mx-auto md:px-10 ">
+    <section className="py-24 text-[#111111] dark:text-white">
+      <div className="container mx-auto px-5 md:px-10">
 
-        <div className="text-center mb-20">
-          <h2 className="md:text-[2.3rem] text-xl   dark:text-white font-extrabold leading-[1.2] tracking-[-0.025em] text-[#111111] mb-6">
+        {/* header*/}
+        <div className="text-center mb-16 max-w-2xl mx-auto">
+          <p className="text-[#5CE1E6] text-sm font-semibold tracking-[0.2em] uppercase mb-4">
+            Our Pillars
+          </p>
+          <h2 className="text-[clamp(1.8rem,4vw,2.3rem)] dark:text-white font-extrabold leading-[1.2] tracking-[-0.025em] text-[#111111] mb-5">
             How We Develop Future-Ready African Leaders
           </h2>
-          <p className="md:max-w-2xl mx-auto w-full md:text-lg text-sm ">
+          <p className="text-base md:text-[1.05rem] text-[#555] dark:text-white/60 leading-relaxed">
             Structured systems designed for measurable youth leadership and personal development growth.
           </p>
         </div>
 
-        <div className="pillars grid md:grid-cols-4 gap-8">
-
+        {/* cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
           {pillars.map((pillar, index) => (
             <div
               key={index}
-              className="pillar-card group border border-zinc-400 dark:border-zinc-500 rounded-2xl overflow-hidden bg-transparent transition-shadow duration-300"
+              className="group relative flex flex-col rounded-2xl overflow-hidden bg-[#050a0a] border border-[#5CE1E6]/30 transition-all duration-300 hover:border-[#5CE1E6]/70 hover:shadow-[0_0_30px_rgba(92,225,230,0.08)]"
             >
-              {/* Image Wrapper */}
-              <div className="relative h-64 overflow-hidden border-b border-zinc-400 dark:border-zinc-500">
+              {/* watermark number kinda effect */}
+              <div
+                className="absolute top-3 right-4 font-black leading-none text-white/5 pointer-events-none select-none z-10"
+                style={{ fontSize: "clamp(48px, 8vw, 72px)", letterSpacing: "-0.05em" }}
+              >
+                {String(index + 1).padStart(2, "0")}
+              </div>
+
+              {/* image */}
+              <div className="relative h-52 overflow-hidden">
                 <Image
                   src={pillar.image}
                   alt={pillar.title}
                   fill
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105 brightness-75"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050a0a] via-[#050a0a]/20 to-transparent" />
               </div>
 
-              {/* Content */}
-              <div className="p-5 dark:text-white flex flex-col justify-between space-y-4">
-                <h3 className="md:text-lg text-[17px] font-semibold">
+              {/* content */}
+              <div className="flex flex-col flex-1 p-5 pt-4 gap-3">
+                <div className="w-8 h-[2px] bg-[#5CE1E6] rounded-full" />
+                <h3 className="text-[15px] md:text-base font-bold text-white leading-snug tracking-[-0.01em]">
                   {pillar.title}
                 </h3>
-                <p className="text-[16px] text-[#111111] dark:text-white">
+                <p className="text-sm text-white/50 leading-relaxed flex-1">
                   {pillar.description}
                 </p>
               </div>
+
+              {/* bottom hover accent */}
+              <div
+                className="absolute bottom-0 left-0 right-0 h-[1.5px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{
+                  background: "linear-gradient(90deg, transparent, #5CE1E6 40%, #5CE1E6 60%, transparent)",
+                }}
+              />
             </div>
           ))}
-
         </div>
+
       </div>
     </section>
   );
