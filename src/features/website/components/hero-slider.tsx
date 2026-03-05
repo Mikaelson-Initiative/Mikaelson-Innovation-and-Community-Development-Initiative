@@ -132,17 +132,17 @@ const HeroSlider: React.FC<HeroSliderProps> = ({
       {/* Content Container — text stays static */}
       <div
         ref={overlayRef}
-        className="relative z-10 flex flex-col space-y-6 justify-center h-full md:pl-10 pl-4 text-center"
+        className="relative z-10 flex flex-col space-y-4 md:space-y-6 justify-center h-full md:pl-10 pl-4 text-center"
       >
         <h1
           ref={titleRef}
-          className="text-3xl md:text-[2.1rem]  font-bold text-white mb-6 max-w-3xl text-left leading-[1.2]"
+          className="text-xl md:text-[2.1rem]  font-bold text-white mb-6 max-w-3xl text-left leading-[1.2]"
         >
           {title}
         </h1>
         <p
           ref={subtitleRef}
-          className="text-lg md:text-[1.1rem] text-left  text-gray-200 max-w-2xl"
+          className="text-[12px] md:text-[1.1rem] text-left  text-gray-200 max-w-2xl"
         >
           {subtitle}
         </p>
@@ -150,7 +150,7 @@ const HeroSlider: React.FC<HeroSliderProps> = ({
         {/* cta */}
         <div className="flex md:gap-2 gap-4 ">
           {/* 1 */}
-          <button className="text-left rounded-md md:px-4 md:py-2 px-2 py-1 text-sm font-semibold bg-transparent hover:border-cyan-300/50  text-white  transition-colors duration-300 text-cyan-300/50 border-2 hover:border-cyan-300/50 focus:outline-none focus:ring-2  focus:ring-cyan-300/60" ref={ctaTextRef}>
+          <button className="hidden md:block text-left  md:px-4 md:py-2 px-2 py-1 text-sm font-semibold bg-transparent hover:border-cyan-300/50  text-white  transition-colors duration-300 text-cyan-300/50 border-2 hover:border-cyan-300/50 focus:outline-none focus:ring-2  focus:ring-cyan-300/60" ref={ctaTextRef}>
            
               {ctaText1}
            
@@ -158,7 +158,7 @@ const HeroSlider: React.FC<HeroSliderProps> = ({
           {/* 2 */}
           <button
             ref={ctaTextRef}
-            className="text-left rounded-md md:px-4 md:py-2 px-2 py-1 text-sm font-semibold  text-white  transition-colors duration-300 bg-cyan-300/50 focus:outline-none focus:ring-2 focus:ring-cyan-300/60"
+            className="text-left  md:px-4 md:py-2 px-2 py-1 text-sm font-semibold  text-white  transition-colors duration-300 bg-cyan-300/50 focus:outline-none focus:ring-2 focus:ring-cyan-300/60"
           >
             {ctaText2}
           </button>

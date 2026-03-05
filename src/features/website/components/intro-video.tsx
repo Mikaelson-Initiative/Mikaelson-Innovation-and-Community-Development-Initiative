@@ -4,7 +4,7 @@ export default function IntroVideo() {
   return (
     <>
       <div
-        className="flex flex-col md:flex-row max-w-full md:gap-5  px-4  py-30 flex-1 items-center md:px-10"
+        className="flex flex-col  md:flex-row max-w-full md:gap-5  py-30 flex-1 items-center gap-10 md:px-10"
         data-aos="fade-left"
       >
         <motion.div
@@ -32,15 +32,15 @@ export default function IntroVideo() {
             </h2>
           </div>
 
-          <div className="flex flex-col space-y-3">
+          <div className="flex flex-col space-y-4">
 
-          <p className="text-lg md:text-[1.1rem] dark:text-white leading-[1.2] tracking-[0.025em] text-[#111111]">
+          <p className="text-lg md:text-[1.1rem] dark:text-white  text-[#111111]">
             Behind every impactful movement is a clear vision. Meet the mind and
             mission driving The Mikaelson Initiative, a youth-focused leadership
             platform committed to equipping African students with a structured
             growth system.
           </p>
-          <p className="text-lg md:text-[1.1rem] dark:text-white leading-[1.2] tracking-[0.025em] text-[#111111]">
+          <p className="text-lg md:text-[1.1rem] dark:text-white text-[#111111]">
             This short video highlights our problem statement, the story, the conviction, and the long-term
             vision behind our youth leadership and personal development programs
             across Nigeria and Africa.
