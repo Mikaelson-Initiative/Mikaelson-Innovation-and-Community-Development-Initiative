@@ -95,3 +95,51 @@ export const audience = [
     iconProps: { size: 30, color: "#5CE1E6", strokeWidth: 1.5 },
   },
 ];
+
+
+export interface ImpactItem {
+  number: string;
+  label: string;
+}
+
+export interface Testimonial {
+  quote: string;
+  name: string;
+  school: string;
+}
+
+export const IMPACT_ITEMS: ImpactItem[] = [
+  { number: "4", label: "Universities Touched (and counting…)" },
+  { number: "3,000+", label: "Students Reached" },
+  { number: "6", label: "Personal Growth Campaigns Run" },
+  { number: "12+", label: "Strategic Collaborators and Volunteers" },
+  { number: "10+", label: "Student Stories Captured" },
+];
+
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    quote: "The Initiative gave me the structure I needed to finally take my life seriously.",
+    name: "Adaeze O.",
+    school: "Wesley University",
+  },
+  {
+    quote: "Mikaelson helped me build habits I never thought I was capable of maintaining.",
+    name: "Emeka T.",
+    school: "University of Lagos",
+  },
+  {
+    quote: "I found a community that held me accountable and pushed me to lead with purpose.",
+    name: "Fatima A.",
+    school: "Ahmadu Bello University",
+  },
+  {
+    quote: "Before Mikaelson, I had ambition but no direction. Now I have both.",
+    name: "Chukwuemeka N.",
+    school: "Covenant University",
+  },
+  {
+    quote: "The personal growth systems changed how I approach every single day.",
+    name: "Blessing I.",
+    school: "University of Ibadan",
+  },
+];

@@ -1,11 +1,11 @@
 "use client";
 
-import AnimatedSection from "@/components/animated-section";
-import EcosystemSection from "@/features/website/components/ecosystem-section";
-import { ExploreMore } from "@/features/website/components/explore-more";
+// import AnimatedSection from "@/components/animated-section";
+// import EcosystemSection from "@/features/website/components/ecosystem-section";
+// import { ExploreMore } from "@/features/website/components/explore-more";
 import HomeHero from "@/components/client-page/hero";
 import ImpactSection from "@/features/website/components/impact-section";
-import MediaStories from "@/features/website/components/media-stories";
+// import MediaStories from "@/features/website/components/media-stories";
 import { useIsMobile } from "@/hooks/use-mobile";
 import IntroVideo from "@/components/client-page/intro-video";
 import WhatWeDo from "./what-we-do";
@@ -35,8 +35,8 @@ export default function Home() {
         <HowItWorks />
         <WhoItsFor />
 
-        <EcosystemSection />
-        <AnimatedSection
+        {/* <EcosystemSection /> */}
+        {/* <AnimatedSection
           title="The Mikaelson Community"
           description="The Mikaelson Community is a vibrant network of ambitious students and changemakers across Africa, united by excellence and intentional growth."
           buttonText="Join our community"
@@ -64,10 +64,10 @@ export default function Home() {
           btnBgcolor="bg-brand-black"
           imageSrc={sponsorUrl}
           imageAlt="Partnership & Growth Network on iPad"
-        />
+        /> */}
         <ImpactSection />
-        <MediaStories />
-        <ExploreMore />
+        {/* <MediaStories /> */}
+        {/* <ExploreMore /> */}
       </main>
     </>
   );
