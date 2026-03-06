@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 
 const CommunityPage = () => {
   return (
-    <main className="community-page">
+    <div className = "community-page" >
       <CommunityHeroSection />
       <FeaturesOverview />
       <LeaderBoard />
@@ -46,7 +46,7 @@ const CommunityPage = () => {
       <MonthlyChallenge />
       <RecentTransformation />
       <CommunityCTA />
-    </main>
+    </div >
   );
 };
 

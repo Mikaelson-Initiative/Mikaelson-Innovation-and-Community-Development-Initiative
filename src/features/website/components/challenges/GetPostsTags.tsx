@@ -364,7 +364,7 @@ export const GetContributors = () => {
     <div className="w-full flex flex-col gap-4">
       {topContributions.map((contributor, index) => (
         <div className="flex flex-row gap-4" key={index}>
-          <div className="bg-gradient-to-br from-teal-500 to-blue-600 text-white p-2 rounded-full aspect-square w-10 h-10 font-semibold flex items-center justify-center">
+          <div className="bg-linear-to-br from-teal-500 to-blue-600 text-white p-2 rounded-full aspect-square w-10 h-10 font-semibold flex items-center justify-center">
             {contributor.userAvatar}
           </div>
           <div key={contributor.userId} className="flex flex-col">
@@ -398,7 +398,7 @@ export const GettAllPosts = ({
           <div className="postheader flex flex-row justify-between">
             <div className="flex items-center gap-3">
               {/* Avatar */}
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-500 to-blue-600 flex items-center justify-center text-white font-semibold shadow-md">
+              <div className="w-8 h-8 rounded-full bg-linear-to-br from-teal-500 to-blue-600 flex items-center justify-center text-white font-semibold shadow-md">
                 {post?.user?.profileImage ? (
                   <img
                     src={post.user.profileImage}

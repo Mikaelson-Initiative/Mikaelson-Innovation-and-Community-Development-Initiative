@@ -37,11 +37,10 @@ export const LeaderBoard = () => {
           px-4 py-3 sm:px-6 sm:py-4 
           rounded-4xl text-sm md:text-[17px] font-medium transition-all 
           w-full sm:w-auto text-nowrap
-          ${
-            isActive
-              ? "bg-blue-600 text-white shadow-md"
-              : "bg-white text-gray-700 border hover:bg-gray-100"
-          }
+          ${isActive
+                    ? "bg-blue-600 text-white shadow-md"
+                    : "bg-white dark:bg-card text-gray-700 dark:text-brand-text-dark border dark:border-white/10 hover:bg-gray-100 dark:hover:bg-slate-800"
+                  }
         `}
               >
                 {tab.icon}

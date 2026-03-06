@@ -12,16 +12,16 @@ export default function Home() {
   const communityUrl = isMobile
     ? "/assets/images/community-mobile.svg"
     : "/assets/images/Macbook-pro.jpg";
-  
+
   const labsUrl = isMobile
     ? "/assets/images/lab-mobile.svg"
     : "/assets/images/Desktop-image.jpg";
-  
+
   const sponsorUrl = isMobile
     ? "/assets/images/partner-mobile.svg"
     : "/assets/images/iPad Image Presentation.jpg";
   return (
-    <main className="bg-[#ffffff] dark:bg-background px-5 lg:px-0">
+    <div className = "bg-[#ffffff] dark:bg-background px-5 lg:px-0" >
       <HomeHero />
       <EcosystemSection />
       <AnimatedSection
@@ -56,6 +56,6 @@ export default function Home() {
       <ImpactSection />
       <MediaStories />
       <ExploreMore />
-    </main>
+    </div >
   );
 }

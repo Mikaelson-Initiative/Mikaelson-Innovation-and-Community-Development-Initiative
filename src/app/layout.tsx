@@ -132,8 +132,8 @@ export default function RootLayout({
               </main>
             </ThemeProvider>
           </QueryProvider>
-        </ClerkProvider>
-      </body>
-    </html>
+      </ClerkProvider>
+    </body>
+    </html >
   );
 }
