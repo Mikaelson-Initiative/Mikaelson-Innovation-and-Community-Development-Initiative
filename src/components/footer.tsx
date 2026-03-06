@@ -1,5 +1,6 @@
 import { footerLinks } from "@/constants";
 import { Mail, MapPin } from "lucide-react";
+import { NewsletterForm } from "../components/newsletter-form"
 import Image from "next/image";
 import Link from "next/link";
 import ReportsDropdown from "./annual-report";
@@ -37,113 +38,138 @@ export const socialLinks = [
 
 export const Footer = () => {
   return (
-    <footer className="pt-10 mt-5 pb-5 px-10 md:px-5 border-t dark:bg-brand-dark-bg-nav">
-      <div className="max-w-6xl mx-auto">
-        <div className="w-full max-w-sm py-10 mx-auto space-y-4 text-center">
-          <div className="flex justify-center items-center gap-2">
-            <Image
-              src="/assets/images/mikaelsonlogo.png"
-              alt="mikaelinitiativelogo"
-              width={50}
-              height={50}
-              className="rounded-md"
-            />
-            <h1 className="font-extrabold text-2xl dark:text-brand-text-dark-heading">Mikaelson Initiative</h1>
+    <footer className="bg-[#0a0a0a] dark:bg-white text-white dark:text-[#111] mt-10">
+
+      {/* Top section */}
+      <div className="max-w-7xl mx-auto px-6 md:px-10 pt-16 pb-12">
+
+        {/* Brand + Newsletter row */}
+        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-12 pb-12 border-b border-white/10 dark:border-black/10">
+
+          {/* Brand */}
+          <div className="flex flex-col gap-5 max-w-xs">
+            <Link href="/" className="flex items-center gap-3">
+              <Image
+                src="/assets/images/mikaelsonlogo.png"
+                alt="Mikaelson Initiative"
+                width={36}
+                height={36}
+                className="rounded-md"
+              />
+              <span className="font-extrabold text-lg tracking-tight text-white dark:text-[#111]">
+                Mikaelson Initiative
+              </span>
+            </Link>
+            <p className="text-sm text-white/50 dark:text-black/50 leading-relaxed">
+              Elevating humanity through leadership, technology, and community — one student at a time.
+            </p>
+            <div className="flex flex-col gap-2.5">
+              <a
+                href="mailto:mikaelsoninitiative@gmail.com"
+                className="flex items-center gap-2.5 text-sm text-white/50 dark:text-black/50 hover:text-[#5CE1E6] dark:hover:text-[#5CE1E6] transition-colors duration-200 group"
+              >
+                <Mail size={14} />
+                mikaelsoninitiative@gmail.com
+              </a>
+              <a
+                href="https://www.google.com/maps"
+                className="flex items-center gap-2.5 text-sm text-white/50 dark:text-black/50 hover:text-[#5CE1E6] dark:hover:text-[#5CE1E6] transition-colors duration-200"
+              >
+                <MapPin size={14} />
+                Nigeria, Africa
+              </a>
+            </div>
           </div>
-          <p className="dark:text-brand-text-dark">
-            Elevating humanity through technology and community.
-          </p>
+
+          {/* Newsletter */}
+          <div className="flex flex-col gap-4 max-w-md w-full">
+            <div>
+              <p className="text-[#5CE1E6] text-xs font-semibold tracking-[0.2em] uppercase mb-2">
+                Stay in the loop
+              </p>
+              <h3 className="text-xl font-bold text-white dark:text-[#111] leading-snug">
+                Get updates from Mikaelson
+              </h3>
+              <p className="text-sm text-white/50 dark:text-black/50 mt-1">
+                Stories, program launches, and leadership resources — straight to your inbox.
+              </p>
+            </div>
+            <NewsletterForm />
+            <p className="text-xs text-white/30 dark:text-black/30">
+              No spam. Unsubscribe at any time.
+            </p>
+          </div>
         </div>
 
-        {/* other links */}
-        <div className="py-20">
-          <div className="">
-            <div className="">
-              <div className="max-w-80 hidden flex-col gap-2">
-                <div className="flex md:items-center gap-2 flex-col md:flex-row items-start">
-                  <Image
-                    src="/assets/images/mikaelsonlogo.png"
-                    alt="mikaelinitiativelogo"
-                    width={50}
-                    height={50}
-                  />
-                  <h1 className="font-extrabold text-xl">
-                    Mikaelson Initiative
-                  </h1>
-                </div>
-                <p className="text-sm">
-                  Elevating humanity through technology and community.
-                </p>
-                <div className="flex flex-row md:flex-col gap-2">
-                  <a
-                    href="mailto:mikaelsoninitiative@gmail.com"
-                    className="flex flex-row items-center gap-2 hover:text-blue-400"
+        {/* Links grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 pt-12">
+          {footerLinks.map((section) => (
+            <div key={section.section}>
+              <h3 className="text-xs font-semibold tracking-[0.15em] uppercase text-white/40 dark:text-black/40 mb-4">
+                {section.section}
+              </h3>
+              <nav className="flex flex-col gap-2.5">
+                {section.links.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-sm text-white/60 dark:text-black/60 hover:text-white dark:hover:text-[#111] hover:translate-x-0.5 transition-all duration-200"
                   >
-                    <Mail className="text-2xl" />
-                    <span className="text-sm hidden md:flex">
-                      mikaelsoninitiative@gmail.com
-                    </span>
-                  </a>
-                  <a
-                    href="https://www.google.com/maps"
-                    className="flex flex-row items-center gap-2 hover:text-blue-400"
-                  >
-                    <MapPin className="text-2xl" />
-                    <span className="text-sm hidden md:flex">
-                      Location here
-                    </span>
-                  </a>
-                </div>
-              </div>
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4">
-              {footerLinks.map((section) => (
-                <div key={section.section} className="">
-                  <h3 className="mb-2 font-extrabold text-lg dark:text-brand-text-dark-heading md:text-2xl">
-                    {section.section}
-                  </h3>
-                  <nav className="flex flex-col gap-2 text-sm text-gray-700">
-                    {section.links.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className="hover:text-blue-500 dark:text-brand-text-dark"
-                      >
-                        {link.label}
-                      </Link>
-                    ))}
-                  </nav>
-                </div>
+          ))}
+
+          {/* Social + Reports */}
+          <div className="flex flex-col gap-5">
+            <h3 className="text-xs font-semibold tracking-[0.15em] uppercase text-white/40 dark:text-black/40">
+              Follow Us
+            </h3>
+            <div className="flex gap-3 flex-wrap">
+              {socialLinks.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={item.ariaLabel}
+                  title={item.label}
+                  className="
+                    flex items-center justify-center
+                    w-9 h-9 rounded-lg
+                    border border-white/10 dark:border-black/10
+                    text-white/60 dark:text-black/60
+                    hover:border-[#5CE1E6]/50 hover:text-[#5CE1E6]
+                    dark:hover:border-[#5CE1E6]/50 dark:hover:text-[#5CE1E6]
+                    transition-all duration-200
+                  "
+                >
+                  <item.icon className="w-4 h-4" />
+                </a>
               ))}
-              <div className="social-links col-span-2 md:col-span-1 flex flex-col items-center gap-4">
-                <h1 className="font-extrabold text-lg md:text-2xl dark:text-brand-text-dark-heading">Connect With Us</h1>
-                <div className="gap-4 flex">
-                  {socialLinks.map((item) => (
-                    <a
-                      key={item.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      title={item.label}
-                      aria-label={item.ariaLabel}
-                      href={item.href}
-                    >
-                      <div className="">
-                        
-                          <item.icon className="w-8 h-8" />
-                      </div>
-                    </a>
-                  ))}
-                </div>
-                <ReportsDropdown />
-              </div>
             </div>
+            {/* <ReportsDropdown /> */}
           </div>
         </div>
       </div>
-      <hr />
-      <p className="text-center mt-5">
-        © 2025 Mikaelson Initiative. All rights reserved.
-      </p>
+
+      {/* Bottom bar */}
+      <div className="border-t border-white/8 dark:border-black/8">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-xs text-white/30 dark:text-black/30">
+            © {new Date().getFullYear()} Mikaelson Initiative. All rights reserved.
+          </p>
+          <div className="flex items-center gap-1">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#5CE1E6]" />
+            <span className="text-xs text-white/30 dark:text-black/30">
+              Building Africa's next generation of leaders
+            </span>
+          </div>
+        </div>
+      </div>
+
     </footer>
   );
 };
