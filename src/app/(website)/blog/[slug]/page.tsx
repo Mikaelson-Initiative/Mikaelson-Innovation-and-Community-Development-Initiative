@@ -1,6 +1,7 @@
+import { Metadata } from "next";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
-import { postBySlugQuery, relatedPostsQuery } from "@/sanity/lib/queries";
+import { postBySlugQuery, relatedPostsQuery, allPostsQuery } from "@/sanity/lib/queries";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,6 +19,72 @@ interface Post {
   publishedAt: string;
   coverImage?: any;
   body?: any[];
+}
+
+// Pre-generate all post slugs at build time
+export async function generateStaticParams() {
+  const posts = await client.fetch(allPostsQuery);
+  return posts.map((post: Post) => ({ slug: post.slug.current }));
+}
+
+// Dynamic metadata per post
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post: Post = await client.fetch(postBySlugQuery, { slug });
+
+  if (!post) return { title: "Post Not Found" };
+
+  const ogImage = post.coverImage
+    ? urlFor(post.coverImage).width(1200).height(630).url()
+    : "https://mikaelsoninitiative.org/assets/images/og-blog.png";
+
+  return {
+    title: `${post.title} — Mikaelson Initiative`,
+    description: post.excerpt,
+    keywords: [
+      post.category,
+      "Mikaelson Initiative",
+      "African student leadership",
+      "youth development Africa",
+      "student growth",
+    ],
+    authors: [{ name: "Mikaelson Initiative", url: "https://mikaelsoninitiative.org" }],
+    alternates: {
+      canonical: `https://mikaelsoninitiative.org/blog/${slug}`,
+    },
+    openGraph: {
+      title: `${post.title} — Mikaelson Initiative`,
+      description: post.excerpt,
+      url: `https://mikaelsoninitiative.org/blog/${slug}`,
+      siteName: "Mikaelson Initiative",
+      type: "article",
+      locale: "en_NG",
+      publishedTime: post.publishedAt,
+      tags: [post.category],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: post.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} — Mikaelson Initiative`,
+      description: post.excerpt,
+      site: "@mcdti_org",
+      images: [ogImage],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+  };
 }
 
 function formatDate(dateStr: string) {
@@ -47,7 +114,7 @@ const portableTextComponents = {
   },
   list: {
     bullet: ({ children }: any) => (
-      <ul className="list-none space-y-2 mb-6 ml-0">{children}</ul>
+      <ul className="list-none space-y-2 mb-6">{children}</ul>
     ),
     number: ({ children }: any) => (
       <ol className="list-decimal list-inside space-y-2 mb-6 text-[#444] dark:text-white/70">{children}</ol>
@@ -131,23 +198,64 @@ function RelatedCard({ post }: { post: Post }) {
   );
 }
 
-export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function BlogPostPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
-  
-  const post = await client.fetch(postBySlugQuery, { slug });
 
+  const post: Post = await client.fetch(postBySlugQuery, { slug });
   if (!post) notFound();
 
-  const related = await client.fetch(relatedPostsQuery, {
+  const related: Post[] = await client.fetch(relatedPostsQuery, {
     category: post.category,
     slug,
   });
-  
+
+  const ogImage = post.coverImage
+    ? urlFor(post.coverImage).width(1200).height(630).url()
+    : "https://mikaelsoninitiative.org/assets/images/og-blog.png";
+
   return (
     <main className="min-h-screen py-16 px-5 md:px-10">
+      {/* JSON-LD Article structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: post.title,
+            description: post.excerpt,
+            datePublished: post.publishedAt,
+            dateModified: post.publishedAt,
+            image: ogImage,
+            url: `https://mikaelsoninitiative.org/blog/${slug}`,
+            author: {
+              "@type": "Organization",
+              name: "Mikaelson Initiative",
+              url: "https://mikaelsoninitiative.org",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Mikaelson Initiative",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://mikaelsoninitiative.org/assets/images/mikaelsonlogo.png",
+              },
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `https://mikaelsoninitiative.org/blog/${slug}`,
+            },
+            keywords: post.category,
+          }),
+        }}
+      />
+
       <div className="max-w-7xl mx-auto">
 
-        {/* Back */}
         <Link
           href="/blog"
           className="inline-flex items-center gap-2 text-sm text-[#999] dark:text-white/40 hover:text-[#5CE1E6] dark:hover:text-[#5CE1E6] transition-colors duration-200 mb-12 group"
@@ -158,9 +266,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-16">
 
-          {/* Article */}
           <article>
-            {/* Meta */}
             <div className="flex items-center gap-3 mb-6">
               <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#5CE1E6] text-black">
                 {post.category}
@@ -171,17 +277,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               </span>
             </div>
 
-            {/* Title */}
             <h1 className="text-[clamp(2rem,5vw,3.2rem)] font-extrabold leading-[1.1] tracking-[-0.03em] dark:text-white text-[#111] mb-6">
               {post.title}
             </h1>
 
-            {/* Excerpt */}
             <p className="text-lg text-[#555] dark:text-white/60 leading-relaxed mb-10 border-l-2 border-[#5CE1E6] pl-5">
               {post.excerpt}
             </p>
 
-            {/* Cover image */}
             {post.coverImage && (
               <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-12 border border-[#5CE1E6]/15">
                 <Image
@@ -194,37 +297,32 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               </div>
             )}
 
-            {/* Divider */}
             <div className="flex items-center gap-4 mb-12">
               <div className="h-px flex-1 bg-[#5CE1E6]/10" />
               <span className="text-[#5CE1E6] text-xs font-bold tracking-widest uppercase">Article</span>
               <div className="h-px flex-1 bg-[#5CE1E6]/10" />
             </div>
 
-            {/* Body */}
             {post.body && (
-              <div className="prose-custom">
-                <PortableText value={post.body} components={portableTextComponents} />
-              </div>
+              <PortableText value={post.body} components={portableTextComponents} />
             )}
           </article>
 
-          {/* Sidebar */}
           <aside className="hidden lg:block">
             <div className="sticky top-28 flex flex-col gap-6">
               <div>
                 <p className="text-xs font-semibold tracking-[0.15em] uppercase text-[#bbb] dark:text-white/25 mb-4">
                   About this article
                 </p>
-                <div className="flex flex-col gap-3 p-5 rounded-2xl border border-[#5CE1E6]/15 bg-[#5CE1E6]/[0.02]">
+                <div className="flex flex-col gap-4 p-5 rounded-2xl border border-[#5CE1E6]/15 bg-[#5CE1E6]/[0.02]">
                   <div>
-                    <p className="text-xs text-[#999] dark:text-white/30 mb-1">Category</p>
+                    <p className="text-xs text-[#999] dark:text-white/30 mb-1.5">Category</p>
                     <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#5CE1E6]/10 text-[#5CE1E6] border border-[#5CE1E6]/30">
                       {post.category}
                     </span>
                   </div>
                   <div>
-                    <p className="text-xs text-[#999] dark:text-white/30 mb-1">Published</p>
+                    <p className="text-xs text-[#999] dark:text-white/30 mb-1.5">Published</p>
                     <p className="text-sm font-medium dark:text-white text-[#111]">
                       {formatDate(post.publishedAt)}
                     </p>
@@ -235,7 +333,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               <div className="w-full h-px bg-[#5CE1E6]/10" />
 
               <div>
-                <p className="text-xs font-semibold tracking-[0.15em] uppercase text-[#bbb] dark:text-white/25 mb-1">
+                <p className="text-xs font-semibold tracking-[0.15em] uppercase text-[#bbb] dark:text-white/25 mb-2">
                   Mikaelson Initiative
                 </p>
                 <p className="text-xs text-[#999] dark:text-white/40 leading-relaxed">
@@ -253,7 +351,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
         </div>
 
-        {/* Related posts */}
         {related.length > 0 && (
           <div className="mt-24 pt-12 border-t border-[#5CE1E6]/10">
             <p className="text-[#5CE1E6] text-xs font-semibold tracking-[0.2em] uppercase mb-3">

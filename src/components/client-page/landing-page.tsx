@@ -6,6 +6,8 @@ import WhatWeDo from "./what-we-do";
 import HowItWorks from "@/components/client-page/how-it-works";
 import WhoItsFor from "./audience";
 import CommunitySection from "@/components/client-page/community-section";
+import FinalSection from "@/components/client-page/final-section";
+
 
 export default function Home() {
   
@@ -21,6 +23,7 @@ export default function Home() {
         <ImpactSection />
         <CommunitySection />
         <BlogSectionWrapper />
+        <FinalSection />
       </main>
     </>
   );

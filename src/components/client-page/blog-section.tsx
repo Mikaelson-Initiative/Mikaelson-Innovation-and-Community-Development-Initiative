@@ -140,7 +140,7 @@ export default function BlogSection({ posts }: BlogSectionProps) {
   const [feature, ...rest] = posts;
 
   return (
-    <section className="py-24 px-5 md:px-10">
+    <section className="py-24 md:px-10">
       <div className="max-w-7xl mx-auto">
 
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">

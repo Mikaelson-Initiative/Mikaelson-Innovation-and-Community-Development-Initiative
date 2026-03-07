@@ -100,12 +100,13 @@ const HeroSlider: React.FC<HeroSliderProps> = ({
         className="relative z-10 flex flex-col justify-end h-full px-5 md:px-10 pb-16 md:pb-20"
       >
         <div className="max-w-3xl flex flex-col gap-5">
-          <div className="flex items-center gap-3">
+
+          {/* <div className="flex items-center gap-3">
             <span className="w-8 h-[2px] bg-[#5CE1E6] rounded-full" />
             <span className="text-[#5CE1E6] text-xs font-semibold tracking-[0.2em] uppercase">
               Mikaelson Initiative
             </span>
-          </div>
+          </div> */}
 
           <h1
             ref={titleRef}
