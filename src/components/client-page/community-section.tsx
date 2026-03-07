@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
-import { communityPillars, communityImages, floatingCards } from "@/components/client-page/data";
+import { communityPillars, communityImages, floatingCards, memberImages  } from "@/components/client-page/data";
 
 export default function CommunitySection() {
   return (
@@ -73,7 +73,7 @@ export default function CommunitySection() {
             <div className="flex flex-col sm:flex-row sm:items-center gap-5">
               <div className="flex items-center gap-3">
                 <div className="flex -space-x-2">
-                  {communityImages.slice(0, 4).map((img, i) => (
+                  {memberImages.slice(0, 4).map((img, i) => (
                     <div
                       key={i}
                       className="w-9 h-9 rounded-full border-2 border-white dark:border-[#111] overflow-hidden shrink-0"
@@ -96,7 +96,7 @@ export default function CommunitySection() {
                   </div>
                 </div>
                 <p className="text-xs text-[#666] dark:text-white/50 leading-tight">
-                  Students from different<br />schools, united by ambition.
+                  Individuals from different<br />walks of life, united by ambition.
                 </p>
               </div>
 
@@ -114,7 +114,7 @@ export default function CommunitySection() {
           <div className="relative lg:w-[52%] w-full">
 
             {/* grid */}
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid  grid-cols-2 gap-3">
               {/* image */}
               <div className="row-span-2 rounded-2xl overflow-hidden border border-[#5CE1E6]/15 aspect-[3/4]">
                 <Image
@@ -166,7 +166,7 @@ export default function CommunitySection() {
               {floatingCards.slice(0, 2).map((card, i) => (
                 <div
                   key={i}
-                  className="bg-white dark:bg-[#111] border border-[#5CE1E6]/30 rounded-xl px-4 py-3 shadow-lg shadow-black/10 dark:shadow-black/30"
+                  className="bg-white mx-4 dark:bg-[#111] border border-[#5CE1E6]/30 rounded-xl px-4 py-3 shadow-lg shadow-black/10 dark:shadow-black/30"
                 >
                   <p className="text-[#5CE1E6] font-extrabold text-lg leading-none">{card.count}</p>
                   <p className="text-xs text-[#555] dark:text-white/50 mt-1">{card.label}</p>

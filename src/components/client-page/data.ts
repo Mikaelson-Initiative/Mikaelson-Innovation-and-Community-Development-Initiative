@@ -111,7 +111,7 @@ export const audience = [
 
 
 export const IMPACT_ITEMS: ImpactItem[] = [
-  { number: "4", label: "Educational Institutions Touched (and counting…)" },
+  { number: "4+", label: "Educational Institutions" },
   { number: "3,000+", label: "Students Reached" },
   { number: "6", label: "Personal Growth Campaigns Run" },
   { number: "12+", label: "Strategic Collaborators and Volunteers" },
@@ -174,10 +174,16 @@ export const communityImages = [
   { src: "/assets/images/community-3.png", alt: "Group discussion" },
   { src: "/assets/images/community-4.png", alt: "Workshop event" },
 ];
+export const memberImages = [
+  { src: "/assets/images/Michael.png", alt: "Mikaelson member" },
+  { src: "/assets/images/Ireti.png", alt: "Mikaelson member" },
+  { src: "/assets/images/Khadija-Abdul.png", alt: "Mikaelson member" },
+  { src: "/assets/images/Olamilekan-Aremu.png", alt: "Mikaelson member" },
+];
 
 export const floatingCards = [
   { label: "Student Discussions", count: "6+" },
-  { label: "Projects Built", count: "4+" },
+  { label: "Projects Built", count: "10+" },
   { label: "Schools Represented", count: "4+" },
   { label: "Leadership Sessions", count: "30+" },
 ];

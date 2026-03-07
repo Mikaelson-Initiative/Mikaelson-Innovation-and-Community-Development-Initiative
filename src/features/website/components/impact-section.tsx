@@ -1,8 +1,8 @@
 "use client";
 
-import  { useMemo, useState, useEffect, useRef } from "react";
+import  { useMemo, useState, useEffect } from "react";
 import TestimonialMarquee from "./reusable-components/marquee";
-import { IMPACT_ITEMS, ImpactItem } from "@/components/client-page/data";
+import { IMPACT_ITEMS, ImpactItem} from "@/components/client-page/data";
 
 type TabKey = "Overview" | "Reach" | "Programs" | "Stories";
 

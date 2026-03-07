@@ -97,7 +97,7 @@ const HeroSlider: React.FC<HeroSliderProps> = ({
 
       <div
         ref={overlayRef}
-        className="relative z-10 flex flex-col justify-end h-full px-5 md:px-14 pb-16 md:pb-20"
+        className="relative z-10 flex flex-col justify-end h-full px-5 md:px-10 pb-16 md:pb-20"
       >
         <div className="max-w-3xl flex flex-col gap-5">
           <div className="flex items-center gap-3">

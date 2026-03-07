@@ -54,7 +54,7 @@ export default function IntroVideo() {
 
           <div className="flex flex-col gap-4">
             <p className="text-base md:text-[1.05rem] text-[#444] dark:text-white/70 leading-relaxed">
-              Behind every impactful movement is a clear vision. Meet the mind and
+              Behind every impactful movement is a clear vision. Meet the minds and
               mission driving The Mikaelson Initiative — a youth-focused leadership
               platform committed to equipping African students with a structured
               growth system.
