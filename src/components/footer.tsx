@@ -150,7 +150,7 @@ export const Footer = () => {
                 </a>
               ))}
             </div>
-            {/* <ReportsDropdown /> */}
+            <ReportsDropdown />
           </div>
         </div>
       </div>
