@@ -11,6 +11,7 @@ import IntroVideo from "@/components/client-page/intro-video";
 import WhatWeDo from "./what-we-do";
 import HowItWorks from "@/components/client-page/how-it-works";
 import WhoItsFor from "./audience";
+import CommunitySection from "@/components/client-page/community-section";
 
 export default function Home() {
   const isMobile = useIsMobile();
@@ -66,6 +67,8 @@ export default function Home() {
           imageAlt="Partnership & Growth Network on iPad"
         /> */}
         <ImpactSection />
+        <CommunitySection />
+        
         {/* <MediaStories /> */}
         {/* <ExploreMore /> */}
       </main>

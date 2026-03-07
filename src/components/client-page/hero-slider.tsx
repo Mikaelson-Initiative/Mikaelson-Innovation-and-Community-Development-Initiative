@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import Image from "next/image";
+import Link from "next/link";
 
 export interface HeroSlide {
   image: string;
@@ -121,15 +122,22 @@ const HeroSlider: React.FC<HeroSliderProps> = ({
           </p>
 
           <div className="flex items-center gap-3 pt-1">
+            <Link href="/community" >
             <button
               ref={ctaTextRef}
               className="px-6 py-3 text-sm font-semibold text-[#5CE1E6] border-2 border-[#5CE1E6]/60 rounded-full hover:border-[#5CE1E6] hover:bg-[#5CE1E6]/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#5CE1E6]"
             >
               {ctaText1}
             </button>
+            
+            </Link>
+
+            <Link href="/about-us">
+            
             <button className="px-6 py-3 text-sm font-semibold text-black bg-[#5CE1E6] rounded-full hover:bg-[#4bcdd2] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#5CE1E6]">
               {ctaText2}
             </button>
+            </Link>
           </div>
         </div>
 

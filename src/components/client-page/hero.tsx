@@ -7,7 +7,7 @@ const heroSlides: HeroSlide[] = [
       title: `Youth Leadership & Personal Development Programs for African Students`,
       subtitle: `The Mikaelson Initiative is a youth development organization equipping African students with practical leadership skills, personal growth systems, and structured accountability.`,
       ctaText1: "Join The Community",
-      ctaText2: "Explore Our Ecosystem",
+      ctaText2: "Learn More",
     },
    {
       image: '/assets/images/mikaelson-landing.png',

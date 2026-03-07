@@ -1,3 +1,15 @@
+export interface ImpactItem {
+  number: string;
+  label: string;
+}
+
+export interface Testimonial {
+  quote: string;
+  name: string;
+  school: string;
+}
+
+import { BookOpen, Users } from "lucide-react";
 import { ShieldCheck, GraduationCap, Lightbulb, Globe } from "lucide-react";
 
 export const pillars = [
@@ -97,19 +109,9 @@ export const audience = [
 ];
 
 
-export interface ImpactItem {
-  number: string;
-  label: string;
-}
-
-export interface Testimonial {
-  quote: string;
-  name: string;
-  school: string;
-}
 
 export const IMPACT_ITEMS: ImpactItem[] = [
-  { number: "4", label: "Universities Touched (and counting…)" },
+  { number: "4", label: "Educational Institutions Touched (and counting…)" },
   { number: "3,000+", label: "Students Reached" },
   { number: "6", label: "Personal Growth Campaigns Run" },
   { number: "12+", label: "Strategic Collaborators and Volunteers" },
@@ -142,4 +144,40 @@ export const TESTIMONIALS: Testimonial[] = [
     name: "Blessing I.",
     school: "University of Ibadan",
   },
+];
+
+// community section data
+export const communityPillars = [
+  {
+    icon: BookOpen,
+    title: "Learn Together",
+    description:
+      "Members share insights, resources, and ideas that help everyone grow academically and personally.",
+  },
+  {
+    icon: Lightbulb,
+    title: "Build Meaningful Ideas",
+    description:
+      "Students collaborate on initiatives, projects, and discussions that encourage creativity and leadership.",
+  },
+  {
+    icon: Users,
+    title: "Support Each Other",
+    description:
+      "Growth is easier with the right people around you. The community encourages accountability, support, and shared ambition.",
+  },
+];
+
+export const communityImages = [
+  { src: "/assets/images/community-1.png", alt: "Community members collaborating" },
+  { src: "/assets/images/community-2.png", alt: "Students at a leadership session" },
+  { src: "/assets/images/community-3.png", alt: "Group discussion" },
+  { src: "/assets/images/community-4.png", alt: "Workshop event" },
+];
+
+export const floatingCards = [
+  { label: "Student Discussions", count: "6+" },
+  { label: "Projects Built", count: "4+" },
+  { label: "Schools Represented", count: "4+" },
+  { label: "Leadership Sessions", count: "30+" },
 ];
