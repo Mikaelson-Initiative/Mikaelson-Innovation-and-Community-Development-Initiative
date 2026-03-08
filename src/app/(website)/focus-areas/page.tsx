@@ -35,16 +35,16 @@ export const metadata: Metadata = {
 
 const FocusAreasPage = () => {
   return (
-    <main className="dark:bg-brand-dark-bg-nav">
-      <section className="border-b border-slate-200 bg-gradient-to-br from-cyan-50 via-sky-50 to-white">
+    <main className="bg-white dark:bg-slate-950">
+      <section className="border-b border-slate-200 bg-gradient-to-br from-cyan-50 via-sky-50 to-white dark:border-slate-800 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
         <div className="mx-auto w-full max-w-6xl px-6 py-16 md:px-8 md:py-20 lg:px-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-700">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-700 dark:text-cyan-300">
             Strategic Priorities
           </p>
-          <h1 className="mt-4 max-w-3xl text-balance text-3xl font-black text-slate-900 md:text-5xl">
+          <h1 className="mt-4 max-w-3xl text-balance text-3xl font-black text-slate-900 dark:text-slate-100 md:text-5xl">
             Focus Areas Driving Sustainable Impact
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-7 text-slate-700 md:text-lg">
+          <p className="mt-5 max-w-2xl text-base leading-7 text-slate-700 dark:text-slate-300 md:text-lg">
             Discover the five program pillars shaping how we build disciplined growth,
             youth opportunity, stronger communities, and education outcomes.
           </p>
@@ -58,7 +58,7 @@ const FocusAreasPage = () => {
             return (
               <article
                 key={area.slug}
-                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900"
               >
                 <p
                   className="inline-flex rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide"
@@ -69,17 +69,17 @@ const FocusAreasPage = () => {
                 >
                   {area.eyebrow}
                 </p>
-                <h2 className="mt-4 text-2xl font-black text-slate-900">
+                <h2 className="mt-4 text-2xl font-black text-slate-900 dark:text-slate-100">
                   {area.title}
                 </h2>
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                   {area.shortDescription}
                 </p>
                 <div className="mt-5 grid grid-cols-2 gap-3 text-sm">
                   {area.metrics.slice(0, 2).map((metric) => (
                     <div
                       key={metric.label}
-                      className="rounded-xl border border-slate-200 bg-slate-50 px-3 py-2"
+                      className="rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 dark:border-slate-700 dark:bg-slate-800"
                     >
                       <p
                         className="font-extrabold"
@@ -87,7 +87,9 @@ const FocusAreasPage = () => {
                       >
                         {metric.value}
                       </p>
-                      <p className="text-xs text-slate-500">{metric.label}</p>
+                      <p className="text-xs text-slate-500 dark:text-slate-400">
+                        {metric.label}
+                      </p>
                     </div>
                   ))}
                 </div>
