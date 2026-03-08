@@ -32,6 +32,7 @@ const Header: React.FC<HeaderProps> = ({
     { label: "Our Product", href: "/product" },
     { label: "About Us", href: "/about-us" },
     { label: "Volunteer", href: "/volunteer" },
+    { label: "Our Blog", href: "/blog" },
   ],
   mobileNavLinks = [
     { label: "Focus Areas", href: "/focus-areas" },
@@ -40,17 +41,20 @@ const Header: React.FC<HeaderProps> = ({
     { label: "Our Product", href: "/product" },
     { label: "About Us", href: "/about-us" },
     { label: "Volunteer", href: "/volunteer" },
+    { label: "Our Blog", href: "/blog" },
   ],
   actionButton = { label: "Sponsor a program", href: "/sponsor" },
 }) => {
   const pathName = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur dark:bg-brand-dark-bg-nav">
+    <header className="sticky top-0 z-50 border-b border-black/[0.06] dark:border-white/[0.06] bg-white dark:bg-[#111111]">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 md:px-10">
+
+        {/* logo*/}
         <Link
           href="/"
-          className="flex items-center gap-3 text-sm font-bold tracking-tight md:gap-4 md:text-xl"
+          className="flex items-center gap-3 font-bold tracking-tight group"
         >
           <Image
             src="/assets/images/mikaelsonlogo.png"
@@ -59,10 +63,13 @@ const Header: React.FC<HeaderProps> = ({
             height={32}
             className="rounded-md"
           />
-          <span className="dark:text-brand-text-dark-heading">{brandName}</span>
+          <span className="text-sm md:text-base dark:text-white text-[#111] group-hover:text-[#5CE1E6] transition-colors duration-200">
+            {brandName}
+          </span>
         </Link>
 
-        <nav className="ml-6 hidden items-center gap-8 whitespace-nowrap text-sm text-gray-700 lg:flex">
+        {/* desktop nav*/}
+        <nav className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => {
             const isActive = pathName === link.href;
             return (
@@ -70,49 +77,49 @@ const Header: React.FC<HeaderProps> = ({
                 key={link.label}
                 href={link.href}
                 className={cn(
-                  "group relative rounded-t p-2 font-medium transition-colors hover:bg-brand-bg-color hover:text-brand-green-100 dark:text-brand-text-dark-heading dark:hover:bg-transparent",
-                  isActive &&
-                    "bg-brand-bg-color text-brand-green-100 dark:bg-transparent"
+                  "relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200",
+                  "dark:text-white/70 text-[#444] hover:text-[#111] dark:hover:text-white",
+                  "hover:bg-[#5CE1E6]/8 dark:hover:bg-white/5",
+                  isActive && "text-[#5CE1E6] dark:text-[#5CE1E6] bg-[#5CE1E6]/8 dark:bg-[#5CE1E6]/10"
                 )}
               >
                 {link.label}
-                <span
-                  className={cn(
-                    "absolute bottom-0 left-0 h-[2px] w-0 bg-brand-blue transition-all duration-300 group-hover:w-full",
-                    isActive && "dark:w-full"
-                  )}
-                />
+                {isActive && (
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-[2px] bg-[#5CE1E6] rounded-full" />
+                )}
               </Link>
             );
           })}
-
-          <div className="flex items-center gap-2">
-            {actionButton && (
-              <Link
-                href={actionButton.href}
-                className="ml-auto inline-flex items-center rounded-xl bg-gray-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-black"
-              >
-                {actionButton.label}
-                <svg
-                  className="ml-2 h-4 w-4"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7 17L17 7M17 7H7M17 7V17"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </Link>
-            )}
-            <ModeToggle />
-          </div>
         </nav>
 
+        {/* action button */}
+        <div className="hidden lg:flex items-center gap-3">
+          <ModeToggle />
+          {actionButton && (
+            <Link
+              href={actionButton.href}
+              className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-xl bg-[#5CE1E6] text-black hover:bg-[#4bcdd2] transition-all duration-200"
+            >
+              {actionButton.label}
+              <svg
+                className="h-3.5 w-3.5"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7 17L17 7M17 7H7M17 7V17"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </Link>
+          )}
+        </div>
+
+        {/* Mobile */}
         <MobileNav
           brandName={brandName}
           navLinks={mobileNavLinks}
