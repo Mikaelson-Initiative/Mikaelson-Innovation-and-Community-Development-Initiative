@@ -81,7 +81,7 @@ export const focusAreaContent: Record<FocusAreaSlug, FocusAreaContent> = {
       "Structured routines, coaching, and reflective tools for personal growth.",
     tags: ["Mindset", "Accountability", "Coaching"],
     metrics: [
-      { label: "Active Learners", value: "2500+" },
+      { label: "Active Learners", value: "2,500+" },
       { label: "Habit Completion", value: "87%" },
       { label: "Mentorship Circles", value: "40" },
       { label: "Confidence Growth", value: "+34%" },

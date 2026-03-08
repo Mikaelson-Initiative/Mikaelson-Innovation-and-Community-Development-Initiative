@@ -64,7 +64,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     department: "OPERATIONS",
     country: "NG",
     role: "Founder & Executive Director",
-    img: "/assets/images/20240726_164330.jpeg",
+    img: "/assets/images/MichaelOlukayode.jpg",
   },
   {
     name: "Khadijah Abdul Juma",
@@ -95,13 +95,6 @@ export const TEAM_MEMBERS: TeamMember[] = [
     img: "/assets/images/Ireti.jpeg",
   },
   {
-    name: "Juliana Philimon Sarya",
-    country: "TZ",
-    department: "OPERATIONS",
-    role: "Program Management Lead",
-    img: "/assets/images/Juliana-Sarya.jpg",
-  },
-  {
     name: "Okikiolu Eniola-Glory Fiyinfoluwa",
     department: "OPERATIONS",
     country: "NG",
@@ -127,7 +120,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     department: "TECH",
     country: "NG",
     role: "Front-end Engineer",
-    img: "/assets/images/Ariyo-Aresa.jpg",
+    img: "/assets/images/AriyoAresa.jpg",
   },
   {
     name: "Mercy Kalu",

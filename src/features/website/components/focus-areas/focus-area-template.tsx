@@ -130,7 +130,7 @@ const FocusAreaTemplate = ({ content }: FocusAreaTemplateProps) => {
               Programs and systems currently driving impact in this area.
             </p>
           </div>
-          <div className="space-y-4">
+          <div className="flex gap-4 flex-col md:flex-row">
             {content.initiatives.map((initiative) => {
               const Icon = initiative.icon;
               return (
@@ -178,7 +178,7 @@ const FocusAreaTemplate = ({ content }: FocusAreaTemplateProps) => {
             <h2 className="text-2xl font-black text-slate-900 dark:text-slate-100 md:text-3xl">
               Expected Outcomes
             </h2>
-            <div className="mt-6 space-y-4">
+            <div className="flex gap-4 flex-col md:flex-row">
               {content.outcomes.map((outcome) => (
                 <div
                   key={outcome.title}
