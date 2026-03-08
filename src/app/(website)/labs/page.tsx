@@ -34,14 +34,14 @@ export const metadata: Metadata = {
 
 const LabsPage = () => {
   return (
-    <main className="labs-page">
+    <div className = "labs-page" >
       <LabsHeroSection />
       <LabsWhatWeDo />
       <LabsFeaturedProjects />
       <LabsInnovationProcess />
-      {/* <LabsTeamSection /> */}
-      <LabsCollaborationSection />
-    </main>
+  {/* <LabsTeamSection /> */ }
+  <LabsCollaborationSection />
+    </div>
   );
 };
 

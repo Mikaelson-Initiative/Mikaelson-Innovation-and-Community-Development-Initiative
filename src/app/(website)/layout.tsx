@@ -8,7 +8,7 @@ const WebsiteRootLayout = ({ children }: PropsWithChildren) => {
       <Header />
       {children}
       <Footer />
-    </main>
+    </div>
   );
 };
 

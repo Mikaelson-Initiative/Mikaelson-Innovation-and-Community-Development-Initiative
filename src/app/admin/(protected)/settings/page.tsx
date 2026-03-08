@@ -11,18 +11,18 @@ const page = () => {
     return (
         <div>
             <Header />
-            <main className="p-6 md:p-8 bg-gray-50 dark:bg-black/20 min-h-screen flex flex-col gap-6">
-                <Hero />
-                <div className="grid grid-cols-1 gap-6">
-                    <SiteConfiguration />
-                    <Security />
-                    <Analytics />
-                    <ENotifications />
-                    <DataManagement />
-                    <Integration />
-                </div>
-            </main>
+            <div className="p-6 md:p-8 bg-gray-50 dark:bg-black/20 min-h-screen flex flex-col gap-6">
+            <Hero />
+            <div className="grid grid-cols-1 gap-6">
+                <SiteConfiguration />
+                <Security />
+                <Analytics />
+                <ENotifications />
+                <DataManagement />
+                <Integration />
+            </div>
         </div>
+        </div >
     )
 }
 

@@ -33,12 +33,12 @@ export const metadata: Metadata = {
 
 const VolunteerPage = () => {
   return (
-    <main className="volunteer-page px-5 lg:px-0">
+    <div className = "volunteer-page px-5 lg:px-0" >
       <VolunteerHero />
       <VolunteerFAQ />
       <WhyVolunteer />
       <VolunteerForm />
-    </main>
+    </div>
   );
 };
 
