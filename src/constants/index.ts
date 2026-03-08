@@ -105,14 +105,14 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: "Okikiolu Eniola-Glory Fiyinfoluwa",
     department: "OPERATIONS",
     country: "NG",
-    role: "Community operations",
+    role: "Community Operations",
     img: "/assets/images/eniola.jpeg",
   },
   {
     name: "Hammed Abibat",
     department: "OPERATIONS",
     country: "NG",
-    role: "Social media relations",
+    role: "Social Media Relations",
     img: "/assets/images/Hammed.JPG",
   },
   {
@@ -147,7 +147,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: "Chukwu Ajah Sabastine",
     department: "TECH",
     country: "NG",
-    role: "Front-end Engineer",
+    role: "Frontend Engineer",
     img: "/assets/images/chukwu-ajah.jpg",
   },
   {
@@ -174,7 +174,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Adeoye Esther Toluwanimi",
     department: "TECH",
-    role: "Social media relations",
+    role: "Social Media Relations",
     country: "NG",
     img: "/assets/images/AdeoyeEsther.jpg",
   },
@@ -195,7 +195,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Obochi Happiness Adah",
     department: "TECH",
-    role: "Back-end Engineer",
+    role: "Backend Engineer",
     country: "NG",
     img: "/assets/images/HappinessObochi.jpg",
   },
@@ -223,14 +223,14 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Maxwell Oba-Joshua",
     department: "TECH",
-    role: "Full-stack Engineer",
+    role: "Full-Stack Engineer",
     country: "NG",
     img: "/assets/images/MaxwellJoshua.jpg",
   },
   {
-    name: "Olamilekan Aremu",
+    name: "Olamilekan J. Aremu",
     department: "TECH",
-    role: "Full-stack Engineer",
+    role: "Full-Stack Engineer",
     country: "NG",
     img: "/assets/images/OlamilekanAremu.jpg",
   },
@@ -244,7 +244,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Oluwole Feranmi",
     department: "OPERATIONS",
-    role: "Social media relations",
+    role: "Social Media Relations",
     country: "NG",
     img: "/assets/images/FeranmiOluwole.jpg",
   },
