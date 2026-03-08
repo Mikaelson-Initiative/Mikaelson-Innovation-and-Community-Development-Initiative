@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { ModeToggle } from "@/components/mode-toggler";
 
-// Types
 interface NavLink {
   label: string;
   href: string;
@@ -28,12 +27,14 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({
   brandName = "Mikaelson Initiative",
   navLinks = [
+    { label: "Focus Areas", href: "/focus-areas" },
     { label: "The Team", href: "/team" },
     { label: "Our Product", href: "/product" },
     { label: "About Us", href: "/about-us" },
     { label: "Volunteer", href: "/volunteer" },
   ],
   mobileNavLinks = [
+    { label: "Focus Areas", href: "/focus-areas" },
     { label: "The Team", href: "/team" },
     { label: "Community", href: "/community" },
     { label: "Our Product", href: "/product" },
@@ -43,13 +44,13 @@ const Header: React.FC<HeaderProps> = ({
   actionButton = { label: "Sponsor a program", href: "/sponsor" },
 }) => {
   const pathName = usePathname();
+
   return (
     <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur dark:bg-brand-dark-bg-nav">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 md:px-10">
-        {/* Logo & Brand */}
         <Link
           href="/"
-          className="flex items-center gap-3 text-sm md:text-xl font-bold tracking-tight md:gap-4"
+          className="flex items-center gap-3 text-sm font-bold tracking-tight md:gap-4 md:text-xl"
         >
           <Image
             src="/assets/images/mikaelsonlogo.png"
@@ -61,7 +62,6 @@ const Header: React.FC<HeaderProps> = ({
           <span className="dark:text-brand-text-dark-heading">{brandName}</span>
         </Link>
 
-        {/* Navigation */}
         <nav className="ml-6 hidden items-center gap-8 whitespace-nowrap text-sm text-gray-700 lg:flex">
           {navLinks.map((link) => {
             const isActive = pathName === link.href;
@@ -70,7 +70,7 @@ const Header: React.FC<HeaderProps> = ({
                 key={link.label}
                 href={link.href}
                 className={cn(
-                  `group dark:text-brand-text-dark-heading font-medium relative p-2 hover:bg-brand-bg-color dark:hover:bg-transparent rounded-t transition-colors hover:text-brand-green-100`,
+                  "group relative rounded-t p-2 font-medium transition-colors hover:bg-brand-bg-color hover:text-brand-green-100 dark:text-brand-text-dark-heading dark:hover:bg-transparent",
                   isActive &&
                     "bg-brand-bg-color text-brand-green-100 dark:bg-transparent"
                 )}
@@ -78,20 +78,19 @@ const Header: React.FC<HeaderProps> = ({
                 {link.label}
                 <span
                   className={cn(
-                    "absolute left-0 bottom-0 h-[2px] w-0 bg-brand-blue transition-all duration-300 group-hover:w-full",
+                    "absolute bottom-0 left-0 h-[2px] w-0 bg-brand-blue transition-all duration-300 group-hover:w-full",
                     isActive && "dark:w-full"
                   )}
-                ></span>
+                />
               </Link>
             );
           })}
 
-          {/* Action Button */}
           <div className="flex items-center gap-2">
             {actionButton && (
               <Link
                 href={actionButton.href}
-                className="ml-auto inline-flex  items-center rounded-xl bg-gray-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-black"
+                className="ml-auto inline-flex items-center rounded-xl bg-gray-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-black"
               >
                 {actionButton.label}
                 <svg
@@ -113,6 +112,7 @@ const Header: React.FC<HeaderProps> = ({
             <ModeToggle />
           </div>
         </nav>
+
         <MobileNav
           brandName={brandName}
           navLinks={mobileNavLinks}

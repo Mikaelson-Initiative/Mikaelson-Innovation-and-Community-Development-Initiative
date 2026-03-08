@@ -3,6 +3,7 @@ export const footerLinks = [
     section: "Explore",
     links: [
       { label: "Home", href: "/" },
+      { label: "Focus Areas", href: "/focus-areas" },
       { label: "Community", href: "/community" },
       { label: "Labs", href: "/labs" },
       { label: "Our Team", href: "/team" },
@@ -266,7 +267,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
 export const products: Product[] = [
   {
     id: "hub-education",
-    icon: "🎓",
+    icon: "Ã°Å¸Å½â€œ",
     title: "RIO Hub for Education",
     category: "Education & Learning",
     color: "#367bf4",
@@ -286,7 +287,7 @@ export const products: Product[] = [
   //   title: "RIO Hub for Companies",
   //   category: "Business & Enterprise",
   //   color: "#48d7e2",
-  //   icon: "🏢",
+  //   icon: "Ã°Å¸ÂÂ¢",
   //   description:
   //     "Boost workplace productivity and employee engagement. Track team performance, collaboration metrics, and professional development goals.",
   //   image: "/assets/images/product-hub.svg",
@@ -303,7 +304,7 @@ export const products: Product[] = [
   //   title: "RIO Hub for Content Creators",
   //   category: "Content & Media",
   //   color: "#a44ff5",
-  //   icon: "🎬",
+  //   icon: "Ã°Å¸Å½Â¬",
   //   description:
   //     "Manage content schedules, track creative output, and build consistent habits. Stay accountable to your audience and creative goals.",
   //   image: "/assets/images/product-hub.svg",
@@ -320,7 +321,7 @@ export const products: Product[] = [
   //   title: "RIO Hub for Developers",
   //   color: "#0eb27c",
   //   category: "Technology & Dev",
-  //   icon: "💻",
+  //   icon: "Ã°Å¸â€™Â»",
   //   description:
   //     "Track coding habits, project milestones, and technical skill development. Build consistent development practices and collaborate effectively.",
   //   image: "/assets/images/product-hub.svg",
@@ -336,7 +337,7 @@ export const products: Product[] = [
   //   id: "hub-startups",
   //   title: "RIO Hub for Startups",
   //   category: "Innovation & Startups",
-  //   icon: "🚀",
+  //   icon: "Ã°Å¸Å¡â‚¬",
   //   color: "#ee950a",
   //   description:
   //     "Monitor innovation cycles, team productivity, and startup growth metrics. Foster a culture of accountability and rapid iteration.",
@@ -354,7 +355,7 @@ export const products: Product[] = [
   //   title: "RIO Hub for Government",
   //   category: "Public Sector",
   //   color: "#ed4141",
-  //   icon: "🏛️",
+  //   icon: "Ã°Å¸Ââ€ºÃ¯Â¸Â",
   //   description:
   //     "Enhance public sector productivity and service delivery. Track project timelines, citizen engagement, and departmental performance.",
   //   image: "/assets/images/product-hub.svg",
@@ -371,7 +372,7 @@ export const products: Product[] = [
   //   title: "RIO Hub for Nonprofits",
   //   category: "Social Impact",
   //   color: "#e63c8d",
-  //   icon: "🤝",
+  //   icon: "Ã°Å¸Â¤Â",
   //   description:
   //     "Maximize impact with volunteer management, program tracking, and donor engagement insights. Build sustainable community initiatives.",
   //   image: "/assets/images/product-hub.svg",
@@ -386,7 +387,7 @@ export const products: Product[] = [
   // {
   //   id: "hub-sports",
   //   title: "RIO Hub for Sports & Fitness",
-  //   icon: "⚽",
+  //   icon: "Ã¢Å¡Â½",
   //   category: "Sports & Wellness",
   //   color: "#11ad9d",
   //   description:
@@ -405,7 +406,7 @@ export const products: Product[] = [
   //   title: "RIO Hub for Creative Media",
   //   category: "Creative Industries",
   //   color: "#5d5ced",
-  //   icon: "🎨",
+  //   icon: "Ã°Å¸Å½Â¨",
   //   description:
   //     "Manage creative projects, track production workflows, and collaborate with teams. Deliver creative excellence on schedule.",
   //   image: "/assets/images/product-hub.svg",
@@ -422,7 +423,7 @@ export const products: Product[] = [
   //   title: "RIO Hub for Research",
   //   category: "Research & Academia",
   //   color: "#8856f4",
-  //   icon: "🔬",
+  //   icon: "Ã°Å¸â€Â¬",
   //   description:
   //     "Track research milestones, manage academic collaborations, and monitor publication progress. Advance knowledge systematically.",
   //   image: "/assets/images/product-hub.svg",

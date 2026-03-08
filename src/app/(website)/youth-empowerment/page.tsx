@@ -4,10 +4,10 @@ import {
   focusAreaContent,
 } from "@/features/website/components/focus-areas/focus-area-data";
 
-export const metadata = createFocusAreaMetadata("community");
+export const metadata = createFocusAreaMetadata("youth-empowerment");
 
-const CommunityPage = () => {
-  return <FocusAreaTemplate content={focusAreaContent.community} />;
+const YouthEmpowermentPage = () => {
+  return <FocusAreaTemplate content={focusAreaContent["youth-empowerment"]} />;
 };
 
-export default CommunityPage;
+export default YouthEmpowermentPage;
