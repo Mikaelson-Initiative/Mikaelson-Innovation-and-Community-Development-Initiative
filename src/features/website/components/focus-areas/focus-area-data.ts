@@ -164,10 +164,10 @@ export const focusAreaContent: Record<FocusAreaSlug, FocusAreaContent> = {
       "Leadership, opportunity access, and practical skills for young changemakers.",
     tags: ["Leadership", "Employability", "Civic Impact"],
     metrics: [
-      { label: "Young Leaders Trained", value: "1,800+" },
-      { label: "Career Placements", value: "320" },
-      { label: "Partner Organizations", value: "55" },
-      { label: "Community Projects", value: "140" },
+      { label: "Young Leaders Trained", value: "1000+" },
+      { label: "Career Placements", value: "200" },
+      { label: "Partner Organizations", value: "10" },
+      { label: "Community Projects", value: "12" },
     ],
     pillars: [
       {
@@ -247,10 +247,10 @@ export const focusAreaContent: Record<FocusAreaSlug, FocusAreaContent> = {
       "Collective growth through collaboration, trust, and local action.",
     tags: ["Belonging", "Collaboration", "Impact"],
     metrics: [
-      { label: "Community Members", value: "4,200+" },
-      { label: "Local Chapters", value: "24" },
-      { label: "Volunteer Hours", value: "12,500+" },
-      { label: "Joint Projects", value: "210" },
+      { label: "Community Members", value: "3,000+" },
+      { label: "Local Chapters", value: "12" },
+      { label: "Volunteer Hours", value: "10,000+" },
+      { label: "Joint Projects", value: "12" },
     ],
     pillars: [
       {
@@ -330,9 +330,9 @@ export const focusAreaContent: Record<FocusAreaSlug, FocusAreaContent> = {
       "Long-term educational outcomes powered by disciplined habits and leadership systems.",
     tags: ["Education", "Habits", "Sustainable Growth"],
     metrics: [
-      { label: "Schools Engaged", value: "62" },
+      { label: "Schools Engaged", value: "4" },
       { label: "Student Habit Scores", value: "+41%" },
-      { label: "Teacher Coaches", value: "190" },
+      { label: "Teacher Coaches", value: "30" },
       { label: "Retention Improvement", value: "+18%" },
     ],
     pillars: [
@@ -413,9 +413,9 @@ export const focusAreaContent: Record<FocusAreaSlug, FocusAreaContent> = {
       "Technology systems that make discipline trackable, transparent, and repeatable.",
     tags: ["Infrastructure", "Data", "Accountability"],
     metrics: [
-      { label: "Platforms Deployed", value: "17" },
-      { label: "Active Daily Users", value: "9,000+" },
-      { label: "Automated Alerts", value: "120k+" },
+      { label: "Platforms Deployed", value: "12" },
+      { label: "Active Daily Users", value: "1,000+" },
+      { label: "Automated Alerts", value: "10,000+" },
       { label: "Process Compliance", value: "92%" },
     ],
     pillars: [
