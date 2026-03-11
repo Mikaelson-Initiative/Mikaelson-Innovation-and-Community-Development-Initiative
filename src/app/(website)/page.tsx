@@ -2,7 +2,7 @@ import Home from "@/components/client-page/landing-page";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Youth Leadership Programs in Nigeria | Mikaelson Initiative",
+  title: "Mikaelson Initiative | Elevating Humanity Through Technology",
   description:
     "Structured youth leadership and personal development programs equipping African students with discipline, innovation skills, and accountability systems.",
   keywords: [
