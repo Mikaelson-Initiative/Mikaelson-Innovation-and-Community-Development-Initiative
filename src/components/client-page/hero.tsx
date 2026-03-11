@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
         }}
       />
       {/* main content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-24 md:py-32">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 py-10 md:py-16  md:px-10  ">
         <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
           <div className="w-full md:w-1/2 flex flex-col gap-6">
             {/* headline */}
