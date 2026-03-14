@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative w-full min-h-screen overflow-hidden flex items-center">
+    <section className="relative w-full h-screen overflow-hidden flex items-center">
       
       {/* wavy background */}
       <WavyBackground />
@@ -21,23 +21,24 @@ const Hero: React.FC = () => {
           opacity: 0.4,
         }}
       />
+
       {/* main content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 py-10 md:py-16  md:px-10  ">
-        <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
-          <div className="w-full md:w-1/2 flex flex-col gap-6">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 md:px-10">
+        <div className="flex flex-col md:flex-row items-center gap-8 lg:gap-14">
+
+          <div className="w-full md:w-1/2 flex flex-col gap-4">
             {/* headline */}
             <motion.h1
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.75, delay: 0.25, ease: "easeOut" }}
-              className="text-[clamp(2rem,4.5vw,3.4rem)] font-extrabold text-gray-900 leading-[1.12] tracking-[-0.03em]"
-              
+              className="text-[clamp(1.6rem,3.2vw,2.75rem)] font-extrabold text-black leading-[1.12] tracking-[-0.03em]"
             >
               We&apos;re Building{" "}
               <span className="relative inline-block">
                 <span className="relative z-10 text-[#0097a7]">Africa&apos;s Future</span>
                 <span
-                  className="absolute bottom-1 left-0 w-full h-[6px] rounded-full opacity-30"
+                  className="absolute bottom-1 left-0 w-full h-[5px] rounded-full opacity-30"
                   style={{ background: "#5CE1E6" }}
                 />
               </span>{" "}
@@ -49,8 +50,7 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
-              className="text-[15px] md:text-[1.05rem] text-gray-600 leading-relaxed max-w-lg"
-              
+              className="text-[13.5px] md:text-[0.95rem] text-gray-600 leading-relaxed max-w-lg"
             >
               The Mikaelson Initiative is a youth development organization equipping African students
               with practical leadership skills, personal growth systems, and structured accountability.
@@ -92,7 +92,6 @@ const Hero: React.FC = () => {
                 transform: "translate(10%, -10%)",
               }}
             />
-
 
             <div className="relative aspect-video w-full rounded-2xl overflow-hidden border border-[#5CE1E6]/30 shadow-[0_8px_48px_rgba(0,151,167,0.18)] z-10">
               {/* corner accents */}

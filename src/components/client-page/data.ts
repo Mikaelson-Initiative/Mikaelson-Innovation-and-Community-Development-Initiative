@@ -80,7 +80,7 @@ export const audience = [
     description:
       "Students who want to develop strong habits, confidence, and leadership skills early. Mikaelson helps secondary school students build discipline, curiosity, and a mindset for long-term growth.",
     icon: ShieldCheck,
-    iconProps: { size: 30, color: "#5CE1E6", strokeWidth: 1.5 },
+    image: "/assets/images/mikaelson-landing.png",
   },
   {
     number: "02",
@@ -88,7 +88,7 @@ export const audience = [
     description:
       "Undergraduate students looking for structure, accountability, and a community focused on personal development. Mikaelson supports students in building leadership capacity and real-world skills beyond the classroom.",
     icon: GraduationCap,
-    iconProps: { size: 30, color: "#5CE1E6", strokeWidth: 1.5 },
+    image: "/assets/images/mikealson-hero.png",
   },
   {
     number: "03",
@@ -96,7 +96,7 @@ export const audience = [
     description:
       "Students interested in exploring ideas, technology, and problem-solving. Mikaelson encourages creative thinking and helps young innovators turn curiosity into meaningful projects and solutions.",
     icon: Lightbulb,
-    iconProps: { size: 30, color: "#5CE1E6", strokeWidth: 1.5 },
+    image: "/assets/images/mikaelson-landing-ii.png",
   },
   {
     number: "04",
@@ -104,10 +104,9 @@ export const audience = [
     description:
       "Young Africans who believe leadership begins with responsibility, discipline, and service. Mikaelson connects students who want to grow personally while contributing positively to their communities.",
     icon: Globe,
-    iconProps: { size: 30, color: "#5CE1E6", strokeWidth: 1.5 },
+    image: "/assets/images/leadership.png",
   },
 ];
-
 
 
 export const IMPACT_ITEMS: ImpactItem[] = [
@@ -186,4 +185,72 @@ export const floatingCards = [
   { label: "Projects Built", count: "10+" },
   { label: "Schools Represented", count: "4+" },
   { label: "Leadership Sessions", count: "30+" },
+];
+
+
+
+export const ecosystems = [
+  {
+    id: "habits",
+    label: "Discipline & Focus",
+
+    title: "Build daily habits that unlock discipline and focus",
+    subtitle: "The Mikaelson Community is where young people come to:",
+    bullets: [
+      "A habit is something you repeat so often that it becomes part of you.",
+      "Discipline is choosing what you want most over what you want now.",
+      "Focus is giving your best attention to what matters right now.",
+    ],
+    tags: ["Habit Systems", "Daily Routines", "Self-Mastery"],
+    cta: { label: "Start Building Habits", href: "/community" },
+    accent: "#5CE1E6",
+    number: "01",
+  },
+  {
+    id: "accountability",
+    label: "Accountability",
+
+    title: "Stay accountable through challenges and peer support",
+    subtitle: "What accountability means at Mikaelson:",
+    bullets: [
+      "Accountable means being responsible for your actions, decisions, and results — and being willing to own the outcome, whether good or bad.",
+      "Challenges are difficult situations or obstacles that test your abilities, mindset, and persistence.",
+    ],
+    tags: ["Peer Accountability", "Challenge Tracks", "Growth Mindset"],
+    cta: { label: "Join an Accountability Circle", href: "/community" },
+    accent: "#5CE1E6",
+    number: "02",
+  },
+  {
+    id: "leadership",
+    label: "Leadership",
+
+    title: "Develop leadership skills rooted in service and impact",
+    subtitle: "What leadership looks like here:",
+    bullets: [
+      "Leadership is helping people move in the right direction together.",
+      "Service is adding value to people and society.",
+      "Impact is the meaningful effect your actions, ideas, or presence have on people, systems, or the future.",
+    ],
+    tags: ["Leadership Training", "Service Projects", "Impact Frameworks"],
+    cta: { label: "Develop Your Leadership", href: "/community" },
+    accent: "#5CE1E6",
+    number: "03",
+  },
+  {
+    id: "community",
+    label: "Community",
+
+    title: "Connect with other builders, dreamers, and doers",
+    subtitle: "Who you'll find in the Mikaelson community:",
+    bullets: [
+      "Builders don't just talk about change, they make it happen!",
+      "Dreamers are people who imagine, envision, and hope for possibilities that don't yet exist.",
+      "Doers are people who take action, execute plans, and get things done.",
+    ],
+    tags: ["Peer Network", "Collaboration", "Shared Vision"],
+    cta: { label: "Meet the Community", href: "/community" },
+    accent: "#5CE1E6",
+    number: "04",
+  },
 ];

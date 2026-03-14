@@ -11,10 +11,10 @@ const ReportsDropdown: React.FC = () => {
     <div className="relative w-full">
       <button
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center justify-between gap-2 px-4 py-2.5 rounded-xl border border-[#5CE1E6]/25 bg-transparent text-sm font-medium text-white dark:text-[#111] hover:border-[#5CE1E6]/60 transition-all duration-200"
+        className="w-full flex items-center justify-between gap-2 px-4 py-2.5 rounded-xl border border-[#5CE1E6]/25 bg-transparent text-sm font-medium text-white  hover:border-[#5CE1E6]/60 transition-all duration-200"
       >
         <div className="flex items-center gap-2">
-          <FileBarChart size={14} className="text-[#5CE1E6]" />
+          <FileBarChart size={14} className="text-[#5CE1E6] " />
           <span>Annual Reports</span>
         </div>
         <ChevronDown

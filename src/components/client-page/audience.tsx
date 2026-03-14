@@ -1,143 +1,139 @@
 "use client";
 
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { audience } from "./data";
 
 export default function WhoItsFor() {
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(1);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setDirection(1);
+      setCurrent((prev) => (prev + 1) % audience.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const goTo = (index: number) => {
+    setDirection(index > current ? 1 : -1);
+    setCurrent(index);
+  };
+
+  const item = audience[current];
+  const Icon = item.icon;
+
+  const variants = {
+    enter: (d: number) => ({ x: d > 0 ? "100%" : "-100%", opacity: 0 }),
+    center: { x: "0%", opacity: 1 },
+    exit: (d: number) => ({ x: d > 0 ? "-100%" : "100%", opacity: 0 }),
+  };
+
   return (
-    <section className="py-24  md:px-10 text-[#111111] dark:text-white overflow-hidden">
+    <section className="py-24  md:px-10 bg-white dark:bg-[#050a0a] overflow-hidden transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
 
         {/* header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16 md:mb-20">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
           <div>
             <p className="text-[#5CE1E6] text-sm font-semibold tracking-[0.2em] uppercase mb-4">
               Our Audience
             </p>
-            <h2 className="text-[clamp(2rem,4.5vw,2.8rem)] font-extrabold leading-[1.15] tracking-[-0.03em] dark:text-white text-[#111111] max-w-sm">
+            <h2 className="text-[clamp(2rem,4.5vw,2.8rem)] font-extrabold leading-[1.15] tracking-[-0.03em] text-[#111] dark:text-white max-w-sm">
               Who Mikaelson<br />Is For
             </h2>
           </div>
-          <p className="text-base text-[#555] dark:text-white/60 leading-relaxed max-w-md md:text-right">
-            Mikaelson is designed for African students who are committed to growth,
+          <p className="text-base text-[#555] dark:text-white/50 leading-relaxed max-w-md md:text-right">
+            Mikaelson Initiative is designed for African students who are committed to growth,
             discipline, and building meaningful impact within their schools and communities.
           </p>
         </div>
 
-        {/* desktop */}
-        <div className="hidden md:grid grid-cols-2 gap-6">
-          {audience.map((item, index) => {
-            const isRight = index % 2 === 1;
-            return (
-              <div
-                key={index}
-                className="group relative flex flex-col justify-between rounded-2xl border border-[#5CE1E6]/25 bg-[#050a0a] p-8 overflow-hidden transition-all duration-300 hover:border-[#5CE1E6]/60 hover:shadow-[0_0_40px_rgba(92,225,230,0.07)]"
-                style={{ marginTop: isRight ? "3rem" : "0" }}
-              >
-                {/* texture */}
-                <div
-                  className="absolute inset-0 pointer-events-none opacity-[0.03]"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(#5CE1E6 1px, transparent 1px), linear-gradient(90deg, #5CE1E6 1px, transparent 1px)",
-                    backgroundSize: "32px 32px",
-                  }}
-                />
-
-                {/* number */}
-                <div
-                  className="absolute bottom-4 right-6 font-black leading-none text-white/[0.04] pointer-events-none select-none"
-                  style={{ fontSize: "clamp(80px, 10vw, 130px)", letterSpacing: "-0.05em" }}
-                >
-                  {item.number}
-                </div>
-
-                {/* icons and number */}
-                <div className="relative z-10 flex items-start justify-between mb-10">
-                  <div className="p-3 rounded-xl border border-[#5CE1E6]/20 bg-[#5CE1E6]/5 group-hover:border-[#5CE1E6]/50 transition-colors duration-300">
-                    <item.icon {...item.iconProps} />
-                  </div>
-                  <span className="text-[#5CE1E6]/40 text-sm font-bold tracking-widest">
-                    {item.number}
-                  </span>
-                </div>
-
-                {/* content */}
-                <div className="relative z-10 flex flex-col gap-4">
-                  <div className="w-7 h-[2px] bg-[#5CE1E6] rounded-full" />
-                  <h3 className="text-xl font-bold text-white leading-snug tracking-[-0.02em]">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-white/50 leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-
-                {/* Bottom accent */}
-                <div
-                  className="absolute bottom-0 left-0 right-0 h-[1.5px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{
-                    background:
-                      "linear-gradient(90deg, transparent, #5CE1E6 40%, #5CE1E6 60%, transparent)",
-                  }}
-                />
-              </div>
-            );
-          })}
-        </div>
-
-        {/* mobile version here */}
-        <div className="flex md:hidden flex-col gap-4">
-          {audience.map((item, index) => (
-            <div
-              key={index}
-              className="group relative flex flex-col rounded-2xl border border-[#5CE1E6]/25 bg-[#050a0a] p-6 overflow-hidden transition-all duration-300 hover:border-[#5CE1E6]/60"
+        {/* carousel */}
+        <div className="relative w-full overflow-hidden rounded-2xl" style={{ height: "520px" }}>
+          <AnimatePresence custom={direction} mode="popLayout">
+            <motion.div
+              key={current}
+              custom={direction}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: 0.55, ease: [0.32, 0.72, 0, 1] }}
+              className="absolute inset-0 rounded-2xl overflow-hidden"
             >
-              {/* grid texture */}
-              <div
-                className="absolute inset-0 pointer-events-none opacity-[0.03]"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(#5CE1E6 1px, transparent 1px), linear-gradient(90deg, #5CE1E6 1px, transparent 1px)",
-                  backgroundSize: "32px 32px",
+              {/* image */}
+              <img
+                src={item.image}
+                alt={item.title}
+                className="absolute inset-0 w-full h-full object-cover"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.display = "none";
                 }}
               />
 
-              {/* watermark -- been doing a lot of this lately */}
-              <div
-                className="absolute bottom-2 right-4 font-black leading-none text-white/[0.04] pointer-events-none select-none"
-                style={{ fontSize: "90px", letterSpacing: "-0.05em" }}
-              >
-                {item.number}
-              </div>
+              {/* dark overlay gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
 
-              <div className="relative z-10 flex items-start justify-between mb-6">
-                <div className="p-3 rounded-xl border border-[#5CE1E6]/20 bg-[#5CE1E6]/5">
-                  <item.icon {...item.iconProps} />
-                </div>
-                <span className="text-[#5CE1E6]/40 text-sm font-bold tracking-widest">
-                  {item.number}
+              {/* content anchored bottom-left */}
+              <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 flex flex-col gap-3">
+                <span className="text-[#5CE1E6] text-xs font-bold tracking-[0.2em] uppercase">
+                  {item.number} · Our Audience
                 </span>
-              </div>
-
-              <div className="relative z-10 flex flex-col gap-3">
-                <div className="w-6 h-[2px] bg-[#5CE1E6] rounded-full" />
-                <h3 className="text-lg font-bold text-white tracking-[-0.02em]">
+                <h3 className="text-[clamp(1.6rem,4vw,2.4rem)] font-extrabold text-white leading-[1.1] tracking-[-0.03em] max-w-xl">
                   {item.title}
                 </h3>
-                <p className="text-sm text-white/50 leading-relaxed">
+                <p className="text-white/65 text-sm md:text-base leading-relaxed max-w-lg">
                   {item.description}
                 </p>
               </div>
+            </motion.div>
+          </AnimatePresence>
 
-              <div
-                className="absolute bottom-0 left-0 right-0 h-[1.5px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+         
+          
+        </div>
+
+        {/* dot indicators + slide titles */}
+        <div className="mt-6 flex items-center  justify-between gap-4">
+          {/* titles row */}
+          <div className="hidden md:flex items-center gap-6 overflow-x-auto">
+            {audience.map((a, i) => (
+              <button
+                key={i}
+                onClick={() => goTo(i)}
+                className={`text-sm font-semibold whitespace-nowrap transition-all duration-300 pb-1 border-b-2 ${
+                  i === current
+                    ? "text-[#5CE1E6] dark:text-[#5CE1E6]"
+                    : "text-black dark:text-white border-transparent hover:text-[#555] dark:hover:text-white/60"
+                }`}
+              >
+                {a.title}
+              </button>
+            ))}
+          </div>
+
+          {/* dots — mobile */}
+          <div className="flex md:hidden items-center  gap-2">
+            {audience.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => goTo(i)}
+                className="transition-all duration-300 rounded-full bg-[#5CE1E6]"
                 style={{
-                  background:
-                    "linear-gradient(90deg, transparent, #5CE1E6 40%, #5CE1E6 60%, transparent)",
+                  width: i === current ? "1.75rem" : "0.5rem",
+                  height: "0.5rem",
+                  opacity: i === current ? 1 : 0.3,
                 }}
               />
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* progress counter */}
+          <span className="text-xs  font-bold text-[#999] dark:text-white/30 tabular-nums shrink-0">
+            {String(current + 1).padStart(2, "0")} / {String(audience.length).padStart(2, "0")}
+          </span>
         </div>
 
       </div>

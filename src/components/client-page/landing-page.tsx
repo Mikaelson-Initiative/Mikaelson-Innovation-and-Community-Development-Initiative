@@ -7,7 +7,7 @@ import HowItWorks from "@/components/client-page/how-it-works";
 import WhoItsFor from "./audience";
 import CommunitySection from "@/components/client-page/community-section";
 import FinalSection from "@/components/client-page/final-section";
-
+import EcosystemSection from "./ecosystem";
 
 export default function Home() {
   
@@ -16,12 +16,13 @@ export default function Home() {
       <HomeHero />
 
       <main className="bg-[#ffffff] dark:bg-background px-5 lg:px-0">
-        <IntroVideo />
-        <WhatWeDo />
+        {/* <IntroVideo /> */}
+        {/* <WhatWeDo /> */}
         <HowItWorks />
+        <EcosystemSection />
         <WhoItsFor />
         <ImpactSection />
-        <CommunitySection />
+        {/* <CommunitySection /> */}
         <BlogSectionWrapper />
         <FinalSection />
       </main>
