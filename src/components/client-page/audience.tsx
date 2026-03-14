@@ -1,93 +1,139 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { audience } from "./data";
 
 export default function WhoItsFor() {
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(1);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setDirection(1);
+      setCurrent((prev) => (prev + 1) % audience.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const goTo = (index: number) => {
+    setDirection(index > current ? 1 : -1);
+    setCurrent(index);
+  };
+
+  const item = audience[current];
+  const Icon = item.icon;
+
+  const variants = {
+    enter: (d: number) => ({ x: d > 0 ? "100%" : "-100%", opacity: 0 }),
+    center: { x: "0%", opacity: 1 },
+    exit: (d: number) => ({ x: d > 0 ? "-100%" : "100%", opacity: 0 }),
+  };
+
   return (
-    <section className="py-24  md:px-10 bg-white dark:bg-[#050a0a] text-[#111] dark:text-white overflow-hidden transition-colors duration-300">
+    <section className="py-24  md:px-10 bg-white dark:bg-[#050a0a] overflow-hidden transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
 
         {/* header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
           <div>
             <p className="text-[#5CE1E6] text-sm font-semibold tracking-[0.2em] uppercase mb-4">
               Our Audience
             </p>
-            <h2 className="text-[clamp(2rem,4.5vw,2.8rem)] font-extrabold leading-[1.15] tracking-[-0.03em] max-w-sm">
+            <h2 className="text-[clamp(2rem,4.5vw,2.8rem)] font-extrabold leading-[1.15] tracking-[-0.03em] text-[#111] dark:text-white max-w-sm">
               Who Mikaelson<br />Is For
             </h2>
           </div>
           <p className="text-base text-[#555] dark:text-white/50 leading-relaxed max-w-md md:text-right">
-            Mikaelson is designed for African students who are committed to growth,
+            Mikaelson Initiative is designed for African students who are committed to growth,
             discipline, and building meaningful impact within their schools and communities.
           </p>
         </div>
 
-        {/* cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {audience.map((item, index) => {
-            const Icon = item.icon;
-            const isOffset = index % 2 === 1;
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 32 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.55, delay: index * 0.1, ease: "easeOut" }}
-                className="group relative rounded-2xl overflow-hidden border border-black/8 dark:border-[#5CE1E6]/15 bg-[#f7fafa] dark:bg-[#0b1214] transition-all duration-300 hover:border-[#5CE1E6]/50 dark:hover:border-[#5CE1E6]/40"
-                style={{ marginTop: isOffset ? "1.5rem" : "0" }}
+        {/* carousel */}
+        <div className="relative w-full overflow-hidden rounded-2xl" style={{ height: "520px" }}>
+          <AnimatePresence custom={direction} mode="popLayout">
+            <motion.div
+              key={current}
+              custom={direction}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: 0.55, ease: [0.32, 0.72, 0, 1] }}
+              className="absolute inset-0 rounded-2xl overflow-hidden"
+            >
+              {/* image */}
+              <img
+                src={item.image}
+                alt={item.title}
+                className="absolute inset-0 w-full h-full object-cover"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.display = "none";
+                }}
+              />
+
+              {/* dark overlay gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
+
+              {/* content anchored bottom-left */}
+              <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 flex flex-col gap-3">
+                <span className="text-[#5CE1E6] text-xs font-bold tracking-[0.2em] uppercase">
+                  {item.number} · Our Audience
+                </span>
+                <h3 className="text-[clamp(1.6rem,4vw,2.4rem)] font-extrabold text-white leading-[1.1] tracking-[-0.03em] max-w-xl">
+                  {item.title}
+                </h3>
+                <p className="text-white/65 text-sm md:text-base leading-relaxed max-w-lg">
+                  {item.description}
+                </p>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+         
+          
+        </div>
+
+        {/* dot indicators + slide titles */}
+        <div className="mt-6 flex items-center  justify-between gap-4">
+          {/* titles row */}
+          <div className="hidden md:flex items-center gap-6 overflow-x-auto">
+            {audience.map((a, i) => (
+              <button
+                key={i}
+                onClick={() => goTo(i)}
+                className={`text-sm font-semibold whitespace-nowrap transition-all duration-300 pb-1 border-b-2 ${
+                  i === current
+                    ? "text-[#5CE1E6] dark:text-[#5CE1E6]"
+                    : "text-black dark:text-white border-transparent hover:text-[#555] dark:hover:text-white/60"
+                }`}
               >
-                {/* image strip */}
-                <div className="relative w-full h-48 overflow-hidden">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    onError={(e) => {
-                      // fallback if image missing
-                      (e.target as HTMLImageElement).style.display = "none";
-                    }}
-                  />
-                  {/* image overlay — light teal tint */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-[#5CE1E6]/10 to-[#5CE1E6]/25 dark:from-[#050a0a]/20 dark:to-[#050a0a]/60" />
+                {a.title}
+              </button>
+            ))}
+          </div>
 
-                  {/* number watermark on image */}
-                  <span className="absolute bottom-3 right-4 font-black text-white/20 dark:text-white/10 leading-none select-none pointer-events-none"
-                    style={{ fontSize: "clamp(56px, 8vw, 80px)", letterSpacing: "-0.05em" }}>
-                    {item.number}
-                  </span>
-                </div>
+          {/* dots — mobile */}
+          <div className="flex md:hidden items-center  gap-2">
+            {audience.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => goTo(i)}
+                className="transition-all duration-300 rounded-full bg-[#5CE1E6]"
+                style={{
+                  width: i === current ? "1.75rem" : "0.5rem",
+                  height: "0.5rem",
+                  opacity: i === current ? 1 : 0.3,
+                }}
+              />
+            ))}
+          </div>
 
-                {/* content */}
-                <div className="p-7 flex flex-col gap-4">
-                  <div className="flex items-center justify-between">
-                    {/* icon */}
-                    <div className="p-2.5 rounded-xl border border-[#5CE1E6]/25 bg-[#5CE1E6]/8 dark:bg-[#5CE1E6]/5 dark:border-[#5CE1E6]/20 transition-colors duration-300 group-hover:border-[#5CE1E6]/50">
-                      <Icon size={22} color="#5CE1E6" strokeWidth={1.5} />
-                    </div>
-                    <div className="w-6 h-[1.5px] bg-[#5CE1E6]/40 rounded-full" />
-                  </div>
-
-                  <h3 className="text-lg font-bold tracking-[-0.02em] text-[#111] dark:text-white leading-snug">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-[#555] dark:text-white/50 leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-
-                {/* bottom accent line on hover */}
-                <div
-                  className="absolute bottom-0 left-0 right-0 h-[1.5px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{
-                    background: "linear-gradient(90deg, transparent, #5CE1E6 40%, #5CE1E6 60%, transparent)",
-                  }}
-                />
-              </motion.div>
-            );
-          })}
+          {/* progress counter */}
+          <span className="text-xs  font-bold text-[#999] dark:text-white/30 tabular-nums shrink-0">
+            {String(current + 1).padStart(2, "0")} / {String(audience.length).padStart(2, "0")}
+          </span>
         </div>
 
       </div>
