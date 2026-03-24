@@ -51,7 +51,7 @@ function EcosystemBlock({ eco }: { eco: (typeof ecosystems)[0] }) {
 
   return (
     <div className="relative">
-      <div className="text-center pt-24 pb-10">
+      <div className="text-center pt-12 pb-10">
         <span
           className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-[0.18em] uppercase mb-4 border"
           style={{

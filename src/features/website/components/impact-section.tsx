@@ -61,13 +61,13 @@ export default function ImpactSection() {
           </div>
 
           {/* Tabs */}
-          <div className="flex gap-1 p-1 rounded-xl border border-[#5CE1E6]/20 dark:bg-white/5 bg-[#f0fafa] w-fit">
+          <div className="flex gap-0.5 p-1 rounded-xl border border-[#5CE1E6]/20 dark:bg-white/5 bg-[#f0fafa] w-fit">
             {(Object.keys(TABS) as TabKey[]).map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 aria-pressed={activeTab === tab}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 cursor-pointer ${
+                className={`px-3 md:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 cursor-pointer ${
                   activeTab === tab
                     ? "bg-[#5CE1E6] text-black"
                     : "dark:text-white/50 text-[#555] hover:text-[#111] dark:hover:text-white"

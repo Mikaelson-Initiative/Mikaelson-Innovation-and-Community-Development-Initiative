@@ -6,7 +6,7 @@ export function NewsletterForm() {
   return (
     <form
       onSubmit={(e) => e.preventDefault()}
-      className="flex gap-2 mt-1"
+      className="flex gap-2 mt-1 w-full relative"
     >
       <input
         type="email"
@@ -21,12 +21,13 @@ export function NewsletterForm() {
           transition-colors duration-200
         "
       />
+      {/* The Arrow right icon should be in the input box on mobile devices */}
       <button
         type="submit"
-        className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#5CE1E6] text-black text-sm font-semibold hover:bg-[#4bcdd2] transition-colors duration-200 shrink-0"
+        className="flex items-center gap-2 px-2 md:px-5 py-2 md:py-2.5 rounded-xl md:bg-[#5CE1E6] text-black text-sm font-semibold md:hover:bg-[#4bcdd2] transition-colors duration-200 shrink-0 absolute right-0 top-0 h-full md:relative"
       >
-        Subscribe
-        <ArrowRight size={14} />
+        <span className="hidden md:block">Subscribe</span>
+        <ArrowRight size={14} className="text-[#5CE1E6] md:text-black" />
       </button>
     </form>
   );
