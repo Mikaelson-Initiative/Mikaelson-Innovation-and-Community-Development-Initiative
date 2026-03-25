@@ -191,66 +191,53 @@ export const floatingCards = [
 
 export const ecosystems = [
   {
-    id: "habits",
-    label: "Discipline & Focus",
+    id: "community",
+    label: "The Mikaelson Community",
 
-    title: "Build daily habits that unlock discipline and focus",
-    subtitle: "The Mikaelson Community is where young people come to:",
+    title: "A growth-driven environment for discipline, clarity, and personal development",
+    subtitle: "This is where the journey begins:",
     bullets: [
-      "A habit is something you repeat so often that it becomes part of you.",
-      "Discipline is choosing what you want most over what you want now.",
-      "Focus is giving your best attention to what matters right now.",
+      "A structured community where students build discipline through daily systems and shared accountability.",
+      "An environment designed to help you develop focus, consistency, and a growth-oriented mindset.",
+      "A space where young people challenge themselves and each other to become better every day.",
+      "The foundation layer where habits, thinking, and identity are shaped.",
     ],
-    tags: ["Habit Systems", "Daily Routines", "Self-Mastery"],
-    cta: { label: "Start Building Habits", href: "/community" },
+    cta: { label: "Enter the Community", href: "/community" },
     accent: "#5CE1E6",
     number: "01",
   },
-  {
-    id: "accountability",
-    label: "Accountability",
 
-    title: "Stay accountable through challenges and peer support",
-    subtitle: "What accountability means at Mikaelson:",
+  {
+    id: "labs",
+    label: "Mikaelson Labs",
+
+    title: "A space for building ideas, exploring technology, and creating real-world solutions",
+    subtitle: "Where thinking turns into execution:",
     bullets: [
-      "Accountable means being responsible for your actions, decisions, and results — and being willing to own the outcome, whether good or bad.",
-      "Challenges are difficult situations or obstacles that test your abilities, mindset, and persistence.",
+      "Students move from learning to building through structured projects and guided exploration.",
+      "A hands-on environment for developing skills in technology, innovation, and problem-solving.",
+      "Opportunities to experiment, collaborate, and bring ideas to life.",
+      "A system that transforms curiosity into tangible output and real-world value.",
     ],
-    tags: ["Peer Accountability", "Challenge Tracks", "Growth Mindset"],
-    cta: { label: "Join an Accountability Circle", href: "/community" },
-    accent: "#5CE1E6",
+    cta: { label: "Explore the Labs", href: "/labs" },
+    accent: "#7DA2FF",
     number: "02",
   },
-  {
-    id: "leadership",
-    label: "Leadership",
 
-    title: "Develop leadership skills rooted in service and impact",
-    subtitle: "What leadership looks like here:",
+  {
+    id: "network",
+    label: "Partnership & Growth Network",
+
+    title: "Expanding opportunities through schools, collaborations, and strategic partnerships",
+    subtitle: "This is where growth scales:",
     bullets: [
-      "Leadership is helping people move in the right direction together.",
-      "Service is adding value to people and society.",
-      "Impact is the meaningful effect your actions, ideas, or presence have on people, systems, or the future.",
+      "Connections with schools, communities, and organizations that support student development.",
+      "Access to opportunities, mentorship, and environments that accelerate growth.",
+      "A network designed to expand impact beyond individuals into systems and institutions.",
+      "The layer that turns personal growth into collective progress across communities.",
     ],
-    tags: ["Leadership Training", "Service Projects", "Impact Frameworks"],
-    cta: { label: "Develop Your Leadership", href: "/community" },
-    accent: "#5CE1E6",
+    cta: { label: "Join the Network", href: "/network" },
+    accent: "#6B6B6B",
     number: "03",
-  },
-  {
-    id: "community",
-    label: "Community",
-
-    title: "Connect with other builders, dreamers, and doers",
-    subtitle: "Who you'll find in the Mikaelson community:",
-    bullets: [
-      "Builders don't just talk about change, they make it happen!",
-      "Dreamers are people who imagine, envision, and hope for possibilities that don't yet exist.",
-      "Doers are people who take action, execute plans, and get things done.",
-    ],
-    tags: ["Peer Network", "Collaboration", "Shared Vision"],
-    cta: { label: "Meet the Community", href: "/community" },
-    accent: "#5CE1E6",
-    number: "04",
   },
 ];
