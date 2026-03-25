@@ -1,7 +1,7 @@
 import type { SVGProps } from "react";
 
 const LinkedIn = (props: SVGProps<SVGSVGElement>) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" id="linkedin">
+  <svg xmlns="http://www.w3.org/2000/svg" width="102" height="102" viewBox="0 0 72 72" id="linkedin">
   <g id="providers-list" fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
     <g id="linkedin">
       <rect id="Rectangle-2" width="72" height="72" x="0" y="0" fill="#117EB8" rx="4"></rect>
