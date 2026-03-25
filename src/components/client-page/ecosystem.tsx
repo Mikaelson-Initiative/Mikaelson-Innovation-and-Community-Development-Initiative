@@ -41,6 +41,7 @@ export function EcosystemBlock({ eco }: { eco: (typeof ecosystems)[0] }) {
           end: `+=${eco.bullets.length * 20}%`,
           pin: true,
           scrub: 1.2,
+          
         });
       }, sectionRef);
 

@@ -126,10 +126,10 @@ export default function RootLayout({
               enableSystem
               disableTransitionOnChange
             >
-              <main id="main-content">
+              <div id="main-content">
                 {children}
                 <Toaster position="top-center" richColors />
-              </main>
+              </div>
             </ThemeProvider>
           </QueryProvider>
       </ClerkProvider>

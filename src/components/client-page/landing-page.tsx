@@ -14,7 +14,7 @@ export default function Home() {
     <>
       <HomeHero />
 
-      <main className="bg-[#ffffff] dark:bg-background px-5 lg:px-0">
+      <main className="bg-[#ffffff] dark:bg-background px-5 lg:px-0 ">
         {/* <IntroVideo /> */}
         {/* <WhatWeDo /> */}
         <OurEcosystemTabs />

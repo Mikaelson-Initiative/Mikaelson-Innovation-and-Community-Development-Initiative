@@ -4,6 +4,8 @@ import  { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import EcosystemSection from "./ecosystem";
+// import ScrollTrigger from "gsap/ScrollTrigger";
+
 
 const tabs = [
   {
@@ -50,8 +52,10 @@ const tabs = [
 export default function OurEcosystemTabs() {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
 
+
   const activeData = tabs.find((t) => t.id === activeTab) || tabs[0];
   const activeIndex = tabs.findIndex((t) => t.id === activeTab);
+  
 
   return (
     <section className="py-24 bg-white dark:bg-background overflow-hidden">
