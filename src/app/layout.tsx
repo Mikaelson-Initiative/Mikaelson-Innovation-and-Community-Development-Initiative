@@ -13,8 +13,10 @@ const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://mikaelsoninitiative.org";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mikaelsoninitiative.org"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Mikaelson Initiative | Elevating Humanity Through Technology",
     template: "%s | Mikaelson Initiative",
@@ -33,20 +35,24 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "Mikaelson Initiative Team",
-      url: "https://mikaelsoninitiative.org",
+      url: siteUrl,
     },
   ],
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://mikaelsoninitiative.org",
+    url: siteUrl,
     siteName: "Mikaelson Initiative",
     title: "Mikaelson Initiative | Elevating Humanity Through Technology",
     description:
       "Join the Mikaelson Initiative to build a better Africa through innovation, community, and impact-driven technology.",
     images: [
       {
-        url: "/assets/images/mikaelsonlogo.png",
+        
+        url: `${siteUrl}/assets/images/mikaelsonlogo.png`,
         width: 1200,
         height: 630,
         alt: "Mikaelson Initiative Logo",
@@ -60,7 +66,7 @@ export const metadata: Metadata = {
     title: "Mikaelson Initiative | Empowering Africa Through Technology",
     description:
       "Discover how the Mikaelson Initiative is transforming Africa through innovation, education, and collaboration.",
-    images: ["/assets/images/mikaelsonlogo.png"],
+    images: [`${siteUrl}/assets/images/mikaelsonlogo.png`],
   },
   robots: {
     index: true,
@@ -74,12 +80,10 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://mikaelsoninitiative.org",
+    canonical: siteUrl,
   },
   category: "Technology & Community Development",
 };
-
-const clerkPubKey = "pk_test_ZGl2aW5lLWRvcnktMzMuY2xlcmsuYWNjb3VudHMuZGV2JA"
 
 export default function RootLayout({
   children,
@@ -89,7 +93,6 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
-        {/* Google Tag Manager */}
         <Script
           src="https://t.contentsquare.net/uxa/637962adff02e.js"
           strategy="afterInteractive"
@@ -109,7 +112,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${poppins.variable} antialiased`}>
-        <ClerkProvider publishableKey={clerkPubKey}>
+        <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY!}>
           <QueryProvider>
             <noscript>
               <iframe
@@ -119,7 +122,6 @@ export default function RootLayout({
                 style={{ display: "none", visibility: "hidden" }}
               />
             </noscript>
-
             <ThemeProvider
               attribute="class"
               defaultTheme="system"
