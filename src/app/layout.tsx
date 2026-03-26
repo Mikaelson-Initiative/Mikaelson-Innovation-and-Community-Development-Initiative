@@ -13,7 +13,8 @@ const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://mikaelsoninitiative.org";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://mikaelsoninitiative.org";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -51,7 +52,6 @@ export const metadata: Metadata = {
       "Join the Mikaelson Initiative to build a better Africa through innovation, community, and impact-driven technology.",
     images: [
       {
-        
         url: `${siteUrl}/assets/images/mikaelsonlogo.png`,
         width: 1200,
         height: 630,
@@ -112,7 +112,9 @@ export default function RootLayout({
         />
       </head>
       <body className={`${poppins.variable} antialiased`}>
-        <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY!}>
+        <ClerkProvider
+          publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY!}
+        >
           <QueryProvider>
             <noscript>
               <iframe

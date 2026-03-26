@@ -1,11 +1,5 @@
-"use client"
-import AnimatedSection from "@/components/animated-section";
-import EcosystemSection from "@/features/website/components/ecosystem-section";
-import { ExploreMore } from "@/features/website/components/explore-more";
-import HomeHero from "@/features/website/components/hero";
-import ImpactSection from "@/features/website/components/impact-section";
-import MediaStories from "@/features/website/components/media-stories";
-import { useIsMobile } from "@/hooks/use-mobile";
+import Home from "@/components/client-page/landing-page";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Mikaelson Initiative | Elevating Humanity Through Technology",
@@ -66,41 +60,38 @@ export const metadata: Metadata = {
 
 export default function LandingPage() {
   return (
-    <main className="bg-[#ffffff] dark:bg-background px-5 lg:px-0">
-      <HomeHero />
-      <EcosystemSection />
-      <AnimatedSection
-        title="The Mikaelson Community"
-        description="The Mikaelson Community is a vibrant network of ambitious students and changemakers across Africa, united by excellence and intentional growth."
-        buttonText="Join our community"
-        btnBgcolor="bg-brand-green-100"
-        buttonLink="/community"
-        imageSrc={communityUrl}
-        imageAlt="Mikaelson Community on MacBook"
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Mikaelson Initiative",
+            url: "https://mikaelsoninitiative.org",
+            logo: "https://mikaelsoninitiative.org/assets/images/mikaelsonlogo.png",
+            description:
+              "Structured youth leadership and personal development programs equipping African students with discipline, innovation skills, and accountability systems.",
+            foundingLocation: {
+              "@type": "Place",
+              name: "Nigeria",
+            },
+            areaServed: "Africa",
+            sameAs: [
+              "https://x.com/mcdti_org",
+              "https://www.instagram.com/mikaelson_initiative/",
+              "https://www.linkedin.com/company/mikaelson-initiative/",
+              "https://www.youtube.com/@TheMikaelsonCommunity",
+            ],
+            contactPoint: {
+              "@type": "ContactPoint",
+              email: "mikaelsoninitiative@gmail.com",
+              contactType: "customer support",
+            },
+          }),
+        }}
       />
-      <AnimatedSection
-        title="Mikaelson Labs"
-        description="Mikaelson Labs is our innovation hub where we build and experiment
-          with new ideas to solve challenges across Africa."
-        buttonText="Contribute to Labs"
-        buttonLink="/labs"
-        btnBgcolor="bg-brand-blue"
-        imageSrc={labsUrl}
-        imageAlt="Mikaelson Community on MacBook"
-      />
-      <AnimatedSection
-        title="Partnership & Growth Network"
-        description="Our network connects students with mentors, resources, and
-          opportunities to foster collaboration and accelerate growth."
-        buttonText="Sponsor a Program"
-        buttonLink="/sponsor"
-        btnBgcolor="bg-brand-black"
-        imageSrc={sponsorUrl}
-        imageAlt="Partnership & Growth Network on iPad"
-      />
-      <ImpactSection />
-      <MediaStories />
-      <ExploreMore />
-    </main>
+      <Home />
+    </>
   );
 }

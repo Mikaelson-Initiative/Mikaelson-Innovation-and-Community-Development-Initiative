@@ -7,6 +7,7 @@ import { XformerlyTwitter } from "./icons/Twitter";
 import { Instagram } from "./icons/Instagram";
 import { LinkedIn } from "./icons/LinkedIn";
 import { YouTube } from "./icons/Youtube";
+import { NewsletterForm } from "./newsletter-form";
 
 export const socialLinks = [
   
