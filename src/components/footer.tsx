@@ -7,6 +7,7 @@ import { XformerlyTwitter } from "./icons/Twitter";
 import { Instagram } from "./icons/Instagram";
 import { LinkedIn } from "./icons/LinkedIn";
 import { YouTube } from "./icons/Youtube";
+import { NewsletterForm } from "./newsletter-form";
 
 export const socialLinks = [
   
@@ -158,21 +159,19 @@ export const Footer = () => {
       {/* Bottom bar */}
       <div className="border-t border-white/8 dark:border-black/8">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-black/30 ">
+          <p className="text-xs text-black">
             © {new Date().getFullYear()} Mikaelson Initiative. All rights reserved.
           </p>
           <div className="flex items-center gap-1">
             <span className="w-1.5 h-1.5 rounded-full bg-[#5CE1E6]" />
-            <span className="text-xs text-black/30 ">
+            <span className="text-xs text-black ">
               Building Africa's next generation of leaders
             </span>
           </div>
         </div>
       </div>
       <hr />
-      <p className="text-center mt-5">
-        © 2025 Mikaelson Initiative. All rights reserved.
-      </p>
+      
     </footer>
   );
 };
