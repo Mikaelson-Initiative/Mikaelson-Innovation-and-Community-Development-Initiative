@@ -54,11 +54,11 @@ export default function OurEcosystemTabs() {
   const activeIndex = tabs.findIndex((t) => t.id === activeTab);
 
   return (
-    <section className="py-24 bg-white dark:bg-background overflow-hidden">
-      <div className="container mx-auto px-5 lg:px-10 max-w-6xl">
+    <section className="py-24  bg-white dark:bg-background overflow-hidden">
+      <div className="container mx-auto px-5  lg:px-10 max-w-6xl">
 
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16  ">
           <p className="text-[#5CE1E6] text-sm font-semibold tracking-[0.2em] uppercase mb-4">
             What we&apos;ve built
           </p>
@@ -68,7 +68,7 @@ export default function OurEcosystemTabs() {
         </div>
 
         {/* Tabs Row */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-20 flex-wrap">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-20  flex-wrap">
           {tabs.map((tab) => (
             <button
               key={tab.id}
@@ -107,7 +107,7 @@ export default function OurEcosystemTabs() {
             />
             <div className="relative z-10 flex flex-col items-center text-center">
               <h3
-                className="text-[clamp(2.5rem,6vw,4rem)] font-extrabold tracking-[-0.03em] text-[#111] dark:text-white/20 mb-6"
+                className="text-[clamp(2.5rem,6vw,4rem)] font-extrabold tracking-[-0.03em] text-[#111] dark:text-white/20 mb-6 "
                 style={{ textShadow: `0px 4px 40px ${activeData.shadowColor}` }}
               >
                 {activeData.title}
@@ -117,7 +117,7 @@ export default function OurEcosystemTabs() {
                 <span className="w-8 h-[2px] bg-[#5CE1E6] rounded-full" />
               </div>
 
-              <p className="text-base text-[#555] dark:text-white/60 leading-relaxed max-w-2xl">
+              <p className="text-base text-[#555] dark:text-white/60  leading-relaxed max-w-2xl">
                 {activeData.content}
               </p>
             </div>
