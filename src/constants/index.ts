@@ -60,7 +60,7 @@ export type FilterType = keyof typeof FILTERS;
 // Team data
 export const TEAM_MEMBERS: TeamMember[] = [
   {
-    name: "Oluwasegun M. Olukayode",
+    name: "Michael S. Olukayode",
     department: "OPERATIONS",
     country: "NG",
     role: "Founder & Executive Director",
