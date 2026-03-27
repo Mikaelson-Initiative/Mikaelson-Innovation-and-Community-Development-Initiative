@@ -43,7 +43,7 @@ export default function EcosystemSection() {
         viewport={{ once: true }}
         className="w-full text-center"
       >
-        <h2 className="mx-auto mb-2 text-center text-[2.3rem] dark:text-white font-extrabold leading-[1.2] tracking-[-0.025em] text-[#111111]">
+        <h2 className="mx-auto mb-2 text-center text-[2.3rem] dark:text-white font-extrabold leading-[1.2] tracking-[-0.025em] text-black">
           Our Ecosystem
         </h2>
       </motion.div>
