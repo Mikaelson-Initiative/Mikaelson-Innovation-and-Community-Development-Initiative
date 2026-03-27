@@ -225,7 +225,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     department: "TECH",
     role: "Software Engineer",
     country: "NG",
-    img: "/assets/images/OluwafemiAjigbayi.jpg",
+    img: "/assets/images/OluwafemiAjigbayi.JPG",
   },
   {
     name: "Maxwell Oba-Joshua",
@@ -260,7 +260,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     department: "TECH",
     role: "Graphic Designer",
     country: "NG",
-    img: "/assets/images/Beloved-John.JPG",
+    img: "/assets/images/Beloved-John.jpg",
   },
   {
     name: "Ayegbusi Bright Temitope",
