@@ -1,4 +1,4 @@
-# 🌍 Mikaelson Innovation and Community Development Initiative
+# 🌍 Mikaelson Community Development And Tech Initiative
 
 <div align="center">
 

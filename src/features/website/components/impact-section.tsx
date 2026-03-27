@@ -1,104 +1,76 @@
 "use client";
-import { HeadingClipText } from "@/components/heading-backgroun-clip";
-import React, { useMemo, useState, useEffect } from "react";
 
-// Item type
-interface ImpactItem {
-  icon: string;
-  number: string;
-  label: string;
-}
+import  { useMemo, useState, useEffect } from "react";
+import TestimonialMarquee from "./reusable-components/marquee";
+import { IMPACT_ITEMS, ImpactItem} from "@/components/client-page/data";
 
-// Static items
-const IMPACT_ITEMS: ImpactItem[] = [
-  { icon: "🏛️", number: "4", label: "Universities Touched (and counting…)" },
-  { icon: "👥", number: "3,000+", label: "Students Reached" },
-  { icon: "🚀", number: "6", label: "Personal Growth Campaigns Run" },
-  {
-    icon: "🤝",
-    number: "12+",
-    label: "Strategic Collaborators and Volunteers",
-  },
-  { icon: "🎙️", number: "10+", label: "Student Stories Captured" },
-];
-
-// Tab keys
 type TabKey = "Overview" | "Reach" | "Programs" | "Stories";
 
-// CountUp props
-interface CountUpProps {
-  value: string;
-}
-
-function CountUp({ value }: CountUpProps) {
+function CountUp({ value }: { value: string }) {
   const [display, setDisplay] = useState<string>(value);
 
   useEffect(() => {
     const match = String(value).match(/([0-9,]+)(\+?)/);
-    if (!match) {
-      setDisplay(value);
-      return;
-    }
-
+    if (!match) { setDisplay(value); return; }
     const numericPart = match[1].replace(/,/g, "");
     const suffix = match[2] || "";
     const target = parseInt(numericPart, 10);
-    if (Number.isNaN(target)) {
-      setDisplay(value);
-      return;
-    }
-
+    if (Number.isNaN(target)) { setDisplay(value); return; }
     const durationMs = 1200;
     const start = performance.now();
-
     function step(now: number) {
       const progress = Math.min(1, (now - start) / durationMs);
       const current = Math.floor(target * progress);
-      const formatted = current
-        .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      const formatted = current.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       setDisplay(`${formatted}${suffix}`);
       if (progress < 1) requestAnimationFrame(step);
     }
-
     requestAnimationFrame(step);
   }, [value]);
 
   return <span>{display}</span>;
 }
 
+
+
 export default function ImpactSection() {
   const [activeTab, setActiveTab] = useState<TabKey>("Overview");
 
-  const TABS: Record<TabKey, ImpactItem[]> = useMemo(
-    () => ({
-      Overview: IMPACT_ITEMS,
-      Reach: [IMPACT_ITEMS[0], IMPACT_ITEMS[1]],
-      Programs: [IMPACT_ITEMS[2], IMPACT_ITEMS[3]],
-      Stories: [IMPACT_ITEMS[4]],
-    }),
-    []
-  );
+  const TABS: Record<TabKey, ImpactItem[]> = useMemo(() => ({
+    Overview: IMPACT_ITEMS,
+    Reach: [IMPACT_ITEMS[0], IMPACT_ITEMS[1]],
+    Programs: [IMPACT_ITEMS[2], IMPACT_ITEMS[3]],
+    Stories: [IMPACT_ITEMS[4]],
+  }), []);
 
   const itemsToShow = TABS[activeTab];
 
   return (
-    <section className="impact-section px-4 py-16" data-aos="fade-up">
-      <div className="container mx-auto max-w-[1200px] text-center">
-        {/* Section heading */}
-        <div className="flex justify-between items-center px-5">
-          <HeadingClipText className="mb-0" title={"Our Impact so far"} />
+    <section className="py-24 md:px-10">
+      <div className="max-w-7xl mx-auto">
+
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+          <div>
+            <p className="text-[#5CE1E6] text-sm font-semibold tracking-[0.2em] uppercase mb-4">
+              Impact
+            </p>
+            <h2 className="text-[clamp(2rem,4.5vw,2.8rem)] font-extrabold leading-[1.15] tracking-[-0.03em] dark:text-white text-[#111111]">
+              Our Impact So Far
+            </h2>
+          </div>
+
           {/* Tabs */}
-          <div className="hidden md:flex gap-2 rounded-lg bg-gray-100 p-1 text-sm md:text-base">
-            {Object.keys(TABS).map((tab) => (
+          <div className="flex gap-1 p-1 rounded-xl border border-[#5CE1E6]/20 dark:bg-white/5 bg-[#f0fafa] w-fit">
+            {(Object.keys(TABS) as TabKey[]).map((tab) => (
               <button
                 key={tab}
-                onClick={() => setActiveTab(tab as TabKey)}
+                onClick={() => setActiveTab(tab)}
                 aria-pressed={activeTab === tab}
-                className={`rounded px-2 md:py-2 transition-colors cursor-pointer ${
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 cursor-pointer ${
                   activeTab === tab
-                    ? "bg-white text-gray-900 shadow"
-                    : "text-gray-600 hover:text-gray-900"
+                    ? "bg-[#5CE1E6] text-black"
+                    : "dark:text-white/50 text-[#555] hover:text-[#111] dark:hover:text-white"
                 }`}
               >
                 {tab}
@@ -107,40 +79,40 @@ export default function ImpactSection() {
           </div>
         </div>
 
-        {/* Items */}
-        <div className="impact-grid mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Stat cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {itemsToShow.map((item) => (
             <div
               key={item.label}
-              className="impact-item rounded-2xl border border-l-[#20c9c0] border-l-4 border-gray-200 bg-white p-10 text-center shadow-sm transition-transform hover:-translate-y-1 hover:shadow-lg"
+              className="group relative rounded-2xl border border-[#5CE1E6]/25 dark:bg-white/5 bg-[#f7fafa] p-8 overflow-hidden transition-all duration-300 hover:border-[#5CE1E6]/60 hover:shadow-[0_0_40px_rgba(92,225,230,0.07)]"
             >
-              <div className="impact-icon-wrapper hidden mx-auto mb-3 h-12 w-12 lg:h-20 lg:w-20 items-center justify-center rounded-full bg-gray-100 text-xl">
-                <span className="impact-icon text-2xl lg:text-5xl" aria-hidden>
-                  {item.icon}
-                </span>
-              </div>
-              <div className="impact-content">
-                <h3 className="impact-number text-3xl lg:text-[40px] font-extrabold text-gray-900">
+              <div className="relative z-10 flex flex-col gap-3">
+                <div className="w-7 h-[2px] bg-[#5CE1E6] rounded-full" />
+                <h3 className="text-[clamp(2.2rem,5vw,3rem)] font-extrabold dark:text-white text-[#111] leading-none tracking-[-0.03em]">
                   <CountUp value={item.number} />
                 </h3>
-                <p className="mt-1 text-sm text-gray-700 md:text-[17.6px]">
+                <p className="text-sm dark:text-white/50 text-[#555] leading-relaxed">
                   {item.label}
                 </p>
               </div>
+              <div
+                className="absolute bottom-0 left-0 right-0 h-[1.5px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{
+                  background: "linear-gradient(90deg, transparent, #5CE1E6 40%, #5CE1E6 60%, transparent)",
+                }}
+              />
             </div>
           ))}
         </div>
 
-        {/* Quote */}
-        <blockquote className="mx-auto mt-10 max-w-3xl rounded-lg border border-l-[#20c9c0] border-l-8 border-gray-200 bg-white p-6 italic text-gray-800 text-lg">
-          <p className="md:text-[25.6px]">
-            The Initiative gave me the structure I needed to finally take my
-            life seriously.
+        {/* Testimonial marquee */}
+        <div className="mt-16">
+          <p className="text-[#5CE1E6] text-xs font-semibold tracking-[0.2em] uppercase mb-6">
+            Student Voices
           </p>
-          <footer className="mt-2 not-italic text-sm text-right text-gray-600  lg:text-[17.6px]">
-            — A Student, Wesley University
-          </footer>
-        </blockquote>
+          <TestimonialMarquee />
+        </div>
+
       </div>
     </section>
   );

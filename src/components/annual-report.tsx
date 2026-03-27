@@ -1,18 +1,31 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { ChevronUp } from "lucide-react";
+import {  ChevronDown, FileBarChart } from "lucide-react";
 import React, { useState } from "react";
 
 const ReportsDropdown: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
 
   return (
-    <div
-      onClick={() => setOpen((v) => !v)}
-      className="relative flex items-center gap-2 rounded-sm border border-gray-300 bg-white dark:bg-black dark:border-gray-300 cursor-pointer p-4 text-lg font-medium hover:bg-gray-50"
-    >
-      <span>📊 Annual Reports</span>
-      <ChevronUp
+    <div className="relative w-full">
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className="w-full flex items-center justify-between gap-2 px-4 py-2.5 rounded-xl border border-[#5CE1E6]/25 bg-transparent text-sm font-medium text-black  hover:border-[#5CE1E6]/60 transition-all duration-200"
+      >
+        <div className="flex items-center gap-2">
+          <FileBarChart size={14} className="text-black " />
+          <span>Annual Reports</span>
+        </div>
+        <ChevronDown
+          size={14}
+          className={cn(
+            "text-black transition-transform duration-300",
+            open && "rotate-180"
+          )}
+        />
+      </button>
+
+      <div
         className={cn(
           open &&
             "rotate-180 ease-linear translate-y-0.5  transition-transform duration-300"
@@ -30,7 +43,7 @@ const ReportsDropdown: React.FC = () => {
           href="https://drive.google.com/drive/folders/1qSFgMPFig9RvlKLAcjaCsPh58GUiotqU"
           target="_blank"
           rel="noreferrer"
-          className="rounded flex items-center justify-center px-3 py-2 text-sm text-gray-800 hover:bg-gray-50 text-center"
+          className="flex items-center justify-between px-4 py-3 text-sm  text-black/70  dark:hover:text-black hover:bg-[#5CE1E6]/8 transition-colors duration-150"
         >
           2025
         </a>

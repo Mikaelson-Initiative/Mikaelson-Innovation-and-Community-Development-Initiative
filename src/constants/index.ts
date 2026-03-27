@@ -3,6 +3,7 @@ export const footerLinks = [
     section: "Explore",
     links: [
       { label: "Home", href: "/" },
+      { label: "Focus Areas", href: "/focus-areas" },
       { label: "Community", href: "/community" },
       { label: "Labs", href: "/labs" },
       { label: "Our Team", href: "/team" },
@@ -30,7 +31,6 @@ export interface TeamMember {
   country: string;
   role: string;
   img: string;
-  bio: string;
   department?: FilterType;
 }
 
@@ -39,7 +39,6 @@ export const FILTERS = {
   ALL: "All",
   TECH: "Tech team",
   OPERATIONS: "Operations",
-  MENTORS: "Mentors",
   ADVISORS: "Advisors & Patrons",
   TRUSTEES: "Board of Trustees",
 } as const;
@@ -65,8 +64,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     department: "OPERATIONS",
     country: "NG",
     role: "Founder & Executive Director",
-    img: "/assets/images/20240726_164330.jpeg",
-    bio: "Visionary leader with over 10 years of experience in sustainable technology and community development. Passionate about empowering African communities through innovative solutions.",
+    img: "/assets/images/MichaelOlukayode.jpg",
   },
   {
     name: "Khadijah Abdul Juma",
@@ -74,25 +72,20 @@ export const TEAM_MEMBERS: TeamMember[] = [
     country: "KE",
     role: "Advisor on Partnership and Growth Network",
     img: "/assets/images/Khadija-Abdul.png",
-    bio: "Khadija Abdul Juma is a results-driven technology and media leader with over 12 years of experience advancing digital transformation and economic opportunities across Africa. She is passionate about improving lives and livelihoods through innovation, community empowerment, and strategic partnerships.",
   },
-
   {
     role: "Secretary, Board of Trustees",
     department: "TRUSTEES",
     country: "NG",
     name: "Imam Bashir Abdulwahab",
     img: "/assets/images/Imam-Bashir.JPG",
-    bio: "Imam Bashir serves as the Secretary of the Trustees, supporting the organization with clear communication, record stewardship, and dependable coordination. He is committed to using technology and organized systems to strengthen community service and improve how people connect with support resources. His work reflects a dedication to uplift humanity, encourage understanding, and promote meaningful social impact.",
   },
-
   {
-    name: "Irene Ezechi",
-    role: "Program Management Lead",
+    name: "Irene Chidinma Ezechi",
+    role: "Regional Program manager",
     department: "OPERATIONS",
     country: "NG",
     img: "/assets/images/Irene-Ezechi.jpg",
-    bio: "Program management lead coordinating planning, execution, and impact across initiatives.",
   },
   {
     name: "Iretioluwa Ogunmola",
@@ -100,73 +93,55 @@ export const TEAM_MEMBERS: TeamMember[] = [
     role: "Product Management Lead",
     country: "NG",
     img: "/assets/images/Ireti.jpeg",
-    bio: "I'm a Product Manager who loves understanding user needs and turning them into products that feel effortless to use. I collaborate with designers and engineers to plan, build, and launch features that solve real problems and create value. I enjoy working with data, learning continuously, and shipping meaningful improvements one iteration at a time.",
   },
   {
-    name: "Juliana Sarya",
-    country: "TZ",
-    department: "OPERATIONS",
-    role: "Project Manager Associate",
-    img: "/assets/images/Juliana-Sarya.jpg",
-    bio: "I am Juliana Sarya, an IT professional, digital activist, and social innovator passionate about using technology to solve real community challenges. Over the past years, I have led initiatives that empower young people, women, and persons with disabilities through digital literacy, IoT, robotics, and human-centered design. I led IOTeach, an EdTech project that equips students with future-ready skills and encourages them to create solutions for issues such as education gaps, inclusion, and community development",
-  },
-  {
-    name: " Okikiolu Eniola-Glory",
+    name: "Okikiolu Eniola-Glory Fiyinfoluwa",
     department: "OPERATIONS",
     country: "NG",
-    role: "Community Operations Lead",
+    role: "Community Operations",
     img: "/assets/images/eniola.jpeg",
-    bio: "My name is Eniola-Glory, an Hr manager and vocal artist, an introvert who loves growing, learning and being impactful.",
   },
-
   {
-    name: "Hammed Adedamola",
+    name: "Hammed Abibat",
     department: "OPERATIONS",
     country: "NG",
-    role: "Social Media Manager Lead",
+    role: "Social Media Relations",
     img: "/assets/images/Hammed.JPG",
-    bio: "I am a Product Manager who is people-driven and passionate about exploring new ideas, connecting with others, and expanding my knowledge. Outside of work, I enjoy watching movies, learning new things, and meeting new people.",
   },
   {
     name: "Inioluwa Afolabi",
     department: "OPERATIONS",
     country: "NG",
-    role: "Project Manager – 30 Days Reset Challenges",
+    role: "Project Manager - Monthly Reset Challenges",
     img: "/assets/images/afolabi.jpeg",
-    bio: "My name is Inioluwa Afolabi. I'm a project manager passionate about learning, growth, leadership and making positive impact that leads to betterment of livelihood. In addition, I'm an advocate for sustainability and digital transformation.",
   },
-
   {
-    name: "Ariyo Aresa",
+    name: "Olatunji-Aresa Ariyo Olamide",
     department: "TECH",
     country: "NG",
-    role: "Frontend Developer",
-    img: "/assets/images/Ariyo-Aresa.jpg",
-    bio: "I'm Ariyo Olatunji-Aresa Aresa, a Frontend engineer with about 4 years of experience who has worked on several projects across several industries. I'm also an engineering student",
+    role: "Front-end Engineer",
+    img: "/assets/images/AriyoAresa.jpg",
   },
   {
-    name: "Mercy kalu",
+    name: "Mercy Kalu",
     department: "TECH",
     country: "NG",
     role: "Product Designer",
     img: "/assets/images/Mercy-Kalu.jpg",
-    bio: "I’m a product designer who creates simple, useful, and meaningful digital products",
   },
   {
-    name: "Neh Glory",
+    name: "Neh Glory Anye",
     department: "OPERATIONS",
     country: "NG",
-    role: "Project Manager – Digital Literacy (Cybersecurity)",
+    role: "Project Manager - Digital Literacy (Cybersecurity)",
     img: "/assets/images/Neh-Glory.jpeg",
-    bio: "I am a certified IT specialist and a tier1 SOC analyst. A tech enthusiast passionate about securing systems and empowering others through training programs.",
   },
   {
-    name: "Chukwu Ajah Sebastian",
+    name: "Chukwu Ajah Sabastine",
     department: "TECH",
     country: "NG",
-    role: "Frontend Developer",
+    role: "Frontend Engineer",
     img: "/assets/images/chukwu-ajah.jpg",
-    bio: "I'm chukwu Ajah sabastine A front end developer with 2 years of experience. I love building products that solves real problems and participates actively when in a team to make sure the teams vision and mission are accomplished",
   },
   {
     name: "Boluwatife Adeleke",
@@ -174,22 +149,118 @@ export const TEAM_MEMBERS: TeamMember[] = [
     role: "Product Marketing Manager",
     country: "NG",
     img: "/assets/images/Boluwatife-Mercy.jpeg",
-    bio: "Boluwatife Adeleke is a purpose-driven social impact leader working at the intersection of education, youth empowerment, and operational systems building.",
   },
   {
-    name: "Olujimi Fashoyin",
+    name: "Fashoyin Olujimi Temitope",
     department: "TECH",
     role: "Data Analyst",
     country: "NG",
     img: "/assets/images/Olujimi-Fashoyin.jpg",
-    bio: "My name is Olujimi Fashoyin. I graduated in mechatronics engineering from FUOYE. I’m passionate about using my skills in data analysis, problem-solving, and technology to make a positive impact. I enjoy collaborating on projects that create meaningful results.",
   },
+  {
+    name: "Abraham Ekundayo",
+    department: "TECH",
+    role: "Product Designer",
+    country: "NG",
+    img: "/assets/images/AbrahamEkundayo.jpeg",
+  },
+  {
+    name: "Adeoye Esther Toluwanimi",
+    department: "TECH",
+    role: "Social Media Relations",
+    country: "NG",
+    img: "/assets/images/AdeoyeEsther.jpg",
+  },
+  {
+    name: "Theresa Gyamfi",
+    department: "TECH",
+    role: "Project Manager - Digital Literacy (Cybersecurity)",
+    country: "GH",
+    img: "/assets/images/AsieduGyamfi.png",
+  },
+  {
+    name: "Shukurat Olajumoke Abdulkadir",
+    department: "OPERATIONS",
+    role: "Project Manager - Digital Literacy (Cybersecurity)",
+    country: "NG",
+    img: "/assets/images/ShukuratAbdulkadir.jpg",
+  },
+  {
+    name: "Obochi Happiness Adah",
+    department: "TECH",
+    role: "Backend Engineer",
+    country: "NG",
+    img: "/assets/images/HappinessObochi.jpg",
+  },
+  {
+    name: "Sodeeq Badejoko",
+    department: "TECH",
+    role: "Graphic Designer",
+    country: "NG",
+    img: "/assets/images/SodeeqBadejoko.png",
+  },
+  {
+    name: "Abayomi Favour",
+    department: "TECH",
+    role: "Software Engineer",
+    country: "NG",
+    img: "/assets/images/FavourAbayomi.jpg",
+  },
+  {
+    name: "Ajigbayi Oluwafemi Tosin",
+    department: "TECH",
+    role: "Software Engineer",
+    country: "NG",
+    img: "/assets/images/OluwafemiAjigbayi.jpg",
+  },
+  {
+    name: "Maxwell Oba-Joshua",
+    department: "TECH",
+    role: "Full-Stack Engineer",
+    country: "NG",
+    img: "/assets/images/MaxwellJoshua.jpg",
+  },
+  {
+    name: "Olamilekan J. Aremu",
+    department: "TECH",
+    role: "Full-Stack Engineer",
+    country: "NG",
+    img: "/assets/images/OlamilekanAremu.jpg",
+  },
+  {
+    name: "Idowu Ayomide Victor",
+    department: "TECH",
+    role: "Graphic Designer",
+    country: "NG",
+    img: "/assets/images/AyomideIdowu.jpg",
+  },
+  {
+    name: "Oluwole Feranmi",
+    department: "OPERATIONS",
+    role: "Social Media Relations",
+    country: "NG",
+    img: "/assets/images/FeranmiOluwole.jpg",
+  },
+  {
+    name: "Beloved-John Adejumo",
+    department: "TECH",
+    role: "Graphic Designer",
+    country: "NG",
+    img: "/assets/images/Beloved-John.jpg",
+  },
+  {
+    name: "Ayegbusi Bright Temitope",
+    department: "TECH",
+    role: "Graphic Designer",
+    country: "NG",
+    img: "/assets/images/AyegbusiBright.jpg",
+  }
 ];
 
 export const products: Product[] = [
   {
     id: "hub-education",
-    icon: "🎓",
+    icon: "Ã°Å¸Å½â€œ",
     title: "RIO Hub for Education",
     category: "Education & Learning",
     color: "#367bf4",
@@ -209,7 +280,7 @@ export const products: Product[] = [
   //   title: "RIO Hub for Companies",
   //   category: "Business & Enterprise",
   //   color: "#48d7e2",
-  //   icon: "🏢",
+  //   icon: "Ã°Å¸ÂÂ¢",
   //   description:
   //     "Boost workplace productivity and employee engagement. Track team performance, collaboration metrics, and professional development goals.",
   //   image: "/assets/images/product-hub.svg",
@@ -226,7 +297,7 @@ export const products: Product[] = [
   //   title: "RIO Hub for Content Creators",
   //   category: "Content & Media",
   //   color: "#a44ff5",
-  //   icon: "🎬",
+  //   icon: "Ã°Å¸Å½Â¬",
   //   description:
   //     "Manage content schedules, track creative output, and build consistent habits. Stay accountable to your audience and creative goals.",
   //   image: "/assets/images/product-hub.svg",
@@ -243,7 +314,7 @@ export const products: Product[] = [
   //   title: "RIO Hub for Developers",
   //   color: "#0eb27c",
   //   category: "Technology & Dev",
-  //   icon: "💻",
+  //   icon: "Ã°Å¸â€™Â»",
   //   description:
   //     "Track coding habits, project milestones, and technical skill development. Build consistent development practices and collaborate effectively.",
   //   image: "/assets/images/product-hub.svg",
@@ -259,7 +330,7 @@ export const products: Product[] = [
   //   id: "hub-startups",
   //   title: "RIO Hub for Startups",
   //   category: "Innovation & Startups",
-  //   icon: "🚀",
+  //   icon: "Ã°Å¸Å¡â‚¬",
   //   color: "#ee950a",
   //   description:
   //     "Monitor innovation cycles, team productivity, and startup growth metrics. Foster a culture of accountability and rapid iteration.",
@@ -277,7 +348,7 @@ export const products: Product[] = [
   //   title: "RIO Hub for Government",
   //   category: "Public Sector",
   //   color: "#ed4141",
-  //   icon: "🏛️",
+  //   icon: "Ã°Å¸Ââ€ºÃ¯Â¸Â",
   //   description:
   //     "Enhance public sector productivity and service delivery. Track project timelines, citizen engagement, and departmental performance.",
   //   image: "/assets/images/product-hub.svg",
@@ -294,7 +365,7 @@ export const products: Product[] = [
   //   title: "RIO Hub for Nonprofits",
   //   category: "Social Impact",
   //   color: "#e63c8d",
-  //   icon: "🤝",
+  //   icon: "Ã°Å¸Â¤Â",
   //   description:
   //     "Maximize impact with volunteer management, program tracking, and donor engagement insights. Build sustainable community initiatives.",
   //   image: "/assets/images/product-hub.svg",
@@ -309,7 +380,7 @@ export const products: Product[] = [
   // {
   //   id: "hub-sports",
   //   title: "RIO Hub for Sports & Fitness",
-  //   icon: "⚽",
+  //   icon: "Ã¢Å¡Â½",
   //   category: "Sports & Wellness",
   //   color: "#11ad9d",
   //   description:
@@ -328,7 +399,7 @@ export const products: Product[] = [
   //   title: "RIO Hub for Creative Media",
   //   category: "Creative Industries",
   //   color: "#5d5ced",
-  //   icon: "🎨",
+  //   icon: "Ã°Å¸Å½Â¨",
   //   description:
   //     "Manage creative projects, track production workflows, and collaborate with teams. Deliver creative excellence on schedule.",
   //   image: "/assets/images/product-hub.svg",
@@ -345,7 +416,7 @@ export const products: Product[] = [
   //   title: "RIO Hub for Research",
   //   category: "Research & Academia",
   //   color: "#8856f4",
-  //   icon: "🔬",
+  //   icon: "Ã°Å¸â€Â¬",
   //   description:
   //     "Track research milestones, manage academic collaborations, and monitor publication progress. Advance knowledge systematically.",
   //   image: "/assets/images/product-hub.svg",
