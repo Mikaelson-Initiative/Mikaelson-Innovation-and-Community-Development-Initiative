@@ -106,7 +106,7 @@ const Hero: React.FC = () => {
               <iframe
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/pkV81B9k_7E"
+                src="https://www.youtube.com/embed/pkV81B9k_7E?autoplay=1&mute=1"
                 title="WE ARE LIVE! Introducing the All-New Mikaelson Initiative Website!"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
