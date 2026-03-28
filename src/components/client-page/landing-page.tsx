@@ -1,13 +1,12 @@
 import HomeHero from "@/components/client-page/hero";
 import ImpactSection from "@/features/website/components/impact-section";
-import IntroVideo from "@/components/client-page/intro-video";
+// import IntroVideo from "@/components/client-page/intro-video";
 import BlogSectionWrapper from "./blog-wrapper";
-import WhatWeDo from "./what-we-do";
-import HowItWorks from "@/components/client-page/how-it-works";
+// import WhatWeDo from "./what-we-do";
+import OurEcosystemTabs from "@/components/client-page/our-ecosystem";
 import WhoItsFor from "./audience";
-import CommunitySection from "@/components/client-page/community-section";
+// import CommunitySection from "@/components/client-page/community-section";
 import FinalSection from "@/components/client-page/final-section";
-import EcosystemSection from "./ecosystem";
 
 export default function Home() {
   
@@ -15,11 +14,10 @@ export default function Home() {
     <>
       <HomeHero />
 
-      <main className="bg-[#ffffff] dark:bg-background px-5 lg:px-0">
+      <main className="bg-[#ffffff] dark:bg-background px-5 lg:px-0 ">
         {/* <IntroVideo /> */}
         {/* <WhatWeDo /> */}
-        <HowItWorks />
-        <EcosystemSection />
+        <OurEcosystemTabs />
         <WhoItsFor />
         <ImpactSection />
         {/* <CommunitySection /> */}

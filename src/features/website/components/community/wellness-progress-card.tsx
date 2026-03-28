@@ -1,19 +1,19 @@
 "use client";
 import { Badge } from "@/components/ui/badge";
 import {
-  Card,
-  CardContent,
-  CardHeader
+    Card,
+    CardContent,
+    CardHeader
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import {
-  Clock,
-  Flame,
-  FlameIcon,
-  LucideIcon,
-  StarIcon,
-  TrophyIcon,
-  Users,
+    Clock,
+    Flame,
+    FlameIcon,
+    LucideIcon,
+    StarIcon,
+    TrophyIcon,
+    Users,
 } from "lucide-react";
 
 type Stat = {
@@ -50,7 +50,7 @@ export function WellnessProgressCard({
   const pct = Math.max(0, Math.min(100, completionPercent));
 
   return (
-    <Card className={cn("overflow-hidden max-w-5xl mx-auto p-10! dark:bg-card dark:border-white/10", className)}>
+    <Card className={cn("overflow-hidden max-w-5xl mx-auto !p-10", className)}>
       <CardHeader className="space-y-2">
         <div className="flex items-center flex-col md:flex-row justify-between">
           <div className="size-20 rounded-2xl flex-center bg-[#fb675c] text-white">
@@ -67,7 +67,7 @@ export function WellnessProgressCard({
               <p className="text-sm text-muted-foreground font-semibold">
                 {dateRange}
               </p>
-              <Badge className="uppercase tracking-wide bg-[#d4edda] dark:bg-[#d4edda]/20 text-green-900 dark:text-green-300 font-semibold">
+              <Badge className="uppercase tracking-wide bg-[#d4edda] text-green-900 font-semibold">
                 <Clock />
                 {daysLeft} days left
               </Badge>
@@ -85,14 +85,14 @@ export function WellnessProgressCard({
             {stats.map((s) => (
               <div
                 key={s.label}
-                className="rounded-lg border gap-3 flex items-center bg-[#f8f9fa] dark:bg-brand-dark-bg-nav dark:border-white/10 p-4 shadow-sm transition-colors"
+                className="rounded-lg border gap-3 flex items-center bg-[#f8f9fa] p-4 shadow-sm  transition-colors"
                 title={s.tooltip}
               >
                 <div className="size-10 btn-gradient flex-center rounded-sm text-white">
                   <s.icon />
                 </div>
                 <div className="">
-                  <p className="mt-1 text-lg md:text-2xl font-bold dark:text-brand-text-dark-heading">
+                  <p className="mt-1 text-lg md:text-2xl font-bold dark:text-black">
                     {s.value}
                   </p>
                   <p className="text-xs text-muted-foreground font-semibold">

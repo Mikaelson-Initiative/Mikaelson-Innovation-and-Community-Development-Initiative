@@ -56,7 +56,7 @@ export const RecentTransformation = () => {
           {data.map((item, index) => (
             <div
               key={index}
-              className="border dark:border-white/10 flex gap-8 rounded-xl p-6 bg-white dark:bg-card shadow-sm hover:shadow-md transition"
+              className="border flex gap-8 rounded-xl p-6 bg-white shadow-sm hover:shadow-md transition"
             >
               <div className="md:flex items-center gap-4 hidden">
                 <Avatar className="w-20 h-20">
@@ -67,13 +67,13 @@ export const RecentTransformation = () => {
               <div className="flex-1">
                 <div className="flex justify-between items-center">
                   <div className="flex gap-2 items-center">
-                    <h3 className="text-sm md:text-lg font-semibold dark:text-brand-text-dark-heading">{item.name}</h3>
+                    <h3 className="text-sm md:text-lg font-semibold dark:text-black/70">{item.name}</h3>
                     <ReactCountryFlag
                       countryCode={item.countryCode}
                       svg
                       style={{ width: "1.5em", height: "1.5em" }}
                       title={item.countryCode}
-                      className="rotate-2 ml-2 hidden! md:flex!"
+                      className="rotate-2 ml-2 !hidden md:!flex"
                     />
                   </div>
                   <p className="text-gray-500 text-xs md:text-sm">{item.time}</p>
@@ -94,7 +94,7 @@ export const RecentTransformation = () => {
                   {item.tags.map((tag, i) => (
                     <span
                       key={i}
-                      className="px-3 py-1.5 bg-[#f8f9fa] dark:bg-brand-dark-bg-nav text-xs rounded-full dark:text-brand-text-dark-heading"
+                      className="px-3 py-1.5 bg-[#f8f9fa]  text-xs rounded-full dark:text-black/40"
                     >
                       #{tag}
                     </span>

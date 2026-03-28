@@ -105,7 +105,7 @@ const regionList: RegionGroup[] = [
 ];
 
 const CommunityChapters: React.FC = () => {
-  const [selectedRegionKey, setSelectedRegionKey] = useState<string>("ssAfrica");
+ const [selectedRegionKey, setSelectedRegionKey] = useState<string>("ssAfrica");
 
 
   // Compute total members
@@ -121,7 +121,7 @@ const CommunityChapters: React.FC = () => {
   );
 
   return (
-    <section className="py-16 bg-linear-to-br from-slate-50 to-slate-100 dark:bg-card dark:from-card dark:to-card">
+    <section className="py-16 bg-gradient-to-br from-slate-50 to-slate-100 dark:bg-card dark:from-card dark:to-card">
       <div className="max-w-6xl mx-auto px-6 space-y-12">
         <CommunityHeader
           label="Our Global Network"
@@ -162,12 +162,13 @@ const CommunityChapters: React.FC = () => {
                 type="button"
                 onClick={() => setSelectedRegionKey(group.key)}
                 aria-pressed={selectedRegionKey === group.key}
-                className={`p-4 cursor-pointer rounded-lg shadow transition text-left ${selectedRegionKey === group.key
-                  ? "bg-brand-primary text-white"
-                  : "bg-white dark:bg-brand-dark-bg-nav hover:bg-blue-50 dark:hover:bg-brand-dark-bg-nav/80"
-                  }`}
+                className={`p-4 cursor-pointer rounded-lg shadow transition text-left ${
+                  selectedRegionKey === group.key
+                    ? "bg-brand-primary text-white"
+                    : "bg-white hover:bg-blue-50"
+                }`}
               >
-                <h4 className="font-semibold dark:text-brand-text-dark-heading">{group.name}</h4>
+                <h4 className="font-semibold dark:text-black">{group.name}</h4>
               </button>
             ))}
           </div>
@@ -176,13 +177,13 @@ const CommunityChapters: React.FC = () => {
         {/* Region Results */}
         {selectedRegionGroup && (
           <div>
-            <h3 className="text-xl font-semibold mb-4 dark:text-brand-text-dark-heading">
+            <h3 className="text-xl font-semibold mb-4">
               {selectedRegionGroup.name} Communities
             </h3>
             <hr />
 
             {selectedRegionGroup.chapters.length > 0 ? (
-              <ul className="space-y-2 bg-white dark:bg-brand-dark-bg-nav p-4 mt-4 rounded-lg">
+              <ul className="space-y-2 bg-white p-4 mt-4 rounded-lg">
                 {selectedRegionGroup.chapters
                   .slice()
                   .sort((a, b) => a.name.localeCompare(b.name))
@@ -190,9 +191,9 @@ const CommunityChapters: React.FC = () => {
                     <li key={chapter.id}>
                       <Link
                         href={`/community`}
-                        className="flex items-start flex-col md:flex-row md:items-center space-x-2 p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded"
+                        className="flex items-start flex-col md:flex-row md:items-center space-x-2 p-2 hover:bg-gray-100 rounded"
                       >
-                        <span className="font-medium dark:text-brand-text-dark-heading">{chapter.name}</span>
+                        <span className="font-medium dark:text-black">{chapter.name}</span>
                         <span className="text-gray-500 text-sm flex gap-1">
                           <span className="hidden md:flex flex-row">•</span><span className="dark:text-brand-text-dark">{chapter.location}</span>
                         </span>
@@ -201,7 +202,7 @@ const CommunityChapters: React.FC = () => {
                   ))}
               </ul>
             ) : (
-              <div className="bg-white dark:bg-brand-dark-bg-nav p-6 mt-4 rounded-lg text-center flex flex-col items-center justify-center text-gray-600 dark:text-brand-text-dark">
+              <div className="bg-white p-6 mt-4 rounded-lg text-center flex flex-col items-center justify-center text-gray-600">
                 <p className="font-bold text-lg md:text-2xl">Coming Soon...</p>
                 <div className="relative w-full max-w-[300px] h-[200px] sm:h-[250px] md:h-[300px]">
                   <Image

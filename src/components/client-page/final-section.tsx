@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function FinalCTA() {
   return (
-    <section className="py-32 px-5 md:px-10">
+    <section className="py-32  md:px-10">
       <div className="max-w-7xl mx-auto">
 
         <div className="relative rounded-3xl overflow-hidden border border-[#5CE1E6] bg-[#050a0a] dark:bg-[#050a0a] light:bg-white p-12 md:p-20"

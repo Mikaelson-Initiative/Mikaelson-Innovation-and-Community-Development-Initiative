@@ -41,7 +41,7 @@ const communityChapters: Chapter[] = [
 ];
 
 export const CommunityStats = () => {
-
+    
   const totalCommunityMembers = useMemo(() => {
     return communityChapters.reduce(
       (total, chapter) => total + chapter.memberCount,
@@ -52,38 +52,38 @@ export const CommunityStats = () => {
   return (
     <>
       {/* Community Growth Stats */}
-      <div className="space-y-4 bg-white dark:bg-card dark:border-white/10 rounded-md p-10">
+      <div className="space-y-4 bg-white rounded-md p-10">
         <div className="text-center space-y-1">
-          <h3 className="text-3xl font-extrabold dark:text-brand-text-dark-heading">Community Growth</h3>
-          <p className="text-gray-700 dark:text-brand-text-dark">
+          <h3 className="text-3xl font-extrabold dark:text-black">Community Growth</h3>
+          <p className="text-gray-700">
             Our chapters are growing stronger every day
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-          <div className="bg-white border dark:border-white/10 dark:bg-card rounded-lg bg-linear-to-br from-slate-50 to-slate-100 dark:from-brand-dark-bg-nav dark:to-brand-dark-bg-nav p-15">
+          <div className="bg-white rounded-lg bg-gradient-to-br from-slate-50 to-slate-100 p-15">
             <TrendingUp className="w-8 h-8 mx-auto text-blue-600 mb-2" />
-            <span className="block text-lg font-bold dark:text-brand-text-dark-heading">
+            <span className="block text-lg font-bold dark:text-black">
               +{Math.floor(totalCommunityMembers)}
             </span>
             <span className="text-gray-600 block dark:text-brand-text-dark">New Members This Month</span>
           </div>
-          <div className="bg-white border dark:border-white/10 dark:bg-card rounded-lg bg-linear-to-br from-slate-50 to-slate-100 dark:from-brand-dark-bg-nav dark:to-brand-dark-bg-nav p-15">
+          <div className="bg-white rounded-lg bg-gradient-to-br from-slate-50 to-slate-100 p-15">
             <Globe className="w-8 h-8 mx-auto text-green-600 mb-2" />
-            <span className="block text-lg font-bold dark:text-brand-text-dark-heading">
+            <span className="block text-lg font-bold dark:text-black">
               {communityChapters.length}
             </span>
-            <span className="text-gray-600 block dark:text-brand-text-dark">Active Chapters</span>
+            <span className="text-gray-600 block">Active Chapters</span>
           </div>
-          <div className="bg-white border dark:border-white/10 dark:bg-card rounded-lg bg-linear-to-br from-slate-50 to-slate-100 dark:from-brand-dark-bg-nav dark:to-brand-dark-bg-nav p-15">
+          <div className="bg-white rounded-lg bg-gradient-to-br from-slate-50 to-slate-100 p-15">
             <Book className="w-8 h-8 mx-auto text-red-600 mb-2" />
-            <span className="block text-lg font-bold dark:text-brand-text-dark-heading">
+            <span className="block text-lg font-bold dark:text-black">
               {Math.round(
                 communityChapters.reduce((sum, c) => sum + c.totalPoints, 0) /
-                1000
+                  1000
               )}
               K+
             </span>
-            <span className="text-gray-600 block dark:text-brand-text-dark">Collective Points</span>
+            <span className="text-gray-600 block">Collective Points</span>
           </div>
         </div>
       </div>

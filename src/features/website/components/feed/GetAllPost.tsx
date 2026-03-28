@@ -279,7 +279,7 @@ export const ForYouFeed = ({ posts }: { posts: Post[] }) => {
           <div className="postheader flex flex-row justify-between">
             <div className="flex items-center gap-3">
               {/* Avatar */}
-              <div className="w-8 h-8 rounded-full bg-linear-to-br from-teal-500 to-blue-600 flex items-center justify-center text-white font-semibold shadow-md">
+              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-500 to-blue-600 flex items-center justify-center text-white font-semibold shadow-md">
                 {post?.user?.profileImage ? (
                   <img
                     src={post.user.profileImage}
@@ -391,7 +391,7 @@ export const FollowingFeed = ({ posts }: { posts: Post[] }) => {
         >
           <div className="postheader flex flex-row justify-between">
             <div className="flex flex-row gap-2 justify-center items-center">
-              <span className="text-white flex items-center justify-center p-2 bg-linear-to-br from-teal-500 to-blue-600 rounded-full w-fit">
+              <span className="text-white flex items-center justify-center p-2 bg-gradient-to-br from-teal-500 to-blue-600 rounded-full w-fit">
                 {post?.user?.profileImage}
               </span>
               <span className="font-semibold text-sm">

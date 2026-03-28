@@ -3,7 +3,7 @@ import React from "react";
 
 const FaqContactSection: React.FC = () => {
   return (
-    <div className="text-center max-w-6xl mx-auto mt-16 p-8 bg-linear-to-br from-slate-50 to-slate-200 rounded-2xl shadow-sm">
+    <div className="text-center max-w-6xl mx-auto mt-16 p-8 bg-gradient-to-br from-slate-50 to-slate-200 rounded-2xl shadow-sm">
       <h3 className="text-2xl font-bold text-gray-900 mb-4">
         Still have questions?
       </h3>

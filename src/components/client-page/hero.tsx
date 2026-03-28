@@ -1,15 +1,13 @@
 "use client";
 
 import React from "react";
-import WavyBackground from "../hero-components/wavy-web"
+import WavyBackground from "../hero-components/wavy-web";
 import { motion } from "framer-motion";
 import Link from "next/link";
-
 
 const Hero: React.FC = () => {
   return (
     <section className="relative w-full h-screen overflow-hidden flex items-center">
-      
       {/* wavy background */}
       <WavyBackground />
 
@@ -25,7 +23,6 @@ const Hero: React.FC = () => {
       {/* main content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-5 md:px-10">
         <div className="flex flex-col md:flex-row items-center gap-8 lg:gap-14">
-
           <div className="w-full md:w-1/2 flex flex-col gap-4">
             {/* headline */}
             <motion.h1
@@ -36,7 +33,9 @@ const Hero: React.FC = () => {
             >
               We&apos;re Building{" "}
               <span className="relative inline-block">
-                <span className="relative z-10 text-[#0097a7]">Africa&apos;s Future</span>
+                <span className="relative z-10 text-[#0097a7]">
+                  Africa&apos;s Future
+                </span>
                 <span
                   className="absolute bottom-1 left-0 w-full h-[5px] rounded-full opacity-30"
                   style={{ background: "#5CE1E6" }}
@@ -52,8 +51,9 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
               className="text-[13.5px] md:text-[0.95rem] text-gray-600 leading-relaxed max-w-lg"
             >
-              The Mikaelson Initiative is a youth development organization equipping African students
-              with practical leadership skills, personal growth systems, and structured accountability.
+              The Mikaelson Initiative is a youth development organization
+              equipping African students with practical leadership skills,
+              personal growth systems, and structured accountability.
             </motion.p>
 
             {/* call to action btns */}
@@ -77,7 +77,7 @@ const Hero: React.FC = () => {
             </motion.div>
           </div>
 
-         {/* video container */}
+          {/* video container */}
           <motion.div
             initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
@@ -88,7 +88,8 @@ const Hero: React.FC = () => {
             <div
               className="absolute -z-0 w-[420px] h-[320px] rounded-full blur-[80px] opacity-30 pointer-events-none"
               style={{
-                background: "radial-gradient(circle, #5CE1E6 0%, transparent 70%)",
+                background:
+                  "radial-gradient(circle, #5CE1E6 0%, transparent 70%)",
                 transform: "translate(10%, -10%)",
               }}
             />
@@ -100,22 +101,20 @@ const Hero: React.FC = () => {
               <span className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-[#5CE1E6] rounded-bl-2xl z-20" />
               <span className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#5CE1E6] rounded-br-2xl z-20" />
 
-             
               {/*video here */}
+
               <iframe
-                className="absolute inset-0 h-full w-full"
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/x8nYGAWlLnQ?autoplay=1&mute=1&loop=1&playlist=x8nYGAWlLnQ"
-                title="Mikaelson Initiative Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                src="https://www.youtube.com/embed/pkV81B9k_7E?autoplay=1"
+                title="WE ARE LIVE! Introducing the All-New Mikaelson Initiative Website!"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
             </div>
           </motion.div>
         </div>
       </div>
-
     </section>
   );
 };

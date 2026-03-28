@@ -25,7 +25,7 @@ const Page = () => {
     { id: '4', name: 'Maria Garcia', email: 'maria@example.com', interest: 'Analytics', referral: 'Blog', newsletter: false, joined: '2025-10-10', status: 'pending' },
     { id: '5', name: 'Chris Lee', email: 'chris@example.com', interest: 'All', referral: 'Website', newsletter: true, joined: '2025-10-09', status: 'contacted' },
     { id: '6', name: 'Emily Davis', email: 'emily@example.com', interest: 'Habits', referral: 'Instagram', newsletter: false, joined: '2025-10-08', status: 'pending' },
-    { id: '7', name: 'Michael Brown', email: 'michael@example.com', interest: 'Community', referral: 'Friend', newsletter: true, joined: '2025-10-07', status: 'invited' },
+    { id: '7', name: 'Michael Brown', email: 'michael@example.com', interest:'Community' , referral:'Friend' , newsletter:true , joined:'2025-10-07' , status:'invited'},               
     { id: '8', name: 'Sarah Wilson', email: 'sarah@example.com', interest: 'Challenges', referral: 'Twitter', newsletter: false, joined: '2025-10-06', status: 'pending' },
     { id: '9', name: 'David Martinez', email: 'david@example.com', interest: 'Analytics', referral: 'LinkedIn', newsletter: true, joined: '2025-10-05', status: 'contacted' },
     { id: '10', name: 'Olivia Taylor', email: 'olivia@example.com', interest: 'All', referral: 'Website', newsletter: true, joined: '2025-10-04', status: 'pending' },
@@ -36,7 +36,7 @@ const Page = () => {
   return (
     <div>
       <WaitlistNavbar onExportAll={() => {
-        const headers = ['id', 'name', 'email', 'interest', 'referral', 'newsletter', 'joined', 'status']
+        const headers = ['id','name','email','interest','referral','newsletter','joined','status']
         const escape = (val: unknown) => {
           const s = String(val ?? '')
           const escaped = s.replace(/"/g, '""')
@@ -60,15 +60,15 @@ const Page = () => {
         const url = URL.createObjectURL(blob)
         const a = document.createElement('a')
         a.href = url
-        a.download = `waitlist-all-${new Date().toISOString().slice(0, 10)}.csv`
+        a.download = `waitlist-all-${new Date().toISOString().slice(0,10)}.csv`
         a.click()
         URL.revokeObjectURL(url)
       }} />
-      <div className="py-12 px-8 bg-brand-bg-gray dark:bg-black/20 dark:text-white">
+      <main className="py-12 px-8 bg-brand-bg-gray dark:bg-black/20 dark:text-white">
         <WaitlistDasboardStats entries={entries} />
         <WaitlistTable entries={entries} setEntries={setEntries} />
-      </div>
-    </div >
+      </main>
+    </div>
   )
 }
 

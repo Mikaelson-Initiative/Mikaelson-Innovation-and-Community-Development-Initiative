@@ -31,10 +31,10 @@ const CommunityCTA: React.FC<CTAProps> = ({
   },
 }) => {
   return (
-    <section className="bg-linear-to-br dark:bg-card dark:from-card dark:to-card from-[#f8fafc] to-[#f1f5f9] py-16">
+    <section className="bg-gradient-to-br dark:bg-card dark:from-card dark:to-card from-[#f8fafc] to-[#f1f5f9] py-16">
       <div className="max-w-4xl mx-auto px-6 text-center">
         {/* Icon */}
-        <div className="flex items-center justify-center w-20 h-20 rounded-full mb-4 mx-auto bg-linear-to-br from-blue-600 to-teal-400">
+        <div className="flex items-center justify-center w-20 h-20 rounded-full mb-4 mx-auto bg-gradient-to-br from-blue-600 to-teal-400">
           <Crown className="w-12 h-12 text-white" aria-hidden="true" />
         </div>
 
@@ -59,7 +59,7 @@ const CommunityCTA: React.FC<CTAProps> = ({
         </div>
 
         {/* Testimonial */}
-        <div className="bg-white dark:bg-card rounded-xl p-6 italic shadow-lg max-w-2xl mx-auto dark:text-brand-text-dark-heading dark:border dark:border-white/10">
+        <div className="bg-white rounded-xl p-6 italic shadow-lg max-w-2xl mx-auto dark:text-black/70">
           <p className="mb-2">{testimonial.quote}</p>
           <cite className="not-italic font-semibold">{testimonial.author}</cite>
         </div>

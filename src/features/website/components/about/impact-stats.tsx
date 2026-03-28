@@ -24,7 +24,7 @@ const Stat: React.FC<StatProps> = ({ value, label, color }) => (
 );
 
 export const ImpactStats: React.FC = () => (
-  <section className="max-w-5xl mx-auto mb-16 rounded-2xl bg-linear-to-br from-gray-50 to-gray-200 p-10 text-center px-4">
+  <section className="max-w-5xl mx-auto mb-16 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-200 p-10 text-center px-4">
     <motion.h2
       className="mb-8 text-3xl font-extrabold text-gray-900 md:text-4xl"
       initial={{ opacity: 0, y: 20 }}

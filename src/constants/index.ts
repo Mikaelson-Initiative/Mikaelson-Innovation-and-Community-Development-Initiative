@@ -60,7 +60,7 @@ export type FilterType = keyof typeof FILTERS;
 // Team data
 export const TEAM_MEMBERS: TeamMember[] = [
   {
-    name: "Oluwasegun M. Olukayode",
+    name: "Michael S. Olukayode",
     department: "OPERATIONS",
     country: "NG",
     role: "Founder & Executive Director",
@@ -98,7 +98,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: "Okikiolu Eniola-Glory Fiyinfoluwa",
     department: "OPERATIONS",
     country: "NG",
-    role: "Community Operations",
+    role: "Community Operations Lead",
     img: "/assets/images/eniola.jpeg",
   },
   {
@@ -116,10 +116,10 @@ export const TEAM_MEMBERS: TeamMember[] = [
     img: "/assets/images/afolabi.jpeg",
   },
   {
-    name: "Olatunji-Aresa Ariyo Olamide",
+    name: "Olatunji-Aresa A. Olamide",
     department: "TECH",
     country: "NG",
-    role: "Front-end Engineer",
+    role: "Frontend Engineer",
     img: "/assets/images/AriyoAresa.jpg",
   },
   {
@@ -127,13 +127,27 @@ export const TEAM_MEMBERS: TeamMember[] = [
     department: "TECH",
     country: "NG",
     role: "Product Designer",
-    img: "/assets/images/Mercy-Kalu.jpg",
+    img: "/assets/images/MercyKalu.jpg",
+  },
+  {
+    name: "Mariam Jimoh",
+    department: "OPERATIONS",
+    country: "NG",
+    role: "ESG & Impact Lead",
+    img: "/assets/images/MariamJimoh.jpeg",
+  },
+  {
+    name: "Olusola Blessing",
+    department: "OPERATIONS",
+    country: "NG",
+    role: "Technical Content Writer",
+    img: "/assets/images/BlessingOlusola.jpeg",
   },
   {
     name: "Neh Glory Anye",
     department: "OPERATIONS",
     country: "NG",
-    role: "Project Manager - Digital Literacy (Cybersecurity)",
+    role: "Project Manager - Digital Literacy (CyberSec.)",
     img: "/assets/images/Neh-Glory.jpeg",
   },
   {
@@ -174,14 +188,14 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Theresa Gyamfi",
     department: "TECH",
-    role: "Project Manager - Digital Literacy (Cybersecurity)",
+    role: "GRC Analyst & Policy Engineer",
     country: "GH",
     img: "/assets/images/AsieduGyamfi.png",
   },
   {
-    name: "Shukurat Olajumoke Abdulkadir",
+    name: "Shukurat O. Abdulkadir",
     department: "OPERATIONS",
-    role: "Project Manager - Digital Literacy (Cybersecurity)",
+    role: "Project Manager - Digital Literacy (CyberSec.)",
     country: "NG",
     img: "/assets/images/ShukuratAbdulkadir.jpg",
   },
@@ -211,7 +225,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     department: "TECH",
     role: "Software Engineer",
     country: "NG",
-    img: "/assets/images/OluwafemiAjigbayi.jpg",
+    img: "/assets/images/OluwafemiAjigbayi.JPG",
   },
   {
     name: "Maxwell Oba-Joshua",
@@ -239,14 +253,14 @@ export const TEAM_MEMBERS: TeamMember[] = [
     department: "OPERATIONS",
     role: "Social Media Relations",
     country: "NG",
-    img: "/assets/images/FeranmiOluwole.jpg",
+    img: "/assets/images/FeranmiOluwole.JPG",
   },
   {
     name: "Beloved-John Adejumo",
     department: "TECH",
     role: "Graphic Designer",
     country: "NG",
-    img: "/assets/images/Beloved-John.jpg",
+    img: "/assets/images/Beloved-john.jpg",
   },
   {
     name: "Ayegbusi Bright Temitope",

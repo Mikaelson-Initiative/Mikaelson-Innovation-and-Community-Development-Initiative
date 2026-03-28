@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 
 const AboutPage = () => {
   return (
-    <div className = "dark:bg-brand-dark-bg-nav" >
+    <main className="dark:bg-brand-dark-bg-nav">
       <AboutHeader />
       <SdgSection />
       <AboutOrganization />
@@ -46,7 +46,7 @@ const AboutPage = () => {
       <ImpactStats />
       <TeamSection />
       <JoinSection />
-    </div >
+    </main>
   );
 };
 

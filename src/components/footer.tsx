@@ -1,6 +1,5 @@
 import { footerLinks } from "@/constants";
 import { Mail, MapPin } from "lucide-react";
-import { NewsletterForm } from "../components/newsletter-form"
 import Image from "next/image";
 import Link from "next/link";
 import ReportsDropdown from "./annual-report";
@@ -8,8 +7,10 @@ import { XformerlyTwitter } from "./icons/Twitter";
 import { Instagram } from "./icons/Instagram";
 import { LinkedIn } from "./icons/LinkedIn";
 import { YouTube } from "./icons/Youtube";
+import { NewsletterForm } from "./newsletter-form";
 
 export const socialLinks = [
+  
   {
     label: "X (formerly Twitter)",
     href: "https://x.com/mcdti_org",
@@ -38,13 +39,13 @@ export const socialLinks = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#0a0a0a] text-white dark:text-[#111] mt-10">
+    <footer className="bg-white text-black  mt-10">
 
       {/* Top section */}
       <div className="max-w-7xl mx-auto px-6 md:px-10 pt-16 pb-12">
 
         {/* Brand + Newsletter row */}
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-12 pb-12 border-b border-white/10 dark:border-black/10">
+        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-12 pb-12 border-b border-black/10">
 
           {/* Brand */}
           <div className="flex flex-col gap-5 max-w-xs">
@@ -56,24 +57,24 @@ export const Footer = () => {
                 height={36}
                 className="rounded-md"
               />
-              <span className="font-extrabold text-lg tracking-tight text-white ">
+              <span className="font-extrabold text-lg tracking-tight text-black ">
                 Mikaelson Initiative
               </span>
             </Link>
-            <p className="text-sm text-white/50  leading-relaxed">
+            <p className="text-sm text-black/60  leading-relaxed">
               Elevating humanity through leadership, technology, and community — one student at a time.
             </p>
             <div className="flex flex-col gap-2.5">
               <a
                 href="mailto:mikaelsoninitiative@gmail.com"
-                className="flex items-center gap-2.5 text-sm text-white/50  hover:text-[#5CE1E6] dark:hover:text-[#5CE1E6] transition-colors duration-200 group"
+                className="flex items-center gap-2.5 text-sm text-black/50  hover:text-[#5CE1E6] dark:hover:text-[#5CE1E6] transition-colors duration-200 group"
               >
                 <Mail size={14} />
                 mikaelsoninitiative@gmail.com
               </a>
               <a
                 href="https://www.google.com/maps"
-                className="flex items-center gap-2.5 text-sm text-white/50 hover:text-[#5CE1E6] dark:hover:text-[#5CE1E6] transition-colors duration-200"
+                className="flex items-center gap-2.5 text-sm text-black/50 hover:text-[#5CE1E6] dark:hover:text-[#5CE1E6] transition-colors duration-200"
               >
                 <MapPin size={14} />
                 Nigeria, Africa
@@ -87,15 +88,15 @@ export const Footer = () => {
               <p className="text-[#5CE1E6] text-xs font-semibold tracking-[0.2em] uppercase mb-2">
                 Stay in the loop
               </p>
-              <h3 className="text-xl font-bold text-white  leading-snug">
+              <h3 className="text-xl font-bold text-black  leading-snug">
                 Get updates from Mikaelson
               </h3>
-              <p className="text-sm text-white/50  mt-1">
+              <p className="text-sm text-black/60  mt-1">
                 Stories, program launches, and leadership resources — straight to your inbox.
               </p>
             </div>
             <NewsletterForm />
-            <p className="text-xs text-white/30 ">
+            <p className="text-xs text-black ">
               No spam. Unsubscribe at any time.
             </p>
           </div>
@@ -105,7 +106,7 @@ export const Footer = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 pt-12">
           {footerLinks.map((section) => (
             <div key={section.section}>
-              <h3 className="text-xs font-semibold tracking-[0.15em] uppercase text-white/40  mb-4">
+              <h3 className="text-xs font-semibold tracking-[0.15em] uppercase text-black/40  mb-4">
                 {section.section}
               </h3>
               <nav className="flex flex-col gap-2.5">
@@ -113,7 +114,7 @@ export const Footer = () => {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="text-sm text-white/60  hover:text-white dark:hover:text-[#111] hover:translate-x-0.5 transition-all duration-200"
+                    className="text-sm text-black/60  hover:text-[#5CE1E6] dark:hover:text-[#5CE1E6] hover:translate-x-0.5 transition-all duration-200"
                   >
                     {link.label}
                   </Link>
@@ -124,7 +125,7 @@ export const Footer = () => {
 
           {/* Social + Reports */}
           <div className="flex flex-col gap-5">
-            <h3 className="text-xs font-semibold tracking-[0.15em] uppercase text-white/40 ">
+            <h3 className="text-xs font-semibold tracking-[0.15em] uppercase text-black/40 ">
               Follow Us
             </h3>
             <div className="flex gap-3 flex-wrap">
@@ -139,14 +140,14 @@ export const Footer = () => {
                   className="
                     flex items-center justify-center
                     w-9 h-9 rounded-lg
-                    border border-white/10 dark:border-black/10
+                    
                     text-white/60 
-                    hover:border-[#5CE1E6]/50 hover:text-[#5CE1E6]
-                    dark:hover:border-[#5CE1E6]/50 dark:hover:text-[#5CE1E6]
+                     hover:text-[#5CE1E6]
+                    dark:hover:text-[#5CE1E6]
                     transition-all duration-200
                   "
                 >
-                  <item.icon className="w-4 h-4" />
+                  <item.icon className="w-3 h-3" />
                 </a>
               ))}
             </div>
@@ -158,18 +159,19 @@ export const Footer = () => {
       {/* Bottom bar */}
       <div className="border-t border-white/8 dark:border-black/8">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-white/30 ">
+          <p className="text-xs text-black">
             © {new Date().getFullYear()} Mikaelson Initiative. All rights reserved.
           </p>
           <div className="flex items-center gap-1">
             <span className="w-1.5 h-1.5 rounded-full bg-[#5CE1E6]" />
-            <span className="text-xs text-white/30 ">
+            <span className="text-xs text-black ">
               Building Africa's next generation of leaders
             </span>
           </div>
         </div>
       </div>
-
+      <hr />
+      
     </footer>
   );
 };

@@ -27,7 +27,7 @@ const CommunityHeroSection: React.FC = () => {
         >
           <h1 className="text-3xl md:text-5xl font-extrabold leading-tight dark:text-brand-text-dark-heading">
             Transform Your Life Through
-            <span className="block bg-linear-to-r from-brand-blue to-teal-500 text-transparent bg-clip-text">
+            <span className="block bg-gradient-to-r from-brand-blue to-teal-500 text-transparent bg-clip-text">
               Community & Growth
             </span>
           </h1>
@@ -49,7 +49,7 @@ const CommunityHeroSection: React.FC = () => {
             }}
           >
             <motion.div
-              className="flex items-center space-x-4 bg-gray-50 dark:bg-brand-dark-bg-nav p-4 rounded-2xl shadow"
+              className="flex items-center space-x-4 bg-gray-50 p-4 rounded-2xl shadow"
               variants={{
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 },
@@ -57,15 +57,15 @@ const CommunityHeroSection: React.FC = () => {
             >
               <Users className="w-8 h-8 text-purple-600" />
               <div>
-                <span className="block text-xl font-bold dark:text-brand-text-dark-heading">
+                <span className="block text-xl font-bold dark:text-black">
                   {formatNumber(liveStats.activeMembers)}
                 </span>
-                <span className="text-sm text-gray-500 dark:text-brand-text-dark">Active Members</span>
+                <span className="text-sm text-gray-500">Active Members</span>
               </div>
             </motion.div>
 
             <motion.div
-              className="flex items-center space-x-4 bg-gray-50 dark:bg-brand-dark-bg-nav p-4 rounded-2xl shadow"
+              className="flex items-center space-x-4 bg-gray-50 p-4 rounded-2xl shadow"
               variants={{
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 },
@@ -73,15 +73,15 @@ const CommunityHeroSection: React.FC = () => {
             >
               <Flame className="w-8 h-8 text-orange-500" />
               <div>
-                <span className="block text-xl font-bold dark:text-brand-text-dark-heading">
+                <span className="block text-xl font-bold dark:text-black">
                   {formatNumber(liveStats.totalStreaks)}
                 </span>
-                <span className="text-sm text-gray-500 dark:text-brand-text-dark">Daily Streaks</span>
+                <span className="text-sm text-gray-500">Daily Streaks</span>
               </div>
             </motion.div>
 
             <motion.div
-              className="flex items-center space-x-4 bg-gray-50 dark:bg-brand-dark-bg-nav p-4 rounded-2xl shadow"
+              className="flex items-center space-x-4 bg-gray-50 p-4 rounded-2xl shadow"
               variants={{
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 },
@@ -89,10 +89,10 @@ const CommunityHeroSection: React.FC = () => {
             >
               <User className="w-8 h-8 text-green-600" />
               <div>
-                <span className="block text-xl font-bold dark:text-brand-text-dark-heading">
+                <span className="block text-xl font-bold dark:text-black">
                   {liveStats.countriesReached}
                 </span>
-                <span className="text-sm text-gray-500 dark:text-brand-text-dark">Countries</span>
+                <span className="text-sm text-gray-500">Countries</span>
               </div>
             </motion.div>
           </motion.div>
@@ -127,7 +127,7 @@ const CommunityHeroSection: React.FC = () => {
 
         {/* Hero Image */}
         <motion.div
-          className="relative flex w-full lg:max-w-3xl justify-center overflow-hidden h-[300px] md:h-[500px] bg-gray-300/50 dark:bg-brand-dark-bg-nav px-4 py-3 rounded"
+          className="relative flex w-full lg:max-w-3xl justify-center overflow-hidden h-[300px] md:h-[500px] bg-gray-300/50 px-4 py-3 rounded"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}

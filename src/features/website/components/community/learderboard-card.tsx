@@ -22,7 +22,7 @@ interface LeaderboardUser {
 
 export const LeaderboardCard = ({ user }: { user: LeaderboardUser }) => {
   return (
-    <div className="w-full rounded-xl bg-brand-bg-gray dark:bg-card dark:border-white/10 shadow p-5 border flex lg:flex-row flex-col gap-4">
+    <div className="w-full rounded-xl bg-brand-bg-gray shadow p-5 border flex lg:flex-row flex-col gap-4">
       <div className="flex flex-1 items-center gap-4">
         {/* Avatar */}
         <Avatar className="h-10 w-10 md:h-12 md:w-12">
@@ -35,7 +35,7 @@ export const LeaderboardCard = ({ user }: { user: LeaderboardUser }) => {
         {/* User Info */}
         <div className="w-full">
           <div className="flex justify-between md:flex-col">
-            <p className="font-semibold text-sm md:text-lg dark:text-brand-text-dark-heading">{user.name}</p>
+            <p className="font-semibold text-sm md:text-lg dark:text-black">{user.name}</p>
             <div className="flex items-center gap-2">
               <p className="text-xs md:text-sm text-gray-500 dark:text-brand-text-dark">{user.country}</p>
               <ReactCountryFlag
@@ -43,7 +43,7 @@ export const LeaderboardCard = ({ user }: { user: LeaderboardUser }) => {
                 svg
                 // style={{ width: "1.5em", height: "1.5em" }}
                 title={user.country}
-                className="rotate-2 ml-2 h-2 w-2 sm:w-5! sm:h-5!"
+                className="rotate-2 ml-2 h-2 w-2 sm:!w-5 sm:!h-5"
               />
             </div>
           </div>
@@ -55,15 +55,15 @@ export const LeaderboardCard = ({ user }: { user: LeaderboardUser }) => {
       <div className="flex flex-1 flex-col md:flex-row items-center justify-evenly gap-3">
         <div className="w-full grid grid-cols-3">
           <div>
-            <p className="font-bold dark:text-brand-text-dark-heading">{user.points}</p>
+            <p className="font-bold dark:text-black">{user.points}</p>
             <p className="text-xs text-gray-500 dark:text-brand-text-dark">Points</p>
           </div>
           <div>
-            <p className="font-bold dark:text-brand-text-dark-heading">{user.streak}</p>
+            <p className="font-bold dark:text-black">{user.streak}</p>
             <p className="text-xs text-gray-500 dark:text-brand-text-dark">Streak</p>
           </div>
           <div>
-            <p className="font-bold dark:text-brand-text-dark-heading">{user.habit}</p>
+            <p className="font-bold dark:text-black">{user.habit}</p>
             <p className="text-xs text-gray-500 dark:text-brand-text-dark">Habits</p>
           </div>
         </div>

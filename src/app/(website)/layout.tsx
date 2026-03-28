@@ -4,11 +4,11 @@ import React, { PropsWithChildren } from "react";
 
 const WebsiteRootLayout = ({ children }: PropsWithChildren) => {
   return (
-    <div className="dark:bg-brand-dark-bg-nav ">
+    <main className="dark:bg-brand-dark-bg-nav">
       <Header />
       {children}
       <Footer />
-    </div>
+    </main>
   );
 };
 

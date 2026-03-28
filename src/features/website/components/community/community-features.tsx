@@ -51,12 +51,12 @@ const FeaturesOverview: React.FC = () => {
           {features.map((feature, idx) => (
             <div
               key={idx}
-              className="p-10 bg-gray-50 dark:bg-card hover:-translate-y-2 rounded-2xl shadow hover:shadow-lg transition-transform duration-200 ease-linear"
+              className="p-10 bg-gray-50 hover:-translate-y-2 rounded-2xl shadow hover:shadow-lg transition-transform duration-200 ease-linear"
             >
-              <div className="flex items-center justify-center w-12 h-12 rounded-full mb-4 mx-auto bg-linear-to-br from-blue-600 to-teal-400">
+              <div className="flex items-center justify-center w-12 h-12 rounded-full mb-4 mx-auto bg-gradient-to-br from-blue-600 to-teal-400">
                 {feature.icon}
               </div>
-              <h3 className="text-2xl font-semibold mb-2 dark:text-brand-text-dark-heading">
+              <h3 className="text-2xl font-semibold mb-2 dark:text-black">
                 {feature.title}
               </h3>
               <p className="text-gray-600 text-base dark:text-brand-text-dark">

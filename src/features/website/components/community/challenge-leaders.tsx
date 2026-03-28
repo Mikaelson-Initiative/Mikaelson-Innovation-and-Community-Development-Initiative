@@ -48,18 +48,18 @@ const getPositionColor = (index: number) => {
 
 export const ChallengeLeaders = () => {
   return (
-    <div className="container px-4 py-10 max-w-5xl mx-auto p-10! bg-white dark:bg-card dark:border border-white/10 mt-10 rounded-xl">
-      <h2 className="text-2xl font-bold mb-6 text-center dark:text-brand-text-dark-heading">Challenge Leaders</h2>
+    <div className="container px-4 py-10 max-w-5xl mx-auto !p-10 bg-white mt-10 rounded-xl">
+      <h2 className="text-2xl font-bold mb-6 text-center dark:text-gray-700">Challenge Leaders</h2>
       <div className="max-w-xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {data.map((leader, index) => (
             <div
               key={index}
               className={cn(
-                "border relative shadow-md rounded-2xl p-6 flex flex-col items-center text-center dark:bg-brand-dark-bg-nav dark:border-white/10",
-                index === 0 && "bg-[#fffdf5] dark:bg-[#fffdf5]/10 border-[rgb(255,215,0)]",
-                index === 1 && "bg-[#fff9f2] dark:bg-[#fff9f2]/10 border-[#eccaa7]",
-                index === 2 && "bg-[#fff9f2] dark:bg-[#fff9f2]/10 border-[#a8a7a6]"
+                "border relative shadow-md rounded-2xl p-6 flex flex-col items-center text-center",
+                index === 0 && "bg-[#fffdf5] border-[rgb(255,215,0)]",
+                index === 1 && "bg-[#fff9f2] border-[#eccaa7]",
+                index === 2 && "bg-[#fff9f2] border-[#a8a7a6]"
               )}
             >
               <div
@@ -73,7 +73,7 @@ export const ChallengeLeaders = () => {
                 <AvatarImage src={leader.imageUrl} alt={leader.name} />
                 <AvatarFallback>{leader.name[0]}</AvatarFallback>
               </Avatar>
-              <h3 className="text-lg font-semibold dark:text-brand-text-dark-heading">{leader.name}</h3>
+              <h3 className="text-lg font-semibold dark:text-black">{leader.name}</h3>
               <p className="text-gray-500 text-sm">
                 {leader.country}
                 <ReactCountryFlag
@@ -84,7 +84,7 @@ export const ChallengeLeaders = () => {
                   className="rotate-2 ml-2"
                 />
               </p>
-              <p className="text-gray-700 dark:text-brand-text-dark mt-2 mb-5">
+              <p className="text-gray-700 mt-2 mb-5">
                 {leader.points.toLocaleString()} points
               </p>
               <span className="flex mt-auto items-center gap-2 bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">

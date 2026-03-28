@@ -59,9 +59,9 @@ const Header: React.FC<HeaderProps> = ({
           <Image
             src="/assets/images/mikaelsonlogo.png"
             alt="Mikaelson Initiative"
-            width={32}
-            height={32}
-            className="rounded-md"
+            width={35}
+            height={35}
+           className="rounded-md"
           />
           <span className="text-sm md:text-base dark:text-white text-[#111] group-hover:text-[#5CE1E6] transition-colors duration-200">
             {brandName}

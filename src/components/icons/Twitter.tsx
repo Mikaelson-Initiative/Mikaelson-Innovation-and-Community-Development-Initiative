@@ -1,12 +1,17 @@
 import type { SVGProps } from "react";
 
 const XformerlyTwitter = (props: SVGProps<SVGSVGElement>) => (
-  <svg {...props} fill="none" viewBox="0 0 1200 1227">
-    <path
-      fill="currentColor"
-      d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"
-    />
-  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="102" height="102" fill="none" viewBox="0 0 512 512" id="twitter">
+  <g clipPath="url(#clip0_84_15698)">
+    <rect width="512" height="512" fill="#fff" rx="60"></rect>
+    <path fill="#000" d="M355.904 100H408.832L293.2 232.16L429.232 412H322.72L239.296 302.928L143.84 412H90.8805L214.56 270.64L84.0645 100H193.28L268.688 199.696L355.904 100ZM337.328 380.32H366.656L177.344 130.016H145.872L337.328 380.32Z"></path>
+  </g>
+  <defs>
+    <clipPath id="clip0_84_15698">
+      <rect width="512" height="512" fill="#fff"></rect>
+    </clipPath>
+  </defs>
+</svg>
 );
 
 export { XformerlyTwitter };
