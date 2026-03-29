@@ -14,9 +14,9 @@ export function NewsletterForm() {
         className="
           flex-1 px-4 py-2.5 rounded-xl text-sm
           bg-white/8 
-          border border-black/10
-          text-black/80 
-          placeholder:text-black/30 
+          border border-black/10 dark:border-white/10
+          text-black/80 text-white/80
+          placeholder:text-black/30 dark:placeholder:text-white/30
           focus:outline-none focus:border-[#5CE1E6]/60
           transition-colors duration-200
         "

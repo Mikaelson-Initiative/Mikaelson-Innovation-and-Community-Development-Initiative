@@ -312,8 +312,8 @@ export const focusAreaContent: Record<FocusAreaSlug, FocusAreaContent> = {
           "Community volunteers transition into long-term leadership roles over time.",
       },
     ],
-    ctaLabel: "Join the Community Network",
-    ctaHref: "/sign-up",
+    ctaLabel: "Join the Community Waitlist",
+    ctaHref: "/waitlist",
     theme: {
       accent: "#0891B2",
       gradientStart: "#F0FDFA",

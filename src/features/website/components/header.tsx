@@ -37,6 +37,7 @@ const Header: React.FC<HeaderProps> = ({
   mobileNavLinks = [
    
     { label: "The Team", href: "/team" },
+    { label: "Focus Areas", href: "/focus-areas"},
     { label: "Community", href: "/community" },
     { label: "Our Product", href: "/product" },
     { label: "About Us", href: "/about-us" },

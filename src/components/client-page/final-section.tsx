@@ -55,10 +55,10 @@ export default function FinalCTA() {
             {/* CTA — only Join the Community */}
             <div className="flex items-center w-full sm:w-auto justify-center">
               <Link
-                href="/community"
+                href="/waitlist"
                 className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#5CE1E6] text-black font-semibold text-sm hover:bg-[#4bcdd2] transition-all duration-200 w-full sm:w-auto justify-center shadow-[0_4px_24px_rgba(92,225,230,0.25)]"
               >
-                Join the Community
+                Join Waitlist
                 <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform duration-200" />
               </Link>
             </div>

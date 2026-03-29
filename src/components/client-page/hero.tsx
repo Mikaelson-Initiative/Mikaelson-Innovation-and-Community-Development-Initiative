@@ -69,9 +69,9 @@ const Hero: React.FC = () => {
                 </button>
               </Link>
 
-              <Link href="/about-us">
+              <Link href="/waitlist">
                 <button className="px-7 py-3 text-sm font-semibold text-[#0097a7] border-2 border-[#5CE1E6]/70 rounded-full hover:border-[#5CE1E6] hover:bg-[#5CE1E6]/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#5CE1E6]">
-                  Read More
+                  Join Waitlist
                 </button>
               </Link>
             </motion.div>

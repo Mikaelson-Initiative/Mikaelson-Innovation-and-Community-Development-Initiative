@@ -13,13 +13,13 @@ const ReportsDropdown: React.FC = () => {
         className="w-full flex items-center justify-between gap-2 px-4 py-2.5 rounded-xl border border-[#5CE1E6]/25 bg-transparent text-sm font-medium text-black  hover:border-[#5CE1E6]/60 transition-all duration-200"
       >
         <div className="flex items-center gap-2">
-          <FileBarChart size={14} className="text-black " />
-          <span>Annual Reports</span>
+          <FileBarChart size={14} className="text-black dark:text-white" />
+          <span className="dark:text-white">Annual Reports</span>
         </div>
         <ChevronDown
           size={14}
           className={cn(
-            "text-black transition-transform duration-300",
+            "text-black dark:text-white transition-transform duration-300",
             open && "rotate-180"
           )}
         />
@@ -28,7 +28,7 @@ const ReportsDropdown: React.FC = () => {
       <div
         className={cn(
           open &&
-            "rotate-180 ease-linear translate-y-0.5  transition-transform duration-300"
+            "rotate-180 ease-linear translate-y-0.5 transition-transform duration-300"
         )}
       />
       <div
