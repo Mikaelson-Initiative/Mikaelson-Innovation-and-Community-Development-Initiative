@@ -39,7 +39,7 @@ export const socialLinks = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-white text-black  mt-10">
+    <footer className="text-black dark:text-white mt-10">
 
       {/* Top section */}
       <div className="max-w-7xl mx-auto px-6 md:px-10 pt-16 pb-12">
@@ -57,24 +57,24 @@ export const Footer = () => {
                 height={36}
                 className="rounded-md"
               />
-              <span className="font-extrabold text-lg tracking-tight text-black ">
+              <span className="font-extrabold text-lg tracking-tight text-black dark:text-white">
                 Mikaelson Initiative
               </span>
             </Link>
-            <p className="text-sm text-black/60  leading-relaxed">
+            <p className="text-sm text-black/60 dark:text-white/60 leading-relaxed">
               Elevating humanity through leadership, technology, and community — one student at a time.
             </p>
             <div className="flex flex-col gap-2.5">
               <a
                 href="mailto:mikaelsoninitiative@gmail.com"
-                className="flex items-center gap-2.5 text-sm text-black/50  hover:text-[#5CE1E6] dark:hover:text-[#5CE1E6] transition-colors duration-200 group"
+                className="flex items-center gap-2.5 text-sm text-black/50 dark:text-white dark:text-white  hover:text-[#5CE1E6] dark:hover:text-[#5CE1E6] transition-colors duration-200 group"
               >
                 <Mail size={14} />
                 mikaelsoninitiative@gmail.com
               </a>
               <a
                 href="https://www.google.com/maps"
-                className="flex items-center gap-2.5 text-sm text-black/50 hover:text-[#5CE1E6] dark:hover:text-[#5CE1E6] transition-colors duration-200"
+                className="flex items-center gap-2.5 text-sm text-black/50 dark:text-white hover:text-[#5CE1E6] dark:hover:text-[#5CE1E6] transition-colors duration-200"
               >
                 <MapPin size={14} />
                 Nigeria, Africa
@@ -88,15 +88,15 @@ export const Footer = () => {
               <p className="text-[#5CE1E6] text-xs font-semibold tracking-[0.2em] uppercase mb-2">
                 Stay in the loop
               </p>
-              <h3 className="text-xl font-bold text-black  leading-snug">
+              <h3 className="text-xl font-bold text-black dark:text-white  leading-snug">
                 Get updates from Mikaelson
               </h3>
-              <p className="text-sm text-black/60  mt-1">
+              <p className="text-sm text-black/60 dark:text-white/60 mt-1">
                 Stories, program launches, and leadership resources — straight to your inbox.
               </p>
             </div>
             <NewsletterForm />
-            <p className="text-xs text-black ">
+            <p className="text-xs text-black dark:text-white">
               No spam. Unsubscribe at any time.
             </p>
           </div>
@@ -106,7 +106,7 @@ export const Footer = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 pt-12">
           {footerLinks.map((section) => (
             <div key={section.section}>
-              <h3 className="text-xs font-semibold tracking-[0.15em] uppercase text-black/40  mb-4">
+              <h3 className="text-xs font-semibold tracking-[0.15em] uppercase text-black/40 dark:text-white/40 mb-4">
                 {section.section}
               </h3>
               <nav className="flex flex-col gap-2.5">
@@ -114,7 +114,7 @@ export const Footer = () => {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="text-sm text-black/60  hover:text-[#5CE1E6] dark:hover:text-[#5CE1E6] hover:translate-x-0.5 transition-all duration-200"
+                    className="text-sm text-black/60 dark:text-white/60  hover:text-[#5CE1E6] dark:hover:text-[#5CE1E6] hover:translate-x-0.5 transition-all duration-200"
                   >
                     {link.label}
                   </Link>
@@ -125,7 +125,7 @@ export const Footer = () => {
 
           {/* Social + Reports */}
           <div className="flex flex-col gap-5">
-            <h3 className="text-xs font-semibold tracking-[0.15em] uppercase text-black/40 ">
+            <h3 className="text-xs font-semibold tracking-[0.15em] uppercase text-black/40 dark:text-white/40">
               Follow Us
             </h3>
             <div className="flex gap-3 flex-wrap">
@@ -159,12 +159,12 @@ export const Footer = () => {
       {/* Bottom bar */}
       <div className="border-t border-white/8 dark:border-black/8">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-black">
+          <p className="text-xs text-black dark:text-white">
             © {new Date().getFullYear()} Mikaelson Initiative. All rights reserved.
           </p>
           <div className="flex items-center gap-1">
             <span className="w-1.5 h-1.5 rounded-full bg-[#5CE1E6]" />
-            <span className="text-xs text-black ">
+            <span className="text-xs text-black dark:text-white">
               Building Africa's next generation of leaders
             </span>
           </div>

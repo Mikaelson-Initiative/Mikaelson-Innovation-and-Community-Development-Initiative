@@ -31,51 +31,46 @@ export const SponsorsShowcase: React.FC = () => {
           Organizations and Individuals that support and believe in our goal
         </h2>
       </div>
-      <div style={{ overflow: "hidden", width: "100%", position: "relative" }}>
-        <div
-          className="logo-slider"
-          style={{
-            display: "flex",
-            gap: "3rem",
-            animation: "slideLeft 20s linear infinite",
-            whiteSpace: "nowrap",
-            width: "calc(200% + 6rem)",
-          }}
-        >
-          {Array.from({ length: 10 }).map((_, i) => (
+      <div className="max-w-[1200px] mx-auto px-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center opacity-80 hover:opacity-100 transition-opacity duration-500">
+          <div className="p-6 bg-white dark:bg-brand-dark-bg-card rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md transition-all duration-300 w-full flex items-center justify-center h-32">
             <Image
-              key={`sponsor-${i}`}
-              src="/assets/images/brand-1.svg"
-              alt={`Sponsor ${i + 1}`}
-              width={80}
-              height={80}
-              className="rounded-full"
-              style={{ flexShrink: 0 }}
+              src="/assets/images/Google.png"
+              alt="Google"
+              width={140}
+              height={50}
+              className="object-contain grayscale hover:grayscale-0 transition-all duration-500"
             />
-          ))}
-          {Array.from({ length: 10 }).map((_, i) => (
+          </div>
+          <div className="p-6 bg-white dark:bg-brand-dark-bg-card rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md transition-all duration-300 w-full flex items-center justify-center h-32">
             <Image
-              key={`sponsor-dup-${i}`}
-              src="/assets/images/brand-1.svg"
-              alt={`Sponsor ${i + 1} Duplicate`}
-              className="rounded-full"
-              width={80}
-              height={80}
-              style={{flexShrink: 0 }}
+              src="/assets/images/Microsoft.png"
+              alt="Microsoft"
+              width={140}
+              height={50}
+              className="object-contain grayscale hover:grayscale-0 transition-all duration-500"
             />
-          ))}
+          </div>
+          <div className="p-6 bg-white dark:bg-brand-dark-bg-card rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md transition-all duration-300 w-full flex items-center justify-center h-32">
+            <Image
+              src="/assets/images/canva.png"
+              alt="Partner Organization"
+              width={120}
+              height={50}
+              className="object-contain grayscale hover:grayscale-0 transition-all duration-500"
+            />
+          </div>
+          <div className="p-6 bg-white dark:bg-brand-dark-bg-card rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md transition-all duration-300 w-full flex items-center justify-center h-32">
+             <Image
+              src="/assets/images/Adobe-Express.png"
+              alt="Mikaelson Initiative"
+              width={120}
+              height={50}
+              className="object-contain grayscale hover:grayscale-0 transition-all duration-500"
+            />
+          </div>
         </div>
       </div>
-      <style jsx>{`
-        @keyframes slideLeft {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-      `}</style>
     </section>
   );
 };
