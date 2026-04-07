@@ -53,7 +53,7 @@ export const SponsorsShowcase: React.FC = () => {
           </div>
           <div className="p-6 bg-white dark:bg-brand-dark-bg-card rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md transition-all duration-300 w-full flex items-center justify-center h-32">
             <Image
-              src="/assets/images/canva.png"
+              src="/assets/images/Canva.png"
               alt="Partner Organization"
               width={120}
               height={50}
