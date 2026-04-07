@@ -20,10 +20,10 @@ export const HowToPartner: React.FC = () => {
         <p className="text-gray-700 text-base md:text-lg dark:text-brand-text-dark">
           Contact us at{" "}
           <a
-            href="mailto:chukwusabastine2018@gmail.com"
+            href="mailto:partnerships@mikaelsoninitiative.org"
             className="text-indigo-600 text-xs md:text-base underline font-medium"
           >
-            community@mikaelsoninitiative.org
+            partnerships@mikaelsoninitiative.org
           </a>
         </p>
       </div>
