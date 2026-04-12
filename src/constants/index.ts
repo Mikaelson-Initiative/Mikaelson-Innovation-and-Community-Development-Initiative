@@ -151,13 +151,6 @@ export const TEAM_MEMBERS: TeamMember[] = [
     img: "/assets/images/Neh-Glory.jpeg",
   },
   {
-    name: "Chukwu Ajah Sabastine",
-    department: "TECH",
-    country: "NG",
-    role: "Frontend Engineer",
-    img: "/assets/images/chukwu-ajah.jpg",
-  },
-  {
     name: "Boluwatife Adeleke",
     department: "TECH",
     role: "Product Marketing Manager",

@@ -18,6 +18,10 @@ const tabs = [
       "The Mikaelson Community is a vibrant network of ambitious students and changemakers across Africa, united by excellence and intentional growth.",
     glowColor: "rgba(92,225,230,0.2)",
     shadowColor: "rgba(92,225,230,0.5)",
+    cta: {
+      text: "Join the Community",
+      href: "/community",
+    },
   },
   {
     id: "labs",
@@ -31,6 +35,10 @@ const tabs = [
       "Mikaelson Labs serves as our innovation hub where bold ideas are nurtured and transformed into real-world solutions that drive sustainable progress.",
     glowColor: "rgba(59,130,246,0.15)",
     shadowColor: "rgba(59,130,246,0.4)",
+    cta: {
+      text: "Explore Labs",
+      href: "/labs",
+    },
   },
   {
     id: "partnerships",
@@ -42,8 +50,12 @@ const tabs = [
     title: "Partnership & Growth Network",
     content:
       "The Partnership & Growth Network connects emerging leaders with mentors, organizations, and strategic opportunities to scale their impact.",
-    glowColor: "rgba(92,225,230,0.1)",
-    shadowColor: "rgba(92,225,230,0.4)",
+    glowColor: "rgba(11, 11, 11, 0.1)",
+    shadowColor: "rgba(0, 0, 0, 0.4)",
+    cta: {
+      text: "Partner with Us",
+      href: "/contact",
+    },
   },
 ];
 
@@ -117,9 +129,27 @@ export default function OurEcosystemTabs() {
                 <span className="w-8 h-[2px] bg-[#5CE1E6] rounded-full" />
               </div>
 
-              <p className="text-base text-[#555] dark:text-white/60  leading-relaxed max-w-2xl">
+              <p className="text-base text-[#555] dark:text-white/60  leading-relaxed max-w-2xl mb-10">
                 {activeData.content}
               </p>
+
+              {activeData.cta && (
+                <motion.a
+                  href={activeData.cta.href}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  style={{ 
+                    backgroundColor: activeData.color,
+                  }}
+                  className={`
+                    inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-sm
+                    ${activeData.textColor} shadow-lg hover:shadow-xl transition-shadow
+                  `}
+                >
+                  {activeData.cta.text}
+                  <ArrowUpRight size={18} strokeWidth={2.5} />
+                </motion.a>
+              )}
             </div>
           </div>
 
